@@ -1,1 +1,1 @@
-# php-iso3166-countries
+# php-iso3166countries
