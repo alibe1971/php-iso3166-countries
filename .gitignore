@@ -1,4 +1,6 @@
+000alibe
 vendor
 .phpunit.result.cache
-.gitignore.local
-
+composer.lock
+phpunit-as-junit.xml
+.idea
