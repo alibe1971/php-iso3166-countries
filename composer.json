@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Alibe\\IsoCountryCodes\\": "src/"
+            "Alibe\\GeoCodes\\": "src/"
         },
         "exclude": [
             "dev",
@@ -31,7 +31,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Alibe\\IsoCountryCodes\\Tests\\": "tests/"
+            "Alibe\\GeoCodes\\Tests\\": "tests/"
         }
     },
     "require-dev": {
