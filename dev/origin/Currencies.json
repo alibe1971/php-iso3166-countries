@@ -1,0 +1,1442 @@
+[
+    {
+        "label (not included in the build)": "UAE Dirham",
+        "isoAlpha": "AED",
+        "isoNumber": "784",
+        "symbol": "د.إ",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Afghani",
+        "isoAlpha": "AFN",
+        "isoNumber": "971",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lek",
+        "isoAlpha": "ALL",
+        "isoNumber": "008",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Armenian Dram",
+        "isoAlpha": "AMD",
+        "isoNumber": "051",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Netherlands Antillean Guilder",
+        "isoAlpha": "ANG",
+        "isoNumber": "532",
+        "symbol": "ƒ",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kwanza",
+        "isoAlpha": "AOA",
+        "isoNumber": "973",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Argentine Peso",
+        "isoAlpha": "ARS",
+        "isoNumber": "032",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Australian Dollar",
+        "isoAlpha": "AUD",
+        "isoNumber": "036",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Aruban Florin",
+        "isoAlpha": "AWG",
+        "isoNumber": "533",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Azerbaijan Manat",
+        "isoAlpha": "AZN",
+        "isoNumber": "944",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Convertible Mark",
+        "isoAlpha": "BAM",
+        "isoNumber": "977",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Barbados Dollar",
+        "isoAlpha": "BBD",
+        "isoNumber": "052",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Taka",
+        "isoAlpha": "BDT",
+        "isoNumber": "050",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bulgarian Lev",
+        "isoAlpha": "BGN",
+        "isoNumber": "975",
+        "symbol": "лв",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bahraini Dinar",
+        "isoAlpha": "BHD",
+        "isoNumber": "048",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Burundi Franc",
+        "isoAlpha": "BIF",
+        "isoNumber": "108",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bermudian Dollar",
+        "isoAlpha": "BMD",
+        "isoNumber": "060",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Brunei Dollar",
+        "isoAlpha": "BND",
+        "isoNumber": "096",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Boliviano",
+        "isoAlpha": "BOB",
+        "isoNumber": "068",
+        "symbol": "Bs.",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mvdol",
+        "isoAlpha": "BOV",
+        "isoNumber": "984",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Brazilian Real",
+        "isoAlpha": "BRL",
+        "isoNumber": "986",
+        "symbol": "R$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bahamian Dollar",
+        "isoAlpha": "BSD",
+        "isoNumber": "044",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ngultrum",
+        "isoAlpha": "BTN",
+        "isoNumber": "064",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pula",
+        "isoAlpha": "BWP",
+        "isoNumber": "072",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Belarusian Ruble",
+        "isoAlpha": "BYN",
+        "isoNumber": "933",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Belize Dollar",
+        "isoAlpha": "BZD",
+        "isoNumber": "084",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Canadian Dollar",
+        "isoAlpha": "CAD",
+        "isoNumber": "124",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Congolese Franc",
+        "isoAlpha": "CDF",
+        "isoNumber": "976",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "WIR Euro",
+        "isoAlpha": "CHE",
+        "isoNumber": "947",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Swiss Franc",
+        "isoAlpha": "CHF",
+        "isoNumber": "756",
+        "symbol": "CHF",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "WIR Franc",
+        "isoAlpha": "CHW",
+        "isoNumber": "948",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Unidad de Fomento",
+        "isoAlpha": "CLF",
+        "isoNumber": "990",
+        "symbol": null,
+        "decimal": 4,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Chilean Peso",
+        "isoAlpha": "CLP",
+        "isoNumber": "152",
+        "symbol": "$",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Yuan Renminbi",
+        "isoAlpha": "CNY",
+        "isoNumber": "156",
+        "symbol": "¥",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Colombian Peso",
+        "isoAlpha": "COP",
+        "isoNumber": "170",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Unidad de Valor Real",
+        "isoAlpha": "COU",
+        "isoNumber": "970",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Costa Rican Colon",
+        "isoAlpha": "CRC",
+        "isoNumber": "188",
+        "symbol": "₡",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Peso Convertible",
+        "isoAlpha": "CUC",
+        "isoNumber": "931",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cuban Peso",
+        "isoAlpha": "CUP",
+        "isoNumber": "192",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cabo Verde Escudo",
+        "isoAlpha": "CVE",
+        "isoNumber": "132",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Czech Koruna",
+        "isoAlpha": "CZK",
+        "isoNumber": "203",
+        "symbol": "Kč",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Djibouti Franc",
+        "isoAlpha": "DJF",
+        "isoNumber": "262",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Danish Krone",
+        "isoAlpha": "DKK",
+        "isoNumber": "208",
+        "symbol": "kr",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dominican Peso",
+        "isoAlpha": "DOP",
+        "isoNumber": "214",
+        "symbol": "RD$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Algerian Dinar",
+        "isoAlpha": "DZD",
+        "isoNumber": "012",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Egyptian Pound",
+        "isoAlpha": "EGP",
+        "isoNumber": "818",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nakfa",
+        "isoAlpha": "ERN",
+        "isoNumber": "232",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ethiopian Birr",
+        "isoAlpha": "ETB",
+        "isoNumber": "230",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Euro",
+        "isoAlpha": "EUR",
+        "isoNumber": "978",
+        "symbol": "€",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Fiji Dollar",
+        "isoAlpha": "FJD",
+        "isoNumber": "242",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Falkland Islands Pound",
+        "isoAlpha": "FKP",
+        "isoNumber": "238",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pound Sterling",
+        "isoAlpha": "GBP",
+        "isoNumber": "826",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lari",
+        "isoAlpha": "GEL",
+        "isoNumber": "981",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ghana Cedi",
+        "isoAlpha": "GHS",
+        "isoNumber": "936",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gibraltar Pound",
+        "isoAlpha": "GIP",
+        "isoNumber": "292",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dalasi",
+        "isoAlpha": "GMD",
+        "isoNumber": "270",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guinean Franc",
+        "isoAlpha": "GNF",
+        "isoNumber": "324",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Quetzal",
+        "isoAlpha": "GTQ",
+        "isoNumber": "320",
+        "symbol": "Q",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guyana Dollar",
+        "isoAlpha": "GYD",
+        "isoNumber": "328",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Hong Kong Dollar",
+        "isoAlpha": "HKD",
+        "isoNumber": "344",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lempira",
+        "isoAlpha": "HNL",
+        "isoNumber": "340",
+        "symbol": "L",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gourde",
+        "isoAlpha": "HTG",
+        "isoNumber": "332",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Forint",
+        "isoAlpha": "HUF",
+        "isoNumber": "348",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rupiah",
+        "isoAlpha": "IDR",
+        "isoNumber": "360",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "New Israeli Sheqel",
+        "isoAlpha": "ILS",
+        "isoNumber": "376",
+        "symbol": "₪",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Indian Rupee",
+        "isoAlpha": "INR",
+        "isoNumber": "356",
+        "symbol": "₹",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iraqi Dinar",
+        "isoAlpha": "IQD",
+        "isoNumber": "368",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iranian Rial",
+        "isoAlpha": "IRR",
+        "isoNumber": "364",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iceland Krona",
+        "isoAlpha": "ISK",
+        "isoNumber": "352",
+        "symbol": "kr",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Jamaican Dollar",
+        "isoAlpha": "JMD",
+        "isoNumber": "388",
+        "symbol": "J$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Jordanian Dinar",
+        "isoAlpha": "JOD",
+        "isoNumber": "400",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Yen",
+        "isoAlpha": "JPY",
+        "isoNumber": "392",
+        "symbol": "¥",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kenyan Shilling",
+        "isoAlpha": "KES",
+        "isoNumber": "404",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Som",
+        "isoAlpha": "KGS",
+        "isoNumber": "417",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Riel",
+        "isoAlpha": "KHR",
+        "isoNumber": "116",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Comorian Franc ",
+        "isoAlpha": "KMF",
+        "isoNumber": "174",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "North Korean Won",
+        "isoAlpha": "KPW",
+        "isoNumber": "408",
+        "symbol": "₩",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Won",
+        "isoAlpha": "KRW",
+        "isoNumber": "410",
+        "symbol": "₩",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kuwaiti Dinar",
+        "isoAlpha": "KWD",
+        "isoNumber": "414",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cayman Islands Dollar",
+        "isoAlpha": "KYD",
+        "isoNumber": "136",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tenge",
+        "isoAlpha": "KZT",
+        "isoNumber": "398",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lao Kip",
+        "isoAlpha": "LAK",
+        "isoNumber": "418",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lebanese Pound",
+        "isoAlpha": "LBP",
+        "isoNumber": "422",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sri Lanka Rupee",
+        "isoAlpha": "LKR",
+        "isoNumber": "144",
+        "symbol": "₨",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Liberian Dollar",
+        "isoAlpha": "LRD",
+        "isoNumber": "430",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Loti",
+        "isoAlpha": "LSL",
+        "isoNumber": "426",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Libyan Dinar",
+        "isoAlpha": "LYD",
+        "isoNumber": "434",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Moroccan Dirham",
+        "isoAlpha": "MAD",
+        "isoNumber": "504",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Moldovan Leu",
+        "isoAlpha": "MDL",
+        "isoNumber": "498",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malagasy Ariary",
+        "isoAlpha": "MGA",
+        "isoNumber": "969",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Denar",
+        "isoAlpha": "MKD",
+        "isoNumber": "807",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kyat",
+        "isoAlpha": "MMK",
+        "isoNumber": "104",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tugrik",
+        "isoAlpha": "MNT",
+        "isoNumber": "496",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pataca",
+        "isoAlpha": "MOP",
+        "isoNumber": "446",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ouguiya",
+        "isoAlpha": "MRU",
+        "isoNumber": "929",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mauritius Rupee",
+        "isoAlpha": "MUR",
+        "isoNumber": "480",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rufiyaa",
+        "isoAlpha": "MVR",
+        "isoNumber": "462",
+        "symbol": "Rf",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malawi Kwacha",
+        "isoAlpha": "MWK",
+        "isoNumber": "454",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mexican Peso",
+        "isoAlpha": "MXN",
+        "isoNumber": "484",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mexican Unidad de Inversion (UDI)",
+        "isoAlpha": "MXV",
+        "isoNumber": "979",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malaysian Ringgit",
+        "isoAlpha": "MYR",
+        "isoNumber": "458",
+        "symbol": "RM",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mozambique Metical",
+        "isoAlpha": "MZN",
+        "isoNumber": "943",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Namibia Dollar",
+        "isoAlpha": "NAD",
+        "isoNumber": "516",
+        "symbol": "N$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Naira",
+        "isoAlpha": "NGN",
+        "isoNumber": "566",
+        "symbol": "₦",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cordoba Oro",
+        "isoAlpha": "NIO",
+        "isoNumber": "558",
+        "symbol": "C$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Norwegian Krone",
+        "isoAlpha": "NOK",
+        "isoNumber": "578",
+        "symbol": "kr",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nepalese Rupee",
+        "isoAlpha": "NPR",
+        "isoNumber": "524",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "New Zealand Dollar",
+        "isoAlpha": "NZD",
+        "isoNumber": "554",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rial Omani",
+        "isoAlpha": "OMR",
+        "isoNumber": "512",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Balboa",
+        "isoAlpha": "PAB",
+        "isoNumber": "590",
+        "symbol": "B/.",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sol",
+        "isoAlpha": "PEN",
+        "isoNumber": "604",
+        "symbol": "S/.",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kina",
+        "isoAlpha": "PGK",
+        "isoNumber": "598",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Philippine Peso",
+        "isoAlpha": "PHP",
+        "isoNumber": "608",
+        "symbol": "₱",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pakistan Rupee",
+        "isoAlpha": "PKR",
+        "isoNumber": "586",
+        "symbol": "₨",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Zloty",
+        "isoAlpha": "PLN",
+        "isoNumber": "985",
+        "symbol": "zł",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guarani",
+        "isoAlpha": "PYG",
+        "isoNumber": "600",
+        "symbol": "₲",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Qatari Rial",
+        "isoAlpha": "QAR",
+        "isoNumber": "634",
+        "symbol": "ر.ق",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Romanian Leu",
+        "isoAlpha": "RON",
+        "isoNumber": "946",
+        "symbol": "lei",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Serbian Dinar",
+        "isoAlpha": "RSD",
+        "isoNumber": "941",
+        "symbol": "дин",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Russian Ruble",
+        "isoAlpha": "RUB",
+        "isoNumber": "643",
+        "symbol": "₽",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rwanda Franc",
+        "isoAlpha": "RWF",
+        "isoNumber": "646",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saudi Riyal",
+        "isoAlpha": "SAR",
+        "isoNumber": "682",
+        "symbol": "ر.س",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Solomon Islands Dollar",
+        "isoAlpha": "SBD",
+        "isoNumber": "090",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Seychelles Rupee",
+        "isoAlpha": "SCR",
+        "isoNumber": "690",
+        "symbol": "SR",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sudanese Pound",
+        "isoAlpha": "SDG",
+        "isoNumber": "938",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Swedish Krona",
+        "isoAlpha": "SEK",
+        "isoNumber": "752",
+        "symbol": "kr",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Singapore Dollar",
+        "isoAlpha": "SGD",
+        "isoNumber": "702",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Helena Pound",
+        "isoAlpha": "SHP",
+        "isoNumber": "654",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Leone",
+        "isoAlpha": "SLE",
+        "isoNumber": "925",
+        "symbol": "Le",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Leone",
+        "isoAlpha": "SLL",
+        "isoNumber": "694",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Somali Shilling",
+        "isoAlpha": "SOS",
+        "isoNumber": "706",
+        "symbol": "S",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Surinam Dollar",
+        "isoAlpha": "SRD",
+        "isoNumber": "968",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "South Sudanese Pound",
+        "isoAlpha": "SSP",
+        "isoNumber": "728",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dobra",
+        "isoAlpha": "STN",
+        "isoNumber": "930",
+        "symbol": "Db",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "El Salvador Colon",
+        "isoAlpha": "SVC",
+        "isoNumber": "222",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Syrian Pound",
+        "isoAlpha": "SYP",
+        "isoNumber": "760",
+        "symbol": "£",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lilangeni",
+        "isoAlpha": "SZL",
+        "isoNumber": "748",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Baht",
+        "isoAlpha": "THB",
+        "isoNumber": "764",
+        "symbol": "฿",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Somoni",
+        "isoAlpha": "TJS",
+        "isoNumber": "972",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Turkmenistan New Manat",
+        "isoAlpha": "TMT",
+        "isoNumber": "934",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tunisian Dinar",
+        "isoAlpha": "TND",
+        "isoNumber": "788",
+        "symbol": null,
+        "decimal": 3,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pa’anga",
+        "isoAlpha": "TOP",
+        "isoNumber": "776",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Turkish Lira",
+        "isoAlpha": "TRY",
+        "isoNumber": "949",
+        "symbol": "₺",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Trinidad and Tobago Dollar",
+        "isoAlpha": "TTD",
+        "isoNumber": "780",
+        "symbol": "TT$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "New Taiwan Dollar",
+        "isoAlpha": "TWD",
+        "isoNumber": "901",
+        "symbol": "NT$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tanzanian Shilling",
+        "isoAlpha": "TZS",
+        "isoNumber": "834",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Hryvnia",
+        "isoAlpha": "UAH",
+        "isoNumber": "980",
+        "symbol": "₴",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uganda Shilling",
+        "isoAlpha": "UGX",
+        "isoNumber": "800",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "US Dollar",
+        "isoAlpha": "USD",
+        "isoNumber": "840",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "US Dollar (Next day)",
+        "isoAlpha": "USN",
+        "isoNumber": "997",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uruguay Peso en Unidades Indexadas (UI)",
+        "isoAlpha": "UYI",
+        "isoNumber": "940",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Peso Uruguayo",
+        "isoAlpha": "UYU",
+        "isoNumber": "858",
+        "symbol": "$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Unidad Previsional",
+        "isoAlpha": "UYW",
+        "isoNumber": "927",
+        "symbol": null,
+        "decimal": 4,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uzbekistan Sum",
+        "isoAlpha": "UZS",
+        "isoNumber": "860",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bolívar Soberano",
+        "isoAlpha": "VED",
+        "isoNumber": "926",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bolívar Soberano",
+        "isoAlpha": "VES",
+        "isoNumber": "928",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dong",
+        "isoAlpha": "VND",
+        "isoNumber": "704",
+        "symbol": "₫",
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Vatu",
+        "isoAlpha": "VUV",
+        "isoNumber": "548",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tala",
+        "isoAlpha": "WST",
+        "isoNumber": "882",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "CFA Franc BEAC",
+        "isoAlpha": "XAF",
+        "isoNumber": "950",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Silver",
+        "isoAlpha": "XAG",
+        "isoNumber": "961",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gold",
+        "isoAlpha": "XAU",
+        "isoNumber": "959",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bond Markets Unit European Composite Unit (EURCO)",
+        "isoAlpha": "XBA",
+        "isoNumber": "955",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
+        "isoAlpha": "XBB",
+        "isoNumber": "956",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
+        "isoAlpha": "XBC",
+        "isoNumber": "957",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
+        "isoAlpha": "XBD",
+        "isoNumber": "958",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "East Caribbean Dollar",
+        "isoAlpha": "XCD",
+        "isoNumber": "951",
+        "symbol": "EC$",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "SDR (Special Drawing Right)",
+        "isoAlpha": "XDR",
+        "isoNumber": "960",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "CFA Franc BCEAO",
+        "isoAlpha": "XOF",
+        "isoNumber": "952",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Palladium",
+        "isoAlpha": "XPD",
+        "isoNumber": "964",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "CFP Franc",
+        "isoAlpha": "XPF",
+        "isoNumber": "953",
+        "symbol": null,
+        "decimal": 0,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Platinum",
+        "isoAlpha": "XPT",
+        "isoNumber": "962",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sucre",
+        "isoAlpha": "XSU",
+        "isoNumber": "994",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Codes specifically reserved for testing purposes",
+        "isoAlpha": "XTS",
+        "isoNumber": "963",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "ADB Unit of Account",
+        "isoAlpha": "XUA",
+        "isoNumber": "965",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "The codes assigned for transactions where no currency is involved",
+        "isoAlpha": "XXX",
+        "isoNumber": "999",
+        "symbol": null,
+        "decimal": null,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Yemeni Rial",
+        "isoAlpha": "YER",
+        "isoNumber": "886",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rand",
+        "isoAlpha": "ZAR",
+        "isoNumber": "710",
+        "symbol": "R",
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Zambian Kwacha",
+        "isoAlpha": "ZMW",
+        "isoNumber": "967",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Zimbabwe Dollar",
+        "isoAlpha": "ZWL",
+        "isoNumber": "932",
+        "symbol": null,
+        "decimal": 2,
+        "NOTES (not included in the build)": []
+    }
+]

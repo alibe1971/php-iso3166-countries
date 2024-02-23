@@ -1,0 +1,4875 @@
+[
+    {
+        "label (not included in the build)": "Andorra",
+        "officialName": {
+            "ca": "Principat d'Andorra"
+        },
+        "alpha2": "AD",
+        "alpha3": "AND",
+        "isocode": "020",
+        "dependency": "",
+        "motto": {
+            "la": "Virtus unita fortior"
+        },
+        "timezones": [
+            "Europe/Andorra"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "United Arab Emirates",
+        "alpha2": "AE",
+        "alpha3": "ARE",
+        "isocode": 784,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة الإمارات العربية المتحدة"
+        },
+        "motto": {
+            "official": {
+                "ar": "الله الوطن الرئيس"
+            }
+        },
+        "timezones": [
+            "Asia/Dubai"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Afghanistan",
+        "officialName": {
+            "ps": "د افغانستان اسلامي امارت",
+            "prs": "امارت اسلامی افغانستان"
+        },
+        "alpha2": "AF",
+        "alpha3": "AFG",
+        "isocode": "004",
+        "dependency": "",
+        "motto": {
+            "ar": "لا إله إلا الله، محمد رسول الله"
+        },
+        "timezones": [
+            "Asia/Kabul"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Antigua and Barbuda",
+        "officialName": {
+            "en": "Antigua and Barbuda"
+        },
+        "alpha2": "AG",
+        "alpha3": "ATG",
+        "isocode": "028",
+        "dependency": "",
+        "motto": {
+            "en": "Each Endeavouring, All Achieving"
+        },
+        "timezones": [
+            "America/Antigua"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Anguilla",
+        "officialName": [],
+        "alpha2": "AI",
+        "alpha3": "AIA",
+        "isocode": 660,
+        "dependency": "GB",
+        "motto": {
+            "en": "Unity, Strength and Endurance"
+        },
+        "timezones": [
+            "America/Anguilla"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Albania",
+        "officialName": {
+            "sq": "Republika e Shqipërisë"
+        },
+        "alpha2": "AL",
+        "alpha3": "ALB",
+        "isocode": "008",
+        "dependency": "",
+        "motto": {
+            "sq": "Ti Shqipëri, më jep nder, më jep emrin Shqipëtar"
+        },
+        "timezones": [
+            "Europe/Tirane"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Armenia",
+        "officialName": {
+            "hy": "Հայաստանի Հանրապետություն"
+        },
+        "alpha2": "AM",
+        "alpha3": "ARM",
+        "isocode": "051",
+        "dependency": "",
+        "motto": {
+            "hy": "Մեկ Ազգ, Մեկ Մշակույթ"
+        },
+        "timezones": [
+            "Asia/Yerevan"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Angola",
+        "officialName": {
+            "pt": "República de Angola"
+        },
+        "alpha2": "AO",
+        "alpha3": "AGO",
+        "isocode": "024",
+        "dependency": "",
+        "motto": {
+            "la": "Virtus unita fortior"
+        },
+        "timezones": [
+            "Africa/Luanda"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Antarctica",
+        "alpha2": "AQ",
+        "alpha3": "ATA",
+        "isocode": "010",
+        "dependency": "",
+        "officialName": [],
+        "motto": [],
+        "timezones": [
+            "Antarctica/South_Pole",
+            "Antarctica/Casey",
+            "Antarctica/Davis",
+            "Antarctica/DumontDUrville",
+            "Antarctica/Macquarie",
+            "Antarctica/Mawson",
+            "Antarctica/Palmer",
+            "Antarctica/Rothera",
+            "Antarctica/Syowa",
+            "Antarctica/Troll",
+            "Antarctica/Vostok"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Argentina",
+        "officialName": {
+            "es": "República Argentina"
+        },
+        "alpha2": "AR",
+        "alpha3": "ARG",
+        "isocode": "032",
+        "dependency": "",
+        "motto": {
+            "es": "En unión y libertad"
+        },
+        "timezones": [
+            "America/Argentina/Buenos_Aires",
+            "America/Argentina/Catamarca",
+            "America/Argentina/Cordoba",
+            "America/Argentina/Jujuy",
+            "America/Argentina/La_Rioja",
+            "America/Argentina/Mendoza",
+            "America/Argentina/Rio_Gallegos",
+            "America/Argentina/Salta",
+            "America/Argentina/San_Juan",
+            "America/Argentina/San_Luis",
+            "America/Argentina/Tucuman",
+            "America/Argentina/Ushuaia",
+            "America/Argentina/ComodRivadavia",
+            "America/Buenos_Aires",
+            "America/Catamarca",
+            "America/Cordoba",
+            "America/Jujuy",
+            "America/Mendoza",
+            "America/Rosario"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "American Samoa",
+        "officialName": {
+            "en": "American Samoa",
+            "sm": "Amerika Sāmoa"
+        },
+        "alpha2": "AS",
+        "alpha3": "ASM",
+        "isocode": "016",
+        "dependency": "US",
+        "motto": {
+            "sm": "Sāmoa, Muamua Le Atua"
+        },
+        "timezones": [
+            "Pacific/Pago_Pago"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Austria",
+        "officialName": {
+            "de": "Republik Österreich"
+        },
+        "alpha2": "AT",
+        "alpha3": "AUT",
+        "isocode": "040",
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Europe/Vienna"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Australia",
+        "officialName": {
+            "en": "Commonwealth of Australia"
+        },
+        "alpha2": "AU",
+        "alpha3": "AUS",
+        "isocode": "036",
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Australia/Adelaide",
+            "Australia/Brisbane",
+            "Australia/Broken_Hill",
+            "Australia/Darwin",
+            "Australia/Eucla",
+            "Australia/Hobart",
+            "Australia/Lindeman",
+            "Australia/Lord_Howe",
+            "Australia/Melbourne",
+            "Australia/Perth",
+            "Australia/Sydney",
+            "Australia/ACT",
+            "Australia/Canberra",
+            "Australia/Currie",
+            "Australia/LHI",
+            "Australia/North",
+            "Australia/NSW",
+            "Australia/Queensland",
+            "Australia/South",
+            "Australia/Tasmania",
+            "Australia/Victoria",
+            "Australia/West",
+            "Australia/Yancowinna"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Aruba",
+        "officialName": {
+            "nl": "Land Aruba",
+            "pap": "Pais Aruba"
+        },
+        "alpha2": "AW",
+        "alpha3": "ABW",
+        "isocode": 533,
+        "dependency": "NL",
+        "motto": [],
+        "timezones": [
+            "America/Aruba"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Åland Islands",
+        "officialName": {
+            "sv": "Landskapet Åland"
+        },
+        "alpha2": "AX",
+        "alpha3": "ALA",
+        "isocode": 248,
+        "dependency": "FI",
+        "motto": [],
+        "timezones": [
+            "Europe/Mariehamn"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Azerbaijan",
+        "officialName": {
+            "az": "Azərbaycan Respublikası"
+        },
+        "alpha2": "AZ",
+        "alpha3": "AZE",
+        "isocode": "031",
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Asia/Baku"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bosnia and Herzegovina",
+        "alpha2": "BA",
+        "alpha3": "BIH",
+        "isocode": "070",
+        "dependency": "",
+        "officialName": {
+            "sr-Cyrl": "Босна и Херцеговина",
+            "bs-Cyrl": "Босна и Херцеговина",
+            "hr-Cyrl": "Босна и Херцеговина",
+            "sr-Latn": "Bosna i Hercegovina",
+            "bs-Latn": "Bosna i Hercegovina",
+            "hr-Latn": "Bosna i Hercegovina"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Sarajevo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Barbados",
+        "officialName": {
+            "en": "Barbados"
+        },
+        "alpha2": "BB",
+        "alpha3": "BRB",
+        "isocode": "052",
+        "dependency": "",
+        "motto": {
+            "en": "Pride and Industry"
+        },
+        "timezones": [
+            "America/Barbados"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bangladesh",
+        "officialName": {
+            "bn": "গণপ্রজাতন্ত্রী বাংলাদেশ"
+        },
+        "alpha2": "BD",
+        "alpha3": "BGD",
+        "isocode": "050",
+        "dependency": "",
+        "motto": {
+            "bn": "জাতীয়তাবাদ, ধর্মনিরপেক্ষতা, সমাজতন্ত্র এবং গণতন্ত্র"
+        },
+        "timezones": [
+            "Asia/Dhaka",
+            "Asia/Dacca"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Belgium",
+        "officialName": {
+            "nl": "Koninkrijk België",
+            "fr": "Royaume de Belgique",
+            "de": "Königreich Belgien"
+        },
+        "alpha2": "BE",
+        "alpha3": "BEL",
+        "isocode": "056",
+        "dependency": "",
+        "motto": {
+            "nl": "Eendracht maakt macht",
+            "fr": "L'union fait la force",
+            "de": "Einigkeit macht stark"
+        },
+        "timezones": [
+            "Europe/Brussels"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Burkina Faso",
+        "alpha2": "BF",
+        "alpha3": "BFA",
+        "isocode": 854,
+        "dependency": "",
+        "officialName": {
+            "fr": "Burkina Faso"
+        },
+        "motto": {
+            "fr": "Unité–Progrès–Justice"
+        },
+        "timezones": [
+            "Africa/Ouagadougou"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bulgaria",
+        "alpha2": "BG",
+        "alpha3": "BGR",
+        "isocode": 100,
+        "dependency": "",
+        "officialName": {
+            "bg": "Република България"
+        },
+        "motto": {
+            "bg": "Съединението прави силата"
+        },
+        "timezones": [
+            "Europe/Sofia"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bahrain",
+        "officialName": {
+            "ar": "مملكة البحرين"
+        },
+        "alpha2": "BH",
+        "alpha3": "BHR",
+        "isocode": "048",
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Asia/Bahrain"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Burundi",
+        "alpha2": "BI",
+        "alpha3": "BDI",
+        "isocode": 108,
+        "dependency": "",
+        "officialName": {
+            "rn": "Repubulika y’Uburunde",
+            "fr": "République du Burundi"
+        },
+        "motto": {
+            "fr": "Unité, Travail, Progrès"
+        },
+        "timezones": [
+            "Africa/Bujumbura"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Benin",
+        "officialName": {
+            "fr": "République du Bénin"
+        },
+        "alpha2": "BJ",
+        "alpha3": "BEN",
+        "isocode": 204,
+        "dependency": "",
+        "motto": {
+            "fr": "Fraternité, Justice, Travail"
+        },
+        "timezones": [
+            "Africa/Porto-Novo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Barthélemy",
+        "alpha2": "BL",
+        "alpha3": "BLM",
+        "isocode": 652,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Collectivité d'outre-mer de Saint-Barthélemy"
+        },
+        "motto": {
+            "official": {
+                "tnq": "Ouanalao"
+            }
+        },
+        "timezones": [
+            "America/St_Barthelemy"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bermuda",
+        "officialName": {
+            "en": "Bermuda"
+        },
+        "alpha2": "BM",
+        "alpha3": "BMU",
+        "isocode": "060",
+        "dependency": "GB",
+        "motto": {
+            "la": "Quo Fata Ferunt"
+        },
+        "timezones": [
+            "Atlantic/Bermuda"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Brunei Darussalam",
+        "alpha2": "BN",
+        "alpha3": "BRN",
+        "isocode": "096",
+        "dependency": "",
+        "officialName": {
+            "ms": "Negara Brunei Darussalam",
+            "en": "Brunei Darussalam"
+        },
+        "motto": {
+            "ms": "Sentiasa membuat kebajikan dengan petunjuk Allah"
+        },
+        "timezones": [
+            "Asia/Brunei"
+        ],
+        "NOTES (not included in the build)": [
+            "The Brunei language also has a different alphabet called 'Jawi', ",
+            "which does not have a corresponding ISO 639 code. IGNORED."
+        ]
+    },
+    {
+        "label (not included in the build)": "Bolivia",
+        "officialName": {
+            "es": "Estado Plurinacional de Bolivia",
+            "gn": "Tetã Hetãvoregua Mborivia",
+            "ay": "Wuliwya Suyu",
+            "qu": "Puliwya Mamallaqta"
+        },
+        "alpha2": "BO",
+        "alpha3": "BOL",
+        "isocode": "068",
+        "dependency": "",
+        "motto": {
+            "es": "La unión es la fuerza"
+        },
+        "timezones": [
+            "America/La_Paz"
+        ],
+        "NOTES (not included in the build)": [
+            "MANY OFFICIAL LANGUAGES - Bolivian Constitution Archived on October 24, 2017, in the Internet Archive.",
+            "Article 5 of the Constitution recognizes Spanish as well as all the languages of the native nations ",
+            "and peoples as official languages. The same article lists the following languages: Aymara, Araona,",
+            "Baure, Bésiro, Canichana, Cavineño, Cayubaba, Chácobo, Chimán, Ese Ejja, Guarani, Guarasu'we, Guarayu,",
+            "Itonama, Leco, Machajuyai-Kallawaya, Machineri, Maropa, Mojeño-Trinitario, Mojeño-Ignaciano, Moré,",
+            "Mosetén, Movima, Pacawara, Puquina, Quechua, Sirionó, Tacana, Tapiete, Toromona, Uru-Chipaya, Weenhayek,",
+            "Yaminawa, Yuki, Yuracaré, and Zamuco."
+        ]
+    },
+    {
+        "label (not included in the build)": "Bonaire, Sint Eustatius and Saba",
+        "alpha2": "BQ",
+        "alpha3": "BES",
+        "isocode": 535,
+        "dependency": "NL",
+        "officialName": {
+            "nl": "Caribisch Nederland"
+        },
+        "motto": {
+            "nl": "Ik zal handhaven"
+        },
+        "timezones": [
+            "America/Kralendijk"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Brazil",
+        "alpha2": "BR",
+        "alpha3": "BRA",
+        "isocode": "076",
+        "dependency": "",
+        "officialName": {
+            "pt": "República Federativa do Brasil",
+            "bzs": null
+        },
+        "motto": {
+            "pt": "Ordem e Progresso"
+        },
+        "timezones": [
+            "America/Araguaina",
+            "America/Bahia",
+            "America/Belem",
+            "America/Boa_Vista",
+            "America/Campo_Grande",
+            "America/Cuiaba",
+            "America/Eirunepe",
+            "America/Fortaleza",
+            "America/Maceio",
+            "America/Manaus",
+            "America/Noronha",
+            "America/Porto_Velho",
+            "America/Recife",
+            "America/Rio_Branco",
+            "America/Santarem",
+            "America/Sao_Paulo",
+            "America/Porto_Acre",
+            "Brazil/Acre",
+            "Brazil/DeNoronha",
+            "Brazil/East",
+            "Brazil/West"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bahamas",
+        "officialName": {
+            "en": "Commonwealth of the Bahamas"
+        },
+        "alpha2": "BS",
+        "alpha3": "BHS",
+        "isocode": "044",
+        "dependency": "",
+        "motto": {
+            "en": "Forward, Upward, Onward, Together"
+        },
+        "timezones": [
+            "America/Nassau"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bhutan",
+        "officialName": {
+            "dz": "འབྲུག་ཡུལ"
+        },
+        "alpha2": "BT",
+        "alpha3": "BTN",
+        "isocode": "064",
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Asia/Thimphu",
+            "Asia/Thimbu"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Bouvet Island",
+        "alpha2": "BV",
+        "alpha3": "BVT",
+        "isocode": "074",
+        "dependency": "NO",
+        "officialName": {
+            "no": "Bouvetøya"
+        },
+        "motto": [],
+        "timezones": [
+            "Etc/UTC"
+        ],
+        "NOTES (not included in the build)": [
+            "The island has population 0 and no area dial code"
+        ]
+    },
+    {
+        "label (not included in the build)": "Botswana",
+        "alpha2": "BW",
+        "alpha3": "BWA",
+        "isocode": "072",
+        "dependency": "",
+        "officialName": {
+            "tn": "Lefatshe la Botswana",
+            "en": "Republic of Botswana"
+        },
+        "motto": {
+            "tn": "Pula"
+        },
+        "timezones": [
+            "Africa/Gaborone"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Belarus",
+        "officialName": {
+            "be": "Рэспубліка Беларусь",
+            "ru": "Республика Беларусь"
+        },
+        "alpha2": "BY",
+        "alpha3": "BLR",
+        "isocode": 112,
+        "dependency": "",
+        "motto": [],
+        "timezones": [
+            "Europe/Minsk"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Belize",
+        "officialName": {
+            "en": "Belize"
+        },
+        "alpha2": "BZ",
+        "alpha3": "BLZ",
+        "isocode": "084",
+        "dependency": "",
+        "motto": {
+            "la": "Sub umbra floreo"
+        },
+        "timezones": [
+            "America/Belize"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Canada",
+        "alpha2": "CA",
+        "alpha3": "CAN",
+        "isocode": 124,
+        "dependency": "",
+        "officialName": {
+            "fr": "Canada",
+            "en": "Canada"
+        },
+        "motto": {
+            "la": "A mari usque ad mare"
+        },
+        "timezones": [
+            "America/Atikokan",
+            "America/Blanc-Sablon",
+            "America/Cambridge_Bay",
+            "America/Creston",
+            "America/Dawson",
+            "America/Dawson_Creek",
+            "America/Edmonton",
+            "America/Fort_Nelson",
+            "America/Glace_Bay",
+            "America/Goose_Bay",
+            "America/Halifax",
+            "America/Inuvik",
+            "America/Iqaluit",
+            "America/Moncton",
+            "America/Rankin_Inlet",
+            "America/Regina",
+            "America/Resolute",
+            "America/St_Johns",
+            "America/Swift_Current",
+            "America/Toronto",
+            "America/Vancouver",
+            "America/Whitehorse",
+            "America/Winnipeg",
+            "America/Coral_Harbour",
+            "America/Montreal",
+            "America/Nipigon",
+            "America/Pangnirtung",
+            "America/Rainy_River",
+            "America/Thunder_Bay",
+            "America/Yellowknife",
+            "Canada/Atlantic",
+            "Canada/Central",
+            "Canada/Eastern",
+            "Canada/Mountain",
+            "Canada/Newfoundland",
+            "Canada/Pacific",
+            "Canada/Saskatchewan",
+            "Canada/Yukon"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cocos (Keeling) Islands",
+        "alpha2": "CC",
+        "alpha3": "CCK",
+        "isocode": 166,
+        "dependency": "AU",
+        "officialName": {
+            "en": "Territory of Cocos (Keeling) Islands"
+        },
+        "motto": {
+            "ms": "Maju Pulu Kita"
+        },
+        "timezones": [
+            "Indian/Cocos"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Congo (Democratic Republic of the)",
+        "alpha2": "CD",
+        "alpha3": "COD",
+        "isocode": 180,
+        "dependency": "",
+        "officialName": {
+            "fr": "République démocratique du Congo"
+        },
+        "motto": {
+            "official": {
+                "fr": "Justice – Paix – Travail"
+            }
+        },
+        "timezones": [
+            "Africa/Kinshasa",
+            "Africa/Lubumbashi"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Central African Republic",
+        "alpha2": "CF",
+        "alpha3": "CAF",
+        "isocode": 140,
+        "dependency": "",
+        "officialName": {
+            "fe": "République centrafricaine",
+            "sg": "Ködörösêse tî Bêafrîka"
+        },
+        "motto": {
+            "fr": "Unité, Dignité, Travail"
+        },
+        "timezones": [
+            "Africa/Bangui"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Congo",
+        "alpha2": "CG",
+        "alpha3": "COG",
+        "isocode": 178,
+        "dependency": "",
+        "officialName": {
+            "fr": "République du Congo"
+        },
+        "motto": {
+            "official": {
+                "fr": "Unité, Travail, Progrès"
+            }
+        },
+        "timezones": [
+            "Africa/Brazzaville"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Switzerland",
+        "alpha2": "CH",
+        "alpha3": "CHE",
+        "isocode": 756,
+        "dependency": "",
+        "officialName": {
+            "de": "Schweizerische Eidgenossenschaft",
+            "fr": "Confédération suisse",
+            "it": "Confederazione Svizzera",
+            "rm": "Confederaziun svizra",
+            "la": "Confoederatio helvetica"
+        },
+        "motto": {
+            "official": {
+                "la": "Unus pro omnibus, omnes pro uno",
+                "de": "Einer für alle, alle für einen",
+                "fr": "Un pour tous, tous pour un",
+                "it": "Uno per tutti, tutti per uno",
+                "rm": "In per tuts, tuts per in"
+            }
+        },
+        "timezones": [
+            "Europe/Zurich"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Côte d'Ivoire",
+        "alpha2": "CI",
+        "alpha3": "CIV",
+        "isocode": 384,
+        "dependency": "",
+        "officialName": {
+            "fr": "République de Côte d'Ivoire"
+        },
+        "motto": {
+            "official": {
+                "fr": "Union, Discipline, Travail"
+            }
+        },
+        "timezones": [
+            "Africa/Abidjan"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cook Islands",
+        "alpha2": "CK",
+        "alpha3": "COK",
+        "isocode": 184,
+        "dependency": "NZ",
+        "officialName": {
+            "mi": "Kūki 'Āirani",
+            "en": "Cook Islands"
+        },
+        "motto": [],
+        "timezones": [
+            "Pacific/Rarotonga"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Chile",
+        "alpha2": "CL",
+        "alpha3": "CHL",
+        "isocode": 152,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Chile"
+        },
+        "motto": {
+            "es": "Por la razón o la fuerza"
+        },
+        "timezones": [
+            "America/Punta_Arenas",
+            "America/Santiago",
+            "Pacific/Easter",
+            "Chile/Continental",
+            "Chile/EasterIsland"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cameroon",
+        "alpha2": "CM",
+        "alpha3": "CMR",
+        "isocode": 120,
+        "dependency": "",
+        "officialName": {
+            "fr": "République du Cameroun",
+            "en": "Republic of Cameroon"
+        },
+        "motto": {
+            "fr": "Paix, Travail, Patrie",
+            "en": "Pace, Lavoro, Patria"
+        },
+        "timezones": [
+            "Africa/Douala"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "China",
+        "alpha2": "CN",
+        "alpha3": "CHN",
+        "isocode": 156,
+        "dependency": "",
+        "officialName": {
+            "zh": "中华人民共和国"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Shanghai",
+            "Asia/Urumqi",
+            "Asia/Chongqing",
+            "Asia/Chungking",
+            "Asia/Harbin",
+            "Asia/Kashgar"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Colombia",
+        "alpha2": "CO",
+        "alpha3": "COL",
+        "isocode": 170,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Colombia"
+        },
+        "motto": {
+            "es": "Libertad y Orden"
+        },
+        "timezones": [
+            "America/Bogota"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Costa Rica",
+        "alpha2": "CR",
+        "alpha3": "CRI",
+        "isocode": 188,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Costa Rica"
+        },
+        "motto": {
+            "official": {
+                "es": "¡Vivan siempre el trabajo y la paz!"
+            }
+        },
+        "timezones": [
+            "America/Costa_Rica"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cuba",
+        "alpha2": "CU",
+        "alpha3": "CUB",
+        "isocode": 192,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Cuba"
+        },
+        "motto": {
+            "official": {
+                "es": "¡Patria o Muerte, Venceremos!"
+            }
+        },
+        "timezones": [
+            "America/Havana",
+            "Cuba"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cabo Verde",
+        "alpha2": "CV",
+        "alpha3": "CPV",
+        "isocode": 132,
+        "dependency": "",
+        "officialName": {
+            "pt": "República de Cabo Verde"
+        },
+        "motto": {
+            "pt": "Unidade, Trabalho, Progresso"
+        },
+        "timezones": [
+            "Atlantic/Cape_Verde"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Curaçao",
+        "alpha2": "CW",
+        "alpha3": "CUW",
+        "isocode": 531,
+        "dependency": "NL",
+        "officialName": {
+            "pap": "Pais Kòrsou",
+            "nl": "Paese di Curaçao"
+        },
+        "motto": [],
+        "timezones": [
+            "America/Curacao"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Christmas Island",
+        "alpha2": "CX",
+        "alpha3": "CXR",
+        "isocode": 162,
+        "dependency": "AU",
+        "officialName": {
+            "en": "Territory of Christmas Island"
+        },
+        "motto": [],
+        "timezones": [
+            "Indian/Christmas"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cyprus",
+        "alpha2": "CY",
+        "alpha3": "CYP",
+        "isocode": 196,
+        "dependency": "",
+        "officialName": {
+            "el": "Κυπριακή Δημοκρατία",
+            "tr": "Kıbrıs Cumhuriyeti"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Famagusta",
+            "Asia/Nicosia",
+            "Europe/Nicosia"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Czechia",
+        "alpha2": "CZ",
+        "alpha3": "CZE",
+        "isocode": 203,
+        "dependency": "",
+        "officialName": {
+            "cs": "Česká republika"
+        },
+        "motto": {
+            "official": {
+                "cs": "Pravda vítězí"
+            }
+        },
+        "timezones": [
+            "Europe/Prague"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Germany",
+        "alpha2": "DE",
+        "alpha3": "DEU",
+        "isocode": 276,
+        "dependency": "",
+        "officialName": {
+            "de": "Bundesrepublik Deutschland"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Berlin",
+            "Europe/Busingen"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Djibouti",
+        "alpha2": "DJ",
+        "alpha3": "DJI",
+        "isocode": 262,
+        "dependency": "",
+        "officialName": {
+            "ar": "جمهورية جيبوتي",
+            "fr": "République de Djibouti"
+        },
+        "motto": {
+            "official": {
+                "ar": "اتحاد، مساواة، سلام",
+                "fr": "Unité, Égalité, Paix"
+            }
+        },
+        "timezones": [
+            "Africa/Djibouti"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Denmark",
+        "alpha2": "DK",
+        "alpha3": "DNK",
+        "isocode": 208,
+        "dependency": "",
+        "officialName": {
+            "da": "Kongeriget Danmark"
+        },
+        "motto": {
+            "official": {
+                "da": "Guds hjælp, Folkets kærlighed, Danmarks styrke"
+            }
+        },
+        "timezones": [
+            "Europe/Copenhagen"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dominica",
+        "alpha2": "DM",
+        "alpha3": "DMA",
+        "isocode": 212,
+        "dependency": "",
+        "officialName": {
+            "en": "Commonwealth of Dominica"
+        },
+        "motto": {
+            "official": {
+                "la": "Post Deum terra est"
+            }
+        },
+        "timezones": [
+            "America/Dominica"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Dominican Republic",
+        "alpha2": "DO",
+        "alpha3": "DOM",
+        "isocode": 214,
+        "dependency": "",
+        "officialName": {
+            "es": "República Dominicana"
+        },
+        "motto": {
+            "official": {
+                "es": "Dios, Patria, Libertad"
+            }
+        },
+        "timezones": [
+            "America/Santo_Domingo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Algeria",
+        "officialName": {
+            "ar": "الجمهورية الجزائرية الديمقراطية الشعبية",
+            "ber": "ⴰⵎⴻⴳⴷⴰⵣⵉⵜ ⴷⴰⵎⵙⵉⵙⵖⵔⵉⴷⴰ ⵏ ⴰⵍⵊⵉⵔⵉⴰ"
+        },
+        "alpha2": "DZ",
+        "alpha3": "DZA",
+        "isocode": "012",
+        "dependency": "",
+        "motto": {
+            "ar": "بالشّعب، وللشّعب",
+            "ber": "ⵏ ⵙⵙⵉⵔⵉⵏ ⵏ ⴰⵔⵔⴻⵏ ⵏ ⵏⴻⵍⵍⴻⵉⵔⵏ"
+        },
+        "timezones": [
+            "Africa/Algiers"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ecuador",
+        "alpha2": "EC",
+        "alpha3": "ECU",
+        "isocode": 218,
+        "dependency": "",
+        "officialName": {
+            "es": "República del Ecuador"
+        },
+        "motto": {
+            "official": {
+                "la": "Pro Deo, Patria et Libertate"
+            }
+        },
+        "timezones": [
+            "America/Guayaquil",
+            "Pacific/Galapagos"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Estonia",
+        "alpha2": "EE",
+        "alpha3": "EST",
+        "isocode": 233,
+        "dependency": "",
+        "officialName": {
+            "et": "Eesti Vabariik"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Tallinn"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Egypt",
+        "alpha2": "EG",
+        "alpha3": "EGY",
+        "isocode": 818,
+        "dependency": "",
+        "officialName": {
+            "ar": "جمهورية مصر العربية"
+        },
+        "motto": {
+            "official": {
+                "ar": "بلادي، بلادي، بلادي"
+            }
+        },
+        "timezones": [
+            "Africa/Cairo",
+            "Egypt"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Western Sahara",
+        "alpha2": "EH",
+        "alpha3": "ESH",
+        "isocode": 732,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهورية العربية الصحراوية الديمقراطية"
+        },
+        "motto": {
+            "official": {
+                "ar": "حرية ديمقراطية وحدة"
+            }
+        },
+        "timezones": [
+            "Africa/El_Aaiun"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Eritrea",
+        "alpha2": "ER",
+        "alpha3": "ERI",
+        "isocode": 232,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة إريتريا",
+            "ti": "ኤርትራ"
+        },
+        "motto": {
+            "official": {
+                "ar": "انتصار للجماهير"
+            }
+        },
+        "timezones": [
+            "Africa/Asmara",
+            "Africa/Asmera"
+        ],
+        "NOTES (not included in the build)": [
+            "Eritrea appears to not have an official language; for now, I will include Arabic and Tigrinya."
+        ]
+    },
+    {
+        "label (not included in the build)": "Spain",
+        "alpha2": "ES",
+        "alpha3": "ESP",
+        "isocode": 724,
+        "dependency": "",
+        "officialName": {
+            "es": "Reino de España"
+        },
+        "motto": {
+            "official": {
+                "la": "Plus ultra"
+            }
+        },
+        "timezones": [
+            "Africa/Ceuta",
+            "Atlantic/Canary",
+            "Europe/Madrid"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ethiopia",
+        "alpha2": "ET",
+        "alpha3": "ETH",
+        "isocode": 231,
+        "dependency": "",
+        "officialName": {
+            "am": "የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ"
+        },
+        "motto": {
+            "official": {
+                "am": "ኢትዮጵያ አንደኛ"
+            }
+        },
+        "timezones": [
+            "Africa/Addis_Ababa"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Finland",
+        "alpha2": "FI",
+        "alpha3": "FIN",
+        "isocode": 246,
+        "dependency": "",
+        "officialName": {
+            "fi": "Suomen tasavalta",
+            "sv": "Republiken Finland"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Helsinki"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Fiji",
+        "alpha2": "FJ",
+        "alpha3": "FJI",
+        "isocode": 242,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Fiji",
+            "fj": "Matanitu Tugalala o Viti",
+            "hif": "रिपब्लिक ऑफ फीजी"
+        },
+        "motto": {
+            "official": {
+                "fj": "Rerevaka na Kalou ka Doka na Tui"
+            }
+        },
+        "timezones": [
+            "Pacific/Fiji"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Falkland Islands (Malvinas)",
+        "alpha2": "FK",
+        "alpha3": "FLK",
+        "isocode": 238,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Falkland Islands"
+        },
+        "motto": {
+            "official": {
+                "en": "Desire the Right"
+            }
+        },
+        "timezones": [
+            "Atlantic/Stanley"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Micronesia (Federated States of)",
+        "alpha2": "FM",
+        "alpha3": "FSM",
+        "isocode": 583,
+        "dependency": "",
+        "officialName": {
+            "en": "Federated States of Micronesia"
+        },
+        "motto": {
+            "official": {
+                "en": "Peace, Unity, Liberty"
+            }
+        },
+        "timezones": [
+            "Pacific/Chuuk",
+            "Pacific/Kosrae",
+            "Pacific/Pohnpei",
+            "Pacific/Ponape",
+            "Pacific/Truk",
+            "Pacific/Yap"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Faroe Islands",
+        "alpha2": "FO",
+        "alpha3": "FRO",
+        "isocode": 234,
+        "dependency": "DK",
+        "officialName": {
+            "fo": "Føroyar",
+            "da": "Færøerne"
+        },
+        "motto": [],
+        "timezones": [
+            "Atlantic/Faroe",
+            "Atlantic/Faeroe"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "France",
+        "alpha2": "FR",
+        "alpha3": "FRA",
+        "isocode": 250,
+        "dependency": "",
+        "officialName": {
+            "fr": "République française"
+        },
+        "motto": {
+            "official": {
+                "fr": "Liberté, Égalité, Fraternité"
+            }
+        },
+        "timezones": [
+            "Europe/Paris"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gabon",
+        "alpha2": "GA",
+        "alpha3": "GAB",
+        "isocode": 266,
+        "dependency": "",
+        "officialName": {
+            "fr": "République gabonaise "
+        },
+        "motto": {
+            "official": {
+                "fr": "Union, Travail, Justice"
+            }
+        },
+        "timezones": [
+            "Africa/Libreville"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "United Kingdom of Great Britain and Northern Ireland",
+        "alpha2": "GB",
+        "alpha3": "GBR",
+        "isocode": 826,
+        "dependency": "",
+        "officialName": {
+            "en": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        "motto": {
+            "fr": "Dieu et mon droit"
+        },
+        "timezones": [
+            "Europe/London",
+            "Europe/Belfast"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Grenada",
+        "alpha2": "GD",
+        "alpha3": "GRD",
+        "isocode": 308,
+        "dependency": "",
+        "officialName": {
+            "en": "Grenada"
+        },
+        "motto": {
+            "official": {
+                "en": "Ever Conscious of God We Aspire, Build and Advance as One People"
+            }
+        },
+        "timezones": [
+            "America/Grenada"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Georgia",
+        "alpha2": "GE",
+        "alpha3": "GEO",
+        "isocode": 268,
+        "dependency": "",
+        "officialName": {
+            "ka": "საქართველოს რესპუბლიკა"
+        },
+        "motto": {
+            "official": {
+                "ka": "ძალა ერთობაშია"
+            }
+        },
+        "timezones": [
+            "Asia/Tbilisi"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "French Guiana",
+        "alpha2": "GF",
+        "alpha3": "GUF",
+        "isocode": 254,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Département de la Guyane"
+        },
+        "motto": {
+            "official": {
+                "fr": "Liberté, Égalité, Fraternité"
+            }
+        },
+        "timezones": [
+            "America/Cayenne"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guernsey",
+        "alpha2": "GG",
+        "alpha3": "GGY",
+        "isocode": 831,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Bailiwick of Guernsey"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Guernsey"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ghana",
+        "alpha2": "GH",
+        "alpha3": "GHA",
+        "isocode": 288,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Ghana"
+        },
+        "motto": {
+            "official": {
+                "en": "Freedom and Justice"
+            }
+        },
+        "timezones": [
+            "Africa/Accra"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gibraltar",
+        "alpha2": "GI",
+        "alpha3": "GIB",
+        "isocode": 292,
+        "dependency": "GB",
+        "officialName": {
+            "": ""
+        },
+        "motto": {
+            "official": {
+                "la": "Montis Insignia Calpe"
+            }
+        },
+        "timezones": [
+            "Europe/Gibraltar"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Greenland",
+        "alpha2": "GL",
+        "alpha3": "GRL",
+        "isocode": 304,
+        "dependency": "DK",
+        "officialName": {
+            "kl": "Kalaallit Nunaat",
+            "da": "Grønland"
+        },
+        "motto": [],
+        "timezones": [
+            "America/Danmarkshavn",
+            "America/Scoresbysund",
+            "America/Thule",
+            "America/Godthab"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Gambia",
+        "alpha2": "GM",
+        "alpha3": "GMB",
+        "isocode": 270,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of The Gambia"
+        },
+        "motto": {
+            "official": {
+                "en": "Progress, Peace, and Prosperity"
+            }
+        },
+        "timezones": [
+            "Africa/Banjul"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guinea",
+        "alpha2": "GN",
+        "alpha3": "GIN",
+        "isocode": 324,
+        "dependency": "",
+        "officialName": {
+            "fr": "République de Guinée"
+        },
+        "motto": {
+            "official": {
+                "fr": "Travail, Justice, Solidarité"
+            }
+        },
+        "timezones": [
+            "Africa/Conakry"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guadeloupe",
+        "alpha2": "GP",
+        "alpha3": "GLP",
+        "isocode": 312,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Region Guadeloupe"
+        },
+        "motto": [],
+        "timezones": [
+            "America/Guadeloupe"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Equatorial Guinea",
+        "alpha2": "GQ",
+        "alpha3": "GNQ",
+        "isocode": 226,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Guinea Ecuatorial",
+            "fr": "République de Guinée équatoriale ",
+            "pt": "República da Guiné Equatorial"
+        },
+        "motto": {
+            "official": {
+                "es": "Unidad, Paz, Justicia"
+            }
+        },
+        "timezones": [
+            "Africa/Malabo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Greece",
+        "alpha2": "GR",
+        "alpha3": "GRC",
+        "isocode": 300,
+        "dependency": "",
+        "officialName": {
+            "el": "Ελληνική Δημοκρατία"
+        },
+        "motto": {
+            "official": {
+                "el": "Ελευθερία ή Θάνατος"
+            }
+        },
+        "timezones": [
+            "Europe/Athens"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "South Georgia and the South Sandwich Islands",
+        "alpha2": "GS",
+        "alpha3": "SGS",
+        "isocode": 239,
+        "dependency": "GB",
+        "officialName": {
+            "en": "South Georgia and the South Sandwich Islands"
+        },
+        "motto": {
+            "official": {
+                "la": "Leo terram propriam protegat"
+            }
+        },
+        "timezones": [
+            "Atlantic/South_Georgia"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guatemala",
+        "alpha2": "GT",
+        "alpha3": "GTM",
+        "isocode": 320,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Guatemala"
+        },
+        "motto": {
+            "official": {
+                "es": "Libre Crezca Fecundo"
+            }
+        },
+        "timezones": [
+            "America/Guatemala"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guam",
+        "alpha2": "GU",
+        "alpha3": "GUM",
+        "isocode": 316,
+        "dependency": "US",
+        "officialName": {
+            "en": "Guam",
+            "ch": "Guåhan"
+        },
+        "motto": {
+            "official": {
+                "ch": "Tånó y CHamoru",
+                "en": "Land of the CHamorus"
+            }
+        },
+        "timezones": [
+            "Pacific/Guam"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guinea-Bissau",
+        "alpha2": "GW",
+        "alpha3": "GNB",
+        "isocode": 624,
+        "dependency": "",
+        "officialName": {
+            "pt": "República da Guiné-Bissau"
+        },
+        "motto": {
+            "official": {
+                "pt": "Unidade, Luta, Progresso"
+            }
+        },
+        "timezones": [
+            "Africa/Bissau"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Guyana",
+        "alpha2": "GY",
+        "alpha3": "GUY",
+        "isocode": 328,
+        "dependency": "",
+        "officialName": {
+            "en": "Co-operative Republic of Guyana"
+        },
+        "motto": {
+            "official": {
+                "en": "One People, One Nation, One Destiny"
+            }
+        },
+        "timezones": [
+            "America/Guyana"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Hong Kong",
+        "alpha2": "HK",
+        "alpha3": "HKG",
+        "isocode": 344,
+        "dependency": "CN",
+        "officialName": {
+            "zh": "中華人民共和國香港特別行政區"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Hong_Kong",
+            "Hongkong"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Heard Island and McDonald Islands",
+        "alpha2": "HM",
+        "alpha3": "HMD",
+        "isocode": 334,
+        "dependency": "AU",
+        "officialName": {
+            "en": "Heard Island and McDonald Islands"
+        },
+        "motto": [],
+        "timezones": [
+            "Etc/GMT-5"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Honduras",
+        "alpha2": "HN",
+        "alpha3": "HND",
+        "isocode": 340,
+        "dependency": "",
+        "officialName": {
+            "ed": "República de Honduras"
+        },
+        "motto": {
+            "official": {
+                "es": "Libre, Soberana e Independiente"
+            }
+        },
+        "timezones": [
+            "America/Tegucigalpa"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Croatia",
+        "alpha2": "HR",
+        "alpha3": "HRV",
+        "isocode": 191,
+        "dependency": "",
+        "officialName": {
+            "hr": "Republika Hrvatska"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Zagreb"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Haiti",
+        "alpha2": "HT",
+        "alpha3": "HTI",
+        "isocode": 332,
+        "dependency": "",
+        "officialName": {
+            "fr": "République d'Haïti",
+            "ht": "Repiblik Ayiti"
+        },
+        "motto": {
+            "official": {
+                "fr": "L'union fait la force"
+            }
+        },
+        "timezones": [
+            "America/Port-au-Prince"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Hungary",
+        "alpha2": "HU",
+        "alpha3": "HUN",
+        "isocode": 348,
+        "dependency": "",
+        "officialName": {
+            "hu": "Magyarország"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Budapest"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Indonesia",
+        "alpha2": "ID",
+        "alpha3": "IDN",
+        "isocode": 360,
+        "dependency": "",
+        "officialName": {
+            "id": "Republik Indonesia"
+        },
+        "motto": {
+            "official": {
+                "kaw": "Bhinneka Tunggal Ika"
+            }
+        },
+        "timezones": [
+            "Asia/Jakarta",
+            "Asia/Jayapura",
+            "Asia/Makassar",
+            "Asia/Pontianak",
+            "Asia/Ujung_Pandang"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ireland",
+        "alpha2": "IE",
+        "alpha3": "IRL",
+        "isocode": 372,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Ireland",
+            "ga": "Poblacht na hÉireann"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Dublin",
+            "Eire"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Israel",
+        "alpha2": "IL",
+        "alpha3": "ISR",
+        "isocode": 376,
+        "dependency": "",
+        "officialName": {
+            "he": "מדינת ישראל"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Jerusalem",
+            "Asia/Tel_Aviv",
+            "Israel"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Isle of Man",
+        "alpha2": "IM",
+        "alpha3": "IMN",
+        "isocode": 833,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Isle of Man",
+            "gv": "Ellan Vannin"
+        },
+        "motto": {
+            "official": {
+                "la": "Quocumque ieceris Stabit"
+            }
+        },
+        "timezones": [
+            "Europe/Isle_of_Man"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "India",
+        "alpha2": "IN",
+        "alpha3": "IND",
+        "isocode": 356,
+        "dependency": "",
+        "officialName": {
+            "hi": "भारत गणराज्य",
+            "en": "Republic of India"
+        },
+        "motto": {
+            "official": {
+                "hi": "सत्यमेव जयते"
+            }
+        },
+        "timezones": [
+            "Asia/Kolkata",
+            "Asia/Calcutta"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "British Indian Ocean Territory",
+        "alpha2": "IO",
+        "alpha3": "IOT",
+        "isocode": "086",
+        "dependency": "GB",
+        "officialName": {
+            "en": "British Indian Ocean Territory"
+        },
+        "motto": {
+            "en": "Limuria is in our trust"
+        },
+        "timezones": [
+            "Indian/Chagos"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iraq",
+        "alpha2": "IQ",
+        "alpha3": "IRQ",
+        "isocode": 368,
+        "dependency": "",
+        "officialName": {
+            "ar": "جمهورية العراق",
+            "ku": "کۆمارا ىراقێ"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Baghdad"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iran (Islamic Republic of)",
+        "alpha2": "IR",
+        "alpha3": "IRN",
+        "isocode": 364,
+        "dependency": "",
+        "officialName": {
+            "fa": "جمهوری اسلامی ایران"
+        },
+        "motto": {
+            "official": {
+                "fa": "استقلال، آزادی، جمهوری اسلامی"
+            }
+        },
+        "timezones": [
+            "Asia/Tehran",
+            "Iran"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Iceland",
+        "alpha2": "IS",
+        "alpha3": "ISL",
+        "isocode": 352,
+        "dependency": "",
+        "officialName": {
+            "is": "Lýðveldið Ísland"
+        },
+        "motto": [],
+        "timezones": [
+            "Atlantic/Reykjavik",
+            "Iceland"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Italy",
+        "alpha2": "IT",
+        "alpha3": "ITA",
+        "isocode": 380,
+        "dependency": "",
+        "officialName": {
+            "it": "Repubblica Italiana"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Rome"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Jersey",
+        "alpha2": "JE",
+        "alpha3": "JEY",
+        "isocode": 832,
+        "dependency": "GB",
+        "officialName": {
+            "": ""
+        },
+        "motto": {
+            "official": {
+                "fr": "Dieu et Mon Droit"
+            }
+        },
+        "timezones": [
+            "Europe/Jersey"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Jamaica",
+        "alpha2": "JM",
+        "alpha3": "JAM",
+        "isocode": 388,
+        "dependency": "",
+        "officialName": {
+            "en": "Jamaica"
+        },
+        "motto": {
+            "official": {
+                "en": "Out of Many One People"
+            }
+        },
+        "timezones": [
+            "America/Jamaica",
+            "Jamaica"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Jordan",
+        "alpha2": "JO",
+        "alpha3": "JOR",
+        "isocode": 400,
+        "dependency": "",
+        "officialName": {
+            "ar": "المملكة الأردنية الهاشمية"
+        },
+        "motto": {
+            "official": {
+                "ar": "الله، الوطن، المليك"
+            }
+        },
+        "timezones": [
+            "Asia/Amman"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Japan",
+        "alpha2": "JP",
+        "alpha3": "JPN",
+        "isocode": 392,
+        "dependency": "",
+        "officialName": {
+            "ja": "日本国"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Tokyo",
+            "Japan"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kenya",
+        "alpha2": "KE",
+        "alpha3": "KEN",
+        "isocode": 404,
+        "dependency": "",
+        "officialName": {
+            "sw": "Jamuhuri ya Kenya",
+            "en": "Republic of Kenya"
+        },
+        "motto": {
+            "official": {
+                "sw": "Harambee"
+            }
+        },
+        "timezones": [
+            "Africa/Nairobi"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kyrgyzstan",
+        "alpha2": "KG",
+        "alpha3": "KGZ",
+        "isocode": 417,
+        "dependency": "",
+        "officialName": {
+            "ru": "Кирги́зская Респу́блика",
+            "ky": "Кыргыз Республикасы"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Bishkek"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cambodia",
+        "alpha2": "KH",
+        "alpha3": "KHM",
+        "isocode": 116,
+        "dependency": "",
+        "officialName": {
+            "km": "ព្រះរាជាណាចក្រ កម្ពុជា"
+        },
+        "motto": {
+            "km": "ជាតិ សាសនា ព្រះមហាក្សត្រ"
+        },
+        "timezones": [
+            "Asia/Phnom_Penh"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kiribati",
+        "alpha2": "KI",
+        "alpha3": "KIR",
+        "isocode": 296,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Kiribati",
+            "gil": "Kiribati"
+        },
+        "motto": {
+            "official": {
+                "gil": "Te mauri, te raoi ao te tabomoa"
+            }
+        },
+        "timezones": [
+            "Pacific/Kiritimati",
+            "Pacific/Tarawa",
+            "Pacific/Enderbury"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Comoros",
+        "alpha2": "KM",
+        "alpha3": "COM",
+        "isocode": 174,
+        "dependency": "",
+        "officialName": {
+            "fr": "Union des Comores",
+            "zd": "Udzima wa Komori",
+            "ar": "الاتحاد ﺍﻟﻘﻤﺮي"
+        },
+        "motto": {
+            "official": {
+                "fr": "Waḥda, taḍāmun, tanmiyya",
+                "ar": "وحدة، تضامن، تنمية"
+            }
+        },
+        "timezones": [
+            "Indian/Comoro"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Kitts and Nevis",
+        "alpha2": "KN",
+        "alpha3": "KNA",
+        "isocode": 659,
+        "dependency": "",
+        "officialName": {
+            "en": "Federation of Saint Christopher and Nevis"
+        },
+        "motto": {
+            "official": {
+                "en": "Country Above Self"
+            }
+        },
+        "timezones": [
+            "America/St_Kitts"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Korea (Democratic People's Republic of)",
+        "alpha2": "KP",
+        "alpha3": "PRK",
+        "isocode": 408,
+        "dependency": "",
+        "officialName": {
+            "ko": "조선민주주의인민공화국"
+        },
+        "motto": {
+            "official": {
+                "ko": "강성대국"
+            }
+        },
+        "timezones": [
+            "Asia/Pyongyang"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Korea (Republic of)",
+        "alpha2": "KR",
+        "alpha3": "KOR",
+        "isocode": 410,
+        "dependency": "",
+        "officialName": {
+            "ko": "대한민국"
+        },
+        "motto": {
+            "official": {
+                "ko": "홍익인간"
+            }
+        },
+        "timezones": [
+            "Asia/Seoul"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kuwait",
+        "alpha2": "KW",
+        "alpha3": "KWT",
+        "isocode": 414,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة الكويت"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Kuwait"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Cayman Islands",
+        "alpha2": "KY",
+        "alpha3": "CYM",
+        "isocode": 136,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Cayman Islands"
+        },
+        "motto": {
+            "en": "He hath founded it upon the seas"
+        },
+        "timezones": [
+            "America/Cayman"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Kazakhstan",
+        "alpha2": "KZ",
+        "alpha3": "KAZ",
+        "isocode": 398,
+        "dependency": "",
+        "officialName": {
+            "kk": "Қазақстан Республикасы",
+            "ru": "Республика Казахстан"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Almaty",
+            "Asia/Aqtau",
+            "Asia/Aqtobe",
+            "Asia/Atyrau",
+            "Asia/Oral",
+            "Asia/Qostanay",
+            "Asia/Qyzylorda"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lao People's Democratic Republic",
+        "alpha2": "LA",
+        "alpha3": "LAO",
+        "isocode": 418,
+        "dependency": "",
+        "officialName": {
+            "lo": "ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ"
+        },
+        "motto": {
+            "official": {
+                "lo": "ສັນຕິພາບ ເອກະລາດ ປະຊາທິປະໄຕ ເອກະພາບ ວັດທະນະຖາວອນ"
+            }
+        },
+        "timezones": [
+            "Asia/Vientiane"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lebanon",
+        "alpha2": "LB",
+        "alpha3": "LBN",
+        "isocode": 422,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهورية اللبنانية"
+        },
+        "motto": {
+            "official": {
+                "ar": "كلنـا للوطـن للعـلى للعـلم"
+            }
+        },
+        "timezones": [
+            "Asia/Beirut"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Lucia",
+        "alpha2": "LC",
+        "alpha3": "LCA",
+        "isocode": 662,
+        "dependency": "",
+        "officialName": {
+            "en": "Saint Lucia"
+        },
+        "motto": {
+            "official": {
+                "en": "The Land, The People, The Light"
+            }
+        },
+        "timezones": [
+            "America/St_Lucia"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Liechtenstein",
+        "alpha2": "LI",
+        "alpha3": "LIE",
+        "isocode": 438,
+        "dependency": "",
+        "officialName": {
+            "de": "Fürstentum Liechtenstein",
+            "wae": "Fürstentum Liechtenstein"
+        },
+        "motto": {
+            "official": {
+                "de": "Für Gott, Fürst und Vaterland"
+            }
+        },
+        "timezones": [
+            "Europe/Vaduz"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sri Lanka",
+        "alpha2": "LK",
+        "alpha3": "LKA",
+        "isocode": 144,
+        "dependency": "",
+        "officialName": {
+            "si": "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය",
+            "ta": "இலங்கை ஜனநாயக சோசலிச குடியரசு"
+        },
+        "motto": {
+            "official": {
+                "si": "ශ්‍රී ලංකා මාතා",
+                "ta": "ஸ்ரீ லங்கா தாயே"
+            }
+        },
+        "timezones": [
+            "Asia/Colombo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Liberia",
+        "alpha2": "LR",
+        "alpha3": "LBR",
+        "isocode": 430,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Liberia"
+        },
+        "motto": {
+            "official": {
+                "en": "The Love of Liberty Brought Us Here"
+            }
+        },
+        "timezones": [
+            "Africa/Monrovia"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lesotho",
+        "alpha2": "LS",
+        "alpha3": "LSO",
+        "isocode": 426,
+        "dependency": "",
+        "officialName": {
+            "st": "Muso oa Lesotho",
+            "en": "Kingdom of Lesotho"
+        },
+        "motto": {
+            "official": {
+                "st": "Khotso Pula Nala"
+            }
+        },
+        "timezones": [
+            "Africa/Maseru"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Lithuania",
+        "alpha2": "LT",
+        "alpha3": "LTU",
+        "isocode": 440,
+        "dependency": "",
+        "officialName": {
+            "lt": "Lietuvos Respublika"
+        },
+        "motto": {
+            "official": {
+                "lt": "Tautos jėga vienybėje"
+            }
+        },
+        "timezones": [
+            "Europe/Vilnius"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Luxembourg",
+        "alpha2": "LU",
+        "alpha3": "LUX",
+        "isocode": 442,
+        "dependency": "",
+        "officialName": {
+            "lb": "Groussherzogtum Lëtzebuerg",
+            "fr": "Grand-Duché de Luxembourg",
+            "de": "Großherzogtum Luxemburg"
+        },
+        "motto": {
+            "official": {
+                "lb": "Mir wëlle bleiwe wat mir sinn",
+                "fr": "Nous voulons rester ce que nous sommes",
+                "de": "Wir wollen bleiben, was wir sind"
+            }
+        },
+        "timezones": [
+            "Europe/Luxembourg"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Latvia",
+        "alpha2": "LV",
+        "alpha3": "LVA",
+        "isocode": 428,
+        "dependency": "",
+        "officialName": {
+            "lv": "Latvijas Republika"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Riga"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Libya",
+        "alpha2": "LY",
+        "alpha3": "LBY",
+        "isocode": 434,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة ليبيا"
+        },
+        "motto": [],
+        "timezones": [
+            "Africa/Tripoli",
+            "Libya"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Morocco",
+        "alpha2": "MA",
+        "alpha3": "MAR",
+        "isocode": 504,
+        "dependency": "",
+        "officialName": {
+            "ar": "المملكة المغربية",
+            "ber": "ⵜⴰⴳⴻⵍⴷⵉⵜ ⵏ ⵍⵎⴻⵖⵔⵉⴱ"
+        },
+        "motto": {
+            "official": {
+                "ar": "الله، الوطن، الملك",
+                "ber": "ⴰⴽⵓⵛ, ⴰⵎⵓⵔ, ⴰⴳⵍⵍⵉⴷ"
+            }
+        },
+        "timezones": [
+            "Africa/Casablanca"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Monaco",
+        "alpha2": "MC",
+        "alpha3": "MCO",
+        "isocode": 492,
+        "dependency": "",
+        "officialName": {
+            "fr": "Principauté de Monaco"
+        },
+        "motto": {
+            "official": {
+                "la": "Deo Juvante"
+            }
+        },
+        "timezones": [
+            "Europe/Monaco"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Moldova (Republic of)",
+        "alpha2": "MD",
+        "alpha3": "MDA",
+        "isocode": 498,
+        "dependency": "",
+        "officialName": {
+            "ro": "Republica Moldova"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Chisinau",
+            "Europe/Tiraspol"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Montenegro",
+        "alpha2": "ME",
+        "alpha3": "MNE",
+        "isocode": 499,
+        "dependency": "",
+        "officialName": {
+            "sr-Latn": "Crna Gora",
+            "sr-Cyrl": "Црна Гора"
+        },
+        "motto": {
+            "official": {
+                "sr-Latn": "Čojstvo i junaštvo",
+                "sr-Cyrl": "Чојство и јунаштво"
+            }
+        },
+        "timezones": [
+            "Europe/Podgorica"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Martin (French part)",
+        "alpha2": "MF",
+        "alpha3": "MAF",
+        "isocode": 663,
+        "dependency": "",
+        "officialName": {
+            "fr": "Collectivité d'outre-mer de Saint-Martin"
+        },
+        "motto": [],
+        "timezones": [
+            "America/Marigot"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Madagascar",
+        "alpha2": "MG",
+        "alpha3": "MDG",
+        "isocode": 450,
+        "dependency": "",
+        "officialName": {
+            "mg": "Repoblikan'i Madagasikara",
+            "fr": "République de Madagascar"
+        },
+        "motto": {
+            "official": {
+                "mg": "Tanindrazana, Fahafahana, Fandrosoana"
+            }
+        },
+        "timezones": [
+            "Indian/Antananarivo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Marshall Islands",
+        "alpha2": "MH",
+        "alpha3": "MHL",
+        "isocode": 584,
+        "dependency": "",
+        "officialName": {
+            "mh": "Aolepān Aorōkin M̧ajeļ",
+            "en": "Republic of the Marshall Islands"
+        },
+        "motto": {
+            "official": {
+                "mh": "Jepilpilin ke ejukaan"
+            }
+        },
+        "timezones": [
+            "Pacific/Kwajalein",
+            "Pacific/Majuro",
+            "Kwajalein"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "North Macedonia",
+        "alpha2": "MK",
+        "alpha3": "MKD",
+        "isocode": 807,
+        "dependency": "",
+        "officialName": {
+            "mk": "Република Северна Македонија",
+            "sq": "Republika e Maqedonisë së Veriut"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Skopje"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mali",
+        "alpha2": "ML",
+        "alpha3": "MLI",
+        "isocode": 466,
+        "dependency": "",
+        "officialName": {
+            "fr": "République du Mali"
+        },
+        "motto": {
+            "official": {
+                "fr": "Un peuple, un but, une foi"
+            }
+        },
+        "timezones": [
+            "Africa/Bamako",
+            "Africa/Timbuktu"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Myanmar",
+        "alpha2": "MM",
+        "alpha3": "MMR",
+        "isocode": 104,
+        "dependency": "",
+        "officialName": {
+            "my": "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Yangon",
+            "Asia/Rangoon"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mongolia",
+        "alpha2": "MN",
+        "alpha3": "MNG",
+        "isocode": 496,
+        "dependency": "",
+        "officialName": {
+            "mn": "ᠮᠣᠩᠭᠣᠯ ᠤᠯᠤᠰ"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Choibalsan",
+            "Asia/Hovd",
+            "Asia/Ulaanbaatar",
+            "Asia/Ulan_Bator"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Macao",
+        "alpha2": "MO",
+        "alpha3": "MAC",
+        "isocode": 446,
+        "dependency": "CN",
+        "officialName": {
+            "cmn": "中华人民共和国澳门特别行政区",
+            "yue": "中華人民共和國澳門特別行政區",
+            "pt": "Região Administrativa Especial de Macau da República Popular da China"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Macau",
+            "Asia/Macao"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Northern Mariana Islands",
+        "alpha2": "MP",
+        "alpha3": "MNP",
+        "isocode": 580,
+        "dependency": "US",
+        "officialName": {
+            "en": "Commonwealth of the Northern Mariana Islands"
+        },
+        "motto": [],
+        "timezones": [
+            "Pacific/Saipan"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Martinique",
+        "alpha2": "MQ",
+        "alpha3": "MTQ",
+        "isocode": 474,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Collectivité territoriale de Martinique"
+        },
+        "motto": [],
+        "timezones": [
+            "America/Martinique"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mauritania",
+        "alpha2": "MR",
+        "alpha3": "MRT",
+        "isocode": 478,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهورية الإسلامية الموريتانية",
+            "fr": "Republique Islamique de Mauritanie"
+        },
+        "motto": {
+            "official": {
+                "ar": "شرف إخاء عدل"
+            }
+        },
+        "timezones": [
+            "Africa/Nouakchott"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Montserrat",
+        "alpha2": "MS",
+        "alpha3": "MSR",
+        "isocode": 500,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Colony of Montserrat"
+        },
+        "motto": {
+            "official": {
+                "en": "A people of excellence, moulded by nature, nurtured by God"
+            }
+        },
+        "timezones": [
+            "America/Montserrat"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malta",
+        "alpha2": "MT",
+        "alpha3": "MLT",
+        "isocode": 470,
+        "dependency": "",
+        "officialName": {
+            "mt": "Repubblika ta' Malta",
+            "en": "Republic of Malta"
+        },
+        "motto": {
+            "official": {
+                "la": "Virtute et constantia"
+            }
+        },
+        "timezones": [
+            "Europe/Malta"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mauritius",
+        "alpha2": "MU",
+        "alpha3": "MUS",
+        "isocode": 480,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Mauritius",
+            "fr": "République de Maurice"
+        },
+        "motto": {
+            "official": {
+                "la": "Stella Clavisque Maris Indici"
+            }
+        },
+        "timezones": [
+            "Indian/Mauritius"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Maldives",
+        "alpha2": "MV",
+        "alpha3": "MDV",
+        "isocode": 462,
+        "dependency": "",
+        "officialName": {
+            "dv": "ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ"
+        },
+        "motto": {
+            "official": {
+                "ar": "الدولة المحلديبية"
+            }
+        },
+        "timezones": [
+            "Indian/Maldives"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malawi",
+        "alpha2": "MW",
+        "alpha3": "MWI",
+        "isocode": 454,
+        "dependency": "",
+        "officialName": {
+            "ny": "Dziko la Malaŵi",
+            "en": "Republic of Malawi"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity and Freedom"
+            }
+        },
+        "timezones": [
+            "Africa/Blantyre"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mexico",
+        "alpha2": "MX",
+        "alpha3": "MEX",
+        "isocode": 484,
+        "dependency": "",
+        "officialName": {
+            "es": "Estados Unidos Mexicanos"
+        },
+        "motto": {
+            "official": {
+                "es": "La Patria Es Primero"
+            }
+        },
+        "timezones": [
+            "America/Bahia_Banderas",
+            "America/Cancun",
+            "America/Chihuahua",
+            "America/Hermosillo",
+            "America/Matamoros",
+            "America/Mazatlan",
+            "America/Merida",
+            "America/Mexico_City",
+            "America/Monterrey",
+            "America/Ojinaga",
+            "America/Tijuana",
+            "America/Ensenada",
+            "America/Santa_Isabel",
+            "Mexico/BajaNorte",
+            "Mexico/BajaSur",
+            "Mexico/General"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Malaysia",
+        "alpha2": "MY",
+        "alpha3": "MYS",
+        "isocode": 458,
+        "dependency": "",
+        "officialName": {
+            "ms": "Malaysia"
+        },
+        "motto": {
+            "official": {
+                "ms": "Bersekutu Bertambah Mutu"
+            }
+        },
+        "timezones": [
+            "Asia/Kuala_Lumpur",
+            "Asia/Kuching"
+        ],
+        "NOTES (not included in the build)": [
+            "The Malay language also has a different alphabet called 'Jawi', ",
+            "which does not have a corresponding ISO 639 code. IGNORED."
+        ]
+    },
+    {
+        "label (not included in the build)": "Mozambique",
+        "alpha2": "MZ",
+        "alpha3": "MOZ",
+        "isocode": 508,
+        "dependency": "",
+        "officialName": {
+            "pt": "República de Moçambique"
+        },
+        "motto": [],
+        "timezones": [
+            "Africa/Maputo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Namibia",
+        "alpha2": "NA",
+        "alpha3": "NAM",
+        "isocode": 516,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Namibia"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity, Liberty, Justice"
+            }
+        },
+        "timezones": [
+            "Africa/Windhoek"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "New Caledonia",
+        "alpha2": "NC",
+        "alpha3": "NCL",
+        "isocode": 540,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Gouvernement de la Nouvelle-Calédonie"
+        },
+        "motto": [],
+        "timezones": [
+            "Pacific/Noumea"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Niger",
+        "alpha2": "NE",
+        "alpha3": "NER",
+        "isocode": 562,
+        "dependency": "",
+        "officialName": {
+            "fr": "République du Niger"
+        },
+        "motto": {
+            "official": {
+                "fr": "Unité - Travail - Progrès"
+            }
+        },
+        "timezones": [
+            "Africa/Niamey"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Norfolk Island",
+        "alpha2": "NF",
+        "alpha3": "NFK",
+        "isocode": 574,
+        "dependency": "AU",
+        "officialName": {
+            "en": "Territory of Norfolk Island"
+        },
+        "motto": {
+            "official": {
+                "pih": "Inasmuch"
+            }
+        },
+        "timezones": [
+            "Pacific/Norfolk"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nigeria",
+        "alpha2": "NG",
+        "alpha3": "NGA",
+        "isocode": 566,
+        "dependency": "",
+        "officialName": {
+            "en": "Federal Republic of Nigeria"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity and Faith, Peace and Progress"
+            }
+        },
+        "timezones": [
+            "Africa/Lagos"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nicaragua",
+        "alpha2": "NI",
+        "alpha3": "NIC",
+        "isocode": 558,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Nicaragua"
+        },
+        "motto": {
+            "official": {
+                "es": "En Dios Confiamos"
+            }
+        },
+        "timezones": [
+            "America/Managua"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Netherlands",
+        "alpha2": "NL",
+        "alpha3": "NLD",
+        "isocode": 528,
+        "dependency": "",
+        "officialName": {
+            "nl": "Koninkrijk der Nederlanden",
+            "fy": "Keninkryk fan de Nederlannen",
+            "pap": "Reino Hulandes",
+            "en": "Kingdom of the Netherlands"
+        },
+        "motto": {
+            "official": {
+                "fr": "Je maintiendrai"
+            }
+        },
+        "timezones": [
+            "Europe/Amsterdam"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Norway",
+        "alpha2": "NO",
+        "alpha3": "NOR",
+        "isocode": 578,
+        "dependency": "",
+        "officialName": {
+            "nb": "Kongeriket Norge",
+            "nn": "Kongeriket Noreg",
+            "se": "Norgga gonagasriika",
+            "smj": "Vuona gånågisrijkka",
+            "sma": "Nöörjen gånkarïjhke"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Oslo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nepal",
+        "alpha2": "NP",
+        "alpha3": "NPL",
+        "isocode": 524,
+        "dependency": "",
+        "officialName": {
+            "ne": "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल"
+        },
+        "motto": {
+            "official": {
+                "ne": "जननी जन्मभूमिश्च स्वर्गादपी गरीयसी"
+            }
+        },
+        "timezones": [
+            "Asia/Kathmandu",
+            "Asia/Katmandu"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Nauru",
+        "alpha2": "NR",
+        "alpha3": "NRU",
+        "isocode": 520,
+        "dependency": "",
+        "officialName": {
+            "na": "Ripublik Naoero",
+            "en": "Republic of Nauru"
+        },
+        "motto": {
+            "official": {
+                "en": "God's Will First"
+            }
+        },
+        "timezones": [
+            "Pacific/Nauru"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Niue",
+        "alpha2": "NU",
+        "alpha3": "NIU",
+        "isocode": 570,
+        "dependency": "NZ",
+        "officialName": {
+            "en": "Niue"
+        },
+        "motto": {
+            "official": {
+                "niu": "Atua, Niue Tukulagi"
+            }
+        },
+        "timezones": [
+            "Pacific/Niue"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "New Zealand",
+        "alpha2": "NZ",
+        "alpha3": "NZL",
+        "isocode": 554,
+        "dependency": "",
+        "officialName": {
+            "mi": "Aotearoa",
+            "en": "New Zealand"
+        },
+        "motto": [],
+        "timezones": [
+            "Pacific/Auckland",
+            "Pacific/Chatham"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Oman",
+        "alpha2": "OM",
+        "alpha3": "OMN",
+        "isocode": 512,
+        "dependency": "",
+        "officialName": {
+            "ar": "سلطنة عُمان"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Muscat"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Panama",
+        "alpha2": "PA",
+        "alpha3": "PAN",
+        "isocode": 591,
+        "dependency": "",
+        "officialName": {
+            "es": "República de Panamá"
+        },
+        "motto": {
+            "official": {
+                "la": "Pro Mundi Beneficio"
+            }
+        },
+        "timezones": [
+            "America/Panama"
+        ],
+        "NOTES (not included in the build)": [
+            "El Salvador and Panama also have Bitcoin as legal tender. IGNORED."
+        ]
+    },
+    {
+        "label (not included in the build)": "Peru",
+        "alpha2": "PE",
+        "alpha3": "PER",
+        "isocode": 604,
+        "dependency": "",
+        "officialName": {
+            "es": "República del Perú",
+            "qu": "Piruw Ripuwlika",
+            "ay": "Piruw Suyu"
+        },
+        "motto": {
+            "official": {
+                "es": "Firme y feliz por la unión"
+            }
+        },
+        "timezones": [
+            "America/Lima"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "French Polynesia",
+        "alpha2": "PF",
+        "alpha3": "PYF",
+        "isocode": 258,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Polynésie française"
+        },
+        "motto": {
+            "official": {
+                "fr": "Liberté, Égalité, Fraternité"
+            },
+            "territorial": {
+                "ty": "Pōrīnetia Farāni"
+            }
+        },
+        "timezones": [
+            "Pacific/Gambier",
+            "Pacific/Marquesas",
+            "Pacific/Tahiti"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Papua New Guinea",
+        "alpha2": "PG",
+        "alpha3": "PNG",
+        "isocode": 598,
+        "dependency": "",
+        "officialName": {
+            "en": "Independent State of Papua New Guinea",
+            "ho": "Independen Stet bilong Papua Niu Gini"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity in Diversity"
+            }
+        },
+        "timezones": [
+            "Pacific/Bougainville",
+            "Pacific/Port_Moresby"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Philippines",
+        "alpha2": "PH",
+        "alpha3": "PHL",
+        "isocode": 608,
+        "dependency": "",
+        "officialName": {
+            "fil": "Repúbliká ng Pilipinas",
+            "en": "Republic of the Philippines"
+        },
+        "motto": {
+            "official": {
+                "": "Maka-Diyos, Maka-tao, Makakalikasan at Makabansa"
+            }
+        },
+        "timezones": [
+            "Asia/Manila"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pakistan",
+        "alpha2": "PK",
+        "alpha3": "PAK",
+        "isocode": 586,
+        "dependency": "",
+        "officialName": {
+            "ur": "اِسلامی جمہوریہ پاكِستان",
+            "en": "Islamic Republic of Pakistan"
+        },
+        "motto": {
+            "official": {
+                "ur": "ایمان ، اتحاد ، نظم"
+            }
+        },
+        "timezones": [
+            "Asia/Karachi"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Poland",
+        "alpha2": "PL",
+        "alpha3": "POL",
+        "isocode": 616,
+        "dependency": "",
+        "officialName": {
+            "pl": "Rzeczpospolita Polska"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Warsaw",
+            "Poland"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Pierre and Miquelon",
+        "alpha2": "PM",
+        "alpha3": "SPM",
+        "isocode": 666,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Collectivité d'outre-mer de Saint-Pierre-et-Miquelon"
+        },
+        "motto": {
+            "official": {
+                "la": "A Mare Labor"
+            }
+        },
+        "timezones": [
+            "America/Miquelon"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Pitcairn",
+        "alpha2": "PN",
+        "alpha3": "PCN",
+        "isocode": 612,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Pitcairn, Henderson, Ducie and Oeno Islands",
+            "pih": "Pitkern Ailen"
+        },
+        "motto": {
+            "official": {
+                "fr": "Dieu et mon droit"
+            }
+        },
+        "timezones": [
+            "Pacific/Pitcairn"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Puerto Rico",
+        "alpha2": "PR",
+        "alpha3": "PRI",
+        "isocode": 630,
+        "dependency": "US",
+        "officialName": {
+            "en": "Commonwealth of Puerto Rico",
+            "es": "Estado Libre Asociado de Puerto Rico"
+        },
+        "motto": {
+            "official": {
+                "la": "Joannes Est Nomen Eius"
+            }
+        },
+        "timezones": [
+            "America/Puerto_Rico"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Palestine, State of",
+        "alpha2": "PS",
+        "alpha3": "PSE",
+        "isocode": 275,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة فلسطين"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Gaza",
+            "Asia/Hebron"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Portugal",
+        "alpha2": "PT",
+        "alpha3": "PRT",
+        "isocode": 620,
+        "dependency": "",
+        "officialName": {
+            "pt": "República Portuguesa"
+        },
+        "motto": [],
+        "timezones": [
+            "Atlantic/Azores",
+            "Atlantic/Madeira",
+            "Europe/Lisbon",
+            "Portugal"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Palau",
+        "alpha2": "PW",
+        "alpha3": "PLW",
+        "isocode": 585,
+        "dependency": "",
+        "officialName": {
+            "pau": "Beluu er a Palau ",
+            "en": "Republic of Palau"
+        },
+        "motto": {
+            "official": {
+                "en": "Rainbow's End"
+            }
+        },
+        "timezones": [
+            "Pacific/Palau"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Paraguay",
+        "alpha2": "PY",
+        "alpha3": "PRY",
+        "isocode": 600,
+        "dependency": "",
+        "officialName": {
+            "es": "República del Paraguay",
+            "gn": "Tetã Paraguái"
+        },
+        "motto": {
+            "official": {
+                "es": "Paz y Justicia",
+                "gn": "Py'aguapy ha tekojoja"
+            }
+        },
+        "timezones": [
+            "America/Asuncion"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Qatar",
+        "alpha2": "QA",
+        "alpha3": "QAT",
+        "isocode": 634,
+        "dependency": "",
+        "officialName": {
+            "ar": "دولة قطر"
+        },
+        "motto": {
+            "official": {
+                "ar": "الله الوطن الأمير"
+            }
+        },
+        "timezones": [
+            "Asia/Qatar"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Réunion",
+        "alpha2": "RE",
+        "alpha3": "REU",
+        "isocode": 638,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Département de La Réunion"
+        },
+        "motto": {
+            "official": {
+                "la": "Florebo quocumque ferar"
+            }
+        },
+        "timezones": [
+            "Indian/Reunion"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Romania",
+        "alpha2": "RO",
+        "alpha3": "ROU",
+        "isocode": 642,
+        "dependency": "",
+        "officialName": {
+            "ro": "România"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Bucharest"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Serbia",
+        "alpha2": "RS",
+        "alpha3": "SRB",
+        "isocode": 688,
+        "dependency": "",
+        "officialName": {
+            "sr-Cyrl": "Република Србија",
+            "sr-Latn": "Republika Srbija"
+        },
+        "motto": {
+            "official": {
+                "sr": "Само слога Србина спасава"
+            }
+        },
+        "timezones": [
+            "Europe/Belgrade"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Russian Federation",
+        "alpha2": "RU",
+        "alpha3": "RUS",
+        "isocode": 643,
+        "dependency": "",
+        "officialName": {
+            "ru": "Росси́йская Федера́ция"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Anadyr",
+            "Asia/Barnaul",
+            "Asia/Chita",
+            "Asia/Irkutsk",
+            "Asia/Kamchatka",
+            "Asia/Khandyga",
+            "Asia/Krasnoyarsk",
+            "Asia/Magadan",
+            "Asia/Novokuznetsk",
+            "Asia/Novosibirsk",
+            "Asia/Omsk",
+            "Asia/Sakhalin",
+            "Asia/Srednekolymsk",
+            "Asia/Tomsk",
+            "Asia/Ust-Nera",
+            "Asia/Vladivostok",
+            "Asia/Yakutsk",
+            "Asia/Yekaterinburg",
+            "Europe/Astrakhan",
+            "Europe/Kaliningrad",
+            "Europe/Kirov",
+            "Europe/Moscow",
+            "Europe/Samara",
+            "Europe/Saratov",
+            "Europe/Simferopol",
+            "Europe/Ulyanovsk",
+            "Europe/Volgograd"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Rwanda",
+        "alpha2": "RW",
+        "alpha3": "RWA",
+        "isocode": 646,
+        "dependency": "",
+        "officialName": {
+            "rw": "Repubulika y'u Rwanda",
+            "sw": "Jamhuri ya Rwanda",
+            "fr": "République du Rwanda",
+            "en": "Republic of Rwanda"
+        },
+        "motto": {
+            "official": {
+                "rw": "Ubumwe, Umurimo, Gukunda Igihugu"
+            }
+        },
+        "timezones": [
+            "Africa/Kigali"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saudi Arabia",
+        "alpha2": "SA",
+        "alpha3": "SAU",
+        "isocode": 682,
+        "dependency": "",
+        "officialName": {
+            "ar": "المملكة العربية السعودية"
+        },
+        "motto": {
+            "official": {
+                "ar": "لا إله إلا الله، محمد رسول الله"
+            }
+        },
+        "timezones": [
+            "Asia/Riyadh"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Solomon Islands",
+        "alpha2": "SB",
+        "alpha3": "SLB",
+        "isocode": "090",
+        "dependency": "",
+        "officialName": {
+            "en": "Solomon Islands"
+        },
+        "motto": {
+            "official": {
+                "en": "To Lead is to Serve"
+            }
+        },
+        "timezones": [
+            "Pacific/Guadalcanal"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Seychelles",
+        "alpha2": "SC",
+        "alpha3": "SYC",
+        "isocode": 690,
+        "dependency": "",
+        "officialName": {
+            "crs": "Repiblik Sesel",
+            "en": "Republic of Seychelles",
+            "fr": "République des Seychelles"
+        },
+        "motto": {
+            "official": {
+                "la": "Finis Coronat Opus"
+            }
+        },
+        "timezones": [
+            "Indian/Mahe"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sudan",
+        "alpha2": "SD",
+        "alpha3": "SDN",
+        "isocode": 729,
+        "dependency": "",
+        "officialName": {
+            "ar": "جمهورية السودان",
+            "en": "Republic of the Sudan"
+        },
+        "motto": {
+            "official": {
+                "ar": "النصر لنا"
+            }
+        },
+        "timezones": [
+            "Africa/Khartoum"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sweden",
+        "alpha2": "SE",
+        "alpha3": "SWE",
+        "isocode": 752,
+        "dependency": "",
+        "officialName": {
+            "sv": "Konungariket Sverige"
+        },
+        "motto": {
+            "official": {
+                "sv": "För Sverige - i tiden"
+            }
+        },
+        "timezones": [
+            "Europe/Stockholm"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Singapore",
+        "alpha2": "SG",
+        "alpha3": "SGP",
+        "isocode": 702,
+        "dependency": "",
+        "officialName": {
+            "ms": "Republik Singapura",
+            "en": "Republic of Singapore",
+            "zh": "新加坡共和国",
+            "ta": "சிங்கப்பூர் குடியரசு"
+        },
+        "motto": {
+            "official": {
+                "ms": "Majulah Singapura"
+            }
+        },
+        "timezones": [
+            "Asia/Singapore",
+            "Singapore"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Helena, Ascension and Tristan da Cunha",
+        "alpha2": "SH",
+        "alpha3": "SHN",
+        "isocode": 654,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Saint Helena, Ascension and Tristan da Cunha"
+        },
+        "motto": {
+            "SH": {
+                "en": "Loyal and Unshakeable"
+            },
+            "AC": {
+                "en": "Our faith is our strength"
+            },
+            "TA": {
+                "en": "Our faith is our strength"
+            }
+        },
+        "timezones": [
+            "Atlantic/St_Helena"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Slovenia",
+        "alpha2": "SI",
+        "alpha3": "SVN",
+        "isocode": 705,
+        "dependency": "",
+        "officialName": {
+            "sl": "Republika Slovenija"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Ljubljana"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Svalbard and Jan Mayen",
+        "alpha2": "SJ",
+        "alpha3": "SJM",
+        "isocode": 744,
+        "dependency": "NO",
+        "officialName": {
+            "no": "Svalbard og Jan Mayen"
+        },
+        "motto": {
+            "official": {
+                "no": "Alt for Norge"
+            }
+        },
+        "timezones": [
+            "Arctic/Longyearbyen",
+            "Atlantic/Jan_Mayen"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Slovakia",
+        "alpha2": "SK",
+        "alpha3": "SVK",
+        "isocode": 703,
+        "dependency": "",
+        "officialName": {
+            "sk": "Slovenská Republika"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Bratislava"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sierra Leone",
+        "alpha2": "SL",
+        "alpha3": "SLE",
+        "isocode": 694,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Sierra Leone",
+            "kri": "Republic of Sierra Leone"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity, Freedom, Justice",
+                "kri": "Unity, Freedom, Justice"
+            }
+        },
+        "timezones": [
+            "Africa/Freetown"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "San Marino",
+        "alpha2": "SM",
+        "alpha3": "SMR",
+        "isocode": 674,
+        "dependency": "",
+        "officialName": {
+            "it": "Repubblica di San Marino"
+        },
+        "motto": {
+            "official": {
+                "la": "Libertas"
+            }
+        },
+        "timezones": [
+            "Europe/San_Marino"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Senegal",
+        "alpha2": "SN",
+        "alpha3": "SEN",
+        "isocode": 686,
+        "dependency": "",
+        "officialName": {
+            "fr": "République du Sénégal",
+            "wo": "Réewum Senegaal"
+        },
+        "motto": {
+            "official": {
+                "fr": "Un Peuple, Un But, Une Foi"
+            }
+        },
+        "timezones": [
+            "Africa/Dakar"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Somalia",
+        "alpha2": "SO",
+        "alpha3": "SOM",
+        "isocode": 706,
+        "dependency": "",
+        "officialName": {
+            "so": "Jamhuuriyadda Federaalka Soomaaliya",
+            "ar": "جمهورية الصومال الفدرالية"
+        },
+        "motto": [],
+        "timezones": [
+            "Africa/Mogadishu"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Suriname",
+        "alpha2": "SR",
+        "alpha3": "SUR",
+        "isocode": 740,
+        "dependency": "",
+        "officialName": {
+            "nl": "Republiek Suriname"
+        },
+        "motto": {
+            "official": {
+                "la": "Justitia – Pietas – Fides"
+            }
+        },
+        "timezones": [
+            "America/Paramaribo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "South Sudan",
+        "alpha2": "SS",
+        "alpha3": "SSD",
+        "isocode": 728,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of South Sudan"
+        },
+        "motto": {
+            "official": {
+                "en": "Justice, Liberty, Prosperity"
+            }
+        },
+        "timezones": [
+            "Africa/Juba"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Sao Tome and Principe",
+        "alpha2": "ST",
+        "alpha3": "STP",
+        "isocode": 678,
+        "dependency": "",
+        "officialName": {
+            "pt": "República Democrática de São Tomé e Príncipe"
+        },
+        "motto": {
+            "official": {
+                "pt": "Unidade, Disciplina, Trabalho"
+            }
+        },
+        "timezones": [
+            "Africa/Sao_Tome"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "El Salvador",
+        "alpha2": "SV",
+        "alpha3": "SLV",
+        "isocode": 222,
+        "dependency": "",
+        "officialName": {
+            "es": "República de El Salvador"
+        },
+        "motto": {
+            "official": {
+                "es": "Dios, Union y Libertad"
+            }
+        },
+        "timezones": [
+            "America/El_Salvador"
+        ],
+        "NOTES (not included in the build)": [
+            "El Salvador and Panama also have Bitcoin as legal tender. IGNORED."
+        ]
+    },
+    {
+        "label (not included in the build)": "Sint Maarten (Dutch part)",
+        "alpha2": "SX",
+        "alpha3": "SXM",
+        "isocode": 534,
+        "dependency": "NL",
+        "officialName": {
+            "nl": "Sint Maarten"
+        },
+        "motto": {
+            "official": {
+                "la": "Semper progrediens"
+            }
+        },
+        "timezones": [
+            "America/Lower_Princes"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Syrian Arab Republic",
+        "alpha2": "SY",
+        "alpha3": "SYR",
+        "isocode": 760,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهوريّة العربيّة السّوريّة"
+        },
+        "motto": {
+            "official": {
+                "ar": "وَحْدَةٌ ، حُرِّيَّةٌ ، اِشْتِرَاكِيَّةٌ"
+            }
+        },
+        "timezones": [
+            "Asia/Damascus"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Eswatini",
+        "alpha2": "SZ",
+        "alpha3": "SWZ",
+        "isocode": 748,
+        "dependency": "",
+        "officialName": {
+            "ss": "Umbuso weSwatini",
+            "en": "Kingdom of eSwatini"
+        },
+        "motto": {
+            "official": {
+                "ss": "Siyinqaba"
+            }
+        },
+        "timezones": [
+            "Africa/Mbabane"
+        ],
+        "NOTES (not included in the build)": [
+            "Former Swaziland"
+        ]
+    },
+    {
+        "label (not included in the build)": "Turks and Caicos Islands",
+        "alpha2": "TC",
+        "alpha3": "TCA",
+        "isocode": 796,
+        "dependency": "GB",
+        "officialName": {
+            "en": "Turks and Caicos"
+        },
+        "motto": {
+            "official": {
+                "en": "One people, one nation, one destiny"
+            }
+        },
+        "timezones": [
+            "America/Grand_Turk"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Chad",
+        "alpha2": "TD",
+        "alpha3": "TCD",
+        "isocode": 148,
+        "dependency": "",
+        "officialName": {
+            "ar": "جمهورية تشاد",
+            "fr": "République du Tchad"
+        },
+        "motto": {
+            "ar": "الاتحاد، العمل، التقدم",
+            "fr": "Unité, Travail, Progrès"
+        },
+        "timezones": [
+            "Africa/Ndjamena"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "French Southern Territories",
+        "alpha2": "TF",
+        "alpha3": "ATF",
+        "isocode": 260,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Territoire des Terres australes et antarctiques françaises"
+        },
+        "motto": {
+            "official": {
+                "fr": "Liberté, égalité, fraternité"
+            }
+        },
+        "timezones": [
+            "Indian/Kerguelen"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Togo",
+        "alpha2": "TG",
+        "alpha3": "TGO",
+        "isocode": 768,
+        "dependency": "",
+        "officialName": {
+            "fr": "République Togolaise"
+        },
+        "motto": {
+            "official": {
+                "fr": "Travail, Liberté, Patrie"
+            }
+        },
+        "timezones": [
+            "Africa/Lome"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Thailand",
+        "alpha2": "TH",
+        "alpha3": "THA",
+        "isocode": 764,
+        "dependency": "",
+        "officialName": {
+            "th": "Ratcha Anachak Thai"
+        },
+        "motto": {
+            "official": {
+                "th": "ชาติ ศาสนา พระมหากษัตริย์"
+            }
+        },
+        "timezones": [
+            "Asia/Bangkok"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tajikistan",
+        "alpha2": "TJ",
+        "alpha3": "TJK",
+        "isocode": 762,
+        "dependency": "",
+        "officialName": {
+            "tg": "Ҷумҳурии Тоҷикистон"
+        },
+        "motto": {
+            "official": {
+                "tg": "Истиқлол, Озодӣ, Ватан"
+            }
+        },
+        "timezones": [
+            "Asia/Dushanbe"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tokelau",
+        "alpha2": "TK",
+        "alpha3": "TKL",
+        "isocode": 772,
+        "dependency": "NZ",
+        "officialName": {
+            "en": "Tokelau"
+        },
+        "motto": {
+            "official": {
+                "tkl": "Tokelau Mo Te Atua"
+            }
+        },
+        "timezones": [
+            "Pacific/Fakaofo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Timor-Leste",
+        "alpha2": "TL",
+        "alpha3": "TLS",
+        "isocode": 626,
+        "dependency": "",
+        "officialName": {
+            "tet": "Repúblika Demokrátika Timór Lorosa'e",
+            "pt": "República Democrática de Timor-Leste"
+        },
+        "motto": {
+            "official": {
+                "pt": "Unidade, Acção, Progresso"
+            }
+        },
+        "timezones": [
+            "Asia/Dili"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Turkmenistan",
+        "alpha2": "TM",
+        "alpha3": "TKM",
+        "isocode": 795,
+        "dependency": "",
+        "officialName": {
+            "tk": "Türkmenistan Respublikasy"
+        },
+        "motto": {
+            "official": {
+                "tk": "Türkmenistan Bitaraplygyň watanydyr"
+            }
+        },
+        "timezones": [
+            "Asia/Ashgabat",
+            "Asia/Ashkhabad"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tunisia",
+        "alpha2": "TN",
+        "alpha3": "TUN",
+        "isocode": 788,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهورية التونسية"
+        },
+        "motto": {
+            "official": {
+                "ar": "حرية، نظام، عدالة"
+            }
+        },
+        "timezones": [
+            "Africa/Tunis"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tonga",
+        "alpha2": "TO",
+        "alpha3": "TON",
+        "isocode": 776,
+        "dependency": "",
+        "officialName": {
+            "to": "Pule'anga Fakatu'i 'o Tonga",
+            "en": "Kingdom of Tonga"
+        },
+        "motto": {
+            "official": {
+                "to": "Ko e Otua mo Tonga ko hoku tofi'a",
+                "en": "God and Tonga are my heritage"
+            }
+        },
+        "timezones": [
+            "Pacific/Tongatapu"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Turkey",
+        "alpha2": "TR",
+        "alpha3": "TUR",
+        "isocode": 792,
+        "dependency": "",
+        "officialName": {
+            "tr": "Türkiye Cumhuriyeti"
+        },
+        "motto": {
+            "official": {
+                "tr": "Yurtta sulh, cihanda sulh"
+            }
+        },
+        "timezones": [
+            "Europe/Istanbul",
+            "Asia/Istanbul",
+            "Turkey"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Trinidad and Tobago",
+        "alpha2": "TT",
+        "alpha3": "TTO",
+        "isocode": 780,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Trinidad and Tobago"
+        },
+        "motto": {
+            "official": {
+                "en": "Together We Aspire, Together We Achieve"
+            }
+        },
+        "timezones": [
+            "America/Port_of_Spain"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tuvalu",
+        "alpha2": "TV",
+        "alpha3": "TUV",
+        "isocode": 798,
+        "dependency": "",
+        "officialName": {
+            "tuv": "Tuvalu",
+            "en": "Tuvalu"
+        },
+        "motto": {
+            "official": {
+                "tuv": "Tuvalu mo te Atua",
+                "en": "Tuvalu for the Almighty"
+            }
+        },
+        "timezones": [
+            "Pacific/Funafuti"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Taiwan",
+        "alpha2": "TW",
+        "alpha3": "TWN",
+        "isocode": 158,
+        "dependency": "",
+        "officialName": {
+            "zh": "中華民國"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Taipei"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Tanzania, United Republic of",
+        "alpha2": "TZ",
+        "alpha3": "TZA",
+        "isocode": 834,
+        "dependency": "",
+        "officialName": {
+            "sw": "Jamhuri ya Muungano wa Tanzania",
+            "en": "United Republic of Tanzania"
+        },
+        "motto": [],
+        "timezones": [
+            "Africa/Dar_es_Salaam"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Ukraine",
+        "alpha2": "UA",
+        "alpha3": "UKR",
+        "isocode": 804,
+        "dependency": "",
+        "officialName": {
+            "uk": "Україна"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Kiev",
+            "Europe/Uzhgorod",
+            "Europe/Zaporozhye"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uganda",
+        "alpha2": "UG",
+        "alpha3": "UGA",
+        "isocode": 800,
+        "dependency": "",
+        "officialName": {
+            "sw": "Jamhuri ya Uganda",
+            "en": "Republic of Uganda"
+        },
+        "motto": {
+            "official": {
+                "en": "For God and My Country"
+            }
+        },
+        "timezones": [
+            "Africa/Kampala"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "United States Minor Outlying Islands",
+        "alpha2": "UM",
+        "alpha3": "UMI",
+        "isocode": 581,
+        "dependency": "US",
+        "officialName": {
+            "en": "United States Minor Outlying Islands"
+        },
+        "motto": {
+            "official": {
+                "en": "In God We Trust"
+            },
+            "presidential": {
+                "la": "E pluribus unum"
+            }
+        },
+        "timezones": [
+            "Pacific/Midway",
+            "Pacific/Wake",
+            "Pacific/Johnston"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "United States of America",
+        "alpha2": "US",
+        "alpha3": "USA",
+        "isocode": 840,
+        "dependency": "",
+        "officialName": {
+            "en": "United States of America"
+        },
+        "motto": {
+            "official": {
+                "en": "In God We Trust"
+            },
+            "presidential": {
+                "la": "E pluribus unum"
+            }
+        },
+        "timezones": [
+            "America/Adak",
+            "America/Anchorage",
+            "America/Boise",
+            "America/Chicago",
+            "America/Denver",
+            "America/Detroit",
+            "America/Indiana/Indianapolis",
+            "America/Indiana/Knox",
+            "America/Indiana/Marengo",
+            "America/Indiana/Petersburg",
+            "America/Indiana/Tell_City",
+            "America/Indiana/Vevay",
+            "America/Indiana/Vincennes",
+            "America/Indiana/Winamac",
+            "America/Juneau",
+            "America/Kentucky/Louisville",
+            "America/Kentucky/Monticello",
+            "America/Los_Angeles",
+            "America/Menominee",
+            "America/Metlakatla",
+            "America/New_York",
+            "America/Nome",
+            "America/North_Dakota/Beulah",
+            "America/North_Dakota/Center",
+            "America/North_Dakota/New_Salem",
+            "America/Phoenix",
+            "America/Sitka",
+            "America/Yakutat",
+            "Pacific/Honolulu",
+            "America/Atka",
+            "America/Fort_Wayne",
+            "America/Indianapolis",
+            "America/Knox_IN",
+            "America/Louisville",
+            "America/Shiprock",
+            "America/Virgin",
+            "Navajo",
+            "US/Alaska",
+            "US/Aleutian",
+            "US/Arizona",
+            "US/Central",
+            "US/East-Indiana",
+            "US/Eastern",
+            "US/Hawaii",
+            "US/Indiana-Starke",
+            "US/Michigan",
+            "US/Mountain",
+            "US/Pacific",
+            "US/Samoa"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uruguay",
+        "alpha2": "UY",
+        "alpha3": "URY",
+        "isocode": 858,
+        "dependency": "",
+        "officialName": {
+            "es": "República Oriental del Uruguay"
+        },
+        "motto": {
+            "official": {
+                "es": "Libertad o Muerte"
+            }
+        },
+        "timezones": [
+            "America/Montevideo"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Uzbekistan",
+        "alpha2": "UZ",
+        "alpha3": "UZB",
+        "isocode": 860,
+        "dependency": "",
+        "officialName": {
+            "uz-Latn": "Uzbekistan Respublikasi",
+            "uz-Cyrl": "Ўзбекистон Республикаси"
+        },
+        "motto": [],
+        "timezones": [
+            "Asia/Samarkand",
+            "Asia/Tashkent"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Holy See",
+        "alpha2": "VA",
+        "alpha3": "VAT",
+        "isocode": 336,
+        "dependency": "",
+        "officialName": {
+            "la": "Status Civitatis Vaticanae",
+            "it": "Stato della Città del Vaticano"
+        },
+        "motto": [],
+        "timezones": [
+            "Europe/Vatican"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Saint Vincent and the Grenadines",
+        "alpha2": "VC",
+        "alpha3": "VCT",
+        "isocode": 670,
+        "dependency": "",
+        "officialName": {
+            "en": "Saint Vincent and the Grenadines"
+        },
+        "motto": {
+            "official": {
+                "la": "Pax et Justitia"
+            }
+        },
+        "timezones": [
+            "America/St_Vincent"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Venezuela",
+        "alpha2": "VE",
+        "alpha3": "VEN",
+        "isocode": 862,
+        "dependency": "",
+        "officialName": {
+            "es": "República Bolivariana de Venezuela"
+        },
+        "motto": {
+            "official": {
+                "es": "Dios y Federación"
+            }
+        },
+        "timezones": [
+            "America/Caracas"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Virgin Islands (British)",
+        "alpha2": "VG",
+        "alpha3": "VGB",
+        "isocode": "092",
+        "dependency": "GB",
+        "officialName": {
+            "en": "British Virgin Islands"
+        },
+        "motto": {
+            "official": {
+                "la": "Vigilate"
+            }
+        },
+        "timezones": [
+            "America/Tortola"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Virgin Islands (U.S.)",
+        "alpha2": "VI",
+        "alpha3": "VIR",
+        "isocode": 850,
+        "dependency": "US",
+        "officialName": {
+            "en": "Virgin Islands of the United States"
+        },
+        "motto": {
+            "official": {
+                "en": "United in Pride and Hope"
+            }
+        },
+        "timezones": [
+            "America/St_Thomas"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Viet Nam",
+        "alpha2": "VN",
+        "alpha3": "VNM",
+        "isocode": 704,
+        "dependency": "",
+        "officialName": {
+            "vi": "Cộng hòa xã hội chủ nghĩa Việt Nam"
+        },
+        "motto": {
+            "official": {
+                "vi": "Độc lập – Tự do – Hạnh phúc"
+            }
+        },
+        "timezones": [
+            "Asia/Ho_Chi_Minh",
+            "Asia/Saigon"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Vanuatu",
+        "alpha2": "VU",
+        "alpha3": "VUT",
+        "isocode": 548,
+        "dependency": "",
+        "officialName": {
+            "bi": "Ripablik blong Vanuatu",
+            "fr": "République de Vanuatu",
+            "en": "Republic of Vanuatu"
+        },
+        "motto": {
+            "official": {
+                "bi": "Long God yumi stanap",
+                "fr": "Nous nous tenons devant Dieu",
+                "en": "With God we stand"
+            }
+        },
+        "timezones": [
+            "Pacific/Efate"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Wallis and Futuna",
+        "alpha2": "WF",
+        "alpha3": "WLF",
+        "isocode": 876,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Collectivité d'outre-mer de Wallis-et-Futuna",
+            "wls": "‘Uvea mo Futuna"
+        },
+        "motto": {
+            "official": {
+                "fr": "Liberté, égalité, fraternité"
+            }
+        },
+        "timezones": [
+            "Pacific/Wallis"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Samoa",
+        "alpha2": "WS",
+        "alpha3": "WSM",
+        "isocode": 882,
+        "dependency": "",
+        "officialName": {
+            "sm": "Malo Sa'oloto Tuto'atasi o Samoa"
+        },
+        "motto": {
+            "official": {
+                "sm": "Fa'avaei le Atua Samoa"
+            }
+        },
+        "timezones": [
+            "Pacific/Apia",
+            "Pacific/Samoa"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Yemen",
+        "alpha2": "YE",
+        "alpha3": "YEM",
+        "isocode": 887,
+        "dependency": "",
+        "officialName": {
+            "ar": "الجمهوريّة اليمنية"
+        },
+        "motto": {
+            "official": {
+                "ar": "اَللهُ، ٱلْوَطَنُ، ٱلثَوْرَةُ، ٱلْوَحْدَةُ"
+            }
+        },
+        "timezones": [
+            "Asia/Aden"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Mayotte",
+        "alpha2": "YT",
+        "alpha3": "MYT",
+        "isocode": 175,
+        "dependency": "FR",
+        "officialName": {
+            "fr": "Collectivité départementale de Mayotte"
+        },
+        "motto": {
+            "official": {
+                "swb": "Ra Hachiri"
+            }
+        },
+        "timezones": [
+            "Indian/Mayotte"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "South Africa",
+        "alpha2": "ZA",
+        "alpha3": "ZAF",
+        "isocode": 710,
+        "dependency": "",
+        "officialName": {
+            "af": "Republiek van Suid-Afrika",
+            "en": "Republic of South Africa",
+            "nr": "iRiphabliki yeSewula Afrika",
+            "ss": "iRiphabhulikhi yeNingizimu Afrika",
+            "st": "Rephaboliki ya Afrika Borwa",
+            "tn": "Rephaboliki ya Aforika Borwa",
+            "ts": "Riphabliki ra Afrika Dzonga",
+            "ve": "Riphabuḽiki ya Afurika Tshipembe",
+            "xh": "iRiphabliki yomZantsi Afrika",
+            "zu": "iRiphabhuliki yaseNingizimu Afrika",
+            "nso": "Repabliki ya Afrika-Borwa"
+        },
+        "motto": {
+            "official": {
+                "xam": "ǃke e: ǀxarra ǁke"
+            }
+        },
+        "timezones": [
+            "Africa/Johannesburg"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Zambia",
+        "alpha2": "ZM",
+        "alpha3": "ZMB",
+        "isocode": 894,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Zambia"
+        },
+        "motto": {
+            "official": {
+                "en": "One Zambia, One Nation"
+            }
+        },
+        "timezones": [
+            "Africa/Lusaka"
+        ],
+        "NOTES (not included in the build)": []
+    },
+    {
+        "label (not included in the build)": "Zimbabwe",
+        "alpha2": "ZW",
+        "alpha3": "ZWE",
+        "isocode": 716,
+        "dependency": "",
+        "officialName": {
+            "en": "Republic of Zimbabwe",
+            "sn": "Nyika yeZimbabwe",
+            "nd": "Ilizwe leZimbabwe",
+            "ny": "Dziko la Zimbabwe",
+            "bwg": "Dziko la Zimbabwe",
+            "twx": "Hango yeZimbabwe",
+            "hio": "Zimbabwe Nù",
+            "nmq": "Inyika yeZimbabwe",
+            "mxc": "Nyika yeZimbabwe",
+            "ts": "Tiko ra Zimbabwe",
+            "nso": "Naha ya Zimbabwe",
+            "toi": "Cisi ca Zimbabwe",
+            "zib": null,
+            "ve": "Shango ḽa Zimbabwe",
+            "xh": "Ilizwe leZimbabwe"
+        },
+        "motto": {
+            "official": {
+                "en": "Unity, Freedom, Work"
+            }
+        },
+        "timezones": [
+            "Africa/Harare"
+        ],
+        "NOTES (not included in the build)": []
+    }
+]
