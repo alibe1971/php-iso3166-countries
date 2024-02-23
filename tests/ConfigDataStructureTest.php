@@ -5,7 +5,7 @@ namespace Alibe\GeoCodes\Tests;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
-final class IntegrityStructureTest extends TestCase
+final class ConfigDataStructureTest extends TestCase
 {
     /**
      * @var string

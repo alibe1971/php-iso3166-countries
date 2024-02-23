@@ -3,9 +3,12 @@
 namespace Alibe\GeoCodes;
 
 use Alibe\GeoCodes\Lib\BaseCode;
+use Alibe\GeoCodes\Lib\CodesCountries;
 
 class GeoCodes extends BaseCode
 {
+    private CodesCountries $codesCountries;
+
     /**
      * @throws \Exception
      */
@@ -13,5 +16,9 @@ class GeoCodes extends BaseCode
     {
         $this->setConfig();
         $this->reset();
+    }
+
+    public function countries()
+    {
     }
 }
