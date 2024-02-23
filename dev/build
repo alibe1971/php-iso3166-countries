@@ -1,0 +1,90 @@
+#!/bin/bash
+
+show_progress() {
+  chars=('▓')
+  index=0
+
+  while true; do
+    printf "%s" "${chars[index]}"
+    ((index++))
+    index=$((index % ${#chars[@]}))
+    sleep 0.1
+  done
+}
+
+script_path=$(readlink -f "$0")
+base_directory=$(dirname "$(dirname "$script_path")")
+
+echo 'DATA CONSTRUCTION IN EXECUTION ...'
+php "$base_directory/dev/buildTools/build.php"
+if [ $? -ne 0 ]; then
+  echo
+  echo "DATA CONSTRUCTION TERMINATED WITH ERRORS."
+  echo
+  echo "$buildData"
+  echo
+  echo "SCRIPT TERMINATED WITH ERROR."
+  echo
+  exit 1
+fi
+echo 'DATA CONSTRUCTION EXECUTED.'
+
+cd "$base_directory"
+
+echo
+echo 'SOURCE CODE CHECK WITH RUNNING CODE SNIFFER ...'
+show_progress &
+progress_pid=$!
+coderepair=$("vendor/bin/phpcbf" --standard=PSR12 "$base_directory"/src "$base_directory"/dev "$base_directory"/tests)
+codesniffer=$("vendor/bin/phpcs" --standard=PSR12 "$base_directory"/src "$base_directory"/dev "$base_directory"/tests)
+kill $progress_pid > /dev/null 2>&1
+printf '\r\033[K'
+echo 'SOURCE CODE CHECK WITH CODE SNIFFER COMPLETED.'
+if [ -n "$codesniffer" ]; then
+  echo "
+The source code check has detected inconsistencies with the PSR-12 rules.
+Please review the following report and proceed to remove all ERRORS and WARNINGS.
+"
+  echo "$codesniffer"
+  echo
+  echo "SCRIPT TERMINATED WITH ERROR."
+  echo
+  exit 1
+fi
+
+echo
+echo 'SOURCE CODE STATIC CHECK WITH RUNNING PHPSTAN ...'
+stan_output=$(vendor/bin/phpstan analyse \
+  "$base_directory"/src \
+  "$base_directory"/dev \
+  "$base_directory"/tests \
+  --memory-limit 1G)
+printf '\033[1A\r\033[K'
+printf '\033[1A\r\033[K'
+echo "SOURCE CODE STATIC CHECK WITH RUNNING PHPSTAN COMPLETED."
+if echo "$stan_output" | grep -q "ERROR"; then
+  echo "$stan_output"
+  echo
+  echo "SCRIPT TERMINATED WITH ERROR."
+  echo
+  exit 1
+fi
+
+echo
+echo 'UNIT TEST IN EXECUTION'
+vendor/bin/phpunit --testsuite geoCodes --testdox
+echo 'UNIT TEST COMPLETED'
+echo
+if [ $? -ne 0 ]; then
+  echo "The PHPUnit tests reported errors or failures."
+  echo "SCRIPT TERMINATED WITH ERROR."
+  echo
+  exit 1
+fi
+echo "The PHPUnit tests passed without any errors."
+echo
+echo "SCRIPT TERMINATED SUCCESSFULLY."
+echo
+echo "You can now commit and push your changes."
+echo
+exit 0
