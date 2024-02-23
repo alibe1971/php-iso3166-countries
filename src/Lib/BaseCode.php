@@ -105,8 +105,9 @@ class BaseCode
     /**
      * Transform an array in an instance of a defined class
      *
+     * @param string $class
      * @param array $array
-     * @return stdClass
+     * @return object
      */
     protected function arrayToObjRecursive(string $class, array $array): object
     {
