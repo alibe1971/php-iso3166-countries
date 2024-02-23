@@ -2,8 +2,9 @@
 
 namespace Alibe\GeoCodes\Lib;
 
+use Alibe\GeoCodes\Lib\DataObj\ConfigLanguages;
+use Alibe\GeoCodes\Lib\DataObj\ConfigSystem;
 use Exception;
-use stdClass;
 
 class BaseCode
 {
@@ -17,7 +18,7 @@ class BaseCode
     /**
      * @var object
      */
-    protected object $Language;
+    private object $Language;
 
 
     /**
@@ -35,7 +36,7 @@ class BaseCode
      */
     protected function setConfig(): void
     {
-        $this->config = $this->arrayToObjRecursive($this->getData('config'));
+        $this->config = $this->arrayToObjRecursive(ConfigSystem::class, $this->getData('config'));
     }
 
     /**
@@ -55,7 +56,7 @@ class BaseCode
      */
     protected function reset(): void
     {
-        $this->Language = new StdClass();
+        $this->Language = new ConfigLanguages();
         $language = $this->config->settings->languages->default;
         $this->setDefaultLanguage($language);
         $this->useLanguage($language);
@@ -107,12 +108,12 @@ class BaseCode
      * @param array $array
      * @return stdClass
      */
-    protected function arrayToObjRecursive(array $array): StdClass
+    protected function arrayToObjRecursive(string $class, array $array): object
     {
-        $obj = new stdClass();
+        $obj = new $class();
         foreach ($array as $key => $value) {
             if (is_array($value) && count(array_filter(array_keys($value), 'is_string')) > 0) {
-                $obj->$key = $this->arrayToObjRecursive($value);
+                $obj->$key = $this->arrayToObjRecursive($class, $value);
             } else {
                 $obj->$key = $value;
             }
