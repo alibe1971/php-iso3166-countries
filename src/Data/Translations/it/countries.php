@@ -15,7 +15,7 @@
 return [
   'AD' => [
     'name' => 'Andorra',
-    'nameComplete' => 'Principato di Andorra',
+    'completeName' => 'Principato di Andorra',
     'demonyms' => [
        'Andorrani',
     ],
@@ -27,7 +27,7 @@ return [
   ],
   'AE' => [
     'name' => 'Emirati Arabi Uniti',
-    'nameComplete' => 'Stato degli Emirati Arabi Uniti',
+    'completeName' => 'Stato degli Emirati Arabi Uniti',
     'demonyms' => [
        'Emiratènsi',
        'Imaratènsi',
@@ -49,7 +49,7 @@ return [
   ],
   'AF' => [
     'name' => 'Afghanistan',
-    'nameComplete' => 'Emirato Islamico d\'Afghanistan',
+    'completeName' => 'Emirato Islamico d\'Afghanistan',
     'demonyms' => [
        'Afgani',
        'Afghani',
@@ -68,7 +68,7 @@ return [
   ],
   'AG' => [
     'name' => 'Antigua e Barbuda',
-    'nameComplete' => 'Antigua and Barbuda',
+    'completeName' => 'Antigua and Barbuda',
     'demonyms' => [
        'Antìguo-barbudani',
        'Antiguani',
@@ -101,7 +101,7 @@ return [
   ],
   'AI' => [
     'name' => 'Anguilla',
-    'nameComplete' => 'Anguilla',
+    'completeName' => 'Anguilla',
     'demonyms' => [
        'Anguillani',
     ],
@@ -129,7 +129,7 @@ return [
   ],
   'AL' => [
     'name' => 'Albania',
-    'nameComplete' => 'Repubblica di Albania',
+    'completeName' => 'Repubblica di Albania',
     'demonyms' => [
        'Albanési',
     ],
@@ -144,7 +144,7 @@ return [
   ],
   'AM' => [
     'name' => 'Armenia',
-    'nameComplete' => 'Repubblica di Armenia',
+    'completeName' => 'Repubblica di Armenia',
     'demonyms' => [
        'Armèni',
     ],
@@ -156,7 +156,7 @@ return [
   ],
   'AO' => [
     'name' => 'Angola',
-    'nameComplete' => 'Repubblica di Angola',
+    'completeName' => 'Repubblica di Angola',
     'demonyms' => [
        'Angolani',
     ],
@@ -170,7 +170,7 @@ return [
   ],
   'AQ' => [
     'name' => 'Antartide',
-    'nameComplete' => 'Antartide',
+    'completeName' => 'Antartide',
     'demonyms' => [
     ],
     'keywords' => [
@@ -188,7 +188,7 @@ return [
   ],
   'AR' => [
     'name' => 'Argentina',
-    'nameComplete' => 'Repubblica Argentina',
+    'completeName' => 'Repubblica Argentina',
     'demonyms' => [
        'Argentini',
     ],
@@ -199,7 +199,7 @@ return [
   ],
   'AS' => [
     'name' => 'Samoa Americane',
-    'nameComplete' => 'Samoa Americane',
+    'completeName' => 'Samoa Americane',
     'demonyms' => [
        'Samoani',
     ],
@@ -214,7 +214,7 @@ return [
   ],
   'AT' => [
     'name' => 'Austria',
-    'nameComplete' => 'Repubblica d\'Austria',
+    'completeName' => 'Repubblica d\'Austria',
     'demonyms' => [
        'Austrìaci',
     ],
@@ -226,7 +226,7 @@ return [
   ],
   'AU' => [
     'name' => 'Australia',
-    'nameComplete' => 'Commonwealth d\'Australia',
+    'completeName' => 'Commonwealth d\'Australia',
     'demonyms' => [
        'Australiani',
     ],
@@ -244,7 +244,7 @@ return [
   ],
   'AW' => [
     'name' => 'Aruba',
-    'nameComplete' => 'Paese di Aruba',
+    'completeName' => 'Paese di Aruba',
     'demonyms' => [
        'Arubani',
     ],
@@ -271,7 +271,7 @@ return [
   ],
   'AX' => [
     'name' => 'Isole Åland',
-    'nameComplete' => 'Provincia delle Åland',
+    'completeName' => 'Provincia delle Åland',
     'demonyms' => [
        'Alandési',
     ],
@@ -281,7 +281,7 @@ return [
   ],
   'AZ' => [
     'name' => 'Azerbaigian',
-    'nameComplete' => 'Repubblica d\'Azerbaigian',
+    'completeName' => 'Repubblica d\'Azerbaigian',
     'demonyms' => [
        'Ażèri',
     ],
@@ -295,7 +295,7 @@ return [
   ],
   'BA' => [
     'name' => 'Bosnia-Erzegovina',
-    'nameComplete' => 'Bosnia ed Erzegovina',
+    'completeName' => 'Bosnia ed Erzegovina',
     'demonyms' => [
        'Bosnìaci',
        'Erzegovési',
@@ -320,7 +320,7 @@ return [
   ],
   'BB' => [
     'name' => 'Barbados',
-    'nameComplete' => 'Barbados',
+    'completeName' => 'Barbados',
     'demonyms' => [
        'Barbadiani',
        'Barbadoregni',
@@ -336,7 +336,7 @@ return [
   ],
   'BD' => [
     'name' => 'Bangladesh',
-    'nameComplete' => 'Repubblica Popolare del Bangladesh',
+    'completeName' => 'Repubblica Popolare del Bangladesh',
     'demonyms' => [
        'Bangladési',
        'Bengalési',
@@ -352,7 +352,7 @@ return [
   ],
   'BE' => [
     'name' => 'Belgio',
-    'nameComplete' => 'Regno del Belgio',
+    'completeName' => 'Regno del Belgio',
     'demonyms' => [
        'Bèlgi',
     ],
@@ -363,7 +363,7 @@ return [
   ],
   'BF' => [
     'name' => 'Burkina Faso',
-    'nameComplete' => 'Burkina Faso',
+    'completeName' => 'Burkina Faso',
     'demonyms' => [
        'Burkinabé',
     ],
@@ -376,7 +376,7 @@ return [
   ],
   'BG' => [
     'name' => 'Bulgaria',
-    'nameComplete' => 'Repubblica di Bulgaria',
+    'completeName' => 'Repubblica di Bulgaria',
     'demonyms' => [
        'Bùlgari',
     ],
@@ -393,7 +393,7 @@ return [
   ],
   'BH' => [
     'name' => 'Bahrein',
-    'nameComplete' => 'Regno del Bahrein',
+    'completeName' => 'Regno del Bahrein',
     'demonyms' => [
        'Bahreiniti',
        'Bahrainiti',
@@ -407,7 +407,7 @@ return [
   ],
   'BI' => [
     'name' => 'Burundi',
-    'nameComplete' => 'Repubblica del Burundi',
+    'completeName' => 'Repubblica del Burundi',
     'demonyms' => [
        'Burundési',
     ],
@@ -417,7 +417,7 @@ return [
   ],
   'BJ' => [
     'name' => 'Benin',
-    'nameComplete' => 'Repubblica del Benin',
+    'completeName' => 'Repubblica del Benin',
     'demonyms' => [
        'Beninési',
        'Beniniani',
@@ -432,7 +432,7 @@ return [
   ],
   'BL' => [
     'name' => 'Saint Barthélemy',
-    'nameComplete' => 'Collettività d\'oltremare di Saint Barthélemy',
+    'completeName' => 'Collettività d\'oltremare di Saint Barthélemy',
     'demonyms' => [
        'Barthélemesi',
        'Santabarthesi',
@@ -456,7 +456,7 @@ return [
   ],
   'BM' => [
     'name' => 'Bermuda',
-    'nameComplete' => 'Bermuda (o Bermude)',
+    'completeName' => 'Bermuda (o Bermude)',
     'demonyms' => [
        'Bermudiani',
     ],
@@ -469,7 +469,7 @@ return [
   ],
   'BN' => [
     'name' => 'Brunei',
-    'nameComplete' => 'Stato del Brunei, Dimora della Pace',
+    'completeName' => 'Stato del Brunei, Dimora della Pace',
     'demonyms' => [
        'Bruneiani',
     ],
@@ -482,7 +482,7 @@ return [
   ],
   'BO' => [
     'name' => 'Bolivia',
-    'nameComplete' => 'Stato plurinazionale del Bolivia',
+    'completeName' => 'Stato plurinazionale del Bolivia',
     'demonyms' => [
        'Boliviani',
     ],
@@ -495,7 +495,7 @@ return [
   ],
   'BQ' => [
     'name' => 'Bonaire, Sint Eustatius e Saba',
-    'nameComplete' => 'Paesi Bassi caraibici',
+    'completeName' => 'Paesi Bassi caraibici',
     'demonyms' => [
        'Boneriani',
        'Statianesi',
@@ -534,7 +534,7 @@ return [
   ],
   'BR' => [
     'name' => 'Brasile',
-    'nameComplete' => 'Repubblica Federale del Brasile',
+    'completeName' => 'Repubblica Federale del Brasile',
     'demonyms' => [
        'Braṡiliani',
     ],
@@ -547,7 +547,7 @@ return [
   ],
   'BS' => [
     'name' => 'Bahamas',
-    'nameComplete' => 'Commonwealth delle Bahamas',
+    'completeName' => 'Commonwealth delle Bahamas',
     'demonyms' => [
        'Bahamènsi',
     ],
@@ -557,7 +557,7 @@ return [
   ],
   'BT' => [
     'name' => 'Bhutan',
-    'nameComplete' => 'Regno del Bhutan',
+    'completeName' => 'Regno del Bhutan',
     'demonyms' => [
        'Bhutanési',
     ],
@@ -574,7 +574,7 @@ return [
   ],
   'BV' => [
     'name' => 'Isola di Bouvet',
-    'nameComplete' => 'Isola di Bouvet',
+    'completeName' => 'Isola di Bouvet',
     'demonyms' => [
     ],
     'keywords' => [
@@ -588,7 +588,7 @@ return [
   ],
   'BW' => [
     'name' => 'Botswana',
-    'nameComplete' => 'Republic of Botswana',
+    'completeName' => 'Republic of Botswana',
     'demonyms' => [
        'Botswani',
        'Bozzu̯àni',
@@ -607,7 +607,7 @@ return [
   ],
   'BY' => [
     'name' => 'Bielorussia',
-    'nameComplete' => 'Repubblica di Bielorussia',
+    'completeName' => 'Repubblica di Bielorussia',
     'demonyms' => [
        'Bielorussi',
        'Belorussi',
@@ -626,7 +626,7 @@ return [
   ],
   'BZ' => [
     'name' => 'Belize',
-    'nameComplete' => 'Belize',
+    'completeName' => 'Belize',
     'demonyms' => [
        'Beliżiani',
     ],
@@ -640,7 +640,7 @@ return [
   ],
   'CA' => [
     'name' => 'Canada',
-    'nameComplete' => 'Canada (o Canadà)',
+    'completeName' => 'Canada (o Canadà)',
     'demonyms' => [
        'Canadési',
     ],
@@ -650,7 +650,7 @@ return [
   ],
   'CC' => [
     'name' => 'Isole Cocos (Keeling)',
-    'nameComplete' => 'Territorio delle Isole Cocos (Keeling)',
+    'completeName' => 'Territorio delle Isole Cocos (Keeling)',
     'demonyms' => [
        'Cocosi',
        'Cocosiani',
@@ -666,7 +666,7 @@ return [
   ],
   'CD' => [
     'name' => 'Congo (Rep. Dem.)',
-    'nameComplete' => 'Repubblica Democratica del Congo',
+    'completeName' => 'Repubblica Democratica del Congo',
     'demonyms' => [
        'Congolési',
     ],
@@ -681,7 +681,7 @@ return [
   ],
   'CF' => [
     'name' => 'Repubblica Centrafricana',
-    'nameComplete' => 'Repubblica Centrafricana',
+    'completeName' => 'Repubblica Centrafricana',
     'demonyms' => [
        'Centrafricani',
        'Centroafricani',
@@ -697,7 +697,7 @@ return [
   ],
   'CG' => [
     'name' => 'Congo',
-    'nameComplete' => 'Repubblica del Congo',
+    'completeName' => 'Repubblica del Congo',
     'demonyms' => [
        'Congolési',
     ],
@@ -710,7 +710,7 @@ return [
   ],
   'CH' => [
     'name' => 'Svizzera',
-    'nameComplete' => 'Confederazione svizzera',
+    'completeName' => 'Confederazione svizzera',
     'demonyms' => [
        'Svìzzeri',
        'Elvètici',
@@ -725,7 +725,7 @@ return [
   ],
   'CI' => [
     'name' => 'Costa d\'Avorio',
-    'nameComplete' => 'Repubblica della Costa d\'Avorio',
+    'completeName' => 'Repubblica della Costa d\'Avorio',
     'demonyms' => [
        'Ivoriani',
        'Avoriano',
@@ -742,7 +742,7 @@ return [
   ],
   'CK' => [
     'name' => 'Isole Cook',
-    'nameComplete' => 'Isole Cook',
+    'completeName' => 'Isole Cook',
     'demonyms' => [
        'Cookiani',
     ],
@@ -756,7 +756,7 @@ return [
   ],
   'CL' => [
     'name' => 'Cile',
-    'nameComplete' => 'Repubblica del Cile',
+    'completeName' => 'Repubblica del Cile',
     'demonyms' => [
        'Cilèni',
     ],
@@ -768,7 +768,7 @@ return [
   ],
   'CM' => [
     'name' => 'Camerun',
-    'nameComplete' => 'Repubblica del Camerun',
+    'completeName' => 'Repubblica del Camerun',
     'demonyms' => [
        'Camerunési',
     ],
@@ -780,7 +780,7 @@ return [
   ],
   'CN' => [
     'name' => 'Cina',
-    'nameComplete' => 'Repubblica Popolare Cinese',
+    'completeName' => 'Repubblica Popolare Cinese',
     'demonyms' => [
        'Cinési',
     ],
@@ -789,7 +789,7 @@ return [
   ],
   'CO' => [
     'name' => 'Colombia',
-    'nameComplete' => 'Repubblica della Colombia',
+    'completeName' => 'Repubblica della Colombia',
     'demonyms' => [
        'Colombiani',
        'Columbiani',
@@ -806,7 +806,7 @@ return [
   ],
   'CR' => [
     'name' => 'Costa Rica',
-    'nameComplete' => 'Repubblica di Costa Rica',
+    'completeName' => 'Repubblica di Costa Rica',
     'demonyms' => [
        'Costaricani',
        'Costaricènsi',
@@ -820,7 +820,7 @@ return [
   ],
   'CU' => [
     'name' => 'Cuba',
-    'nameComplete' => 'Repubblica di Cuba',
+    'completeName' => 'Repubblica di Cuba',
     'demonyms' => [
        'Cubani',
     ],
@@ -843,7 +843,7 @@ return [
   ],
   'CV' => [
     'name' => 'Capo Verde',
-    'nameComplete' => 'Repubblica di Capo Verde',
+    'completeName' => 'Repubblica di Capo Verde',
     'demonyms' => [
        'Capoverdiani',
     ],
@@ -855,7 +855,7 @@ return [
   ],
   'CW' => [
     'name' => 'Curaçao',
-    'nameComplete' => 'Paese di Curaçao',
+    'completeName' => 'Paese di Curaçao',
     'demonyms' => [
        'Curasanesi',
        'Curaçanesi',
@@ -892,7 +892,7 @@ return [
   ],
   'CX' => [
     'name' => 'Isola di Natale',
-    'nameComplete' => 'Isola di Natale',
+    'completeName' => 'Isola di Natale',
     'demonyms' => [
        'Natalensi',
        'Natalini',
@@ -907,7 +907,7 @@ return [
   ],
   'CY' => [
     'name' => 'Cipro',
-    'nameComplete' => 'Repubblica di Cipro',
+    'completeName' => 'Repubblica di Cipro',
     'demonyms' => [
        'Ciprïòti',
     ],
@@ -918,7 +918,7 @@ return [
   ],
   'CZ' => [
     'name' => 'Repubblica Ceca',
-    'nameComplete' => 'Repubblica Ceca',
+    'completeName' => 'Repubblica Ceca',
     'demonyms' => [
        'Cèchi',
        'Cèki',
@@ -938,7 +938,7 @@ return [
   ],
   'DE' => [
     'name' => 'Germania',
-    'nameComplete' => 'Repubblica Federale di Germania',
+    'completeName' => 'Repubblica Federale di Germania',
     'demonyms' => [
        'Tedéschi',
     ],
@@ -961,7 +961,7 @@ return [
   ],
   'DJ' => [
     'name' => 'Gibuti',
-    'nameComplete' => 'Repubblica di Gibuti',
+    'completeName' => 'Repubblica di Gibuti',
     'demonyms' => [
        'Gibutiani',
     ],
@@ -973,7 +973,7 @@ return [
   ],
   'DK' => [
     'name' => 'Danimarca',
-    'nameComplete' => 'Regno di Danimarca',
+    'completeName' => 'Regno di Danimarca',
     'demonyms' => [
        'Danési',
     ],
@@ -983,7 +983,7 @@ return [
   ],
   'DM' => [
     'name' => 'Dominica',
-    'nameComplete' => 'Commonwealth della Dominica',
+    'completeName' => 'Commonwealth della Dominica',
     'demonyms' => [
        'Dominicani',
     ],
@@ -1009,7 +1009,7 @@ return [
   ],
   'DO' => [
     'name' => 'Repubblica Dominicana',
-    'nameComplete' => 'Repubblica Dominicana',
+    'completeName' => 'Repubblica Dominicana',
     'demonyms' => [
        'Dominicani',
     ],
@@ -1034,7 +1034,7 @@ return [
   ],
   'DZ' => [
     'name' => 'Algeria',
-    'nameComplete' => 'Repubblica Democratica Popolare di Algeria',
+    'completeName' => 'Repubblica Democratica Popolare di Algeria',
     'demonyms' => [
        'Algerini',
     ],
@@ -1047,7 +1047,7 @@ return [
   ],
   'EC' => [
     'name' => 'Ecuador',
-    'nameComplete' => 'Repubblica dell\'Ecuador',
+    'completeName' => 'Repubblica dell\'Ecuador',
     'demonyms' => [
        'Ecuadoriani',
     ],
@@ -1066,7 +1066,7 @@ return [
   ],
   'EE' => [
     'name' => 'Estonia',
-    'nameComplete' => 'Repubblica d\'Estonia',
+    'completeName' => 'Repubblica d\'Estonia',
     'demonyms' => [
        'Èstoni',
        'Estóni',
@@ -1078,7 +1078,7 @@ return [
   ],
   'EG' => [
     'name' => 'Egitto',
-    'nameComplete' => 'Repubblica Araba d\'Egitto',
+    'completeName' => 'Repubblica Araba d\'Egitto',
     'demonyms' => [
        'Egiziani',
     ],
@@ -1092,7 +1092,7 @@ return [
   ],
   'EH' => [
     'name' => 'Sahara Occidentale',
-    'nameComplete' => 'Repubblica Democratica Araba Sahrawi',
+    'completeName' => 'Repubblica Democratica Araba Sahrawi',
     'demonyms' => [
        'Sahariani',
        'Sahariani occidentali',
@@ -1106,7 +1106,7 @@ return [
   ],
   'ER' => [
     'name' => 'Eritrea',
-    'nameComplete' => 'Stato di Eritrea',
+    'completeName' => 'Stato di Eritrea',
     'demonyms' => [
        'Eritrèi',
     ],
@@ -1117,7 +1117,7 @@ return [
   ],
   'ES' => [
     'name' => 'Spagna',
-    'nameComplete' => 'Regno di Spagna',
+    'completeName' => 'Regno di Spagna',
     'demonyms' => [
        'Spagnòli',
        'Ispànici',
@@ -1147,7 +1147,7 @@ return [
   ],
   'ET' => [
     'name' => 'Etiopia',
-    'nameComplete' => 'Repubblica Federale Democratica d\'Etiopia',
+    'completeName' => 'Repubblica Federale Democratica d\'Etiopia',
     'demonyms' => [
        'Etìopi',
        'Etìopi',
@@ -1166,7 +1166,7 @@ return [
   ],
   'FI' => [
     'name' => 'Finlandia',
-    'nameComplete' => 'Repubblica di Finlandia',
+    'completeName' => 'Repubblica di Finlandia',
     'demonyms' => [
        'Finlandési',
        'Fìnnici',
@@ -1180,7 +1180,7 @@ return [
   ],
   'FJ' => [
     'name' => 'Figi',
-    'nameComplete' => 'Repubblica di Figi',
+    'completeName' => 'Repubblica di Figi',
     'demonyms' => [
        'Figiani',
     ],
@@ -1195,7 +1195,7 @@ return [
   ],
   'FK' => [
     'name' => 'Isole Falkland',
-    'nameComplete' => 'Isole Falkland',
+    'completeName' => 'Isole Falkland',
     'demonyms' => [
        'Falklandési',
     ],
@@ -1208,7 +1208,7 @@ return [
   ],
   'FM' => [
     'name' => 'Micronesia',
-    'nameComplete' => 'Stati Federati di Micronesia',
+    'completeName' => 'Stati Federati di Micronesia',
     'demonyms' => [
        'Microneṡiani',
     ],
@@ -1221,7 +1221,7 @@ return [
   ],
   'FO' => [
     'name' => 'Isole Fær Øer',
-    'nameComplete' => 'Isole Faroe (Feringie)',
+    'completeName' => 'Isole Faroe (Feringie)',
     'demonyms' => [
        'Farìngi',
        'Feroesi',
@@ -1239,7 +1239,7 @@ return [
   ],
   'FR' => [
     'name' => 'Francia',
-    'nameComplete' => 'Repubblica francese',
+    'completeName' => 'Repubblica francese',
     'demonyms' => [
        'Francéṡi',
     ],
@@ -1252,7 +1252,7 @@ return [
   ],
   'GA' => [
     'name' => 'Gabon',
-    'nameComplete' => 'Repubblica Gabonese',
+    'completeName' => 'Repubblica Gabonese',
     'demonyms' => [
        'Gabonési',
     ],
@@ -1261,7 +1261,7 @@ return [
   ],
   'GB' => [
     'name' => 'Regno Unito',
-    'nameComplete' => 'Regno Unito di Gran Bretagna ed Irlanda del Nord',
+    'completeName' => 'Regno Unito di Gran Bretagna ed Irlanda del Nord',
     'demonyms' => [
        'Britànnici',
        'Inglési',
@@ -1328,7 +1328,7 @@ return [
   ],
   'GD' => [
     'name' => 'Grenada',
-    'nameComplete' => 'Grenada',
+    'completeName' => 'Grenada',
     'demonyms' => [
        'Grenadini',
        'Grenadiani',
@@ -1357,7 +1357,7 @@ return [
   ],
   'GE' => [
     'name' => 'Georgia',
-    'nameComplete' => 'Repubblica della Georgia',
+    'completeName' => 'Repubblica della Georgia',
     'demonyms' => [
        'Georgiani',
     ],
@@ -1369,7 +1369,7 @@ return [
   ],
   'GF' => [
     'name' => 'Guyana Francese',
-    'nameComplete' => 'Dipartimento della Guyana francese',
+    'completeName' => 'Dipartimento della Guyana francese',
     'demonyms' => [
        'Guianési',
        'Guyanési',
@@ -1383,7 +1383,7 @@ return [
   ],
   'GG' => [
     'name' => 'Guernsey',
-    'nameComplete' => 'Baliato di Guernsey',
+    'completeName' => 'Baliato di Guernsey',
     'demonyms' => [
        'Guernesiani',
        'Guernesi',
@@ -1403,7 +1403,7 @@ return [
   ],
   'GH' => [
     'name' => 'Ghana',
-    'nameComplete' => 'Repubblica del Ghana',
+    'completeName' => 'Repubblica del Ghana',
     'demonyms' => [
        'Ghanési',
        'Ghanaési',
@@ -1422,7 +1422,7 @@ return [
   ],
   'GI' => [
     'name' => 'Gibilterra',
-    'nameComplete' => 'Gibilterra',
+    'completeName' => 'Gibilterra',
     'demonyms' => [
        'Gibilterriani',
     ],
@@ -1436,7 +1436,7 @@ return [
   ],
   'GL' => [
     'name' => 'Groenlandia',
-    'nameComplete' => 'Groenlandia',
+    'completeName' => 'Groenlandia',
     'demonyms' => [
        'Groenlandési',
     ],
@@ -1447,7 +1447,7 @@ return [
   ],
   'GM' => [
     'name' => 'Gambia',
-    'nameComplete' => 'Repubblica del Gambia (o della Gambia)',
+    'completeName' => 'Repubblica del Gambia (o della Gambia)',
     'demonyms' => [
        'Gambiani',
     ],
@@ -1459,7 +1459,7 @@ return [
   ],
   'GN' => [
     'name' => 'Guinea',
-    'nameComplete' => 'Repubblica di Guinea',
+    'completeName' => 'Repubblica di Guinea',
     'demonyms' => [
        'Guineani',
     ],
@@ -1472,7 +1472,7 @@ return [
   ],
   'GP' => [
     'name' => 'Guadalupa',
-    'nameComplete' => 'Dipartimento di Guadalupa',
+    'completeName' => 'Dipartimento di Guadalupa',
     'demonyms' => [
        'Guadalupensi',
        'Guadalupiani',
@@ -1501,7 +1501,7 @@ return [
   ],
   'GQ' => [
     'name' => 'Guinea Equatoriale',
-    'nameComplete' => 'Repubblica della Guinea Equatoriale',
+    'completeName' => 'Repubblica della Guinea Equatoriale',
     'demonyms' => [
        'Guineani',
     ],
@@ -1514,7 +1514,7 @@ return [
   ],
   'GR' => [
     'name' => 'Grecia',
-    'nameComplete' => 'Repubblica ellenica',
+    'completeName' => 'Repubblica ellenica',
     'demonyms' => [
        'Grèci',
        'Ellènici',
@@ -1529,7 +1529,7 @@ return [
   ],
   'GS' => [
     'name' => 'Georgia del Sud e Isole Sandwich Meridionali',
-    'nameComplete' => 'Georgia del Sud e Isole Sandwich Australi',
+    'completeName' => 'Georgia del Sud e Isole Sandwich Australi',
     'demonyms' => [
        'Sudgeorgiani',
     ],
@@ -1541,7 +1541,7 @@ return [
   ],
   'GT' => [
     'name' => 'Guatemala',
-    'nameComplete' => 'Repubblica del Guatemala',
+    'completeName' => 'Repubblica del Guatemala',
     'demonyms' => [
        'Guatemaltèchi',
     ],
@@ -1555,7 +1555,7 @@ return [
   ],
   'GU' => [
     'name' => 'Guam',
-    'nameComplete' => 'Guam',
+    'completeName' => 'Guam',
     'demonyms' => [
        'Mariannènsi',
     ],
@@ -1567,7 +1567,7 @@ return [
   ],
   'GW' => [
     'name' => 'Guinea-Bissau',
-    'nameComplete' => 'Repubblica della Guinea-Bissau',
+    'completeName' => 'Repubblica della Guinea-Bissau',
     'demonyms' => [
        'Guineani',
     ],
@@ -1583,7 +1583,7 @@ return [
   ],
   'GY' => [
     'name' => 'Guyana',
-    'nameComplete' => 'Repubblica Cooperativa di Guyana',
+    'completeName' => 'Repubblica Cooperativa di Guyana',
     'demonyms' => [
        'Guianési',
        'Guyanési',
@@ -1595,7 +1595,7 @@ return [
   ],
   'HK' => [
     'name' => 'Hong Kong',
-    'nameComplete' => 'Regione amministrativa speciale di Hong Kong della Repubblica Popolare Cinese',
+    'completeName' => 'Regione amministrativa speciale di Hong Kong della Repubblica Popolare Cinese',
     'demonyms' => [
        'Hongkonghesi',
     ],
@@ -1605,7 +1605,7 @@ return [
   ],
   'HM' => [
     'name' => 'Isole Heard e McDonald',
-    'nameComplete' => 'Territorio delle Isole Heard e McDonald',
+    'completeName' => 'Territorio delle Isole Heard e McDonald',
     'demonyms' => [
     ],
     'keywords' => [
@@ -1613,7 +1613,7 @@ return [
   ],
   'HN' => [
     'name' => 'Honduras',
-    'nameComplete' => 'Repubblica dell\'Honduras',
+    'completeName' => 'Repubblica dell\'Honduras',
     'demonyms' => [
        'Hondurégni',
        'Ondurégni',
@@ -1629,7 +1629,7 @@ return [
   ],
   'HR' => [
     'name' => 'Croazia',
-    'nameComplete' => 'Repubblica di Croazia',
+    'completeName' => 'Repubblica di Croazia',
     'demonyms' => [
        'Croati',
     ],
@@ -1646,7 +1646,7 @@ return [
   ],
   'HT' => [
     'name' => 'Haiti',
-    'nameComplete' => 'Repubblica di Haiti',
+    'completeName' => 'Repubblica di Haiti',
     'demonyms' => [
        'Haitiani',
     ],
@@ -1669,7 +1669,7 @@ return [
   ],
   'HU' => [
     'name' => 'Ungheria',
-    'nameComplete' => 'Ungheria',
+    'completeName' => 'Ungheria',
     'demonyms' => [
        'Ungherési',
        'Magiàri',
@@ -1692,7 +1692,7 @@ return [
   ],
   'ID' => [
     'name' => 'Indonesia',
-    'nameComplete' => 'Repubblica d\'Indonesia',
+    'completeName' => 'Repubblica d\'Indonesia',
     'demonyms' => [
        'Indonesiani',
     ],
@@ -1707,7 +1707,7 @@ return [
   ],
   'IE' => [
     'name' => 'Irlanda',
-    'nameComplete' => 'Repubblica d\'Irlanda',
+    'completeName' => 'Repubblica d\'Irlanda',
     'demonyms' => [
        'Irlandési',
     ],
@@ -1718,7 +1718,7 @@ return [
   ],
   'IL' => [
     'name' => 'Israele',
-    'nameComplete' => 'Stato d\'Israele',
+    'completeName' => 'Stato d\'Israele',
     'demonyms' => [
        'Israeliani',
     ],
@@ -1733,7 +1733,7 @@ return [
   ],
   'IM' => [
     'name' => 'Isola di Man',
-    'nameComplete' => 'Isola di Man',
+    'completeName' => 'Isola di Man',
     'demonyms' => [
        'Mannési',
     ],
@@ -1744,7 +1744,7 @@ return [
   ],
   'IN' => [
     'name' => 'India',
-    'nameComplete' => 'Repubblica dell\'India',
+    'completeName' => 'Repubblica dell\'India',
     'demonyms' => [
        'Indiani',
     ],
@@ -1756,7 +1756,7 @@ return [
   ],
   'IO' => [
     'name' => 'Territorio britannico dell\'oceano Indiano',
-    'nameComplete' => 'Territorio britannico dell\'oceano Indiano',
+    'completeName' => 'Territorio britannico dell\'oceano Indiano',
     'demonyms' => [
     ],
     'keywords' => [
@@ -1766,7 +1766,7 @@ return [
   ],
   'IQ' => [
     'name' => 'Iraq',
-    'nameComplete' => 'Repubblica d\'Iraq',
+    'completeName' => 'Repubblica d\'Iraq',
     'demonyms' => [
        'Irachèni',
        'Irakèni',
@@ -1783,7 +1783,7 @@ return [
   ],
   'IR' => [
     'name' => 'Iran',
-    'nameComplete' => 'Repubblica Islamica dell\'Iran',
+    'completeName' => 'Repubblica Islamica dell\'Iran',
     'demonyms' => [
        'Iraniani',
     ],
@@ -1800,7 +1800,7 @@ return [
   ],
   'IS' => [
     'name' => 'Islanda',
-    'nameComplete' => 'Repubblica d\'Islanda',
+    'completeName' => 'Repubblica d\'Islanda',
     'demonyms' => [
        'Islandési',
     ],
@@ -1810,7 +1810,7 @@ return [
   ],
   'IT' => [
     'name' => 'Italia',
-    'nameComplete' => 'Repubblica Italiana',
+    'completeName' => 'Repubblica Italiana',
     'demonyms' => [
        'Italiani',
     ],
@@ -1822,7 +1822,7 @@ return [
   ],
   'JE' => [
     'name' => 'Jersey',
-    'nameComplete' => 'Baliato di Jersey',
+    'completeName' => 'Baliato di Jersey',
     'demonyms' => [
        'Jersesi',
     ],
@@ -1834,7 +1834,7 @@ return [
   ],
   'JM' => [
     'name' => 'Giamaica',
-    'nameComplete' => 'Giamaica',
+    'completeName' => 'Giamaica',
     'demonyms' => [
        'Giamaicani',
     ],
@@ -1857,7 +1857,7 @@ return [
   ],
   'JO' => [
     'name' => 'Giordania',
-    'nameComplete' => 'Regno Hascemita di Giordania',
+    'completeName' => 'Regno Hascemita di Giordania',
     'demonyms' => [
        'Giordani',
        'Giordaniani',
@@ -1873,7 +1873,7 @@ return [
   ],
   'JP' => [
     'name' => 'Giappone',
-    'nameComplete' => 'Stato del Giappone',
+    'completeName' => 'Stato del Giappone',
     'demonyms' => [
        'Giapponési',
        'Nippònici',
@@ -1888,7 +1888,7 @@ return [
   ],
   'KE' => [
     'name' => 'Kenya',
-    'nameComplete' => 'Repubblica del Kenya',
+    'completeName' => 'Repubblica del Kenya',
     'demonyms' => [
        'Keniani',
        'Kenioti',
@@ -1902,7 +1902,7 @@ return [
   ],
   'KG' => [
     'name' => 'Kirghizistan',
-    'nameComplete' => 'Repubblica del Kirghizistan',
+    'completeName' => 'Repubblica del Kirghizistan',
     'demonyms' => [
        'Kirghiṡi',
        'Kirghiżi',
@@ -1922,7 +1922,7 @@ return [
   ],
   'KH' => [
     'name' => 'Cambogia',
-    'nameComplete' => 'Regno di Cambogia',
+    'completeName' => 'Regno di Cambogia',
     'demonyms' => [
        'Cambogiani',
     ],
@@ -1934,7 +1934,7 @@ return [
   ],
   'KI' => [
     'name' => 'Kiribati',
-    'nameComplete' => 'Repubblica delle Kiribati',
+    'completeName' => 'Repubblica delle Kiribati',
     'demonyms' => [
        'Kiribatési',
     ],
@@ -1944,7 +1944,7 @@ return [
   ],
   'KM' => [
     'name' => 'Comore',
-    'nameComplete' => 'Unione delle Comore',
+    'completeName' => 'Unione delle Comore',
     'demonyms' => [
        'Comoriani',
     ],
@@ -1956,7 +1956,7 @@ return [
   ],
   'KN' => [
     'name' => 'Saint Kitts e Nevis',
-    'nameComplete' => 'Federazione di Saint Kitts e Nevis',
+    'completeName' => 'Federazione di Saint Kitts e Nevis',
     'demonyms' => [
        'Nevisiani',
        'Cristoforiani',
@@ -1992,7 +1992,7 @@ return [
   ],
   'KP' => [
     'name' => 'Corea del Nord',
-    'nameComplete' => 'Repubblica Popolare Democratica di Corea',
+    'completeName' => 'Repubblica Popolare Democratica di Corea',
     'demonyms' => [
        'Coreani',
        'Nordcoreani',
@@ -2010,7 +2010,7 @@ return [
   ],
   'KR' => [
     'name' => 'Corea del Sud',
-    'nameComplete' => 'Repubblica di Corea',
+    'completeName' => 'Repubblica di Corea',
     'demonyms' => [
        'Coreani',
        'Sudcoreani',
@@ -2028,7 +2028,7 @@ return [
   ],
   'KW' => [
     'name' => 'Kuwait',
-    'nameComplete' => 'Stato del Kuwait',
+    'completeName' => 'Stato del Kuwait',
     'demonyms' => [
        'Kuwaitiani',
     ],
@@ -2040,7 +2040,7 @@ return [
   ],
   'KY' => [
     'name' => 'Isole Cayman',
-    'nameComplete' => 'Isole Cayman',
+    'completeName' => 'Isole Cayman',
     'demonyms' => [
        'Caymaniani',
        'Caymanesi',
@@ -2062,7 +2062,7 @@ return [
   ],
   'KZ' => [
     'name' => 'Kazakistan',
-    'nameComplete' => 'Repubblica del Kazakistan',
+    'completeName' => 'Repubblica del Kazakistan',
     'demonyms' => [
        'Każachi',
        'Każaki',
@@ -2078,7 +2078,7 @@ return [
   ],
   'LA' => [
     'name' => 'Laos',
-    'nameComplete' => 'Repubblica Popolare Democratica del Laos',
+    'completeName' => 'Repubblica Popolare Democratica del Laos',
     'demonyms' => [
        'Laotiani',
        'Laosiani',
@@ -2094,7 +2094,7 @@ return [
   ],
   'LB' => [
     'name' => 'Libano',
-    'nameComplete' => 'Repubblica Libanese',
+    'completeName' => 'Repubblica Libanese',
     'demonyms' => [
        'Libanési',
     ],
@@ -2104,7 +2104,7 @@ return [
   ],
   'LC' => [
     'name' => 'Santa Lucia',
-    'nameComplete' => 'Saint Lucia',
+    'completeName' => 'Saint Lucia',
     'demonyms' => [
        'Santaluciani',
     ],
@@ -2127,7 +2127,7 @@ return [
   ],
   'LI' => [
     'name' => 'Liechtenstein',
-    'nameComplete' => 'Principato del Liechtenstein',
+    'completeName' => 'Principato del Liechtenstein',
     'demonyms' => [
        'Liechtensteiniani',
     ],
@@ -2143,7 +2143,7 @@ return [
   ],
   'LK' => [
     'name' => 'Sri Lanka',
-    'nameComplete' => 'Repubblica Democratica Socialista dello Sri Lanka',
+    'completeName' => 'Repubblica Democratica Socialista dello Sri Lanka',
     'demonyms' => [
        'Srilankési',
        'Singalési',
@@ -2158,7 +2158,7 @@ return [
   ],
   'LR' => [
     'name' => 'Liberia',
-    'nameComplete' => 'Repubblica della Liberia',
+    'completeName' => 'Repubblica della Liberia',
     'demonyms' => [
        'Liberiani',
     ],
@@ -2170,7 +2170,7 @@ return [
   ],
   'LS' => [
     'name' => 'Lesotho',
-    'nameComplete' => 'Regno del Lesotho',
+    'completeName' => 'Regno del Lesotho',
     'demonyms' => [
        'Lesothiani',
     ],
@@ -2189,7 +2189,7 @@ return [
   ],
   'LT' => [
     'name' => 'Lituania',
-    'nameComplete' => 'Repubblica di Lituania',
+    'completeName' => 'Repubblica di Lituania',
     'demonyms' => [
        'Litüani',
     ],
@@ -2201,7 +2201,7 @@ return [
   ],
   'LU' => [
     'name' => 'Lussemburgo',
-    'nameComplete' => 'Granducato di Lussemburgo',
+    'completeName' => 'Granducato di Lussemburgo',
     'demonyms' => [
        'Lussemburghési',
     ],
@@ -2211,7 +2211,7 @@ return [
   ],
   'LV' => [
     'name' => 'Lettonia',
-    'nameComplete' => 'Repubblica di Lettonia',
+    'completeName' => 'Repubblica di Lettonia',
     'demonyms' => [
        'Lèttoni',
        'Lettóni',
@@ -2222,7 +2222,7 @@ return [
   ],
   'LY' => [
     'name' => 'Libia',
-    'nameComplete' => 'Stato della Libia',
+    'completeName' => 'Stato della Libia',
     'demonyms' => [
        'Lìbici',
     ],
@@ -2234,7 +2234,7 @@ return [
   ],
   'MA' => [
     'name' => 'Marocco',
-    'nameComplete' => 'Regno del Marocco',
+    'completeName' => 'Regno del Marocco',
     'demonyms' => [
        'Marocchini',
        'Marrocchini',
@@ -2250,7 +2250,7 @@ return [
   ],
   'MC' => [
     'name' => 'Monaco',
-    'nameComplete' => 'Principato di Monaco',
+    'completeName' => 'Principato di Monaco',
     'demonyms' => [
        'Monegaschi',
     ],
@@ -2262,7 +2262,7 @@ return [
   ],
   'MD' => [
     'name' => 'Moldavia',
-    'nameComplete' => 'Repubblica di Moldavia',
+    'completeName' => 'Repubblica di Moldavia',
     'demonyms' => [
        'Moldavi',
     ],
@@ -2274,7 +2274,7 @@ return [
   ],
   'ME' => [
     'name' => 'Montenegro',
-    'nameComplete' => 'Montenegro',
+    'completeName' => 'Montenegro',
     'demonyms' => [
        'Montenegrini',
     ],
@@ -2293,7 +2293,7 @@ return [
   ],
   'MF' => [
     'name' => 'Saint Martin',
-    'nameComplete' => 'Collettività d\'oltremare di Saint Martin',
+    'completeName' => 'Collettività d\'oltremare di Saint Martin',
     'demonyms' => [
        'Sanmartinesi',
        'Sammartinesi',
@@ -2317,7 +2317,7 @@ return [
   ],
   'MG' => [
     'name' => 'Madagascar',
-    'nameComplete' => 'Repubblica del Madagascar',
+    'completeName' => 'Repubblica del Madagascar',
     'demonyms' => [
        'Malgasci',
     ],
@@ -2330,7 +2330,7 @@ return [
   ],
   'MH' => [
     'name' => 'Isole Marshall',
-    'nameComplete' => 'Repubblica delle Isole Marshall',
+    'completeName' => 'Repubblica delle Isole Marshall',
     'demonyms' => [
        'Marshallési',
     ],
@@ -2343,7 +2343,7 @@ return [
   ],
   'MK' => [
     'name' => 'Macedonia del Nord',
-    'nameComplete' => 'Repubblica della Macedonia del Nord',
+    'completeName' => 'Repubblica della Macedonia del Nord',
     'demonyms' => [
        'Macèdoni',
        'Macèdoni del Nord',
@@ -2359,7 +2359,7 @@ return [
   ],
   'ML' => [
     'name' => 'Mali',
-    'nameComplete' => 'Repubblica del Mali',
+    'completeName' => 'Repubblica del Mali',
     'demonyms' => [
        'Maliani',
     ],
@@ -2371,7 +2371,7 @@ return [
   ],
   'MM' => [
     'name' => 'Myanmar',
-    'nameComplete' => 'Repubblica dell\'Unione del Myanmar',
+    'completeName' => 'Repubblica dell\'Unione del Myanmar',
     'demonyms' => [
        'Birmani',
     ],
@@ -2387,7 +2387,7 @@ return [
   ],
   'MN' => [
     'name' => 'Mongolia',
-    'nameComplete' => 'Mongolia',
+    'completeName' => 'Mongolia',
     'demonyms' => [
        'Mòngoli',
     ],
@@ -2401,7 +2401,7 @@ return [
   ],
   'MO' => [
     'name' => 'Macao',
-    'nameComplete' => 'Regione Amministrativa Speciale di Macao della Repubblica Popolare Cinese',
+    'completeName' => 'Regione Amministrativa Speciale di Macao della Repubblica Popolare Cinese',
     'demonyms' => [
        'Macaensi',
     ],
@@ -2414,7 +2414,7 @@ return [
   ],
   'MP' => [
     'name' => 'Isole Marianne Settentrionali',
-    'nameComplete' => 'Commonwealth delle Isole Marianne Settentrionali',
+    'completeName' => 'Commonwealth delle Isole Marianne Settentrionali',
     'demonyms' => [
        'Mariannènsi',
     ],
@@ -2425,7 +2425,7 @@ return [
   ],
   'MQ' => [
     'name' => 'Martinica',
-    'nameComplete' => 'Collettività territoriale della Martinica',
+    'completeName' => 'Collettività territoriale della Martinica',
     'demonyms' => [
        'Martinicani',
     ],
@@ -2449,7 +2449,7 @@ return [
   ],
   'MR' => [
     'name' => 'Mauritania',
-    'nameComplete' => 'Repubblica Islamica della Mauritania',
+    'completeName' => 'Repubblica Islamica della Mauritania',
     'demonyms' => [
        'Mauritaniani',
        'Mauritani',
@@ -2467,7 +2467,7 @@ return [
   ],
   'MS' => [
     'name' => 'Montserrat',
-    'nameComplete' => 'Colonia di Montserrat',
+    'completeName' => 'Colonia di Montserrat',
     'demonyms' => [
        'Montserratiani',
     ],
@@ -2490,7 +2490,7 @@ return [
   ],
   'MT' => [
     'name' => 'Malta',
-    'nameComplete' => 'Repubblica di Malta',
+    'completeName' => 'Repubblica di Malta',
     'demonyms' => [
        'Maltési',
     ],
@@ -2500,7 +2500,7 @@ return [
   ],
   'MU' => [
     'name' => 'Mauritius',
-    'nameComplete' => 'Repubblica di Mauritius',
+    'completeName' => 'Repubblica di Mauritius',
     'demonyms' => [
        'Mauriziani',
     ],
@@ -2512,7 +2512,7 @@ return [
   ],
   'MV' => [
     'name' => 'Maldive',
-    'nameComplete' => 'Repubblica delle Maldive',
+    'completeName' => 'Repubblica delle Maldive',
     'demonyms' => [
        'Maldiviani',
     ],
@@ -2528,7 +2528,7 @@ return [
   ],
   'MW' => [
     'name' => 'Malawi',
-    'nameComplete' => 'Repubblica di Malawi',
+    'completeName' => 'Repubblica di Malawi',
     'demonyms' => [
        'Malawènsi',
        'Malau̯ènsi',
@@ -2551,7 +2551,7 @@ return [
   ],
   'MX' => [
     'name' => 'Messico',
-    'nameComplete' => 'Stati Uniti Messicani',
+    'completeName' => 'Stati Uniti Messicani',
     'demonyms' => [
        'Messicani',
     ],
@@ -2564,7 +2564,7 @@ return [
   ],
   'MY' => [
     'name' => 'Malesia',
-    'nameComplete' => 'Malaysia',
+    'completeName' => 'Malaysia',
     'demonyms' => [
        'Malayṡiani',
        'Malési',
@@ -2586,7 +2586,7 @@ return [
   ],
   'MZ' => [
     'name' => 'Mozambico',
-    'nameComplete' => 'Repubblica del Mozambico',
+    'completeName' => 'Repubblica del Mozambico',
     'demonyms' => [
        'Możambicani',
     ],
@@ -2598,7 +2598,7 @@ return [
   ],
   'NA' => [
     'name' => 'Namibia',
-    'nameComplete' => 'Repubblica della Namibia',
+    'completeName' => 'Repubblica della Namibia',
     'demonyms' => [
        'Namibiani',
     ],
@@ -2611,7 +2611,7 @@ return [
   ],
   'NC' => [
     'name' => 'Nuova Caledonia',
-    'nameComplete' => 'Governo della Nuova Caledonia',
+    'completeName' => 'Governo della Nuova Caledonia',
     'demonyms' => [
        'Neocaledoni',
        'Neocaledoniani',
@@ -2627,7 +2627,7 @@ return [
   ],
   'NE' => [
     'name' => 'Niger',
-    'nameComplete' => 'Repubblica del Niger',
+    'completeName' => 'Repubblica del Niger',
     'demonyms' => [
        'Nigerini',
     ],
@@ -2639,7 +2639,7 @@ return [
   ],
   'NF' => [
     'name' => 'Isola Norfolk',
-    'nameComplete' => 'Territorio dell\'isola Norfolk',
+    'completeName' => 'Territorio dell\'isola Norfolk',
     'demonyms' => [
        'Norfolcani',
        'Norfolkiani',
@@ -2655,7 +2655,7 @@ return [
   ],
   'NG' => [
     'name' => 'Nigeria',
-    'nameComplete' => 'Repubblica Federale della Nigeria',
+    'completeName' => 'Repubblica Federale della Nigeria',
     'demonyms' => [
        'Nigeriani',
     ],
@@ -2667,7 +2667,7 @@ return [
   ],
   'NI' => [
     'name' => 'Nicaragua',
-    'nameComplete' => 'Repubblica del Nicaragua',
+    'completeName' => 'Repubblica del Nicaragua',
     'demonyms' => [
        'Nicaraguènsi',
        'Nicaraguési',
@@ -2683,7 +2683,7 @@ return [
   ],
   'NL' => [
     'name' => 'Paesi Bassi',
-    'nameComplete' => 'Regno dei Paesi Bassi',
+    'completeName' => 'Regno dei Paesi Bassi',
     'demonyms' => [
        'Olandési',
        'Neerlandési',
@@ -2698,7 +2698,7 @@ return [
   ],
   'NO' => [
     'name' => 'Norvegia',
-    'nameComplete' => 'Regno di Norvegia',
+    'completeName' => 'Regno di Norvegia',
     'demonyms' => [
        'Norvegési',
     ],
@@ -2708,7 +2708,7 @@ return [
   ],
   'NP' => [
     'name' => 'Nepal',
-    'nameComplete' => 'Repubblica Federale Democratica del Nepal',
+    'completeName' => 'Repubblica Federale Democratica del Nepal',
     'demonyms' => [
        'Nepalési',
     ],
@@ -2722,7 +2722,7 @@ return [
   ],
   'NR' => [
     'name' => 'Nauru',
-    'nameComplete' => 'Repubblica di Nauru',
+    'completeName' => 'Repubblica di Nauru',
     'demonyms' => [
        'Nauruani',
     ],
@@ -2742,7 +2742,7 @@ return [
   ],
   'NU' => [
     'name' => 'Niue',
-    'nameComplete' => 'Niue',
+    'completeName' => 'Niue',
     'demonyms' => [
        'Niueani',
     ],
@@ -2760,7 +2760,7 @@ return [
   ],
   'NZ' => [
     'name' => 'Nuova Zelanda',
-    'nameComplete' => 'Nuova Zelanda',
+    'completeName' => 'Nuova Zelanda',
     'demonyms' => [
        'Neożelandési',
     ],
@@ -2771,7 +2771,7 @@ return [
   ],
   'OM' => [
     'name' => 'Oman',
-    'nameComplete' => 'Sultanato dell\'Oman',
+    'completeName' => 'Sultanato dell\'Oman',
     'demonyms' => [
        'Omaniti',
     ],
@@ -2785,7 +2785,7 @@ return [
   ],
   'PA' => [
     'name' => 'Panama',
-    'nameComplete' => 'Repubblica di Panama',
+    'completeName' => 'Repubblica di Panama',
     'demonyms' => [
        'Panamènsi',
     ],
@@ -2797,7 +2797,7 @@ return [
   ],
   'PE' => [
     'name' => 'Perù',
-    'nameComplete' => 'Repubblica del Perù',
+    'completeName' => 'Repubblica del Perù',
     'demonyms' => [
        'Peruviani',
     ],
@@ -2813,7 +2813,7 @@ return [
   ],
   'PF' => [
     'name' => 'Polinesia Francese',
-    'nameComplete' => 'Collettività d\'oltremare della Polinesia Francese',
+    'completeName' => 'Collettività d\'oltremare della Polinesia Francese',
     'demonyms' => [
        'Polineṡiani',
     ],
@@ -2826,7 +2826,7 @@ return [
   ],
   'PG' => [
     'name' => 'Papua Nuova Guinea',
-    'nameComplete' => 'Stato Indipendente della Papua Nuova Guinea',
+    'completeName' => 'Stato Indipendente della Papua Nuova Guinea',
     'demonyms' => [
        'Papüani',
     ],
@@ -2838,7 +2838,7 @@ return [
   ],
   'PH' => [
     'name' => 'Filippine',
-    'nameComplete' => 'Repubblica delle Filippine',
+    'completeName' => 'Repubblica delle Filippine',
     'demonyms' => [
        'Filippini',
     ],
@@ -2849,7 +2849,7 @@ return [
   ],
   'PK' => [
     'name' => 'Pakistan',
-    'nameComplete' => 'Repubblica Islamica del Pakistan',
+    'completeName' => 'Repubblica Islamica del Pakistan',
     'demonyms' => [
        'Pachistani',
     ],
@@ -2866,7 +2866,7 @@ return [
   ],
   'PL' => [
     'name' => 'Polonia',
-    'nameComplete' => 'Repubblica di Polonia',
+    'completeName' => 'Repubblica di Polonia',
     'demonyms' => [
        'Polacchi',
        'Pollacchi',
@@ -2882,7 +2882,7 @@ return [
   ],
   'PM' => [
     'name' => 'Saint Pierre e Miquelon',
-    'nameComplete' => 'Collettività d\'oltremare di Saint-Pierre and Miquelon',
+    'completeName' => 'Collettività d\'oltremare di Saint-Pierre and Miquelon',
     'demonyms' => [
        'Miqueloniani',
        'Miquelonesi',
@@ -2899,7 +2899,7 @@ return [
   ],
   'PN' => [
     'name' => 'Pitcairn',
-    'nameComplete' => 'Isole Pitcairn, Henderson, Ducie e Oeno',
+    'completeName' => 'Isole Pitcairn, Henderson, Ducie e Oeno',
     'demonyms' => [
        'Pitcairnesi',
     ],
@@ -2909,7 +2909,7 @@ return [
   ],
   'PR' => [
     'name' => 'Portorico',
-    'nameComplete' => 'Stato libero associato di Porto Rico',
+    'completeName' => 'Stato libero associato di Porto Rico',
     'demonyms' => [
        'Portoricani',
     ],
@@ -2943,7 +2943,7 @@ return [
   ],
   'PS' => [
     'name' => 'Palestina',
-    'nameComplete' => 'Stato di Palestina',
+    'completeName' => 'Stato di Palestina',
     'demonyms' => [
        'Palestinési',
     ],
@@ -2957,7 +2957,7 @@ return [
   ],
   'PT' => [
     'name' => 'Portogallo',
-    'nameComplete' => 'Repubblica Portoghese',
+    'completeName' => 'Repubblica Portoghese',
     'demonyms' => [
        'Portoghési',
        'Lusitani',
@@ -2970,7 +2970,7 @@ return [
   ],
   'PW' => [
     'name' => 'Palau',
-    'nameComplete' => 'Repubblica di Palau',
+    'completeName' => 'Repubblica di Palau',
     'demonyms' => [
        'Palaulani',
     ],
@@ -2982,7 +2982,7 @@ return [
   ],
   'PY' => [
     'name' => 'Paraguay',
-    'nameComplete' => 'Repubblica del Paraguay',
+    'completeName' => 'Repubblica del Paraguay',
     'demonyms' => [
        'Paraguaiani',
        'Paraguayani',
@@ -3002,7 +3002,7 @@ return [
   ],
   'QA' => [
     'name' => 'Qatar',
-    'nameComplete' => 'Stato del Qatar',
+    'completeName' => 'Stato del Qatar',
     'demonyms' => [
        'Qatariani',
     ],
@@ -3040,7 +3040,7 @@ return [
   ],
   'RE' => [
     'name' => 'La Riunione',
-    'nameComplete' => 'Dipartimento della Réunion',
+    'completeName' => 'Dipartimento della Réunion',
     'demonyms' => [
        'Reunionési',
     ],
@@ -3051,7 +3051,7 @@ return [
   ],
   'RO' => [
     'name' => 'Romania',
-    'nameComplete' => 'Romania',
+    'completeName' => 'Romania',
     'demonyms' => [
        'Romèni',
        'Rumèni',
@@ -3067,7 +3067,7 @@ return [
   ],
   'RS' => [
     'name' => 'Serbia',
-    'nameComplete' => 'Repubblica di Serbia',
+    'completeName' => 'Repubblica di Serbia',
     'demonyms' => [
        'Sèrbi',
     ],
@@ -3084,7 +3084,7 @@ return [
   ],
   'RU' => [
     'name' => 'Russia',
-    'nameComplete' => 'Federazione Russa',
+    'completeName' => 'Federazione Russa',
     'demonyms' => [
        'Russi',
     ],
@@ -3095,7 +3095,7 @@ return [
   ],
   'RW' => [
     'name' => 'Ruanda',
-    'nameComplete' => 'Repubblica del Ruanda',
+    'completeName' => 'Repubblica del Ruanda',
     'demonyms' => [
        'Ruandési',
     ],
@@ -3105,7 +3105,7 @@ return [
   ],
   'SA' => [
     'name' => 'Arabia Saudita',
-    'nameComplete' => 'Regno dell\'Arabia Saudita',
+    'completeName' => 'Regno dell\'Arabia Saudita',
     'demonyms' => [
        'Sauditi',
     ],
@@ -3118,7 +3118,7 @@ return [
   ],
   'SB' => [
     'name' => 'Isole Salomone',
-    'nameComplete' => 'Isole Salomone',
+    'completeName' => 'Isole Salomone',
     'demonyms' => [
        'Salomonesi',
     ],
@@ -3128,7 +3128,7 @@ return [
   ],
   'SC' => [
     'name' => 'Seychelles',
-    'nameComplete' => 'Repubblica delle Seychelles',
+    'completeName' => 'Repubblica delle Seychelles',
     'demonyms' => [
        'Seychellesi',
        'Seicellesi',
@@ -3140,7 +3140,7 @@ return [
   ],
   'SD' => [
     'name' => 'Sudan',
-    'nameComplete' => 'Repubblica del Sudan',
+    'completeName' => 'Repubblica del Sudan',
     'demonyms' => [
        'Sudanési',
     ],
@@ -3150,7 +3150,7 @@ return [
   ],
   'SE' => [
     'name' => 'Svezia',
-    'nameComplete' => 'Regno di Svezia',
+    'completeName' => 'Regno di Svezia',
     'demonyms' => [
        'Svedési',
        'Svezzési',
@@ -3162,7 +3162,7 @@ return [
   ],
   'SG' => [
     'name' => 'Singapore',
-    'nameComplete' => 'Repubblica di Singapore',
+    'completeName' => 'Repubblica di Singapore',
     'demonyms' => [
        'Singaporiani',
     ],
@@ -3174,7 +3174,7 @@ return [
   ],
   'SH' => [
     'name' => 'Sant\'Elena',
-    'nameComplete' => 'Isole di Sant\'Elena, Ascensione e Tristan da Cunha',
+    'completeName' => 'Isole di Sant\'Elena, Ascensione e Tristan da Cunha',
     'demonyms' => [
        'Tristaniani',
        'Ascensionesi',
@@ -3192,7 +3192,7 @@ return [
   ],
   'SI' => [
     'name' => 'Slovenia',
-    'nameComplete' => 'Repubblica di Slovenia',
+    'completeName' => 'Repubblica di Slovenia',
     'demonyms' => [
        'Slovèni',
     ],
@@ -3209,7 +3209,7 @@ return [
   ],
   'SJ' => [
     'name' => 'Svalbard e Jan Mayen',
-    'nameComplete' => 'Isole Svalbard e Jan Mayen',
+    'completeName' => 'Isole Svalbard e Jan Mayen',
     'demonyms' => [
        'Svalbardesi',
     ],
@@ -3219,7 +3219,7 @@ return [
   ],
   'SK' => [
     'name' => 'Slovacchia',
-    'nameComplete' => 'Repubblica Slovacca',
+    'completeName' => 'Repubblica Slovacca',
     'demonyms' => [
        'Slovàcchi',
     ],
@@ -3230,7 +3230,7 @@ return [
   ],
   'SL' => [
     'name' => 'Sierra Leone',
-    'nameComplete' => 'Repubblica della Sierra Leone',
+    'completeName' => 'Repubblica della Sierra Leone',
     'demonyms' => [
        'Sierraleonési',
     ],
@@ -3240,7 +3240,7 @@ return [
   ],
   'SM' => [
     'name' => 'San Marino',
-    'nameComplete' => 'Repubblica di San Marino',
+    'completeName' => 'Repubblica di San Marino',
     'demonyms' => [
        'Sammarinési',
        'Sanmarinési',
@@ -3253,7 +3253,7 @@ return [
   ],
   'SN' => [
     'name' => 'Senegal',
-    'nameComplete' => 'Repubblica del Senegal',
+    'completeName' => 'Repubblica del Senegal',
     'demonyms' => [
        'Senegalési',
     ],
@@ -3263,7 +3263,7 @@ return [
   ],
   'SO' => [
     'name' => 'Somalia',
-    'nameComplete' => 'Repubblica Federale di Somalia',
+    'completeName' => 'Repubblica Federale di Somalia',
     'demonyms' => [
        'Sòmali',
        'Somàli',
@@ -3276,7 +3276,7 @@ return [
   ],
   'SR' => [
     'name' => 'Suriname',
-    'nameComplete' => 'Repubblica del Suriname',
+    'completeName' => 'Repubblica del Suriname',
     'demonyms' => [
        'Surinamensi',
     ],
@@ -3288,7 +3288,7 @@ return [
   ],
   'SS' => [
     'name' => 'Sud Sudan',
-    'nameComplete' => 'Repubblica del Sudan del Sud',
+    'completeName' => 'Repubblica del Sudan del Sud',
     'demonyms' => [
        'Sudanési del sud',
        'Sudsudanési',
@@ -3300,7 +3300,7 @@ return [
   ],
   'ST' => [
     'name' => 'São Tomé e Príncipe',
-    'nameComplete' => 'Repubblica Democratica di São Tomé e Príncipe',
+    'completeName' => 'Repubblica Democratica di São Tomé e Príncipe',
     'demonyms' => [
        'Saotomensi',
     ],
@@ -3314,7 +3314,7 @@ return [
   ],
   'SV' => [
     'name' => 'El Salvador',
-    'nameComplete' => 'Repubblica di El Salvador',
+    'completeName' => 'Repubblica di El Salvador',
     'demonyms' => [
        'Salvadorégni',
     ],
@@ -3330,7 +3330,7 @@ return [
   ],
   'SX' => [
     'name' => 'Sint Maarten',
-    'nameComplete' => 'Sint Maarten',
+    'completeName' => 'Sint Maarten',
     'demonyms' => [
        'Sanmartinesi',
        'Sammartinesi',
@@ -3356,7 +3356,7 @@ return [
   ],
   'SY' => [
     'name' => 'Siria',
-    'nameComplete' => 'Repubblica Araba di Siria',
+    'completeName' => 'Repubblica Araba di Siria',
     'demonyms' => [
        'Siriani',
     ],
@@ -3372,7 +3372,7 @@ return [
   ],
   'SZ' => [
     'name' => 'eSwatini',
-    'nameComplete' => 'Regno di eSwatini',
+    'completeName' => 'Regno di eSwatini',
     'demonyms' => [
        'Swati',
        'Swazi',
@@ -3389,7 +3389,7 @@ return [
   ],
   'TC' => [
     'name' => 'Isole Turks e Caicos',
-    'nameComplete' => 'Isole di Turks and Caicos',
+    'completeName' => 'Isole di Turks and Caicos',
     'demonyms' => [
        'Turks',
        'Caicosiani',
@@ -3406,7 +3406,7 @@ return [
   ],
   'TD' => [
     'name' => 'Ciad',
-    'nameComplete' => 'Repubblica del Ciad',
+    'completeName' => 'Repubblica del Ciad',
     'demonyms' => [
        'Ciadiani',
     ],
@@ -3418,7 +3418,7 @@ return [
   ],
   'TF' => [
     'name' => 'Terre Australi e Antartiche Francesi',
-    'nameComplete' => 'Territorio delle Terre Australi e Antartiche Francesi',
+    'completeName' => 'Territorio delle Terre Australi e Antartiche Francesi',
     'demonyms' => [
     ],
     'keywords' => [
@@ -3428,7 +3428,7 @@ return [
   ],
   'TG' => [
     'name' => 'Togo',
-    'nameComplete' => 'Repubblica togolese',
+    'completeName' => 'Repubblica togolese',
     'demonyms' => [
        'Togolési',
     ],
@@ -3437,7 +3437,7 @@ return [
   ],
   'TH' => [
     'name' => 'Tailandia',
-    'nameComplete' => 'Regno di Thailandia',
+    'completeName' => 'Regno di Thailandia',
     'demonyms' => [
        'Thailandési',
        'Tailandési',
@@ -3449,7 +3449,7 @@ return [
   ],
   'TJ' => [
     'name' => 'Tagikistan',
-    'nameComplete' => 'Repubblica del Tagikistan',
+    'completeName' => 'Repubblica del Tagikistan',
     'demonyms' => [
        'Tagiki',
        'Tagichi',
@@ -3469,7 +3469,7 @@ return [
   ],
   'TK' => [
     'name' => 'Tokelau',
-    'nameComplete' => 'Isole Tokelau',
+    'completeName' => 'Isole Tokelau',
     'demonyms' => [
        'Tokelauani',
     ],
@@ -3483,7 +3483,7 @@ return [
   ],
   'TL' => [
     'name' => 'Timor Est',
-    'nameComplete' => 'Repubblica Democratica di Timor Est',
+    'completeName' => 'Repubblica Democratica di Timor Est',
     'demonyms' => [
        'Timorési',
     ],
@@ -3493,7 +3493,7 @@ return [
   ],
   'TM' => [
     'name' => 'Turkmenistan',
-    'nameComplete' => 'Repubblica del Turkmenistan',
+    'completeName' => 'Repubblica del Turkmenistan',
     'demonyms' => [
        'Turkmèni',
     ],
@@ -3509,7 +3509,7 @@ return [
   ],
   'TN' => [
     'name' => 'Tunisia',
-    'nameComplete' => 'Repubblica di Tunisia',
+    'completeName' => 'Repubblica di Tunisia',
     'demonyms' => [
        'Tuniṡini',
     ],
@@ -3521,7 +3521,7 @@ return [
   ],
   'TO' => [
     'name' => 'Tonga',
-    'nameComplete' => 'Regno di Tonga',
+    'completeName' => 'Regno di Tonga',
     'demonyms' => [
        'Tongani',
     ],
@@ -3533,7 +3533,7 @@ return [
   ],
   'TR' => [
     'name' => 'Turchia',
-    'nameComplete' => 'Repubblica di Turchia',
+    'completeName' => 'Repubblica di Turchia',
     'demonyms' => [
        'Turchi',
     ],
@@ -3545,7 +3545,7 @@ return [
   ],
   'TT' => [
     'name' => 'Trinidad e Tobago',
-    'nameComplete' => 'Repubblica di Trinidad e Tobago',
+    'completeName' => 'Repubblica di Trinidad e Tobago',
     'demonyms' => [
        'Trinidadiani',
        'Tobagani',
@@ -3561,7 +3561,7 @@ return [
   ],
   'TV' => [
     'name' => 'Tuvalu',
-    'nameComplete' => 'Tuvalu',
+    'completeName' => 'Tuvalu',
     'demonyms' => [
        'Tuvalüani',
     ],
@@ -3573,7 +3573,7 @@ return [
   ],
   'TW' => [
     'name' => 'Taiwan',
-    'nameComplete' => 'Repubblica di Cina',
+    'completeName' => 'Repubblica di Cina',
     'demonyms' => [
        'Taiwanési',
     ],
@@ -3586,7 +3586,7 @@ return [
   ],
   'TZ' => [
     'name' => 'Tanzania',
-    'nameComplete' => 'Repubblica Unita di Tanzania',
+    'completeName' => 'Repubblica Unita di Tanzania',
     'demonyms' => [
        'Tanżaniani',
     ],
@@ -3598,7 +3598,7 @@ return [
   ],
   'UA' => [
     'name' => 'Ucraina',
-    'nameComplete' => 'Ucraina',
+    'completeName' => 'Ucraina',
     'demonyms' => [
        'Ucràini',
     ],
@@ -3613,7 +3613,7 @@ return [
   ],
   'UG' => [
     'name' => 'Uganda',
-    'nameComplete' => 'Repubblica dell\'Uganda',
+    'completeName' => 'Repubblica dell\'Uganda',
     'demonyms' => [
        'Ugandési',
     ],
@@ -3623,7 +3623,7 @@ return [
   ],
   'UM' => [
     'name' => 'Isole minori esterne degli Stati Uniti',
-    'nameComplete' => 'Isole minori esterne degli Stati Uniti',
+    'completeName' => 'Isole minori esterne degli Stati Uniti',
     'demonyms' => [
        'Statunitènsi',
     ],
@@ -3653,7 +3653,7 @@ return [
   ],
   'US' => [
     'name' => 'Stati Uniti',
-    'nameComplete' => 'Stati Uniti d\'America',
+    'completeName' => 'Stati Uniti d\'America',
     'demonyms' => [
        'Statunitènsi',
        'Americani',
@@ -3680,7 +3680,7 @@ return [
   ],
   'UY' => [
     'name' => 'Uruguay',
-    'nameComplete' => 'Repubblica Orientale dell\'Uruguay',
+    'completeName' => 'Repubblica Orientale dell\'Uruguay',
     'demonyms' => [
        'Uruguaiani',
        'Uruguayani',
@@ -3700,7 +3700,7 @@ return [
   ],
   'UZ' => [
     'name' => 'Uzbekistan',
-    'nameComplete' => 'Repubblica dell\'Uzbekistan',
+    'completeName' => 'Repubblica dell\'Uzbekistan',
     'demonyms' => [
        'Użbèki',
        'Usbèki',
@@ -3728,7 +3728,7 @@ return [
   ],
   'VA' => [
     'name' => 'Città del Vaticano',
-    'nameComplete' => 'Vatican City State',
+    'completeName' => 'Vatican City State',
     'demonyms' => [
        'Vaticani',
     ],
@@ -3748,7 +3748,7 @@ return [
   ],
   'VC' => [
     'name' => 'Saint Vincent e Grenadine',
-    'nameComplete' => 'Saint Vincent e Grenadine',
+    'completeName' => 'Saint Vincent e Grenadine',
     'demonyms' => [
        'Sanvincentini',
     ],
@@ -3771,7 +3771,7 @@ return [
   ],
   'VE' => [
     'name' => 'Venezuela',
-    'nameComplete' => 'Repubblica Bolivariana del Venezuela',
+    'completeName' => 'Repubblica Bolivariana del Venezuela',
     'demonyms' => [
        'Venezuelani',
        'Veneżuelani',
@@ -3789,7 +3789,7 @@ return [
   ],
   'VG' => [
     'name' => 'Isole Vergini Britanniche',
-    'nameComplete' => 'Isole Vergini Britanniche',
+    'completeName' => 'Isole Vergini Britanniche',
     'demonyms' => [
        'Verginiani',
     ],
@@ -3813,7 +3813,7 @@ return [
   ],
   'VI' => [
     'name' => 'Isole Vergini Americane',
-    'nameComplete' => 'Isole Vergini degli Stati Uniti',
+    'completeName' => 'Isole Vergini degli Stati Uniti',
     'demonyms' => [
        'Verginiani',
     ],
@@ -3837,7 +3837,7 @@ return [
   ],
   'VN' => [
     'name' => 'Vietnam',
-    'nameComplete' => 'Repubblica Socialista del Vietnam',
+    'completeName' => 'Repubblica Socialista del Vietnam',
     'demonyms' => [
        'Vietnamiti',
     ],
@@ -3850,7 +3850,7 @@ return [
   ],
   'VU' => [
     'name' => 'Vanuatu',
-    'nameComplete' => 'Repubblica di Vanuatu',
+    'completeName' => 'Repubblica di Vanuatu',
     'demonyms' => [
        'Vanuatiani',
     ],
@@ -3865,7 +3865,7 @@ return [
   ],
   'WF' => [
     'name' => 'Wallis e Futuna',
-    'nameComplete' => 'Collettività d\'oltremare delle isole Wallis e Futuna',
+    'completeName' => 'Collettività d\'oltremare delle isole Wallis e Futuna',
     'demonyms' => [
        'Wallisiani',
        'Futuniani',
@@ -3889,7 +3889,7 @@ return [
   ],
   'WS' => [
     'name' => 'Samoa',
-    'nameComplete' => 'Stato indipendente di Samoa',
+    'completeName' => 'Stato indipendente di Samoa',
     'demonyms' => [
        'Samoani',
     ],
@@ -3901,7 +3901,7 @@ return [
   ],
   'YE' => [
     'name' => 'Yemen',
-    'nameComplete' => 'Repubblica dello Yemen',
+    'completeName' => 'Repubblica dello Yemen',
     'demonyms' => [
        'Yemeniti',
     ],
@@ -3913,7 +3913,7 @@ return [
   ],
   'YT' => [
     'name' => 'Mayotte',
-    'nameComplete' => 'Collettività dipartimentale di Mayotte',
+    'completeName' => 'Collettività dipartimentale di Mayotte',
     'demonyms' => [
        'Maoresi',
     ],
@@ -3934,7 +3934,7 @@ return [
   ],
   'ZA' => [
     'name' => 'Sud Africa',
-    'nameComplete' => 'Repubblica del Sudafrica',
+    'completeName' => 'Repubblica del Sudafrica',
     'demonyms' => [
        'Sud-Africani',
        'Sudafricani',
@@ -3950,7 +3950,7 @@ return [
   ],
   'ZM' => [
     'name' => 'Zambia',
-    'nameComplete' => 'Repubblica dello Zambia',
+    'completeName' => 'Repubblica dello Zambia',
     'demonyms' => [
        'Zambiano',
     ],
@@ -3963,7 +3963,7 @@ return [
   ],
   'ZW' => [
     'name' => 'Zimbabwe',
-    'nameComplete' => 'Repubblica dello Zimbabwe',
+    'completeName' => 'Repubblica dello Zimbabwe',
     'demonyms' => [
        'Zimbabwesi',
     ],

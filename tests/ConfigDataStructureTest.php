@@ -785,10 +785,10 @@ final class ConfigDataStructureTest extends TestCase
                         $lang . '.countries` dataset'
                     );
                     $this->assertArrayHasKey(
-                        'nameComplete',
+                        'completeName',
                         $countries[$cc],
                         'The country code `' . $cc . '` has the missing property ' .
-                        '`nameComplete` in `translations.' . $lang . '.countries` dataset'
+                        '`completeName` in `translations.' . $lang . '.countries` dataset'
                     );
                     $this->assertArrayHasKey(
                         'demonyms',
@@ -816,13 +816,13 @@ final class ConfigDataStructureTest extends TestCase
                     );
 
                     $this->assertIsString(
-                        $countries[$cc]['nameComplete'],
-                        'The country code `' . $cc . '` property `nameComplete` must be string ' .
+                        $countries[$cc]['completeName'],
+                        'The country code `' . $cc . '` property `completeName` must be string ' .
                         'in `translations.' . $lang . '.countries` dataset'
                     );
                     $this->assertNotEmpty(
-                        trim(preg_replace('/\s+/u', '', $countries[$cc]['nameComplete'])),
-                        'The country code `' . $cc . '` has the property `nameComplete` as ' .
+                        trim(preg_replace('/\s+/u', '', $countries[$cc]['completeName'])),
+                        'The country code `' . $cc . '` has the property `completeName` as ' .
                         'empty in `translations.' . $lang . '.countries` dataset'
                     );
 
