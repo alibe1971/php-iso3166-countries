@@ -7,7 +7,7 @@
             "convention",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AR",
             "AU",
             "BR",
@@ -40,7 +40,7 @@
             "convention",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "CA",
             "FR",
             "DE",
@@ -62,7 +62,7 @@
             "convention",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AT",
             "BE",
             "HR",
@@ -101,7 +101,7 @@
             "convention",
             "security"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "AL",
             "DZ",
@@ -303,7 +303,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "DZ",
             "EG",
             "LY",
@@ -375,7 +375,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "DZ",
             "EG",
             "LY",
@@ -394,7 +394,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "IO",
             "BI",
             "KM",
@@ -459,7 +459,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "IO",
             "BI",
             "KM",
@@ -493,7 +493,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "AO",
             "CM",
             "CF",
@@ -514,7 +514,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "BW",
             "SZ",
             "LS",
@@ -531,7 +531,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "BJ",
             "BF",
             "CV",
@@ -560,7 +560,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "AI",
             "AG",
             "AW",
@@ -629,7 +629,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AI",
             "AG",
             "AW",
@@ -693,7 +693,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "AI",
             "AG",
             "AW",
@@ -733,7 +733,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "BZ",
             "CR",
             "SV",
@@ -753,7 +753,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "AR",
             "BO",
             "BV",
@@ -781,7 +781,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "BM",
             "CA",
             "GL",
@@ -798,7 +798,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "AQ"
         ],
         "NOTES (not included in the build)": [
@@ -814,7 +814,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "KZ",
             "KG",
             "TJ",
@@ -876,7 +876,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "KZ",
             "KG",
             "TJ",
@@ -893,7 +893,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "CN",
             "HK",
             "MO",
@@ -912,7 +912,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "BN",
             "KH",
             "ID",
@@ -935,7 +935,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "BD",
             "BT",
@@ -956,7 +956,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AM",
             "AZ",
             "BH",
@@ -986,7 +986,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "BY",
             "BG",
             "CZ",
@@ -1057,7 +1057,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "BY",
             "BG",
             "CZ",
@@ -1079,7 +1079,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AX",
             "GG",
             "JE",
@@ -1109,7 +1109,7 @@
             "geography",
             "subdivision"
         ],
-        "set": [
+        "countryCodes": [
             "GG",
             "JE"
         ],
@@ -1125,7 +1125,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AL",
             "AD",
             "BA",
@@ -1153,7 +1153,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AT",
             "BE",
             "FR",
@@ -1174,7 +1174,7 @@
             "geography",
             "region"
         ],
-        "set": [
+        "countryCodes": [
             "AU",
             "CX",
             "CC",
@@ -1215,7 +1215,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AU",
             "CX",
             "CC",
@@ -1233,7 +1233,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "FJ",
             "NC",
             "PG",
@@ -1250,7 +1250,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "GU",
             "KI",
             "MH",
@@ -1270,7 +1270,7 @@
             "geography",
             "subregion"
         ],
-        "set": [
+        "countryCodes": [
             "AS",
             "CK",
             "PF",
@@ -1292,7 +1292,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "BO",
             "BR",
             "CO",
@@ -1313,7 +1313,7 @@
             "geopolitics",
             "economy"
         ],
-        "set": [
+        "countryCodes": [
             "ID",
             "MY",
             "PH",
@@ -1335,7 +1335,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "DZ",
             "AO",
             "BJ",
@@ -1398,7 +1398,7 @@
             "organization",
             "economy"
         ],
-        "set": [
+        "countryCodes": [
             "BR",
             "RU",
             "IN",
@@ -1415,7 +1415,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AM",
             "AZ",
             "BY",
@@ -1436,7 +1436,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AD",
             "AL",
             "AM",
@@ -1495,7 +1495,7 @@
             "organization",
             "military"
         ],
-        "set": [
+        "countryCodes": [
             "AM",
             "BY",
             "KZ",
@@ -1513,7 +1513,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "GB",
             "CA",
             "ZA",
@@ -1581,7 +1581,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AG",
             "AU",
             "BS",
@@ -1608,7 +1608,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AT",
             "BE",
             "BG",
@@ -1647,7 +1647,7 @@
             "organization",
             "finance"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "LR",
             "AL",
@@ -1848,7 +1848,7 @@
             "organization",
             "jurisprudence"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "AL",
             "AD",
@@ -1984,7 +1984,7 @@
             "organization",
             "finance"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "LR",
             "AL",
@@ -2154,7 +2154,7 @@
             "organization",
             "finance"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "LV",
             "AL",
@@ -2340,7 +2340,7 @@
             "organization",
             "finance"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "LS",
             "AL",
@@ -2538,7 +2538,7 @@
             "organization",
             "security"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "AL",
             "DZ",
@@ -2745,7 +2745,7 @@
             "organization",
             "finance"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "LS",
             "AL",
@@ -2939,7 +2939,7 @@
             "organization",
             "military"
         ],
-        "set": [
+        "countryCodes": [
             "BE",
             "BG",
             "CZ",
@@ -2981,7 +2981,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AG",
             "AR",
             "BS",
@@ -3028,7 +3028,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AT",
             "BE",
             "DK",
@@ -3078,7 +3078,7 @@
             "organization",
             "economy"
         ],
-        "set": [
+        "countryCodes": [
             "DZ",
             "AO",
             "SA",
@@ -3103,7 +3103,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AL",
             "AD",
             "AM",
@@ -3173,7 +3173,7 @@
             "economy",
             "military"
         ],
-        "set": [
+        "countryCodes": [
             "CN",
             "IN",
             "KZ",
@@ -3193,7 +3193,7 @@
             "organization",
             "geopolitics"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "AL",
             "DZ",
@@ -3398,7 +3398,7 @@
             "organization",
             "economy"
         ],
-        "set": [
+        "countryCodes": [
             "AG",
             "AR",
             "BS",
@@ -3597,7 +3597,7 @@
             "organization",
             "economy"
         ],
-        "set": [
+        "countryCodes": [
             "AF",
             "AL",
             "AO",
@@ -3776,7 +3776,7 @@
             "economy",
             "currency"
         ],
-        "set": [
+        "countryCodes": [
             "AT",
             "BE",
             "CY",

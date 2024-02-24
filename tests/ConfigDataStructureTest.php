@@ -282,19 +282,19 @@ final class ConfigDataStructureTest extends TestCase
             );
 
             $this->assertArrayHasKey(
-                'set',
+                'countryCodes',
                 $gs,
-                'The property `set` is not present inside the `geoSets` data ' .
+                'The property `countryCodes` is not present inside the `geoSets` data ' .
                 'for the internalCode `' . $gs['internalCode'] . '`'
             );
             $this->assertIsArray(
-                $gs['set'],
-                'The property `set` is not an array in the `geoSets` data ' .
+                $gs['countryCodes'],
+                'The property `countryCodes` is not an array in the `geoSets` data ' .
                 'for the internalCode `' . $gs['internalCode'] . '`'
             );
             $this->assertNotEmpty(
-                $gs['set'],
-                'The property `set` is an empty array in the `geoSets` data ' .
+                $gs['countryCodes'],
+                'The property `countryCodes` is an empty array in the `geoSets` data ' .
                 'for the internalCode `' . $gs['internalCode'] . '`'
             );
 
@@ -307,7 +307,7 @@ final class ConfigDataStructureTest extends TestCase
                 if (!array_key_exists($parent, $geo)) {
                     $geo[$parent] = [];
                 }
-                foreach ($gs['set'] as $cc) {
+                foreach ($gs['countryCodes'] as $cc) {
                     if ($Lv != 0) {
                         $this->assertContains(
                             $cc,
