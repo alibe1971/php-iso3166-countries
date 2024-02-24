@@ -30,7 +30,7 @@ final class ConfigDataStructureTest extends TestCase
     private static array $countriesData = [
         'alpha2' => [],
         'alpha3' => [],
-        'M49Code' => [],
+        'unM49' => [],
         'ln' => [],
         'currencies' => [],
         'setsInternal' => []
@@ -332,28 +332,28 @@ final class ConfigDataStructureTest extends TestCase
                     }
                 }
                 $this->assertArrayHasKey(
-                    'M49Code',
+                    'unM49',
                     $gs,
-                    'The property `M49Code` is not present inside the `geoSets` data ' .
+                    'The property `unM49` is not present inside the `geoSets` data ' .
                     'for the internal code `' . $gs['internalCode'] . '`'
                 );
                 $this->assertNotContains(
-                    $gs['M49Code'],
+                    $gs['unM49'],
                     $m49,
-                    'The geoSets with `M49Code` `'
+                    'The geoSets with `unM49` `'
                     . $gs['internalCode'] .
                     '` is a duplicated key in the `geoSets` data'
                 );
                 $this->assertMatchesRegularExpression(
                     '/^[0-9]+$/',
-                    $gs['M49Code'],
-                    'The geoSets code `M49Code` `'
+                    $gs['unM49'],
+                    'The geoSets code `unM49` `'
                     . $gs['internalCode'] .
                     '` must be three digits long'
                 );
-                $m49[] = $gs['M49Code'];
+                $m49[] = $gs['unM49'];
                 if ($gs['internalCode'] != 'GEOG-AQ') {      // Antartica is an exception
-                    self::$countriesData['M49Code'][] = $gs['M49Code'];
+                    self::$countriesData['unM49'][] = $gs['unM49'];
                 } else {
                     $aq = true;
                 }
@@ -441,26 +441,26 @@ final class ConfigDataStructureTest extends TestCase
 
 
             $this->assertArrayHasKey(
-                'M49Code',
+                'unM49',
                 $cc,
-                'The property `M49Code` is not present inside the `countries` data ' .
+                'The property `unM49` is not present inside the `countries` data ' .
                 'for the alpha2 `' . $cc['alpha2'] . '`'
             );
             $this->assertNotContains(
-                $cc['M49Code'],
-                self::$countriesData['M49Code'],
-                'The country code with `M49Code` `'
-                . $cc['M49Code'] .
+                $cc['unM49'],
+                self::$countriesData['unM49'],
+                'The country code with `unM49` `'
+                . $cc['unM49'] .
                 '` is a duplicated key in the group of `countries` and `geoSets` data'
             );
             $this->assertMatchesRegularExpression(
                 '/^\d\d\d$/',
-                $cc['M49Code'],
-                'The country code `M49Code` `'
-                . $cc['M49Code'] .
+                $cc['unM49'],
+                'The country code `unM49` `'
+                . $cc['unM49'] .
                 '` must be three digits long.'
             );
-            self::$countriesData['M49Code'][] = $cc['M49Code'];
+            self::$countriesData['unM49'][] = $cc['unM49'];
 
 
             $this->assertArrayHasKey(
