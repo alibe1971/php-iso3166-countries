@@ -19,7 +19,7 @@ return [
     ],
     'alpha2' => 'AD',
     'alpha3' => 'AND',
-    'M49Code' => '020',
+    'unM49' => '020',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -53,7 +53,7 @@ return [
   [
     'alpha2' => 'AE',
     'alpha3' => 'ARE',
-    'M49Code' => '784',
+    'unM49' => '784',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة الإمارات العربية المتحدة',
@@ -94,7 +94,7 @@ return [
     ],
     'alpha2' => 'AF',
     'alpha3' => 'AFG',
-    'M49Code' => '004',
+    'unM49' => '004',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -136,7 +136,7 @@ return [
     ],
     'alpha2' => 'AG',
     'alpha3' => 'ATG',
-    'M49Code' => '028',
+    'unM49' => '028',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -173,7 +173,7 @@ return [
     ],
     'alpha2' => 'AI',
     'alpha3' => 'AIA',
-    'M49Code' => '660',
+    'unM49' => '660',
     'dependency' => 'GB',
     'mottos' => [
       'official' => [
@@ -210,7 +210,7 @@ return [
     ],
     'alpha2' => 'AL',
     'alpha3' => 'ALB',
-    'M49Code' => '008',
+    'unM49' => '008',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -247,7 +247,7 @@ return [
     ],
     'alpha2' => 'AM',
     'alpha3' => 'ARM',
-    'M49Code' => '051',
+    'unM49' => '051',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -284,7 +284,7 @@ return [
     ],
     'alpha2' => 'AO',
     'alpha3' => 'AGO',
-    'M49Code' => '024',
+    'unM49' => '024',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -320,7 +320,7 @@ return [
   [
     'alpha2' => 'AQ',
     'alpha3' => 'ATA',
-    'M49Code' => '010',
+    'unM49' => '010',
     'dependency' => null,
     'officialName' => [
       'en' => 'Antarctica',
@@ -528,7 +528,7 @@ return [
     ],
     'alpha2' => 'AR',
     'alpha3' => 'ARG',
-    'M49Code' => '032',
+    'unM49' => '032',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -584,7 +584,7 @@ return [
     ],
     'alpha2' => 'AS',
     'alpha3' => 'ASM',
-    'M49Code' => '016',
+    'unM49' => '016',
     'dependency' => 'US',
     'mottos' => [
       'official' => [
@@ -621,7 +621,7 @@ return [
     ],
     'alpha2' => 'AT',
     'alpha3' => 'AUT',
-    'M49Code' => '040',
+    'unM49' => '040',
     'dependency' => null,
     'mottos' => [
     ],
@@ -657,7 +657,7 @@ return [
     ],
     'alpha2' => 'AU',
     'alpha3' => 'AUS',
-    'M49Code' => '036',
+    'unM49' => '036',
     'dependency' => null,
     'mottos' => [
     ],
@@ -714,7 +714,7 @@ return [
     ],
     'alpha2' => 'AW',
     'alpha3' => 'ABW',
-    'M49Code' => '533',
+    'unM49' => '533',
     'dependency' => 'NL',
     'mottos' => [
     ],
@@ -748,7 +748,7 @@ return [
     ],
     'alpha2' => 'AX',
     'alpha3' => 'ALA',
-    'M49Code' => '248',
+    'unM49' => '248',
     'dependency' => 'FI',
     'mottos' => [
     ],
@@ -782,7 +782,7 @@ return [
     ],
     'alpha2' => 'AZ',
     'alpha3' => 'AZE',
-    'M49Code' => '031',
+    'unM49' => '031',
     'dependency' => null,
     'mottos' => [
     ],
@@ -816,7 +816,7 @@ return [
   [
     'alpha2' => 'BA',
     'alpha3' => 'BIH',
-    'M49Code' => '070',
+    'unM49' => '070',
     'dependency' => null,
     'officialName' => [
       'sr-Cyrl' => 'Босна и Херцеговина',
@@ -865,7 +865,7 @@ return [
     ],
     'alpha2' => 'BB',
     'alpha3' => 'BRB',
-    'M49Code' => '052',
+    'unM49' => '052',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -902,7 +902,7 @@ return [
     ],
     'alpha2' => 'BD',
     'alpha3' => 'BGD',
-    'M49Code' => '050',
+    'unM49' => '050',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -942,7 +942,7 @@ return [
     ],
     'alpha2' => 'BE',
     'alpha3' => 'BEL',
-    'M49Code' => '056',
+    'unM49' => '056',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -984,7 +984,7 @@ return [
   [
     'alpha2' => 'BF',
     'alpha3' => 'BFA',
-    'M49Code' => '854',
+    'unM49' => '854',
     'dependency' => null,
     'officialName' => [
       'fr' => 'Burkina Faso',
@@ -1021,7 +1021,7 @@ return [
   [
     'alpha2' => 'BG',
     'alpha3' => 'BGR',
-    'M49Code' => '100',
+    'unM49' => '100',
     'dependency' => null,
     'officialName' => [
       'bg' => 'Република България',
@@ -1061,7 +1061,7 @@ return [
     ],
     'alpha2' => 'BH',
     'alpha3' => 'BHR',
-    'M49Code' => '048',
+    'unM49' => '048',
     'dependency' => null,
     'mottos' => [
     ],
@@ -1092,7 +1092,7 @@ return [
   [
     'alpha2' => 'BI',
     'alpha3' => 'BDI',
-    'M49Code' => '108',
+    'unM49' => '108',
     'dependency' => null,
     'officialName' => [
       'rn' => 'Repubulika y’Uburunde',
@@ -1137,7 +1137,7 @@ return [
     ],
     'alpha2' => 'BJ',
     'alpha3' => 'BEN',
-    'M49Code' => '204',
+    'unM49' => '204',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -1173,7 +1173,7 @@ return [
   [
     'alpha2' => 'BL',
     'alpha3' => 'BLM',
-    'M49Code' => '652',
+    'unM49' => '652',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Collectivité d\'outre-mer de Saint-Barthélemy',
@@ -1213,7 +1213,7 @@ return [
     ],
     'alpha2' => 'BM',
     'alpha3' => 'BMU',
-    'M49Code' => '060',
+    'unM49' => '060',
     'dependency' => 'GB',
     'mottos' => [
       'official' => [
@@ -1247,7 +1247,7 @@ return [
   [
     'alpha2' => 'BN',
     'alpha3' => 'BRN',
-    'M49Code' => '096',
+    'unM49' => '096',
     'dependency' => null,
     'officialName' => [
       'ms' => 'Negara Brunei Darussalam',
@@ -1291,7 +1291,7 @@ return [
     ],
     'alpha2' => 'BO',
     'alpha3' => 'BOL',
-    'M49Code' => '068',
+    'unM49' => '068',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -1327,7 +1327,7 @@ return [
   [
     'alpha2' => 'BQ',
     'alpha3' => 'BES',
-    'M49Code' => '535',
+    'unM49' => '535',
     'dependency' => 'NL',
     'officialName' => [
       'nl' => 'Caribisch Nederland',
@@ -1364,7 +1364,7 @@ return [
   [
     'alpha2' => 'BR',
     'alpha3' => 'BRA',
-    'M49Code' => '076',
+    'unM49' => '076',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República Federativa do Brasil',
@@ -1426,7 +1426,7 @@ return [
     ],
     'alpha2' => 'BS',
     'alpha3' => 'BHS',
-    'M49Code' => '044',
+    'unM49' => '044',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -1463,7 +1463,7 @@ return [
     ],
     'alpha2' => 'BT',
     'alpha3' => 'BTN',
-    'M49Code' => '064',
+    'unM49' => '064',
     'dependency' => null,
     'mottos' => [
     ],
@@ -1495,7 +1495,7 @@ return [
   [
     'alpha2' => 'BV',
     'alpha3' => 'BVT',
-    'M49Code' => '074',
+    'unM49' => '074',
     'dependency' => 'NO',
     'officialName' => [
       'no' => 'Bouvetøya',
@@ -1532,7 +1532,7 @@ return [
   [
     'alpha2' => 'BW',
     'alpha3' => 'BWA',
-    'M49Code' => '072',
+    'unM49' => '072',
     'dependency' => null,
     'officialName' => [
       'tn' => 'Lefatshe la Botswana',
@@ -1574,7 +1574,7 @@ return [
     ],
     'alpha2' => 'BY',
     'alpha3' => 'BLR',
-    'M49Code' => '112',
+    'unM49' => '112',
     'dependency' => null,
     'mottos' => [
     ],
@@ -1610,7 +1610,7 @@ return [
     ],
     'alpha2' => 'BZ',
     'alpha3' => 'BLZ',
-    'M49Code' => '084',
+    'unM49' => '084',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -1646,7 +1646,7 @@ return [
   [
     'alpha2' => 'CA',
     'alpha3' => 'CAN',
-    'M49Code' => '124',
+    'unM49' => '124',
     'dependency' => null,
     'officialName' => [
       'fr' => 'Canada',
@@ -1723,7 +1723,7 @@ return [
   [
     'alpha2' => 'CC',
     'alpha3' => 'CCK',
-    'M49Code' => '166',
+    'unM49' => '166',
     'dependency' => 'AU',
     'officialName' => [
       'en' => 'Territory of Cocos (Keeling) Islands',
@@ -1760,7 +1760,7 @@ return [
   [
     'alpha2' => 'CD',
     'alpha3' => 'COD',
-    'M49Code' => '180',
+    'unM49' => '180',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République démocratique du Congo',
@@ -1804,7 +1804,7 @@ return [
   [
     'alpha2' => 'CF',
     'alpha3' => 'CAF',
-    'M49Code' => '140',
+    'unM49' => '140',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République centrafricaine',
@@ -1846,7 +1846,7 @@ return [
   [
     'alpha2' => 'CG',
     'alpha3' => 'COG',
-    'M49Code' => '178',
+    'unM49' => '178',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République du Congo',
@@ -1885,7 +1885,7 @@ return [
   [
     'alpha2' => 'CH',
     'alpha3' => 'CHE',
-    'M49Code' => '756',
+    'unM49' => '756',
     'dependency' => null,
     'officialName' => [
       'de' => 'Schweizerische Eidgenossenschaft',
@@ -1944,7 +1944,7 @@ return [
   [
     'alpha2' => 'CI',
     'alpha3' => 'CIV',
-    'M49Code' => '384',
+    'unM49' => '384',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République de Côte d\'Ivoire',
@@ -1981,7 +1981,7 @@ return [
   [
     'alpha2' => 'CK',
     'alpha3' => 'COK',
-    'M49Code' => '184',
+    'unM49' => '184',
     'dependency' => 'NZ',
     'officialName' => [
       'mi' => 'Kūki \'Āirani',
@@ -2016,7 +2016,7 @@ return [
   [
     'alpha2' => 'CL',
     'alpha3' => 'CHL',
-    'M49Code' => '152',
+    'unM49' => '152',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Chile',
@@ -2057,7 +2057,7 @@ return [
   [
     'alpha2' => 'CM',
     'alpha3' => 'CMR',
-    'M49Code' => '120',
+    'unM49' => '120',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République du Cameroun',
@@ -2124,7 +2124,7 @@ return [
   [
     'alpha2' => 'CN',
     'alpha3' => 'CHN',
-    'M49Code' => '156',
+    'unM49' => '156',
     'dependency' => null,
     'officialName' => [
       'zh' => '中华人民共和国',
@@ -2169,7 +2169,7 @@ return [
   [
     'alpha2' => 'CO',
     'alpha3' => 'COL',
-    'M49Code' => '170',
+    'unM49' => '170',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Colombia',
@@ -2206,7 +2206,7 @@ return [
   [
     'alpha2' => 'CR',
     'alpha3' => 'CRI',
-    'M49Code' => '188',
+    'unM49' => '188',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Costa Rica',
@@ -2243,7 +2243,7 @@ return [
   [
     'alpha2' => 'CU',
     'alpha3' => 'CUB',
-    'M49Code' => '192',
+    'unM49' => '192',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Cuba',
@@ -2281,7 +2281,7 @@ return [
   [
     'alpha2' => 'CV',
     'alpha3' => 'CPV',
-    'M49Code' => '132',
+    'unM49' => '132',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República de Cabo Verde',
@@ -2320,7 +2320,7 @@ return [
   [
     'alpha2' => 'CW',
     'alpha3' => 'CUW',
-    'M49Code' => '531',
+    'unM49' => '531',
     'dependency' => 'NL',
     'officialName' => [
       'pap' => 'Pais Kòrsou',
@@ -2355,7 +2355,7 @@ return [
   [
     'alpha2' => 'CX',
     'alpha3' => 'CXR',
-    'M49Code' => '162',
+    'unM49' => '162',
     'dependency' => 'AU',
     'officialName' => [
       'en' => 'Territory of Christmas Island',
@@ -2389,7 +2389,7 @@ return [
   [
     'alpha2' => 'CY',
     'alpha3' => 'CYP',
-    'M49Code' => '196',
+    'unM49' => '196',
     'dependency' => null,
     'officialName' => [
       'el' => 'Κυπριακή Δημοκρατία',
@@ -2430,7 +2430,7 @@ return [
   [
     'alpha2' => 'CZ',
     'alpha3' => 'CZE',
-    'M49Code' => '203',
+    'unM49' => '203',
     'dependency' => null,
     'officialName' => [
       'cs' => 'Česká republika',
@@ -2467,7 +2467,7 @@ return [
   [
     'alpha2' => 'DE',
     'alpha3' => 'DEU',
-    'M49Code' => '276',
+    'unM49' => '276',
     'dependency' => null,
     'officialName' => [
       'de' => 'Bundesrepublik Deutschland',
@@ -2512,7 +2512,7 @@ return [
   [
     'alpha2' => 'DJ',
     'alpha3' => 'DJI',
-    'M49Code' => '262',
+    'unM49' => '262',
     'dependency' => null,
     'officialName' => [
       'ar' => 'جمهورية جيبوتي',
@@ -2555,7 +2555,7 @@ return [
   [
     'alpha2' => 'DK',
     'alpha3' => 'DNK',
-    'M49Code' => '208',
+    'unM49' => '208',
     'dependency' => null,
     'officialName' => [
       'da' => 'Kongeriget Danmark',
@@ -2596,7 +2596,7 @@ return [
   [
     'alpha2' => 'DM',
     'alpha3' => 'DMA',
-    'M49Code' => '212',
+    'unM49' => '212',
     'dependency' => null,
     'officialName' => [
       'en' => 'Commonwealth of Dominica',
@@ -2633,7 +2633,7 @@ return [
   [
     'alpha2' => 'DO',
     'alpha3' => 'DOM',
-    'M49Code' => '214',
+    'unM49' => '214',
     'dependency' => null,
     'officialName' => [
       'es' => 'República Dominicana',
@@ -2674,7 +2674,7 @@ return [
     ],
     'alpha2' => 'DZ',
     'alpha3' => 'DZA',
-    'M49Code' => '012',
+    'unM49' => '012',
     'dependency' => null,
     'mottos' => [
       'official' => [
@@ -2713,7 +2713,7 @@ return [
   [
     'alpha2' => 'EC',
     'alpha3' => 'ECU',
-    'M49Code' => '218',
+    'unM49' => '218',
     'dependency' => null,
     'officialName' => [
       'es' => 'República del Ecuador',
@@ -2753,7 +2753,7 @@ return [
   [
     'alpha2' => 'EE',
     'alpha3' => 'EST',
-    'M49Code' => '233',
+    'unM49' => '233',
     'dependency' => null,
     'officialName' => [
       'et' => 'Eesti Vabariik',
@@ -2787,7 +2787,7 @@ return [
   [
     'alpha2' => 'EG',
     'alpha3' => 'EGY',
-    'M49Code' => '818',
+    'unM49' => '818',
     'dependency' => null,
     'officialName' => [
       'ar' => 'جمهورية مصر العربية',
@@ -2825,7 +2825,7 @@ return [
   [
     'alpha2' => 'EH',
     'alpha3' => 'ESH',
-    'M49Code' => '732',
+    'unM49' => '732',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهورية العربية الصحراوية الديمقراطية',
@@ -2862,7 +2862,7 @@ return [
   [
     'alpha2' => 'ER',
     'alpha3' => 'ERI',
-    'M49Code' => '232',
+    'unM49' => '232',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة إريتريا',
@@ -2905,7 +2905,7 @@ return [
   [
     'alpha2' => 'ES',
     'alpha3' => 'ESP',
-    'M49Code' => '724',
+    'unM49' => '724',
     'dependency' => null,
     'officialName' => [
       'es' => 'Reino de España',
@@ -2952,7 +2952,7 @@ return [
   [
     'alpha2' => 'ET',
     'alpha3' => 'ETH',
-    'M49Code' => '231',
+    'unM49' => '231',
     'dependency' => null,
     'officialName' => [
       'am' => 'የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ',
@@ -2995,7 +2995,7 @@ return [
   [
     'alpha2' => 'FI',
     'alpha3' => 'FIN',
-    'M49Code' => '246',
+    'unM49' => '246',
     'dependency' => null,
     'officialName' => [
       'fi' => 'Suomen tasavalta',
@@ -3038,7 +3038,7 @@ return [
   [
     'alpha2' => 'FJ',
     'alpha3' => 'FJI',
-    'M49Code' => '242',
+    'unM49' => '242',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Fiji',
@@ -3077,7 +3077,7 @@ return [
   [
     'alpha2' => 'FK',
     'alpha3' => 'FLK',
-    'M49Code' => '238',
+    'unM49' => '238',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Falkland Islands',
@@ -3114,7 +3114,7 @@ return [
   [
     'alpha2' => 'FM',
     'alpha3' => 'FSM',
-    'M49Code' => '583',
+    'unM49' => '583',
     'dependency' => null,
     'officialName' => [
       'en' => 'Federated States of Micronesia',
@@ -3156,7 +3156,7 @@ return [
   [
     'alpha2' => 'FO',
     'alpha3' => 'FRO',
-    'M49Code' => '234',
+    'unM49' => '234',
     'dependency' => 'DK',
     'officialName' => [
       'fo' => 'Føroyar',
@@ -3192,7 +3192,7 @@ return [
   [
     'alpha2' => 'FR',
     'alpha3' => 'FRA',
-    'M49Code' => '250',
+    'unM49' => '250',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République française',
@@ -3235,7 +3235,7 @@ return [
   [
     'alpha2' => 'GA',
     'alpha3' => 'GAB',
-    'M49Code' => '266',
+    'unM49' => '266',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République gabonaise ',
@@ -3272,7 +3272,7 @@ return [
   [
     'alpha2' => 'GB',
     'alpha3' => 'GBR',
-    'M49Code' => '826',
+    'unM49' => '826',
     'dependency' => null,
     'officialName' => [
       'en' => 'United Kingdom of Great Britain and Northern Ireland',
@@ -3318,7 +3318,7 @@ return [
   [
     'alpha2' => 'GD',
     'alpha3' => 'GRD',
-    'M49Code' => '308',
+    'unM49' => '308',
     'dependency' => null,
     'officialName' => [
       'en' => 'Grenada',
@@ -3355,7 +3355,7 @@ return [
   [
     'alpha2' => 'GE',
     'alpha3' => 'GEO',
-    'M49Code' => '268',
+    'unM49' => '268',
     'dependency' => null,
     'officialName' => [
       'ka' => 'საქართველოს რესპუბლიკა',
@@ -3394,7 +3394,7 @@ return [
   [
     'alpha2' => 'GF',
     'alpha3' => 'GUF',
-    'M49Code' => '254',
+    'unM49' => '254',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Département de la Guyane',
@@ -3431,7 +3431,7 @@ return [
   [
     'alpha2' => 'GG',
     'alpha3' => 'GGY',
-    'M49Code' => '831',
+    'unM49' => '831',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Bailiwick of Guernsey',
@@ -3465,7 +3465,7 @@ return [
   [
     'alpha2' => 'GH',
     'alpha3' => 'GHA',
-    'M49Code' => '288',
+    'unM49' => '288',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Ghana',
@@ -3508,7 +3508,7 @@ return [
   [
     'alpha2' => 'GI',
     'alpha3' => 'GIB',
-    'M49Code' => '292',
+    'unM49' => '292',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Gibraltar',
@@ -3545,7 +3545,7 @@ return [
   [
     'alpha2' => 'GL',
     'alpha3' => 'GRL',
-    'M49Code' => '304',
+    'unM49' => '304',
     'dependency' => 'DK',
     'officialName' => [
       'kl' => 'Kalaallit Nunaat',
@@ -3585,7 +3585,7 @@ return [
   [
     'alpha2' => 'GM',
     'alpha3' => 'GMB',
-    'M49Code' => '270',
+    'unM49' => '270',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of The Gambia',
@@ -3622,7 +3622,7 @@ return [
   [
     'alpha2' => 'GN',
     'alpha3' => 'GIN',
-    'M49Code' => '324',
+    'unM49' => '324',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République de Guinée',
@@ -3661,7 +3661,7 @@ return [
   [
     'alpha2' => 'GP',
     'alpha3' => 'GLP',
-    'M49Code' => '312',
+    'unM49' => '312',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Region Guadeloupe',
@@ -3695,7 +3695,7 @@ return [
   [
     'alpha2' => 'GQ',
     'alpha3' => 'GNQ',
-    'M49Code' => '226',
+    'unM49' => '226',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Guinea Ecuatorial',
@@ -3738,7 +3738,7 @@ return [
   [
     'alpha2' => 'GR',
     'alpha3' => 'GRC',
-    'M49Code' => '300',
+    'unM49' => '300',
     'dependency' => null,
     'officialName' => [
       'el' => 'Ελληνική Δημοκρατία',
@@ -3775,7 +3775,7 @@ return [
   [
     'alpha2' => 'GS',
     'alpha3' => 'SGS',
-    'M49Code' => '239',
+    'unM49' => '239',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'South Georgia and the South Sandwich Islands',
@@ -3819,7 +3819,7 @@ return [
   [
     'alpha2' => 'GT',
     'alpha3' => 'GTM',
-    'M49Code' => '320',
+    'unM49' => '320',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Guatemala',
@@ -3856,7 +3856,7 @@ return [
   [
     'alpha2' => 'GU',
     'alpha3' => 'GUM',
-    'M49Code' => '316',
+    'unM49' => '316',
     'dependency' => 'US',
     'officialName' => [
       'en' => 'Guam',
@@ -3895,7 +3895,7 @@ return [
   [
     'alpha2' => 'GW',
     'alpha3' => 'GNB',
-    'M49Code' => '624',
+    'unM49' => '624',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República da Guiné-Bissau',
@@ -3932,7 +3932,7 @@ return [
   [
     'alpha2' => 'GY',
     'alpha3' => 'GUY',
-    'M49Code' => '328',
+    'unM49' => '328',
     'dependency' => null,
     'officialName' => [
       'en' => 'Co-operative Republic of Guyana',
@@ -3969,7 +3969,7 @@ return [
   [
     'alpha2' => 'HK',
     'alpha3' => 'HKG',
-    'M49Code' => '344',
+    'unM49' => '344',
     'dependency' => 'CN',
     'officialName' => [
       'zh' => '中華人民共和國香港特別行政區',
@@ -4008,7 +4008,7 @@ return [
   [
     'alpha2' => 'HM',
     'alpha3' => 'HMD',
-    'M49Code' => '334',
+    'unM49' => '334',
     'dependency' => 'AU',
     'officialName' => [
       'en' => 'Heard Island and McDonald Islands',
@@ -4042,7 +4042,7 @@ return [
   [
     'alpha2' => 'HN',
     'alpha3' => 'HND',
-    'M49Code' => '340',
+    'unM49' => '340',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Honduras',
@@ -4079,7 +4079,7 @@ return [
   [
     'alpha2' => 'HR',
     'alpha3' => 'HRV',
-    'M49Code' => '191',
+    'unM49' => '191',
     'dependency' => null,
     'officialName' => [
       'hr' => 'Republika Hrvatska',
@@ -4113,7 +4113,7 @@ return [
   [
     'alpha2' => 'HT',
     'alpha3' => 'HTI',
-    'M49Code' => '332',
+    'unM49' => '332',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République d\'Haïti',
@@ -4151,7 +4151,7 @@ return [
   [
     'alpha2' => 'HU',
     'alpha3' => 'HUN',
-    'M49Code' => '348',
+    'unM49' => '348',
     'dependency' => null,
     'officialName' => [
       'hu' => 'Magyarország',
@@ -4185,7 +4185,7 @@ return [
   [
     'alpha2' => 'ID',
     'alpha3' => 'IDN',
-    'M49Code' => '360',
+    'unM49' => '360',
     'dependency' => null,
     'officialName' => [
       'id' => 'Republik Indonesia',
@@ -4228,7 +4228,7 @@ return [
   [
     'alpha2' => 'IE',
     'alpha3' => 'IRL',
-    'M49Code' => '372',
+    'unM49' => '372',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Ireland',
@@ -4266,7 +4266,7 @@ return [
   [
     'alpha2' => 'IL',
     'alpha3' => 'ISR',
-    'M49Code' => '376',
+    'unM49' => '376',
     'dependency' => null,
     'officialName' => [
       'he' => 'מדינת ישראל',
@@ -4306,7 +4306,7 @@ return [
   [
     'alpha2' => 'IM',
     'alpha3' => 'IMN',
-    'M49Code' => '833',
+    'unM49' => '833',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Isle of Man',
@@ -4344,7 +4344,7 @@ return [
   [
     'alpha2' => 'IN',
     'alpha3' => 'IND',
-    'M49Code' => '356',
+    'unM49' => '356',
     'dependency' => null,
     'officialName' => [
       'hi' => 'भारत गणराज्य',
@@ -4418,7 +4418,7 @@ return [
   [
     'alpha2' => 'IO',
     'alpha3' => 'IOT',
-    'M49Code' => '086',
+    'unM49' => '086',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'British Indian Ocean Territory',
@@ -4455,7 +4455,7 @@ return [
   [
     'alpha2' => 'IQ',
     'alpha3' => 'IRQ',
-    'M49Code' => '368',
+    'unM49' => '368',
     'dependency' => null,
     'officialName' => [
       'ar' => 'جمهورية العراق',
@@ -4494,7 +4494,7 @@ return [
   [
     'alpha2' => 'IR',
     'alpha3' => 'IRN',
-    'M49Code' => '364',
+    'unM49' => '364',
     'dependency' => null,
     'officialName' => [
       'fa' => 'جمهوری اسلامی ایران',
@@ -4534,7 +4534,7 @@ return [
   [
     'alpha2' => 'IS',
     'alpha3' => 'ISL',
-    'M49Code' => '352',
+    'unM49' => '352',
     'dependency' => null,
     'officialName' => [
       'is' => 'Lýðveldið Ísland',
@@ -4569,7 +4569,7 @@ return [
   [
     'alpha2' => 'IT',
     'alpha3' => 'ITA',
-    'M49Code' => '380',
+    'unM49' => '380',
     'dependency' => null,
     'officialName' => [
       'it' => 'Repubblica Italiana',
@@ -4609,7 +4609,7 @@ return [
   [
     'alpha2' => 'JE',
     'alpha3' => 'JEY',
-    'M49Code' => '832',
+    'unM49' => '832',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Bailiwick of Jersey',
@@ -4646,7 +4646,7 @@ return [
   [
     'alpha2' => 'JM',
     'alpha3' => 'JAM',
-    'M49Code' => '388',
+    'unM49' => '388',
     'dependency' => null,
     'officialName' => [
       'en' => 'Jamaica',
@@ -4685,7 +4685,7 @@ return [
   [
     'alpha2' => 'JO',
     'alpha3' => 'JOR',
-    'M49Code' => '400',
+    'unM49' => '400',
     'dependency' => null,
     'officialName' => [
       'ar' => 'المملكة الأردنية الهاشمية',
@@ -4722,7 +4722,7 @@ return [
   [
     'alpha2' => 'JP',
     'alpha3' => 'JPN',
-    'M49Code' => '392',
+    'unM49' => '392',
     'dependency' => null,
     'officialName' => [
       'ja' => '日本国',
@@ -4757,7 +4757,7 @@ return [
   [
     'alpha2' => 'KE',
     'alpha3' => 'KEN',
-    'M49Code' => '404',
+    'unM49' => '404',
     'dependency' => null,
     'officialName' => [
       'sw' => 'Jamuhuri ya Kenya',
@@ -4825,7 +4825,7 @@ return [
   [
     'alpha2' => 'KG',
     'alpha3' => 'KGZ',
-    'M49Code' => '417',
+    'unM49' => '417',
     'dependency' => null,
     'officialName' => [
       'ru' => 'Кирги́зская Респу́блика',
@@ -4862,7 +4862,7 @@ return [
   [
     'alpha2' => 'KH',
     'alpha3' => 'KHM',
-    'M49Code' => '116',
+    'unM49' => '116',
     'dependency' => null,
     'officialName' => [
       'km' => 'ព្រះរាជាណាចក្រ កម្ពុជា',
@@ -4899,7 +4899,7 @@ return [
   [
     'alpha2' => 'KI',
     'alpha3' => 'KIR',
-    'M49Code' => '296',
+    'unM49' => '296',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Kiribati',
@@ -4939,7 +4939,7 @@ return [
   [
     'alpha2' => 'KM',
     'alpha3' => 'COM',
-    'M49Code' => '174',
+    'unM49' => '174',
     'dependency' => null,
     'officialName' => [
       'fr' => 'Union des Comores',
@@ -4981,7 +4981,7 @@ return [
   [
     'alpha2' => 'KN',
     'alpha3' => 'KNA',
-    'M49Code' => '659',
+    'unM49' => '659',
     'dependency' => null,
     'officialName' => [
       'en' => 'Federation of Saint Christopher and Nevis',
@@ -5018,7 +5018,7 @@ return [
   [
     'alpha2' => 'KP',
     'alpha3' => 'PRK',
-    'M49Code' => '408',
+    'unM49' => '408',
     'dependency' => null,
     'officialName' => [
       'ko' => '조선민주주의인민공화국',
@@ -5055,7 +5055,7 @@ return [
   [
     'alpha2' => 'KR',
     'alpha3' => 'KOR',
-    'M49Code' => '410',
+    'unM49' => '410',
     'dependency' => null,
     'officialName' => [
       'ko' => '대한민국',
@@ -5092,7 +5092,7 @@ return [
   [
     'alpha2' => 'KW',
     'alpha3' => 'KWT',
-    'M49Code' => '414',
+    'unM49' => '414',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة الكويت',
@@ -5126,7 +5126,7 @@ return [
   [
     'alpha2' => 'KY',
     'alpha3' => 'CYM',
-    'M49Code' => '136',
+    'unM49' => '136',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Cayman Islands',
@@ -5163,7 +5163,7 @@ return [
   [
     'alpha2' => 'KZ',
     'alpha3' => 'KAZ',
-    'M49Code' => '398',
+    'unM49' => '398',
     'dependency' => null,
     'officialName' => [
       'kk' => 'Қазақстан Республикасы',
@@ -5206,7 +5206,7 @@ return [
   [
     'alpha2' => 'LA',
     'alpha3' => 'LAO',
-    'M49Code' => '418',
+    'unM49' => '418',
     'dependency' => null,
     'officialName' => [
       'lo' => 'ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ',
@@ -5243,7 +5243,7 @@ return [
   [
     'alpha2' => 'LB',
     'alpha3' => 'LBN',
-    'M49Code' => '422',
+    'unM49' => '422',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهورية اللبنانية',
@@ -5280,7 +5280,7 @@ return [
   [
     'alpha2' => 'LC',
     'alpha3' => 'LCA',
-    'M49Code' => '662',
+    'unM49' => '662',
     'dependency' => null,
     'officialName' => [
       'en' => 'Saint Lucia',
@@ -5317,7 +5317,7 @@ return [
   [
     'alpha2' => 'LI',
     'alpha3' => 'LIE',
-    'M49Code' => '438',
+    'unM49' => '438',
     'dependency' => null,
     'officialName' => [
       'de' => 'Fürstentum Liechtenstein',
@@ -5357,7 +5357,7 @@ return [
   [
     'alpha2' => 'LK',
     'alpha3' => 'LKA',
-    'M49Code' => '144',
+    'unM49' => '144',
     'dependency' => null,
     'officialName' => [
       'si' => 'ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය',
@@ -5398,7 +5398,7 @@ return [
   [
     'alpha2' => 'LR',
     'alpha3' => 'LBR',
-    'M49Code' => '430',
+    'unM49' => '430',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Liberia',
@@ -5440,7 +5440,7 @@ return [
   [
     'alpha2' => 'LS',
     'alpha3' => 'LSO',
-    'M49Code' => '426',
+    'unM49' => '426',
     'dependency' => null,
     'officialName' => [
       'st' => 'Muso oa Lesotho',
@@ -5478,7 +5478,7 @@ return [
   [
     'alpha2' => 'LT',
     'alpha3' => 'LTU',
-    'M49Code' => '440',
+    'unM49' => '440',
     'dependency' => null,
     'officialName' => [
       'lt' => 'Lietuvos Respublika',
@@ -5515,7 +5515,7 @@ return [
   [
     'alpha2' => 'LU',
     'alpha3' => 'LUX',
-    'M49Code' => '442',
+    'unM49' => '442',
     'dependency' => null,
     'officialName' => [
       'lb' => 'Groussherzogtum Lëtzebuerg',
@@ -5562,7 +5562,7 @@ return [
   [
     'alpha2' => 'LV',
     'alpha3' => 'LVA',
-    'M49Code' => '428',
+    'unM49' => '428',
     'dependency' => null,
     'officialName' => [
       'lv' => 'Latvijas Republika',
@@ -5596,7 +5596,7 @@ return [
   [
     'alpha2' => 'LY',
     'alpha3' => 'LBY',
-    'M49Code' => '434',
+    'unM49' => '434',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة ليبيا',
@@ -5631,7 +5631,7 @@ return [
   [
     'alpha2' => 'MA',
     'alpha3' => 'MAR',
-    'M49Code' => '504',
+    'unM49' => '504',
     'dependency' => null,
     'officialName' => [
       'ar' => 'المملكة المغربية',
@@ -5682,7 +5682,7 @@ return [
   [
     'alpha2' => 'MC',
     'alpha3' => 'MCO',
-    'M49Code' => '492',
+    'unM49' => '492',
     'dependency' => null,
     'officialName' => [
       'fr' => 'Principauté de Monaco',
@@ -5719,7 +5719,7 @@ return [
   [
     'alpha2' => 'MD',
     'alpha3' => 'MDA',
-    'M49Code' => '498',
+    'unM49' => '498',
     'dependency' => null,
     'officialName' => [
       'ro' => 'Republica Moldova',
@@ -5756,7 +5756,7 @@ return [
   [
     'alpha2' => 'ME',
     'alpha3' => 'MNE',
-    'M49Code' => '499',
+    'unM49' => '499',
     'dependency' => null,
     'officialName' => [
       'sr-Latn' => 'Crna Gora',
@@ -5798,7 +5798,7 @@ return [
   [
     'alpha2' => 'MF',
     'alpha3' => 'MAF',
-    'M49Code' => '663',
+    'unM49' => '663',
     'dependency' => null,
     'officialName' => [
       'fr' => 'Collectivité d\'outre-mer de Saint-Martin',
@@ -5832,7 +5832,7 @@ return [
   [
     'alpha2' => 'MG',
     'alpha3' => 'MDG',
-    'M49Code' => '450',
+    'unM49' => '450',
     'dependency' => null,
     'officialName' => [
       'mg' => 'Repoblikan\'i Madagasikara',
@@ -5874,7 +5874,7 @@ return [
   [
     'alpha2' => 'MH',
     'alpha3' => 'MHL',
-    'M49Code' => '584',
+    'unM49' => '584',
     'dependency' => null,
     'officialName' => [
       'mh' => 'Aolepān Aorōkin M̧ajeļ',
@@ -5914,7 +5914,7 @@ return [
   [
     'alpha2' => 'MK',
     'alpha3' => 'MKD',
-    'M49Code' => '807',
+    'unM49' => '807',
     'dependency' => null,
     'officialName' => [
       'mk' => 'Република Северна Македонија',
@@ -5951,7 +5951,7 @@ return [
   [
     'alpha2' => 'ML',
     'alpha3' => 'MLI',
-    'M49Code' => '466',
+    'unM49' => '466',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République du Mali',
@@ -5995,7 +5995,7 @@ return [
   [
     'alpha2' => 'MM',
     'alpha3' => 'MMR',
-    'M49Code' => '104',
+    'unM49' => '104',
     'dependency' => null,
     'officialName' => [
       'my' => 'ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်',
@@ -6030,7 +6030,7 @@ return [
   [
     'alpha2' => 'MN',
     'alpha3' => 'MNG',
-    'M49Code' => '496',
+    'unM49' => '496',
     'dependency' => null,
     'officialName' => [
       'mn' => 'ᠮᠣᠩᠭᠣᠯ ᠤᠯᠤᠰ',
@@ -6067,7 +6067,7 @@ return [
   [
     'alpha2' => 'MO',
     'alpha3' => 'MAC',
-    'M49Code' => '446',
+    'unM49' => '446',
     'dependency' => 'CN',
     'officialName' => [
       'cmn' => '中华人民共和国澳门特别行政区',
@@ -6108,7 +6108,7 @@ return [
   [
     'alpha2' => 'MP',
     'alpha3' => 'MNP',
-    'M49Code' => '580',
+    'unM49' => '580',
     'dependency' => 'US',
     'officialName' => [
       'en' => 'Commonwealth of the Northern Mariana Islands',
@@ -6142,7 +6142,7 @@ return [
   [
     'alpha2' => 'MQ',
     'alpha3' => 'MTQ',
-    'M49Code' => '474',
+    'unM49' => '474',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Collectivité territoriale de Martinique',
@@ -6176,7 +6176,7 @@ return [
   [
     'alpha2' => 'MR',
     'alpha3' => 'MRT',
-    'M49Code' => '478',
+    'unM49' => '478',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهورية الإسلامية الموريتانية',
@@ -6218,7 +6218,7 @@ return [
   [
     'alpha2' => 'MS',
     'alpha3' => 'MSR',
-    'M49Code' => '500',
+    'unM49' => '500',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Colony of Montserrat',
@@ -6255,7 +6255,7 @@ return [
   [
     'alpha2' => 'MT',
     'alpha3' => 'MLT',
-    'M49Code' => '470',
+    'unM49' => '470',
     'dependency' => null,
     'officialName' => [
       'mt' => 'Repubblika ta\' Malta',
@@ -6295,7 +6295,7 @@ return [
   [
     'alpha2' => 'MU',
     'alpha3' => 'MUS',
-    'M49Code' => '480',
+    'unM49' => '480',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Mauritius',
@@ -6337,7 +6337,7 @@ return [
   [
     'alpha2' => 'MV',
     'alpha3' => 'MDV',
-    'M49Code' => '462',
+    'unM49' => '462',
     'dependency' => null,
     'officialName' => [
       'dv' => 'ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ',
@@ -6374,7 +6374,7 @@ return [
   [
     'alpha2' => 'MW',
     'alpha3' => 'MWI',
-    'M49Code' => '454',
+    'unM49' => '454',
     'dependency' => null,
     'officialName' => [
       'ny' => 'Dziko la Malaŵi',
@@ -6412,7 +6412,7 @@ return [
   [
     'alpha2' => 'MX',
     'alpha3' => 'MEX',
-    'M49Code' => '484',
+    'unM49' => '484',
     'dependency' => null,
     'officialName' => [
       'es' => 'Estados Unidos Mexicanos',
@@ -6464,7 +6464,7 @@ return [
   [
     'alpha2' => 'MY',
     'alpha3' => 'MYS',
-    'M49Code' => '458',
+    'unM49' => '458',
     'dependency' => null,
     'officialName' => [
       'ms' => 'Malaysia',
@@ -6506,7 +6506,7 @@ return [
   [
     'alpha2' => 'MZ',
     'alpha3' => 'MOZ',
-    'M49Code' => '508',
+    'unM49' => '508',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República de Moçambique',
@@ -6544,7 +6544,7 @@ return [
   [
     'alpha2' => 'NA',
     'alpha3' => 'NAM',
-    'M49Code' => '516',
+    'unM49' => '516',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Namibia',
@@ -6585,7 +6585,7 @@ return [
   [
     'alpha2' => 'NC',
     'alpha3' => 'NCL',
-    'M49Code' => '540',
+    'unM49' => '540',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Gouvernement de la Nouvelle-Calédonie',
@@ -6619,7 +6619,7 @@ return [
   [
     'alpha2' => 'NE',
     'alpha3' => 'NER',
-    'M49Code' => '562',
+    'unM49' => '562',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République du Niger',
@@ -6662,7 +6662,7 @@ return [
   [
     'alpha2' => 'NF',
     'alpha3' => 'NFK',
-    'M49Code' => '574',
+    'unM49' => '574',
     'dependency' => 'AU',
     'officialName' => [
       'en' => 'Territory of Norfolk Island',
@@ -6699,7 +6699,7 @@ return [
   [
     'alpha2' => 'NG',
     'alpha3' => 'NGA',
-    'M49Code' => '566',
+    'unM49' => '566',
     'dependency' => null,
     'officialName' => [
       'en' => 'Federal Republic of Nigeria',
@@ -6742,7 +6742,7 @@ return [
   [
     'alpha2' => 'NI',
     'alpha3' => 'NIC',
-    'M49Code' => '558',
+    'unM49' => '558',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Nicaragua',
@@ -6779,7 +6779,7 @@ return [
   [
     'alpha2' => 'NL',
     'alpha3' => 'NLD',
-    'M49Code' => '528',
+    'unM49' => '528',
     'dependency' => null,
     'officialName' => [
       'nl' => 'Koninkrijk der Nederlanden',
@@ -6823,7 +6823,7 @@ return [
   [
     'alpha2' => 'NO',
     'alpha3' => 'NOR',
-    'M49Code' => '578',
+    'unM49' => '578',
     'dependency' => null,
     'officialName' => [
       'nb' => 'Kongeriket Norge',
@@ -6865,7 +6865,7 @@ return [
   [
     'alpha2' => 'NP',
     'alpha3' => 'NPL',
-    'M49Code' => '524',
+    'unM49' => '524',
     'dependency' => null,
     'officialName' => [
       'ne' => 'सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल',
@@ -6903,7 +6903,7 @@ return [
   [
     'alpha2' => 'NR',
     'alpha3' => 'NRU',
-    'M49Code' => '520',
+    'unM49' => '520',
     'dependency' => null,
     'officialName' => [
       'na' => 'Ripublik Naoero',
@@ -6941,7 +6941,7 @@ return [
   [
     'alpha2' => 'NU',
     'alpha3' => 'NIU',
-    'M49Code' => '570',
+    'unM49' => '570',
     'dependency' => 'NZ',
     'officialName' => [
       'en' => 'Niue',
@@ -6978,7 +6978,7 @@ return [
   [
     'alpha2' => 'NZ',
     'alpha3' => 'NZL',
-    'M49Code' => '554',
+    'unM49' => '554',
     'dependency' => null,
     'officialName' => [
       'mi' => 'Aotearoa',
@@ -7016,7 +7016,7 @@ return [
   [
     'alpha2' => 'OM',
     'alpha3' => 'OMN',
-    'M49Code' => '512',
+    'unM49' => '512',
     'dependency' => null,
     'officialName' => [
       'ar' => 'سلطنة عُمان',
@@ -7050,7 +7050,7 @@ return [
   [
     'alpha2' => 'PA',
     'alpha3' => 'PAN',
-    'M49Code' => '591',
+    'unM49' => '591',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de Panamá',
@@ -7087,7 +7087,7 @@ return [
   [
     'alpha2' => 'PE',
     'alpha3' => 'PER',
-    'M49Code' => '604',
+    'unM49' => '604',
     'dependency' => null,
     'officialName' => [
       'es' => 'República del Perú',
@@ -7128,7 +7128,7 @@ return [
   [
     'alpha2' => 'PF',
     'alpha3' => 'PYF',
-    'M49Code' => '258',
+    'unM49' => '258',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Polynésie française',
@@ -7170,7 +7170,7 @@ return [
   [
     'alpha2' => 'PG',
     'alpha3' => 'PNG',
-    'M49Code' => '598',
+    'unM49' => '598',
     'dependency' => null,
     'officialName' => [
       'en' => 'Independent State of Papua New Guinea',
@@ -7209,7 +7209,7 @@ return [
   [
     'alpha2' => 'PH',
     'alpha3' => 'PHL',
-    'M49Code' => '608',
+    'unM49' => '608',
     'dependency' => null,
     'officialName' => [
       'fil' => 'Repúbliká ng Pilipinas',
@@ -7252,7 +7252,7 @@ return [
   [
     'alpha2' => 'PK',
     'alpha3' => 'PAK',
-    'M49Code' => '586',
+    'unM49' => '586',
     'dependency' => null,
     'officialName' => [
       'ur' => 'اِسلامی جمہوریہ پاكِستان',
@@ -7298,7 +7298,7 @@ return [
   [
     'alpha2' => 'PL',
     'alpha3' => 'POL',
-    'M49Code' => '616',
+    'unM49' => '616',
     'dependency' => null,
     'officialName' => [
       'pl' => 'Rzeczpospolita Polska',
@@ -7333,7 +7333,7 @@ return [
   [
     'alpha2' => 'PM',
     'alpha3' => 'SPM',
-    'M49Code' => '666',
+    'unM49' => '666',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Collectivité d\'outre-mer de Saint-Pierre-et-Miquelon',
@@ -7370,7 +7370,7 @@ return [
   [
     'alpha2' => 'PN',
     'alpha3' => 'PCN',
-    'M49Code' => '612',
+    'unM49' => '612',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Pitcairn, Henderson, Ducie and Oeno Islands',
@@ -7408,7 +7408,7 @@ return [
   [
     'alpha2' => 'PR',
     'alpha3' => 'PRI',
-    'M49Code' => '630',
+    'unM49' => '630',
     'dependency' => 'US',
     'officialName' => [
       'en' => 'Commonwealth of Puerto Rico',
@@ -7449,7 +7449,7 @@ return [
   [
     'alpha2' => 'PS',
     'alpha3' => 'PSE',
-    'M49Code' => '275',
+    'unM49' => '275',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة فلسطين',
@@ -7483,7 +7483,7 @@ return [
   [
     'alpha2' => 'PT',
     'alpha3' => 'PRT',
-    'M49Code' => '620',
+    'unM49' => '620',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República Portuguesa',
@@ -7520,7 +7520,7 @@ return [
   [
     'alpha2' => 'PW',
     'alpha3' => 'PLW',
-    'M49Code' => '585',
+    'unM49' => '585',
     'dependency' => null,
     'officialName' => [
       'pau' => 'Beluu er a Palau ',
@@ -7558,7 +7558,7 @@ return [
   [
     'alpha2' => 'PY',
     'alpha3' => 'PRY',
-    'M49Code' => '600',
+    'unM49' => '600',
     'dependency' => null,
     'officialName' => [
       'es' => 'República del Paraguay',
@@ -7597,7 +7597,7 @@ return [
   [
     'alpha2' => 'QA',
     'alpha3' => 'QAT',
-    'M49Code' => '634',
+    'unM49' => '634',
     'dependency' => null,
     'officialName' => [
       'ar' => 'دولة قطر',
@@ -7634,7 +7634,7 @@ return [
   [
     'alpha2' => 'RE',
     'alpha3' => 'REU',
-    'M49Code' => '638',
+    'unM49' => '638',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Département de La Réunion',
@@ -7671,7 +7671,7 @@ return [
   [
     'alpha2' => 'RO',
     'alpha3' => 'ROU',
-    'M49Code' => '642',
+    'unM49' => '642',
     'dependency' => null,
     'officialName' => [
       'ro' => 'România',
@@ -7705,7 +7705,7 @@ return [
   [
     'alpha2' => 'RS',
     'alpha3' => 'SRB',
-    'M49Code' => '688',
+    'unM49' => '688',
     'dependency' => null,
     'officialName' => [
       'sr-Cyrl' => 'Република Србија',
@@ -7746,7 +7746,7 @@ return [
   [
     'alpha2' => 'RU',
     'alpha3' => 'RUS',
-    'M49Code' => '643',
+    'unM49' => '643',
     'dependency' => null,
     'officialName' => [
       'ru' => 'Росси́йская Федера́ция',
@@ -7816,7 +7816,7 @@ return [
   [
     'alpha2' => 'RW',
     'alpha3' => 'RWA',
-    'M49Code' => '646',
+    'unM49' => '646',
     'dependency' => null,
     'officialName' => [
       'rw' => 'Repubulika y\'u Rwanda',
@@ -7860,7 +7860,7 @@ return [
   [
     'alpha2' => 'SA',
     'alpha3' => 'SAU',
-    'M49Code' => '682',
+    'unM49' => '682',
     'dependency' => null,
     'officialName' => [
       'ar' => 'المملكة العربية السعودية',
@@ -7897,7 +7897,7 @@ return [
   [
     'alpha2' => 'SB',
     'alpha3' => 'SLB',
-    'M49Code' => '090',
+    'unM49' => '090',
     'dependency' => null,
     'officialName' => [
       'en' => 'Solomon Islands',
@@ -7934,7 +7934,7 @@ return [
   [
     'alpha2' => 'SC',
     'alpha3' => 'SYC',
-    'M49Code' => '690',
+    'unM49' => '690',
     'dependency' => null,
     'officialName' => [
       'crs' => 'Repiblik Sesel',
@@ -7975,7 +7975,7 @@ return [
   [
     'alpha2' => 'SD',
     'alpha3' => 'SDN',
-    'M49Code' => '729',
+    'unM49' => '729',
     'dependency' => null,
     'officialName' => [
       'ar' => 'جمهورية السودان',
@@ -8017,7 +8017,7 @@ return [
   [
     'alpha2' => 'SE',
     'alpha3' => 'SWE',
-    'M49Code' => '752',
+    'unM49' => '752',
     'dependency' => null,
     'officialName' => [
       'sv' => 'Konungariket Sverige',
@@ -8058,7 +8058,7 @@ return [
   [
     'alpha2' => 'SG',
     'alpha3' => 'SGP',
-    'M49Code' => '702',
+    'unM49' => '702',
     'dependency' => null,
     'officialName' => [
       'ms' => 'Republik Singapura',
@@ -8105,7 +8105,7 @@ return [
   [
     'alpha2' => 'SH',
     'alpha3' => 'SHN',
-    'M49Code' => '654',
+    'unM49' => '654',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Saint Helena, Ascension and Tristan da Cunha',
@@ -8142,7 +8142,7 @@ return [
   [
     'alpha2' => 'SI',
     'alpha3' => 'SVN',
-    'M49Code' => '705',
+    'unM49' => '705',
     'dependency' => null,
     'officialName' => [
       'sl' => 'Republika Slovenija',
@@ -8178,7 +8178,7 @@ return [
   [
     'alpha2' => 'SJ',
     'alpha3' => 'SJM',
-    'M49Code' => '744',
+    'unM49' => '744',
     'dependency' => 'NO',
     'officialName' => [
       'no' => 'Svalbard og Jan Mayen',
@@ -8216,7 +8216,7 @@ return [
   [
     'alpha2' => 'SK',
     'alpha3' => 'SVK',
-    'M49Code' => '703',
+    'unM49' => '703',
     'dependency' => null,
     'officialName' => [
       'sk' => 'Slovenská Republika',
@@ -8250,7 +8250,7 @@ return [
   [
     'alpha2' => 'SL',
     'alpha3' => 'SLE',
-    'M49Code' => '694',
+    'unM49' => '694',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Sierra Leone',
@@ -8289,7 +8289,7 @@ return [
   [
     'alpha2' => 'SM',
     'alpha3' => 'SMR',
-    'M49Code' => '674',
+    'unM49' => '674',
     'dependency' => null,
     'officialName' => [
       'it' => 'Repubblica di San Marino',
@@ -8326,7 +8326,7 @@ return [
   [
     'alpha2' => 'SN',
     'alpha3' => 'SEN',
-    'M49Code' => '686',
+    'unM49' => '686',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République du Sénégal',
@@ -8370,7 +8370,7 @@ return [
   [
     'alpha2' => 'SO',
     'alpha3' => 'SOM',
-    'M49Code' => '706',
+    'unM49' => '706',
     'dependency' => null,
     'officialName' => [
       'so' => 'Jamhuuriyadda Federaalka Soomaaliya',
@@ -8407,7 +8407,7 @@ return [
   [
     'alpha2' => 'SR',
     'alpha3' => 'SUR',
-    'M49Code' => '740',
+    'unM49' => '740',
     'dependency' => null,
     'officialName' => [
       'nl' => 'Republiek Suriname',
@@ -8444,7 +8444,7 @@ return [
   [
     'alpha2' => 'SS',
     'alpha3' => 'SSD',
-    'M49Code' => '728',
+    'unM49' => '728',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of South Sudan',
@@ -8483,7 +8483,7 @@ return [
   [
     'alpha2' => 'ST',
     'alpha3' => 'STP',
-    'M49Code' => '678',
+    'unM49' => '678',
     'dependency' => null,
     'officialName' => [
       'pt' => 'República Democrática de São Tomé e Príncipe',
@@ -8520,7 +8520,7 @@ return [
   [
     'alpha2' => 'SV',
     'alpha3' => 'SLV',
-    'M49Code' => '222',
+    'unM49' => '222',
     'dependency' => null,
     'officialName' => [
       'es' => 'República de El Salvador',
@@ -8557,7 +8557,7 @@ return [
   [
     'alpha2' => 'SX',
     'alpha3' => 'SXM',
-    'M49Code' => '534',
+    'unM49' => '534',
     'dependency' => 'NL',
     'officialName' => [
       'nl' => 'Sint Maarten',
@@ -8596,7 +8596,7 @@ return [
   [
     'alpha2' => 'SY',
     'alpha3' => 'SYR',
-    'M49Code' => '760',
+    'unM49' => '760',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهوريّة العربيّة السّوريّة',
@@ -8635,7 +8635,7 @@ return [
   [
     'alpha2' => 'SZ',
     'alpha3' => 'SWZ',
-    'M49Code' => '748',
+    'unM49' => '748',
     'dependency' => null,
     'officialName' => [
       'ss' => 'Umbuso weSwatini',
@@ -8673,7 +8673,7 @@ return [
   [
     'alpha2' => 'TC',
     'alpha3' => 'TCA',
-    'M49Code' => '796',
+    'unM49' => '796',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'Turks and Caicos',
@@ -8710,7 +8710,7 @@ return [
   [
     'alpha2' => 'TD',
     'alpha3' => 'TCD',
-    'M49Code' => '148',
+    'unM49' => '148',
     'dependency' => null,
     'officialName' => [
       'ar' => 'جمهورية تشاد',
@@ -8751,7 +8751,7 @@ return [
   [
     'alpha2' => 'TF',
     'alpha3' => 'ATF',
-    'M49Code' => '260',
+    'unM49' => '260',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Territoire des Terres australes et antarctiques françaises',
@@ -8794,7 +8794,7 @@ return [
   [
     'alpha2' => 'TG',
     'alpha3' => 'TGO',
-    'M49Code' => '768',
+    'unM49' => '768',
     'dependency' => null,
     'officialName' => [
       'fr' => 'République Togolaise',
@@ -8833,7 +8833,7 @@ return [
   [
     'alpha2' => 'TH',
     'alpha3' => 'THA',
-    'M49Code' => '764',
+    'unM49' => '764',
     'dependency' => null,
     'officialName' => [
       'th' => 'Ratcha Anachak Thai',
@@ -8870,7 +8870,7 @@ return [
   [
     'alpha2' => 'TJ',
     'alpha3' => 'TJK',
-    'M49Code' => '762',
+    'unM49' => '762',
     'dependency' => null,
     'officialName' => [
       'tg' => 'Ҷумҳурии Тоҷикистон',
@@ -8907,7 +8907,7 @@ return [
   [
     'alpha2' => 'TK',
     'alpha3' => 'TKL',
-    'M49Code' => '772',
+    'unM49' => '772',
     'dependency' => 'NZ',
     'officialName' => [
       'en' => 'Tokelau',
@@ -8944,7 +8944,7 @@ return [
   [
     'alpha2' => 'TL',
     'alpha3' => 'TLS',
-    'M49Code' => '626',
+    'unM49' => '626',
     'dependency' => null,
     'officialName' => [
       'tet' => 'Repúblika Demokrátika Timór Lorosa\'e',
@@ -8982,7 +8982,7 @@ return [
   [
     'alpha2' => 'TM',
     'alpha3' => 'TKM',
-    'M49Code' => '795',
+    'unM49' => '795',
     'dependency' => null,
     'officialName' => [
       'tk' => 'Türkmenistan Respublikasy',
@@ -9020,7 +9020,7 @@ return [
   [
     'alpha2' => 'TN',
     'alpha3' => 'TUN',
-    'M49Code' => '788',
+    'unM49' => '788',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهورية التونسية',
@@ -9059,7 +9059,7 @@ return [
   [
     'alpha2' => 'TO',
     'alpha3' => 'TON',
-    'M49Code' => '776',
+    'unM49' => '776',
     'dependency' => null,
     'officialName' => [
       'to' => 'Pule\'anga Fakatu\'i \'o Tonga',
@@ -9100,7 +9100,7 @@ return [
   [
     'alpha2' => 'TR',
     'alpha3' => 'TUR',
-    'M49Code' => '792',
+    'unM49' => '792',
     'dependency' => null,
     'officialName' => [
       'tr' => 'Türkiye Cumhuriyeti',
@@ -9141,7 +9141,7 @@ return [
   [
     'alpha2' => 'TT',
     'alpha3' => 'TTO',
-    'M49Code' => '780',
+    'unM49' => '780',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Trinidad and Tobago',
@@ -9178,7 +9178,7 @@ return [
   [
     'alpha2' => 'TV',
     'alpha3' => 'TUV',
-    'M49Code' => '798',
+    'unM49' => '798',
     'dependency' => null,
     'officialName' => [
       'tuv' => 'Tuvalu',
@@ -9217,7 +9217,7 @@ return [
   [
     'alpha2' => 'TW',
     'alpha3' => 'TWN',
-    'M49Code' => '158',
+    'unM49' => '158',
     'dependency' => null,
     'officialName' => [
       'zh' => '中華民國',
@@ -9251,7 +9251,7 @@ return [
   [
     'alpha2' => 'TZ',
     'alpha3' => 'TZA',
-    'M49Code' => '834',
+    'unM49' => '834',
     'dependency' => null,
     'officialName' => [
       'sw' => 'Jamhuri ya Muungano wa Tanzania',
@@ -9310,7 +9310,7 @@ return [
   [
     'alpha2' => 'UA',
     'alpha3' => 'UKR',
-    'M49Code' => '804',
+    'unM49' => '804',
     'dependency' => null,
     'officialName' => [
       'uk' => 'Україна',
@@ -9348,7 +9348,7 @@ return [
   [
     'alpha2' => 'UG',
     'alpha3' => 'UGA',
-    'M49Code' => '800',
+    'unM49' => '800',
     'dependency' => null,
     'officialName' => [
       'sw' => 'Jamhuri ya Uganda',
@@ -9398,7 +9398,7 @@ return [
   [
     'alpha2' => 'UM',
     'alpha3' => 'UMI',
-    'M49Code' => '581',
+    'unM49' => '581',
     'dependency' => 'US',
     'officialName' => [
       'en' => 'United States Minor Outlying Islands',
@@ -9440,7 +9440,7 @@ return [
   [
     'alpha2' => 'US',
     'alpha3' => 'USA',
-    'M49Code' => '840',
+    'unM49' => '840',
     'dependency' => null,
     'officialName' => [
       'en' => 'United States of America',
@@ -9536,7 +9536,7 @@ return [
   [
     'alpha2' => 'UY',
     'alpha3' => 'URY',
-    'M49Code' => '858',
+    'unM49' => '858',
     'dependency' => null,
     'officialName' => [
       'es' => 'República Oriental del Uruguay',
@@ -9573,7 +9573,7 @@ return [
   [
     'alpha2' => 'UZ',
     'alpha3' => 'UZB',
-    'M49Code' => '860',
+    'unM49' => '860',
     'dependency' => null,
     'officialName' => [
       'uz-Latn' => 'Uzbekistan Respublikasi',
@@ -9612,7 +9612,7 @@ return [
   [
     'alpha2' => 'VA',
     'alpha3' => 'VAT',
-    'M49Code' => '336',
+    'unM49' => '336',
     'dependency' => null,
     'officialName' => [
       'la' => 'Status Civitatis Vaticanae',
@@ -9647,7 +9647,7 @@ return [
   [
     'alpha2' => 'VC',
     'alpha3' => 'VCT',
-    'M49Code' => '670',
+    'unM49' => '670',
     'dependency' => null,
     'officialName' => [
       'en' => 'Saint Vincent and the Grenadines',
@@ -9684,7 +9684,7 @@ return [
   [
     'alpha2' => 'VE',
     'alpha3' => 'VEN',
-    'M49Code' => '862',
+    'unM49' => '862',
     'dependency' => null,
     'officialName' => [
       'es' => 'República Bolivariana de Venezuela',
@@ -9721,7 +9721,7 @@ return [
   [
     'alpha2' => 'VG',
     'alpha3' => 'VGB',
-    'M49Code' => '092',
+    'unM49' => '092',
     'dependency' => 'GB',
     'officialName' => [
       'en' => 'British Virgin Islands',
@@ -9758,7 +9758,7 @@ return [
   [
     'alpha2' => 'VI',
     'alpha3' => 'VIR',
-    'M49Code' => '850',
+    'unM49' => '850',
     'dependency' => 'US',
     'officialName' => [
       'en' => 'Virgin Islands of the United States',
@@ -9795,7 +9795,7 @@ return [
   [
     'alpha2' => 'VN',
     'alpha3' => 'VNM',
-    'M49Code' => '704',
+    'unM49' => '704',
     'dependency' => null,
     'officialName' => [
       'vi' => 'Cộng hòa xã hội chủ nghĩa Việt Nam',
@@ -9833,7 +9833,7 @@ return [
   [
     'alpha2' => 'VU',
     'alpha3' => 'VUT',
-    'M49Code' => '548',
+    'unM49' => '548',
     'dependency' => null,
     'officialName' => [
       'bi' => 'Ripablik blong Vanuatu',
@@ -9876,7 +9876,7 @@ return [
   [
     'alpha2' => 'WF',
     'alpha3' => 'WLF',
-    'M49Code' => '876',
+    'unM49' => '876',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Collectivité d\'outre-mer de Wallis-et-Futuna',
@@ -9914,7 +9914,7 @@ return [
   [
     'alpha2' => 'WS',
     'alpha3' => 'WSM',
-    'M49Code' => '882',
+    'unM49' => '882',
     'dependency' => null,
     'officialName' => [
       'sm' => 'Malo Sa\'oloto Tuto\'atasi o Samoa',
@@ -9952,7 +9952,7 @@ return [
   [
     'alpha2' => 'YE',
     'alpha3' => 'YEM',
-    'M49Code' => '887',
+    'unM49' => '887',
     'dependency' => null,
     'officialName' => [
       'ar' => 'الجمهوريّة اليمنية',
@@ -9989,7 +9989,7 @@ return [
   [
     'alpha2' => 'YT',
     'alpha3' => 'MYT',
-    'M49Code' => '175',
+    'unM49' => '175',
     'dependency' => 'FR',
     'officialName' => [
       'fr' => 'Collectivité départementale de Mayotte',
@@ -10026,7 +10026,7 @@ return [
   [
     'alpha2' => 'ZA',
     'alpha3' => 'ZAF',
-    'M49Code' => '710',
+    'unM49' => '710',
     'dependency' => null,
     'officialName' => [
       'af' => 'Republiek van Suid-Afrika',
@@ -10079,7 +10079,7 @@ return [
   [
     'alpha2' => 'ZM',
     'alpha3' => 'ZMB',
-    'M49Code' => '894',
+    'unM49' => '894',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Zambia',
@@ -10118,7 +10118,7 @@ return [
   [
     'alpha2' => 'ZW',
     'alpha3' => 'ZWE',
-    'M49Code' => '716',
+    'unM49' => '716',
     'dependency' => null,
     'officialName' => [
       'en' => 'Republic of Zimbabwe',

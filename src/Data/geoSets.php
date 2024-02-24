@@ -294,7 +294,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF',
-    'M49Code' => '002',
+    'unM49' => '002',
     'tags' => [
        'geography',
        'region',
@@ -364,7 +364,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-NO',
-    'M49Code' => '015',
+    'unM49' => '015',
     'tags' => [
        'geography',
        'subregion',
@@ -381,7 +381,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-SS',
-    'M49Code' => '202',
+    'unM49' => '202',
     'tags' => [
        'geography',
        'subregion',
@@ -444,7 +444,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-SS-EA',
-    'M49Code' => '014',
+    'unM49' => '014',
     'tags' => [
        'geography',
        'subdivision',
@@ -476,7 +476,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-SS-MD',
-    'M49Code' => '017',
+    'unM49' => '017',
     'tags' => [
        'geography',
        'subdivision',
@@ -495,7 +495,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-SS-SO',
-    'M49Code' => '018',
+    'unM49' => '018',
     'tags' => [
        'geography',
        'subdivision',
@@ -510,7 +510,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AF-SS-WE',
-    'M49Code' => '011',
+    'unM49' => '011',
     'tags' => [
        'geography',
        'subdivision',
@@ -537,7 +537,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM',
-    'M49Code' => '019',
+    'unM49' => '019',
     'tags' => [
        'geography',
        'region',
@@ -604,7 +604,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM-LA',
-    'M49Code' => '419',
+    'unM49' => '419',
     'tags' => [
        'geography',
        'subregion',
@@ -666,7 +666,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM-LA-CA',
-    'M49Code' => '029',
+    'unM49' => '029',
     'tags' => [
        'geography',
        'subdivision',
@@ -704,7 +704,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM-LA-CT',
-    'M49Code' => '013',
+    'unM49' => '013',
     'tags' => [
        'geography',
        'subdivision',
@@ -722,7 +722,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM-LA-SO',
-    'M49Code' => '005',
+    'unM49' => '005',
     'tags' => [
        'geography',
        'subdivision',
@@ -748,7 +748,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AM-NO',
-    'M49Code' => '021',
+    'unM49' => '021',
     'tags' => [
        'geography',
        'subregion',
@@ -763,7 +763,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AQ',
-    'M49Code' => '010',
+    'unM49' => '010',
     'tags' => [
        'geography',
        'region',
@@ -774,7 +774,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS',
-    'M49Code' => '142',
+    'unM49' => '142',
     'tags' => [
        'geography',
        'region',
@@ -834,7 +834,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS-CT',
-    'M49Code' => '143',
+    'unM49' => '143',
     'tags' => [
        'geography',
        'subregion',
@@ -849,7 +849,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS-EA',
-    'M49Code' => '030',
+    'unM49' => '030',
     'tags' => [
        'geography',
        'subregion',
@@ -866,7 +866,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS-SE',
-    'M49Code' => '035',
+    'unM49' => '035',
     'tags' => [
        'geography',
        'subregion',
@@ -887,7 +887,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS-SO',
-    'M49Code' => '034',
+    'unM49' => '034',
     'tags' => [
        'geography',
        'subregion',
@@ -906,7 +906,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-AS-WE',
-    'M49Code' => '145',
+    'unM49' => '145',
     'tags' => [
        'geography',
        'subregion',
@@ -934,7 +934,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU',
-    'M49Code' => '150',
+    'unM49' => '150',
     'tags' => [
        'geography',
        'region',
@@ -995,7 +995,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU-EA',
-    'M49Code' => '151',
+    'unM49' => '151',
     'tags' => [
        'geography',
        'subregion',
@@ -1015,7 +1015,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU-NO',
-    'M49Code' => '154',
+    'unM49' => '154',
     'tags' => [
        'geography',
        'subregion',
@@ -1041,7 +1041,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU-NO-CH',
-    'M49Code' => '830',
+    'unM49' => '830',
     'tags' => [
        'geography',
        'subdivision',
@@ -1053,7 +1053,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU-SO',
-    'M49Code' => '039',
+    'unM49' => '039',
     'tags' => [
        'geography',
        'subregion',
@@ -1079,7 +1079,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-EU-WE',
-    'M49Code' => '155',
+    'unM49' => '155',
     'tags' => [
        'geography',
        'subregion',
@@ -1098,7 +1098,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-OC',
-    'M49Code' => '009',
+    'unM49' => '009',
     'tags' => [
        'geography',
        'region',
@@ -1137,7 +1137,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-OC-AN',
-    'M49Code' => '053',
+    'unM49' => '053',
     'tags' => [
        'geography',
        'subregion',
@@ -1153,7 +1153,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-OC-ME',
-    'M49Code' => '054',
+    'unM49' => '054',
     'tags' => [
        'geography',
        'subregion',
@@ -1168,7 +1168,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-OC-MI',
-    'M49Code' => '057',
+    'unM49' => '057',
     'tags' => [
        'geography',
        'subregion',
@@ -1186,7 +1186,7 @@ return [
   ],
   [
     'internalCode' => 'GEOG-OC-PO',
-    'M49Code' => '061',
+    'unM49' => '061',
     'tags' => [
        'geography',
        'subregion',
