@@ -40,6 +40,7 @@ return [
        'GB',
        'US',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-G7',
@@ -56,6 +57,7 @@ return [
        'GB',
        'US',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-SCHENGEN',
@@ -92,6 +94,7 @@ return [
        'CH',
        'HU',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-UNCAC',
@@ -291,6 +294,7 @@ return [
        'ZM',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'GEOG-AF',
@@ -1220,6 +1224,7 @@ return [
        'SR',
        'VE',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ASEAN',
@@ -1240,6 +1245,7 @@ return [
        'LA',
        'MM',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-AU',
@@ -1300,6 +1306,7 @@ return [
        'ZM',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-BRICS',
@@ -1314,6 +1321,7 @@ return [
        'CN',
        'ZA',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CIS',
@@ -1332,6 +1340,7 @@ return [
        'TJ',
        'UZ',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-COE',
@@ -1388,6 +1397,7 @@ return [
        'TR',
        'UA',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CSTO',
@@ -1403,6 +1413,7 @@ return [
        'RU',
        'TJ',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CWNAT',
@@ -1468,6 +1479,7 @@ return [
        'GA',
        'TG',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CWRLM',
@@ -1492,6 +1504,7 @@ return [
        'LC',
        'TV',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-EU',
@@ -1528,6 +1541,7 @@ return [
        'SI',
        'SK',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IBRD',
@@ -1726,6 +1740,7 @@ return [
        'ZW',
        'LS',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ICC',
@@ -1859,6 +1874,7 @@ return [
        'VE',
        'ZM',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ICSID',
@@ -2026,6 +2042,7 @@ return [
        'LS',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IDA',
@@ -2209,6 +2226,7 @@ return [
        'LA',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IFC',
@@ -2404,6 +2422,7 @@ return [
        'LV',
        'LB',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IPOL',
@@ -2608,6 +2627,7 @@ return [
        'ZM',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-MIGA',
@@ -2799,6 +2819,7 @@ return [
        'LV',
        'LB',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-NATO',
@@ -2838,6 +2859,7 @@ return [
        'MK',
        'FI',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OAS',
@@ -2882,6 +2904,7 @@ return [
        'UY',
        'VE',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OECD',
@@ -2929,6 +2952,7 @@ return [
        'CO',
        'CR',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OPEC',
@@ -2951,6 +2975,7 @@ return [
        'CG',
        'VE',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OSCE',
@@ -3017,6 +3042,7 @@ return [
        'VA',
        'MN',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-SCO',
@@ -3035,6 +3061,7 @@ return [
        'TJ',
        'UZ',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-UN',
@@ -3237,6 +3264,7 @@ return [
        'ZM',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-WCO',
@@ -3431,6 +3459,7 @@ return [
        'VU',
        'VN',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-WTO',
@@ -3603,6 +3632,7 @@ return [
        'ZM',
        'ZW',
     ],
+    'unM49' => null,
   ],
   [
     'internalCode' => 'ZONE-EZ',
@@ -3634,5 +3664,6 @@ return [
        'ES',
        'HR',
     ],
+    'unM49' => null,
   ],
 ];

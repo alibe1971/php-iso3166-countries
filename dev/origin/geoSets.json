@@ -787,7 +787,7 @@
         "NOTES (not included in the build)": []
     },
     {
-        "label (not included in the build)": "Antarctica",
+        "label (not included in the build)": "Antartica",
         "internalCode": "GEOG-AQ",
         "unM49": "010",
         "tags": [
@@ -798,8 +798,8 @@
             "AQ"
         ],
         "NOTES (not included in the build)": [
-            "Antarctica has its own ISO-3166-1 and M49 code",
-            "Antarctica is a continent group that include itself"
+            "Antartica has its own ISO-3166-1 and M49 code",
+            "Antartica is a continent group that include itself"
         ]
     },
     {

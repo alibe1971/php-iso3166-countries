@@ -25,7 +25,8 @@
             "TR",
             "GB",
             "US"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "CONV-G7",
@@ -41,7 +42,8 @@
             "JP",
             "GB",
             "US"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "CONV-SCHENGEN",
@@ -77,7 +79,8 @@
             "SE",
             "CH",
             "HU"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "CONV-UNCAC",
@@ -276,7 +279,8 @@
             "YE",
             "ZM",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "GEOG-AF",
@@ -1205,7 +1209,8 @@
             "PE",
             "SR",
             "VE"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-ASEAN",
@@ -1225,7 +1230,8 @@
             "KH",
             "LA",
             "MM"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-AU",
@@ -1285,7 +1291,8 @@
             "UG",
             "ZM",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-BRICS",
@@ -1299,7 +1306,8 @@
             "IN",
             "CN",
             "ZA"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-CIS",
@@ -1317,7 +1325,8 @@
             "RU",
             "TJ",
             "UZ"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-COE",
@@ -1373,7 +1382,8 @@
             "SM",
             "TR",
             "UA"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-CSTO",
@@ -1388,7 +1398,8 @@
             "KG",
             "RU",
             "TJ"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-CWNAT",
@@ -1453,7 +1464,8 @@
             "RW",
             "GA",
             "TG"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-CWRLM",
@@ -1477,7 +1489,8 @@
             "VC",
             "LC",
             "TV"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-EU",
@@ -1513,7 +1526,8 @@
             "SE",
             "SI",
             "SK"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-IBRD",
@@ -1711,7 +1725,8 @@
             "LB",
             "ZW",
             "LS"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-ICC",
@@ -1844,7 +1859,8 @@
             "VU",
             "VE",
             "ZM"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-ICSID",
@@ -2011,7 +2027,8 @@
             "ZM",
             "LS",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-IDA",
@@ -2194,7 +2211,8 @@
             "ZM",
             "LA",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-IFC",
@@ -2389,7 +2407,8 @@
             "ZW",
             "LV",
             "LB"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-IPOL",
@@ -2593,7 +2612,8 @@
             "YE",
             "ZM",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-MIGA",
@@ -2784,7 +2804,8 @@
             "ZW",
             "LV",
             "LB"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-NATO",
@@ -2823,7 +2844,8 @@
             "AL",
             "MK",
             "FI"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-OAS",
@@ -2867,7 +2889,8 @@
             "US",
             "UY",
             "VE"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-OECD",
@@ -2914,7 +2937,8 @@
             "LT",
             "CO",
             "CR"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-OPEC",
@@ -2936,7 +2960,8 @@
             "NG",
             "CG",
             "VE"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-OSCE",
@@ -3002,7 +3027,8 @@
             "UZ",
             "VA",
             "MN"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-SCO",
@@ -3020,7 +3046,8 @@
             "RU",
             "TJ",
             "UZ"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-UN",
@@ -3222,7 +3249,8 @@
             "YE",
             "ZM",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-WCO",
@@ -3416,7 +3444,8 @@
             "TO",
             "VU",
             "VN"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ORGS-WTO",
@@ -3588,7 +3617,8 @@
             "YE",
             "ZM",
             "ZW"
-        ]
+        ],
+        "unM49": null
     },
     {
         "internalCode": "ZONE-EZ",
@@ -3619,6 +3649,7 @@
             "SI",
             "ES",
             "HR"
-        ]
+        ],
+        "unM49": null
     }
 ]

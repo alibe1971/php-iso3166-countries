@@ -98,8 +98,8 @@ return [
     ],
   ],
   'AQ' => [
-    'name' => 'Antarctica',
-    'completeName' => 'Antarctica',
+    'name' => 'Antartica',
+    'completeName' => 'Antartica',
     'demonyms' => [
     ],
     'keywords' => [
