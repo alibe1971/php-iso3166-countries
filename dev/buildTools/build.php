@@ -24,7 +24,7 @@ usort($Countries, function ($a, $b) {
 foreach ($Countries as $index => $arr) {
     $Countries[$index]['alpha2'] = strtoupper($arr['alpha2']);
     $Countries[$index]['alpha3'] = strtoupper($arr['alpha3']);
-    $Countries[$index]['M49Code'] = str_pad($arr['M49Code'], 3, '0', STR_PAD_LEFT);
+    $Countries[$index]['unM49'] = str_pad($arr['unM49'], 3, '0', STR_PAD_LEFT);
     $Countries[$index]['currencies']['legalTenders'] = array_map('strtoupper', $arr['currencies']['legalTenders']);
     $Countries[$index]['currencies']['widelyAccepted'] = array_map('strtoupper', $arr['currencies']['widelyAccepted']);
     unset($Countries[$index]['label (not included in the build)']);
@@ -58,8 +58,8 @@ usort($geoSets, function ($a, $b) {
 foreach ($geoSets as $index => $arr) {
     unset($geoSets[$index]['label (not included in the build)']);
     unset($geoSets[$index]['NOTES (not included in the build)']);
-    if (array_key_exists('M49Code', $arr)) {
-        $geoSets[$index]['M49Code'] = str_pad($geoSets[$index]['M49Code'], 3, '0', STR_PAD_LEFT);
+    if (array_key_exists('unM49', $arr)) {
+        $geoSets[$index]['unM49'] = str_pad($geoSets[$index]['unM49'], 3, '0', STR_PAD_LEFT);
     }
     if (array_key_exists('set', $arr)) {
         $geoSets[$index]['set'] = array_map('strtoupper', $arr['set']);
