@@ -2,6 +2,7 @@
     {
         "label (not included in the build)": "Group of Twenty (G20)",
         "internalCode": "CONV-G20",
+        "unM49": null,
         "tags": [
             "convention",
             "geopolitics"
@@ -34,6 +35,7 @@
     {
         "label (not included in the build)": "Group of Seven (G7)",
         "internalCode": "CONV-G7",
+        "unM49": null,
         "tags": [
             "convention",
             "geopolitics"
@@ -55,6 +57,7 @@
     {
         "label (not included in the build)": "Schengen Area",
         "internalCode": "CONV-SCHENGEN",
+        "unM49": null,
         "tags": [
             "convention",
             "geopolitics"
@@ -93,6 +96,7 @@
     {
         "label (not included in the build)": "United Nations Convention Against Corruption (UNCAC)",
         "internalCode": "CONV-UNCAC",
+        "unM49": null,
         "tags": [
             "convention",
             "security"
@@ -1283,6 +1287,7 @@
     {
         "label (not included in the build)": "Amazon Cooperation Treaty Organization (ACTO)",
         "internalCode": "ORGS-ACTO",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1302,6 +1307,7 @@
     {
         "label (not included in the build)": "Association of Southeast Asian Nations (ASEAN)",
         "internalCode": "ORGS-ASEAN",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics",
@@ -1324,6 +1330,7 @@
     {
         "label (not included in the build)": "African Union (AU)",
         "internalCode": "ORGS-AU",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1386,6 +1393,7 @@
     {
         "label (not included in the build)": "BRICS",
         "internalCode": "ORGS-BRICS",
+        "unM49": null,
         "tags": [
             "organization",
             "economy"
@@ -1402,6 +1410,7 @@
     {
         "label (not included in the build)": "Commonwealth of Independent States (CIS)",
         "internalCode": "ORGS-CIS",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1422,6 +1431,7 @@
     {
         "label (not included in the build)": "Council of Europe (CoE)",
         "internalCode": "ORGS-COE",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1480,6 +1490,7 @@
     {
         "label (not included in the build)": "Collective Security Treaty Organization (CSTO)",
         "internalCode": "ORGS-CSTO",
+        "unM49": null,
         "tags": [
             "organization",
             "military"
@@ -1497,6 +1508,7 @@
     {
         "label (not included in the build)": "Commonwealth of the Nations",
         "internalCode": "ORGS-CWNAT",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1564,6 +1576,7 @@
     {
         "label (not included in the build)": "Commonwealth realm",
         "internalCode": "ORGS-CWRLM",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1590,6 +1603,7 @@
     {
         "label (not included in the build)": "European Union (EU)",
         "internalCode": "ORGS-EU",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -1628,6 +1642,7 @@
     {
         "label (not included in the build)": "International Bank for Reconstruction and Development (IBRD)",
         "internalCode": "ORGS-IBRD",
+        "unM49": null,
         "tags": [
             "organization",
             "finance"
@@ -1828,6 +1843,7 @@
     {
         "label (not included in the build)": "International Criminal Court (ICC)",
         "internalCode": "ORGS-ICC",
+        "unM49": null,
         "tags": [
             "organization",
             "jurisprudence"
@@ -1963,6 +1979,7 @@
     {
         "label (not included in the build)": "International Centre for Settlement of Investment Disputes (ICSID)",
         "internalCode": "ORGS-ICSID",
+        "unM49": null,
         "tags": [
             "organization",
             "finance"
@@ -2132,6 +2149,7 @@
     {
         "label (not included in the build)": "International Development Association (IDA)",
         "internalCode": "ORGS-IDA",
+        "unM49": null,
         "tags": [
             "organization",
             "finance"
@@ -2317,6 +2335,7 @@
     {
         "label (not included in the build)": "International Finance Corporation (IFC)",
         "internalCode": "ORGS-IFC",
+        "unM49": null,
         "tags": [
             "organization",
             "finance"
@@ -2514,6 +2533,7 @@
     {
         "label (not included in the build)": "The International Criminal Police Organization (Interpol)",
         "internalCode": "ORGS-IPOL",
+        "unM49": null,
         "tags": [
             "organization",
             "security"
@@ -2720,6 +2740,7 @@
     {
         "label (not included in the build)": "Multilateral Investment Guarantee Agency (MIGA)",
         "internalCode": "ORGS-MIGA",
+        "unM49": null,
         "tags": [
             "organization",
             "finance"
@@ -2913,6 +2934,7 @@
     {
         "label (not included in the build)": "North Atlantic Treaty Organization (NATO)",
         "internalCode": "ORGS-NATO",
+        "unM49": null,
         "tags": [
             "organization",
             "military"
@@ -2954,6 +2976,7 @@
     {
         "label (not included in the build)": "Organization of American States (OAS)",
         "internalCode": "ORGS-OAS",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -3000,6 +3023,7 @@
     {
         "label (not included in the build)": "Organisation for Economic Co-operation and Development (OECD)",
         "internalCode": "ORGS-OECD",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -3049,6 +3073,7 @@
     {
         "label (not included in the build)": "Organization of the Petroleum Exporting Countries (OPEC)",
         "internalCode": "ORGS-OPEC",
+        "unM49": null,
         "tags": [
             "organization",
             "economy"
@@ -3073,6 +3098,7 @@
     {
         "label (not included in the build)": "Organization for Security and Co-operation in Europe (OSCE)",
         "internalCode": "ORGS-OSCE",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -3141,6 +3167,7 @@
     {
         "label (not included in the build)": "Shanghai Cooperation Organisation (SCO)",
         "internalCode": "ORGS-SCO",
+        "unM49": null,
         "tags": [
             "geopolitics",
             "economy",
@@ -3161,6 +3188,7 @@
     {
         "label (not included in the build)": "United Nations (UN)",
         "internalCode": "ORGS-UN",
+        "unM49": null,
         "tags": [
             "organization",
             "geopolitics"
@@ -3365,6 +3393,7 @@
     {
         "label (not included in the build)": "World Customs Organization (WCO)",
         "internalCode": "ORGS-WCO",
+        "unM49": null,
         "tags": [
             "organization",
             "economy"
@@ -3563,6 +3592,7 @@
     {
         "label (not included in the build)": "World Trade Organization (WTO)",
         "internalCode": "ORGS-WTO",
+        "unM49": null,
         "tags": [
             "organization",
             "economy"
@@ -3739,6 +3769,7 @@
     {
         "label (not included in the build)": "Eurozone (EZ)",
         "internalCode": "ZONE-EZ",
+        "unM49": null,
         "tags": [
             "zone",
             "finance",

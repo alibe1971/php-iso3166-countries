@@ -15,6 +15,7 @@
 return [
   [
     'internalCode' => 'CONV-G20',
+    'unM49' => null,
     'tags' => [
        'convention',
        'geopolitics',
@@ -40,10 +41,10 @@ return [
        'GB',
        'US',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-G7',
+    'unM49' => null,
     'tags' => [
        'convention',
        'geopolitics',
@@ -57,10 +58,10 @@ return [
        'GB',
        'US',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-SCHENGEN',
+    'unM49' => null,
     'tags' => [
        'convention',
        'geopolitics',
@@ -94,10 +95,10 @@ return [
        'CH',
        'HU',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'CONV-UNCAC',
+    'unM49' => null,
     'tags' => [
        'convention',
        'security',
@@ -294,7 +295,6 @@ return [
        'ZM',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'GEOG-AF',
@@ -1210,6 +1210,7 @@ return [
   ],
   [
     'internalCode' => 'ORGS-ACTO',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1224,10 +1225,10 @@ return [
        'SR',
        'VE',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ASEAN',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1245,10 +1246,10 @@ return [
        'LA',
        'MM',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-AU',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1306,10 +1307,10 @@ return [
        'ZM',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-BRICS',
+    'unM49' => null,
     'tags' => [
        'organization',
        'economy',
@@ -1321,10 +1322,10 @@ return [
        'CN',
        'ZA',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CIS',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1340,10 +1341,10 @@ return [
        'TJ',
        'UZ',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-COE',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1397,10 +1398,10 @@ return [
        'TR',
        'UA',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CSTO',
+    'unM49' => null,
     'tags' => [
        'organization',
        'military',
@@ -1413,10 +1414,10 @@ return [
        'RU',
        'TJ',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CWNAT',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1479,10 +1480,10 @@ return [
        'GA',
        'TG',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-CWRLM',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1504,10 +1505,10 @@ return [
        'LC',
        'TV',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-EU',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -1541,10 +1542,10 @@ return [
        'SI',
        'SK',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IBRD',
+    'unM49' => null,
     'tags' => [
        'organization',
        'finance',
@@ -1740,10 +1741,10 @@ return [
        'ZW',
        'LS',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ICC',
+    'unM49' => null,
     'tags' => [
        'organization',
        'jurisprudence',
@@ -1874,10 +1875,10 @@ return [
        'VE',
        'ZM',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-ICSID',
+    'unM49' => null,
     'tags' => [
        'organization',
        'finance',
@@ -2042,10 +2043,10 @@ return [
        'LS',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IDA',
+    'unM49' => null,
     'tags' => [
        'organization',
        'finance',
@@ -2226,10 +2227,10 @@ return [
        'LA',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IFC',
+    'unM49' => null,
     'tags' => [
        'organization',
        'finance',
@@ -2422,10 +2423,10 @@ return [
        'LV',
        'LB',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-IPOL',
+    'unM49' => null,
     'tags' => [
        'organization',
        'security',
@@ -2627,10 +2628,10 @@ return [
        'ZM',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-MIGA',
+    'unM49' => null,
     'tags' => [
        'organization',
        'finance',
@@ -2819,10 +2820,10 @@ return [
        'LV',
        'LB',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-NATO',
+    'unM49' => null,
     'tags' => [
        'organization',
        'military',
@@ -2859,10 +2860,10 @@ return [
        'MK',
        'FI',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OAS',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -2904,10 +2905,10 @@ return [
        'UY',
        'VE',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OECD',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -2952,10 +2953,10 @@ return [
        'CO',
        'CR',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OPEC',
+    'unM49' => null,
     'tags' => [
        'organization',
        'economy',
@@ -2975,10 +2976,10 @@ return [
        'CG',
        'VE',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-OSCE',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -3042,10 +3043,10 @@ return [
        'VA',
        'MN',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-SCO',
+    'unM49' => null,
     'tags' => [
        'geopolitics',
        'economy',
@@ -3061,10 +3062,10 @@ return [
        'TJ',
        'UZ',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-UN',
+    'unM49' => null,
     'tags' => [
        'organization',
        'geopolitics',
@@ -3264,10 +3265,10 @@ return [
        'ZM',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-WCO',
+    'unM49' => null,
     'tags' => [
        'organization',
        'economy',
@@ -3459,10 +3460,10 @@ return [
        'VU',
        'VN',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ORGS-WTO',
+    'unM49' => null,
     'tags' => [
        'organization',
        'economy',
@@ -3632,10 +3633,10 @@ return [
        'ZM',
        'ZW',
     ],
-    'unM49' => null,
   ],
   [
     'internalCode' => 'ZONE-EZ',
+    'unM49' => null,
     'tags' => [
        'zone',
        'finance',
@@ -3664,6 +3665,5 @@ return [
        'ES',
        'HR',
     ],
-    'unM49' => null,
   ],
 ];
