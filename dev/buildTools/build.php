@@ -74,7 +74,7 @@ $func->build('geoSets', $geoSets);
 foreach ($Config['settings']['languages']['inPackage'] as $lang) {
     $translationDir = 'Translations/' . $lang . '/';
 
-    $names = $func->getData($func->devDirectory . '/Origin/' . $translationDir . '/ccName.json');
+    $names = $func->getData($func->devDirectory . '/Origin/' . $translationDir . '/ccNameCommon.json');
     ksort($names);
 
     $nameComplete = $func->getData($func->devDirectory . '/Origin/' . $translationDir . '/ccNameComplete.json');
@@ -95,7 +95,7 @@ foreach ($Config['settings']['languages']['inPackage'] as $lang) {
     $countryTranslation = [];
     foreach ($names as $cc => $name) {
         $countryTranslation[$cc]['name'] = $name;
-        $countryTranslation[$cc]['nameComplete'] = $nameComplete[$cc];
+        $countryTranslation[$cc]['completeName'] = $nameComplete[$cc];
         $countryTranslation[$cc]['demonyms'] = $demonyms[$cc]['demonyms'];
 
         $countryTranslation[$cc]['keywords'] = array_values(array_unique(array_diff(
