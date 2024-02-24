@@ -4,6 +4,6 @@ namespace Alibe\GeoCodes\Lib\DataObj;
 
 use stdClass;
 
-class ConfigSystem extends stdClass
+class InstanceLanguage extends stdClass
 {
 }
