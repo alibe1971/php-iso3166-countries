@@ -20,7 +20,7 @@ return [
        'convention',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AR',
        'AU',
        'BR',
@@ -49,7 +49,7 @@ return [
        'convention',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'CA',
        'FR',
        'DE',
@@ -66,7 +66,7 @@ return [
        'convention',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AT',
        'BE',
        'HR',
@@ -103,7 +103,7 @@ return [
        'convention',
        'security',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'AL',
        'DZ',
@@ -303,7 +303,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'DZ',
        'EG',
        'LY',
@@ -373,7 +373,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'DZ',
        'EG',
        'LY',
@@ -390,7 +390,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'IO',
        'BI',
        'KM',
@@ -453,7 +453,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'IO',
        'BI',
        'KM',
@@ -485,7 +485,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'AO',
        'CM',
        'CF',
@@ -504,7 +504,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'BW',
        'SZ',
        'LS',
@@ -519,7 +519,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'BJ',
        'BF',
        'CV',
@@ -546,7 +546,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'AI',
        'AG',
        'AW',
@@ -613,7 +613,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AI',
        'AG',
        'AW',
@@ -675,7 +675,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'AI',
        'AG',
        'AW',
@@ -713,7 +713,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'BZ',
        'CR',
        'SV',
@@ -731,7 +731,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'AR',
        'BO',
        'BV',
@@ -757,7 +757,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'BM',
        'CA',
        'GL',
@@ -772,7 +772,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'AQ',
     ],
   ],
@@ -783,7 +783,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'KZ',
        'KG',
        'TJ',
@@ -843,7 +843,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'KZ',
        'KG',
        'TJ',
@@ -858,7 +858,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'CN',
        'HK',
        'MO',
@@ -875,7 +875,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'BN',
        'KH',
        'ID',
@@ -896,7 +896,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'BD',
        'BT',
@@ -915,7 +915,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AM',
        'AZ',
        'BH',
@@ -943,7 +943,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'BY',
        'BG',
        'CZ',
@@ -1004,7 +1004,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'BY',
        'BG',
        'CZ',
@@ -1024,7 +1024,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AX',
        'GG',
        'JE',
@@ -1050,7 +1050,7 @@ return [
        'geography',
        'subdivision',
     ],
-    'set' => [
+    'countryCodes' => [
        'GG',
        'JE',
     ],
@@ -1062,7 +1062,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AL',
        'AD',
        'BA',
@@ -1088,7 +1088,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AT',
        'BE',
        'FR',
@@ -1107,7 +1107,7 @@ return [
        'geography',
        'region',
     ],
-    'set' => [
+    'countryCodes' => [
        'AU',
        'CX',
        'CC',
@@ -1146,7 +1146,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AU',
        'CX',
        'CC',
@@ -1162,7 +1162,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'FJ',
        'NC',
        'PG',
@@ -1177,7 +1177,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'GU',
        'KI',
        'MH',
@@ -1195,7 +1195,7 @@ return [
        'geography',
        'subregion',
     ],
-    'set' => [
+    'countryCodes' => [
        'AS',
        'CK',
        'PF',
@@ -1215,7 +1215,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'BO',
        'BR',
        'CO',
@@ -1234,7 +1234,7 @@ return [
        'geopolitics',
        'economy',
     ],
-    'set' => [
+    'countryCodes' => [
        'ID',
        'MY',
        'PH',
@@ -1254,7 +1254,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'DZ',
        'AO',
        'BJ',
@@ -1315,7 +1315,7 @@ return [
        'organization',
        'economy',
     ],
-    'set' => [
+    'countryCodes' => [
        'BR',
        'RU',
        'IN',
@@ -1330,7 +1330,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AM',
        'AZ',
        'BY',
@@ -1349,7 +1349,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AD',
        'AL',
        'AM',
@@ -1406,7 +1406,7 @@ return [
        'organization',
        'military',
     ],
-    'set' => [
+    'countryCodes' => [
        'AM',
        'BY',
        'KZ',
@@ -1422,7 +1422,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'GB',
        'CA',
        'ZA',
@@ -1488,7 +1488,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AG',
        'AU',
        'BS',
@@ -1513,7 +1513,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AT',
        'BE',
        'BG',
@@ -1550,7 +1550,7 @@ return [
        'organization',
        'finance',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'LR',
        'AL',
@@ -1749,7 +1749,7 @@ return [
        'organization',
        'jurisprudence',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'AL',
        'AD',
@@ -1883,7 +1883,7 @@ return [
        'organization',
        'finance',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'LR',
        'AL',
@@ -2051,7 +2051,7 @@ return [
        'organization',
        'finance',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'LV',
        'AL',
@@ -2235,7 +2235,7 @@ return [
        'organization',
        'finance',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'LS',
        'AL',
@@ -2431,7 +2431,7 @@ return [
        'organization',
        'security',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'AL',
        'DZ',
@@ -2636,7 +2636,7 @@ return [
        'organization',
        'finance',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'LS',
        'AL',
@@ -2828,7 +2828,7 @@ return [
        'organization',
        'military',
     ],
-    'set' => [
+    'countryCodes' => [
        'BE',
        'BG',
        'CZ',
@@ -2868,7 +2868,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AG',
        'AR',
        'BS',
@@ -2913,7 +2913,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AT',
        'BE',
        'DK',
@@ -2961,7 +2961,7 @@ return [
        'organization',
        'economy',
     ],
-    'set' => [
+    'countryCodes' => [
        'DZ',
        'AO',
        'SA',
@@ -2984,7 +2984,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AL',
        'AD',
        'AM',
@@ -3052,7 +3052,7 @@ return [
        'economy',
        'military',
     ],
-    'set' => [
+    'countryCodes' => [
        'CN',
        'IN',
        'KZ',
@@ -3070,7 +3070,7 @@ return [
        'organization',
        'geopolitics',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'AL',
        'DZ',
@@ -3273,7 +3273,7 @@ return [
        'organization',
        'economy',
     ],
-    'set' => [
+    'countryCodes' => [
        'AG',
        'AR',
        'BS',
@@ -3468,7 +3468,7 @@ return [
        'organization',
        'economy',
     ],
-    'set' => [
+    'countryCodes' => [
        'AF',
        'AL',
        'AO',
@@ -3643,7 +3643,7 @@ return [
        'economy',
        'currency',
     ],
-    'set' => [
+    'countryCodes' => [
        'AT',
        'BE',
        'CY',
