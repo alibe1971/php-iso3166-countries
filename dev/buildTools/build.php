@@ -1,6 +1,6 @@
 <?php
 
-namespace Alibe\Countrycode\Dev\BuildTools;
+namespace Alibe\GeoCodes\Dev\BuildTools;
 
 //
  // [TODO] Languages
@@ -107,21 +107,25 @@ foreach ($Config['settings']['languages']['inPackage'] as $lang) {
         $countryTranslation[$cc]['keywords'] = array_values(array_unique(array_diff(
             array_filter(array_merge(
                 array_merge(...array_map(function ($element) use ($func) {
+                    /** @phpstan-ignore-next-line */
                      return str_word_count($func->slug($element), 1);
                 }, $alias[$cc]['acronymsAliasFormer'])),
                 array_merge(...array_map(function ($element) use ($func) {
+                    /** @phpstan-ignore-next-line */
                      return str_word_count($func->slug($element), 1);
                 }, $adjectives[$cc]['adjectives'])),
                 array_merge(...array_map(function ($element) use ($func) {
+                    /** @phpstan-ignore-next-line */
                      return str_word_count($func->slug($element), 1);
                 }, $typos[$cc]['typos'])),
                 array_merge(...array_map(function ($element) use ($func) {
+                    /** @phpstan-ignore-next-line */
                      return str_word_count($func->slug($element), 1);
                 }, $others[$cc]['others']))
             )),
-            array_filter(array_merge(
-                explode(' ', $func->slug($name)),
-                explode(' ', $func->slug($nameComplete[$cc])),
+            array_filter(array_merge(                               /** @phpstan-ignore-next-line */
+                explode(' ', $func->slug($name)),                   /** @phpstan-ignore-next-line */
+                explode(' ', $func->slug($nameComplete[$cc])),      /** @phpstan-ignore-next-line */
                 explode(' ', $func->slug(implode(' ', $demonyms[$cc]['demonyms'])))
             ))
         )));
