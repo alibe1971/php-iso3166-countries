@@ -2,8 +2,8 @@
 
 namespace Alibe\GeoCodes\Lib;
 
-use Alibe\GeoCodes\Lib\DataObj\ConfigLanguages;
-use Alibe\GeoCodes\Lib\DataObj\ConfigSystem;
+use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
+use Alibe\GeoCodes\Lib\DataObj\ConfigSettings;
 use Exception;
 
 class BaseCode
@@ -11,14 +11,14 @@ class BaseCode
     /**
      * The main config array
      *
-     * @var object
+     * @var ConfigSettings
      */
-    private object $config;
+    private ConfigSettings $config;
 
     /**
-     * @var object
+     * @var InstanceLanguage
      */
-    private object $Language;
+    private InstanceLanguage $Language;
 
 
     /**
@@ -26,7 +26,7 @@ class BaseCode
      * @param $file
      * @return array
      */
-    private function getData($file): array
+    public static function getData($file): array
     {
         return include(dirname(__DIR__) . '/Data/' . $file . '.php');
     }
@@ -36,7 +36,17 @@ class BaseCode
      */
     protected function setConfig(): void
     {
-        $this->config = $this->arrayToObjRecursive(ConfigSystem::class, $this->getData('config'));
+        $this->config = (new ConfigSettings())->from($this->getData('config'));
+    }
+
+    /**
+     * Get the internal main config
+     *
+     * @return ConfigSettings
+     */
+    protected function getConfig(): ConfigSettings
+    {
+        return $this->config;
     }
 
     /**
@@ -45,7 +55,17 @@ class BaseCode
      */
     public function getAvailableLanguages(): array
     {
-        return $this->config->settings->languages->inPackage;
+        return $this->config->settings->languages->inPackage->toArray();
+    }
+
+    /**
+     * Get the instance config Languages
+     *
+     * @return InstanceLanguage
+     */
+    protected function getInstanceLanguage(): InstanceLanguage
+    {
+        return $this->Language;
     }
 
     /**
@@ -56,7 +76,7 @@ class BaseCode
      */
     protected function reset(): void
     {
-        $this->Language = new ConfigLanguages();
+        $this->Language = new InstanceLanguage();
         $language = $this->config->settings->languages->default;
         $this->setDefaultLanguage($language);
         $this->useLanguage($language);
@@ -66,16 +86,23 @@ class BaseCode
      * Set the default language to use in case the chosen current language doesn't exist.
      *
      * @param string $language
+     * @return BaseCode
      * @throws Exception
      */
-    public function setDefaultLanguage(string $language): void
+    public function setDefaultLanguage(string $language): BaseCode
     {
-        if (!in_array($language, $this->config->settings->languages->inPackage)) {
+        if (!in_array($language, $this->config->settings->languages->inPackage->toArray())) {
             throw new Exception('Invalid format. Use "array" or "object"');
         }
         $this->Language->default = $language;
+        return $this;
     }
 
+    /**
+     * Get the default language code
+     *
+     * @return string
+     */
     public function getDefaultLanguage(): string
     {
         return $this->Language->default;
@@ -85,11 +112,13 @@ class BaseCode
      * Set the language to use in the instance.
      *
      * @param string $language
+     * @return BaseCode
      */
-    public function useLanguage(string $language): void
+    public function useLanguage(string $language): BaseCode
     {
-        $this->Language->current = (!in_array($language, $this->config->settings->languages->inPackage)) ?
+        $this->Language->current = (!in_array($language, $this->config->settings->languages->inPackage->toArray())) ?
             $this->Language->default : $language;
+        return $this;
     }
 
     /**
@@ -102,25 +131,6 @@ class BaseCode
         return $this->Language->current;
     }
 
-    /**
-     * Transform an array in an instance of a defined class
-     *
-     * @param string $class
-     * @param array $array
-     * @return object
-     */
-    protected function arrayToObjRecursive(string $class, array $array): object
-    {
-        $obj = new $class();
-        foreach ($array as $key => $value) {
-            if (is_array($value) && count(array_filter(array_keys($value), 'is_string')) > 0) {
-                $obj->$key = $this->arrayToObjRecursive($class, $value);
-            } else {
-                $obj->$key = $value;
-            }
-        }
-        return $obj;
-    }
 
     private function buildTranslation($lang)
     {
@@ -136,13 +146,5 @@ class BaseCode
 //        if($this->superDefLang != $lang) {
 //            $this->execParsingTranslation($lang);
 //        }
-    }
-
-    /**
-     * [TODO]
-     * @param $lang
-     */
-    private function execParsingTranslation($lang)
-    {
     }
 }

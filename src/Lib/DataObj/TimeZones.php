@@ -2,6 +2,6 @@
 
 namespace Alibe\GeoCodes\Lib\DataObj;
 
-class ConfigSettings extends BaseDataObj
+class TimeZones extends BaseDataObj
 {
 }
