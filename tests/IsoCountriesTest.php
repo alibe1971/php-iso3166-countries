@@ -31,12 +31,12 @@ final class IsoCountriesTest extends TestCase
      */
     public function testSelectableFields(): void
     {
-        $selectFileds = self::$geoCodes->countries()->getSelectables();
-        $this->assertIsArray($selectFileds);
+        $selectFields = self::$geoCodes->countries()->getSelectables();
+        $this->assertIsArray($selectFields);
 
 
-        foreach ($selectFileds as $key => $descr) {
-            $this->assertArrayHasKey($key, $selectFileds, 'Key `' . $key . '` not present as selectable');
+        foreach ($selectFields as $key => $descr) {
+            $this->assertArrayHasKey($key, $selectFields, 'Key `' . $key . '` not present as selectable');
             // check the existence of the field
             // check the type of the key
         }
@@ -58,6 +58,7 @@ final class IsoCountriesTest extends TestCase
 
         /** @phpstan-ignore-next-line */
         $countries3 = self::$geoCodes->useLanguage('it')->countries()->limit(0, 1)->get();
+
 
 
 //        $countries4 = $countries3->toJson();
