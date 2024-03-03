@@ -1,6 +1,6 @@
 <?php
 
-namespace Alibe\Countrycode\Dev\BuildTools;
+namespace Alibe\GeoCodes\Dev\BuildTools;
 
 use Exception;
 use Symfony\Component\String\Slugger\AsciiSlugger;
@@ -31,7 +31,7 @@ class Functions
 
     /**
      * @param string $filename
-     * @param array<string, mixed> $data
+     * @param array<string|int, mixed> $data
      * @return void
      */
     public function build(string $filename, array $data): void
@@ -64,7 +64,7 @@ class Functions
 
     /**
      * @param string $filename
-     * @param array<string, mixed> $data
+     * @param array<string|int, mixed> $data
      * @return void
      */
     private function buildArray(string $filename, array $data): void
