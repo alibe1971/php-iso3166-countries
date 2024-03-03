@@ -2,10 +2,18 @@
 
 namespace Alibe\Countrycode\Dev\BuildTools;
 
+//
+ // [TODO] Languages
+ //    - https://en.wikipedia.org/wiki/List_of_official_languages_by_country_and_territory
+ //    - https://github.com/datasets/language-codes
+ //    ------> https://github.com/sokil/php-isocodes-db-only
+ //
+
 require __DIR__ . '/../../vendor/autoload.php';
 require __DIR__ . '/Functions.php';
 
 $func = new Functions();
+
 
 /**
  * Configuration
@@ -56,14 +64,12 @@ usort($geoSets, function ($a, $b) {
     return strcmp($a['internalCode'], $b['internalCode']);
 });
 foreach ($geoSets as $index => $arr) {
+    $geoSets[$index]['internalCode'] = strtoupper($arr['internalCode']);
+    $geoSets[$index]['unM49'] = ($arr['unM49'] !== null) ? str_pad($arr['unM49'], 3, '0', STR_PAD_LEFT) : null;
+    $geoSets[$index]['tags'] = array_map('strtolower', $arr['tags']);
+    $geoSets[$index]['countryCodes'] = array_map('strtoupper', $arr['countryCodes']);
     unset($geoSets[$index]['label (not included in the build)']);
     unset($geoSets[$index]['NOTES (not included in the build)']);
-    if (array_key_exists('unM49', $arr)) {
-        $geoSets[$index]['unM49'] = str_pad($geoSets[$index]['unM49'], 3, '0', STR_PAD_LEFT);
-    }
-    if (array_key_exists('set', $arr)) {
-        $geoSets[$index]['set'] = array_map('strtoupper', $arr['set']);
-    }
 }
 $func->build('geoSets', $geoSets);
 
