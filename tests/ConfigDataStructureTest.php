@@ -709,7 +709,7 @@ final class ConfigDataStructureTest extends TestCase
                     . $loc .
                     '` already exits (duplicated) in `locales` for the alpha2 `' . $cc['alpha2'] . '`'
                 );
-//                $this->assertContains(  // [TODO] alibe DA METTERE ANCHE LA LISTA DEI LOCALES
+//                $this->assertContains(  // [TODO] DA METTERE ANCHE LA LISTA DEI LOCALES
 //                    $loc,
 //                    self::$countriesData['currencies'],
 //                    'The property `currencies.widelyAccepted` with value `'
