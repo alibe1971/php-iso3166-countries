@@ -6,6 +6,9 @@ use Alibe\GeoCodes\Lib\DataObj\BaseDataObj;
 
 class CountryMottos extends BaseDataObj
 {
+    /**
+     * @return array<string, mixed>
+     */
     protected function getObjectStructureParser(): array
     {
         return [

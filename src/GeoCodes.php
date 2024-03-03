@@ -20,16 +20,16 @@ class GeoCodes extends BaseCode
 
     public function countries(): CodesCountries
     {
-        return new CodesCountries($this->getConfig(), $this->getInstanceLanguage());
+        return new CodesCountries($this->getInstanceLanguage());
     }
 
     public function geoSets(): CodesGeoSets
     {
-        return new CodesGeoSets($this->getConfig(), $this->getInstanceLanguage());
+        return new CodesGeoSets($this->getInstanceLanguage());
     }
 
     public function geoCurrencies(): CodesCurrencies
     {
-        return new CodesCurrencies($this->getConfig(), $this->getInstanceLanguage());
+        return new CodesCurrencies($this->getInstanceLanguage());
     }
 }

@@ -7,6 +7,9 @@ use Alibe\GeoCodes\Lib\DataObj\Currencies;
 
 class CountryCurrencies extends BaseDataObj
 {
+    /**
+     * @return array<string, mixed>
+     */
     protected function getObjectStructureParser(): array
     {
         return [

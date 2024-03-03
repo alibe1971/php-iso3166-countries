@@ -8,6 +8,9 @@ use Alibe\GeoCodes\Lib\DataObj\TimeZones;
 
 class Country extends BaseDataObj
 {
+    /**
+     * @return array<string, mixed>
+     */
     protected function getObjectStructureParser(): array
     {
         return [

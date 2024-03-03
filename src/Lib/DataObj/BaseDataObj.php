@@ -15,7 +15,7 @@ class BaseDataObj extends StdClass
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function toArray(): array
     {
@@ -23,12 +23,12 @@ class BaseDataObj extends StdClass
     }
 
     /**
-     * @param array $data
+     * @param array<string, mixed> $data
      * @return $this
      */
     public function from(array $data): BaseDataObj
     {
-        $parser = $this->getObjectStructureParser();
+        $parser = method_exists($this, 'getObjectStructureParser') ? $this->getObjectStructureParser() : [];
         if (empty($parser)) {
             $class = get_called_class() ?: __CLASS__;
             foreach ($data as $dataKey => $dataValue) {
@@ -67,7 +67,7 @@ class BaseDataObj extends StdClass
     }
 
     /**
-     * @return array
+     * @return array<string, mixed> | array<int, array<int, string>>
      */
     protected function getObjectStructureParser(): array
     {

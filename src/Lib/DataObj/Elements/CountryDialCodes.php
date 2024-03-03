@@ -7,6 +7,9 @@ use Alibe\GeoCodes\Lib\DataObj\DialCodes;
 
 class CountryDialCodes extends BaseDataObj
 {
+    /**
+     * @return array<string, mixed>
+     */
     protected function getObjectStructureParser(): array
     {
         return [

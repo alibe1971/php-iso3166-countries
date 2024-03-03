@@ -10,12 +10,19 @@ use Alibe\GeoCodes\Lib\Enums\DataSets\Type;
 
 class CodesCountries extends Enquiries
 {
+    /**
+     * @var string
+     */
     protected string $dataSetName = 'countries';
 
-
+    /**
+     * @var string
+     */
     protected string $instanceName = Countries::class;
 
-
+    /**
+     * @var array<string, array<string, bool|string|null>>
+     */
     protected array $dataSetsStructure = [
         'alpha2' => [
             'source' => Source::DATA,
@@ -154,6 +161,9 @@ class CodesCountries extends Enquiries
         ]
     ];
 
+    /**
+     * @return object
+     */
     public function get(): object
     {
         $this->dataGet();

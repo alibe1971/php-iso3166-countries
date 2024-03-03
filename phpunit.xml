@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
->
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+    <php>
+        <env name="PHP_VERSION" value="7.4"/>
+    </php>
+
     <testsuites>
         <testsuite name="geoCodes">
             <directory>tests</directory>
@@ -11,9 +11,11 @@
             <file>tests/ConfigSettingsTest.php</file>
         </testsuite>
     </testsuites>
+
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src</directory>
         </include>
     </coverage>
 </phpunit>
+

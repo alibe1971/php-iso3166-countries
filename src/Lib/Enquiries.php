@@ -3,28 +3,43 @@
 namespace Alibe\GeoCodes\Lib;
 
 use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
-use Alibe\GeoCodes\Lib\DataObj\ConfigSettings;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
 
 class Enquiries
 {
-    private ConfigSettings $ConfigSettings;
+    /**
+     * @var InstanceLanguage
+     */
     private InstanceLanguage $InstanceLanguage;
 
+    /**
+     * @var string
+     */
     protected string $dataSetName;
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $dataSets = [
         Source::DATA => [],
         Source::TRANSLATIONS => []
     ];
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $dataSetsStructure;
 
-
+    /**
+     * @var array<string, mixed>
+     */
     protected array $data;
 
+    /**
+     * @var array<string, mixed>
+     */
     private array $query = [
         'select' => [],
         'where' => [],
@@ -34,15 +49,18 @@ class Enquiries
         ]
     ];
 
-    public function __construct(ConfigSettings $settings, InstanceLanguage $languages)
+    public function __construct(InstanceLanguage $languages)
     {
-        $this->ConfigSettings = $settings;
         $this->InstanceLanguage = $languages;
         $this->getDataSetData(Source::DATA, $this->dataSetName);
         $this->getDataSetData(Source::TRANSLATIONS, $this->dataSetName);
     }
 
-    private function getDataSetData($source, $name)
+    /**
+     * @param string $source
+     * @param string $name
+     */
+    private function getDataSetData(string $source, string $name): void
     {
         if ($source === Source::DATA && empty($this->dataSets[$source][$name])) {
             $this->dataSets[$source][$name] = BaseCode::getData($name);
@@ -60,6 +78,9 @@ class Enquiries
         }
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getSelectables(): array
     {
         $selectables = [];
@@ -74,6 +95,9 @@ class Enquiries
         return $selectables;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getIndexables(): array
     {
         $indexables = [];
@@ -86,7 +110,11 @@ class Enquiries
         return $indexables;
     }
 
-
+    /**
+     * @param int $from
+     * @param int $numberOfItems
+     * @return $this
+     */
     public function limit(int $from, int $numberOfItems): Enquiries
     {
         $this->query['limit']['from'] = $from;
@@ -95,7 +123,10 @@ class Enquiries
         return $this;
     }
 
-
+    /**
+     * @param string ...$select
+     * @return $this
+     */
     public function select(string ...$select): Enquiries
     {
         $this->query['select'] = [];
@@ -106,7 +137,10 @@ class Enquiries
         return $this;
     }
 
-    protected function dataGet()
+    /**
+     *
+     */
+    protected function dataGet(): void
     {
         $this->data = [];
         foreach (

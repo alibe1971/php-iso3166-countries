@@ -23,10 +23,10 @@ class BaseCode
 
     /**
      * Get the data from the database.
-     * @param $file
-     * @return array
+     * @param string $file
+     * @return array<string, mixed>
      */
-    public static function getData($file): array
+    public static function getData(string $file): array
     {
         return include(dirname(__DIR__) . '/Data/' . $file . '.php');
     }
@@ -51,7 +51,7 @@ class BaseCode
 
     /**
      * Get the available languages present in the package
-     * @return array
+     * @return array<string, mixed>
      */
     public function getAvailableLanguages(): array
     {
@@ -132,19 +132,19 @@ class BaseCode
     }
 
 
-    private function buildTranslation($lang)
-    {
-//        $dir = 'Translations/'.$lang.'/';
-//
-//        $this->translations[$lang] = [
-//            'countries' => $this->getData($dir.'countries'),
-//            'currencies' => $this->getData($dir.'currencies'),
-//            'geoSets' => $this->getData($dir.'geoSets'),
-//            'languages' => $this->getData($dir.'languages')
-//        ];
-//
-//        if($this->superDefLang != $lang) {
-//            $this->execParsingTranslation($lang);
-//        }
-    }
+//    private function buildTranslation($lang)
+//    {
+////        $dir = 'Translations/'.$lang.'/';
+////
+////        $this->translations[$lang] = [
+////            'countries' => $this->getData($dir.'countries'),
+////            'currencies' => $this->getData($dir.'currencies'),
+////            'geoSets' => $this->getData($dir.'geoSets'),
+////            'languages' => $this->getData($dir.'languages')
+////        ];
+////
+////        if($this->superDefLang != $lang) {
+////            $this->execParsingTranslation($lang);
+////        }
+//    }
 }
