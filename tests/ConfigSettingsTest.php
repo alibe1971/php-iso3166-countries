@@ -22,11 +22,6 @@ final class ConfigSettingsTest extends TestCase
      */
     public function testAvailableLanguages()
     {
-
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r(self::$geoCodes , true)."\n");
-        fclose($elenaMyfile);
-
         $availableLanguages = self::$geoCodes->getAvailableLanguages();
         $this->assertIsArray($availableLanguages, 'The available language is not an array');
         $this->assertContains('en', $availableLanguages, 'The language `en` is not available');
