@@ -10,6 +10,9 @@ final class ConfigSettingsTest extends TestCase
 {
     private static GeoCodes $geoCodes;
 
+    /**
+     * @return void
+     */
     public static function setUpBeforeClass(): void
     {
         self::$geoCodes = new GeoCodes();
@@ -19,8 +22,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify that the available languages exist.
+     * @return void
      */
-    public function testAvailableLanguages()
+    public function testAvailableLanguages(): void
     {
         $availableLanguages = self::$geoCodes->getAvailableLanguages();
         $this->assertIsArray($availableLanguages, 'The available language is not an array');
@@ -31,8 +35,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify that the default language exists at the beginning of the instance.
+     * @return void
      */
-    public function testMainDefaultLanguage()
+    public function testMainDefaultLanguage(): void
     {
         $this->assertIsString(self::$geoCodes->getDefaultLanguage(), 'The default language is not a string');
         $this->assertEquals('en', self::$geoCodes->getDefaultLanguage(), 'The default language is not `en`');
@@ -41,8 +46,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify that the current language exists at the beginning of the instance.
+     * @return void
      */
-    public function testCurrentLanguage()
+    public function testCurrentLanguage(): void
     {
         $this->assertIsString(self::$geoCodes->getLanguage(), 'The current language is not a string');
         $this->assertEquals('en', self::$geoCodes->getLanguage(), 'The current language is not `en`');
@@ -51,8 +57,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify that setting default language with a not available parameter returns an exception.
+     * @return void
      */
-    public function testDefaultLanguageWithException()
+    public function testDefaultLanguageWithException(): void
     {
         $this->expectException(Exception::class);
         self::$geoCodes->setDefaultLanguage('zz');
@@ -62,8 +69,9 @@ final class ConfigSettingsTest extends TestCase
      * @test
      * @testdox Configuration: Verify that setting default language works with available parameter.
      * @throws Exception
+     * @return void
      */
-    public function testDefaultLanguageCorrectly()
+    public function testDefaultLanguageCorrectly(): void
     {
         self::$geoCodes->setDefaultLanguage('it');
         $this->assertEquals(
@@ -82,8 +90,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify useLanguage with not available parameter is ignored and the default one is used.
+     * @return void
      */
-    public function testUseLanguageWithWrongParameter()
+    public function testUseLanguageWithWrongParameter(): void
     {
         self::$geoCodes->useLanguage('zz');
         $this->assertEquals(
@@ -96,8 +105,9 @@ final class ConfigSettingsTest extends TestCase
     /**
      * @test
      * @testdox Configuration: Verify useLanguage with available parameter is correctly set.
+     * @return void
      */
-    public function testUseLanguageWithRightParameter()
+    public function testUseLanguageWithRightParameter(): void
     {
         self::$geoCodes->useLanguage('it');
         $this->assertEquals(

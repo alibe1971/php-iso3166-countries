@@ -8,9 +8,19 @@ use Symfony\Component\Finder\Finder;
 
 class Functions
 {
+    /**
+     * @var string
+     */
     public string $devDirectory;
+
+    /**
+     * @var string
+     */
     private string $baseDirectory;
 
+    /**
+     * @var array<int|string, mixed>
+     */
     private array $dataStructure = [];
 
     public function __construct()
@@ -19,14 +29,24 @@ class Functions
         $this->baseDirectory = dirname($this->devDirectory);
     }
 
-    public function build($filename, $data)
+    /**
+     * @param string $filename
+     * @param array<string, mixed> $data
+     * @return void
+     */
+    public function build(string $filename, array $data): void
     {
         print('  => building `' . $filename . "` data ...\n");
         $this->buildJson($filename, $data);
         $this->buildArray($filename, $data);
     }
 
-    private function buildJson($filename, $data)
+    /**
+     * @param string $filename
+     * @param array<int|string, mixed> $data
+     * @return void
+     */
+    private function buildJson(string $filename, array $data): void
     {
         $prettyJson = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         $minified   = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -42,10 +62,21 @@ class Functions
         $this->dataStructure[] = $file . '.min.json';
     }
 
-    private function buildArray($filename, $data)
+    /**
+     * @param string $filename
+     * @param array<string, mixed> $data
+     * @return void
+     */
+    private function buildArray(string $filename, array $data): void
     {
+        $jsonString = json_encode($data);
+
+        if ($jsonString === false) {
+            throw new \RuntimeException('Failed to encode data to JSON.');
+        }
+
         $data = json_decode(
-            json_encode($data),
+            $jsonString,
             true,
             512,
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_QUOT
@@ -86,7 +117,11 @@ class Functions
         $this->dataStructure[] = $file;
     }
 
-    public function slug($input)
+    /**
+     * @param string|null $input
+     * @return false|string
+     */
+    public function slug(?string $input)
     {
         $input = preg_replace("/\./", "", $input);
         $slugger = new AsciiSlugger();
@@ -95,7 +130,11 @@ class Functions
         return iconv("UTF-8", "ASCII//TRANSLIT", strtolower($input));
     }
 
-    public function getData($file)
+    /**
+     * @param string $file
+     * @return array<string, mixed>
+     */
+    public function getData(string $file): array
     {
         try {
             $fileContents = file_get_contents($file);
@@ -114,7 +153,10 @@ class Functions
         return $data;
     }
 
-    public function cleanStructure()
+    /**
+     * @return void
+     */
+    public function cleanStructure(): void
     {
         $finder = new Finder();
         $finder->files()->in([

@@ -10,8 +10,14 @@ use Alibe\GeoCodes\GeoCodes;
  */
 final class IsoCountriesTest extends TestCase
 {
+    /**
+     * @var GeoCodes $geoCodes
+     */
     private static GeoCodes $geoCodes;
 
+    /**
+     * @return void
+     */
     public static function setUpBeforeClass(): void
     {
         self::$geoCodes = new GeoCodes();
@@ -21,8 +27,9 @@ final class IsoCountriesTest extends TestCase
     /**
      * @test
      * @testdox => Tests on the selectable fields.
+     * @return void
      */
-    public function testSelectableFields()
+    public function testSelectableFields(): void
     {
         $selectFileds = self::$geoCodes->countries()->getSelectables();
         $this->assertIsArray($selectFileds);
@@ -39,20 +46,22 @@ final class IsoCountriesTest extends TestCase
     /**
      * @test
      * @testdox Countries: stica.
+     * @return void
      */
-    public function testAvailableLanguages()
+    public function testAvailableLanguages(): void
     {
+        /** @phpstan-ignore-next-line */
         $countries = self::$geoCodes->useLanguage('it')->countries()->getSelectables();
+
+        /** @phpstan-ignore-next-line */
         $countries2 = self::$geoCodes->useLanguage('it')->countries()->getIndexables();
 
+        /** @phpstan-ignore-next-line */
         $countries3 = self::$geoCodes->useLanguage('it')->countries()->limit(0, 1)->get();
+
+
 //        $countries4 = $countries3->toJson();
 //        $countries4 = $countries3->toArray();
-
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r($countries3, true) . "\n");
-        fclose($elenaMyfile);
-
 
         self::$geoCodes->useLanguage('en');
 

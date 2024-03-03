@@ -11,7 +11,13 @@ class BaseDataObj extends StdClass
      */
     public function toJson(): string
     {
-        return json_encode($this);
+        $jsonString = json_encode($this);
+
+        if ($jsonString === false) {
+            throw new \RuntimeException('Failed to encode object to JSON.');
+        }
+
+        return $jsonString;
     }
 
     /**
@@ -44,6 +50,7 @@ class BaseDataObj extends StdClass
         foreach ($parser as $parserKey => $parserValue) {
             if ($parserKey == '0' && is_array($parserValue) && class_exists($parserValue[0])) {
                 foreach ($data as $dataKey => $dataValue) {
+                    /** @phpstan-ignore-next-line */
                     $this->{$dataKey} = (new ($parser[0][0])())->from($dataValue);
                 }
                 return $this;
@@ -53,6 +60,7 @@ class BaseDataObj extends StdClass
                 switch (gettype($parserValue)) {
                     case 'string':
                         if (class_exists($parserValue)) {
+                            /** @phpstan-ignore-next-line */
                             $this->{$parserKey} = (new ($parserValue)())->from($data[$parserKey]);
                         } else {
                             $this->{$parserKey} = $data[$parserKey];

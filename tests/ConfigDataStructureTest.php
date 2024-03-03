@@ -19,13 +19,13 @@ final class ConfigDataStructureTest extends TestCase
     private static string $defaultLanguage;
 
     /**
-     * @var array
+     * @var array<string, mixed>
      */
     private static array $Config = [];
 
 
     /**
-     * @var array
+     * @var array<string, mixed>
      */
     private static array $countriesData = [
         'alpha2' => [],
@@ -44,8 +44,9 @@ final class ConfigDataStructureTest extends TestCase
 
     /**
      * @test
+     * @return void
      */
-    public function testDataStructureExists()
+    public function testDataStructureExists(): void
     {
         $finder = new Finder();
         $finder->files()->in(self::$dataDir)->ignoreDotFiles(true);
@@ -59,8 +60,9 @@ final class ConfigDataStructureTest extends TestCase
     /**
      * @test
      * @depends testDataStructureExists
+     * @return void
      */
-    public function testValidationConfigFile()
+    public function testValidationConfigFile(): void
     {
 
         $config = self::$dataDir . '/config.php';
@@ -125,8 +127,9 @@ final class ConfigDataStructureTest extends TestCase
     /**
      * @test
      * @depends testValidationConfigFile
+     * @return void
      */
-    public function testValidationCurrencyData()
+    public function testValidationCurrencyData(): void
     {
         $currencies = self::$dataDir . '/currencies.php';
 
@@ -222,8 +225,9 @@ final class ConfigDataStructureTest extends TestCase
     /**
      * @test
      * @depends testValidationConfigFile
+     * @return void
      */
-    public function testValidationGeoSetsData()
+    public function testValidationGeoSetsData(): void
     {
         $geosets = self::$dataDir . '/geoSets.php';
 
@@ -384,8 +388,9 @@ final class ConfigDataStructureTest extends TestCase
      * @test
      * @depends testValidationCurrencyData
      * @depends testValidationGeoSetsData
+     * @return void
      */
-    public function testValidationCountryData()
+    public function testValidationCountryData(): void
     {
         $countries = self::$dataDir . '/countries.php';
 
@@ -736,8 +741,9 @@ final class ConfigDataStructureTest extends TestCase
 
     /** @test
      * @depends testValidationCountryData
+     * @return void
      */
-    public function testValidationTranslationsFiles()
+    public function testValidationTranslationsFiles(): void
     {
         $trns = [
             'countries',
@@ -769,6 +775,7 @@ final class ConfigDataStructureTest extends TestCase
                         $lang . '.countries` dataset'
                     );
                     $this->assertIsArray(
+                        /** @phpstan-ignore-next-line */
                         $countries[$cc],
                         'The country code `' . $cc . '`is not an array in `translations.' .
                         $lang . '.countries` dataset'
@@ -846,7 +853,9 @@ final class ConfigDataStructureTest extends TestCase
                         'The currency code `' . $cur . '`does not exist in `translations.' .
                         $lang . '.currencies` dataset'
                     );
+
                     $this->assertIsString(
+                        /** @phpstan-ignore-next-line */
                         $currencies[$cur],
                         'The currency code `' . $cur . '` must be string in `translations.' .
                         $lang . '.currencies` dataset'
@@ -867,6 +876,7 @@ final class ConfigDataStructureTest extends TestCase
                         $lang . '.geoSets` dataset'
                     );
                     $this->assertIsString(
+                        /** @phpstan-ignore-next-line */
                         $geosets[$gs],
                         'The geoSets internal code `' . $gs . '` must be string in `translations.' .
                         $lang . '.geoSets` dataset'
@@ -888,6 +898,7 @@ final class ConfigDataStructureTest extends TestCase
                         $lang . '.languages` dataset'
                     );
                     $this->assertIsString(
+                        /** @phpstan-ignore-next-line */
                         $languages[$ln],
                         'The language internal code `' . $ln . '` must be string in `translations.' .
                         $lang . '.languages` dataset'
