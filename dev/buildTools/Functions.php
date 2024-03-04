@@ -163,8 +163,8 @@ class Functions
                $this->devDirectory . '/derivativeJson',
                $this->baseDirectory . '/src/Data'
             ])
-            ->ignoreDotFiles(true)
-            ->ignoreVCSIgnored(true);
+            ->ignoreDotFiles(true); //->ignoreVCSIgnored(true);
+
         foreach ($finder as $file) {
             $item = $file->getRealPath();
             if (!in_array($item, $this->dataStructure)) {

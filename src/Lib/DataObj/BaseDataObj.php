@@ -39,7 +39,7 @@ class BaseDataObj extends StdClass
             $class = get_called_class() ?: __CLASS__;
             foreach ($data as $dataKey => $dataValue) {
                 if (is_array($dataValue)) {
-                    $this->{$dataKey} = (new ($class)())->from($dataValue);
+                    $this->{$dataKey} = (new $class())->from($dataValue);
                 } else {
                     $this->{$dataKey} = $dataValue;
                 }
@@ -51,7 +51,7 @@ class BaseDataObj extends StdClass
             if ($parserKey == '0' && is_array($parserValue) && class_exists($parserValue[0])) {
                 foreach ($data as $dataKey => $dataValue) {
                     /** @phpstan-ignore-next-line */
-                    $this->{$dataKey} = (new ($parser[0][0])())->from($dataValue);
+                    $this->{$dataKey} = (new $parser[0][0]())->from($dataValue);
                 }
                 return $this;
             }
@@ -61,7 +61,7 @@ class BaseDataObj extends StdClass
                     case 'string':
                         if (class_exists($parserValue)) {
                             /** @phpstan-ignore-next-line */
-                            $this->{$parserKey} = (new ($parserValue)())->from($data[$parserKey]);
+                            $this->{$parserKey} = (new $parserValue())->from($data[$parserKey]);
                         } else {
                             $this->{$parserKey} = $data[$parserKey];
                         }
