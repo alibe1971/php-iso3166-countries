@@ -2,8 +2,8 @@
 
 namespace Alibe\GeoCodes\Lib\Exceptions;
 
-use \InvalidArgumentException;
-use \Exception;
+use InvalidArgumentException;
+use Exception;
 use Alibe\GeoCodes\Lib\Enums\Exceptions\ExceptionsMessagesMap;
 
 class BaseException extends Exception
@@ -16,5 +16,4 @@ class BaseException extends Exception
         }
         parent::__construct(constant($message), $code, $previous);
     }
-
 }
