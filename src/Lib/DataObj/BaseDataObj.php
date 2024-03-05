@@ -36,7 +36,7 @@ class BaseDataObj extends StdClass
     {
         $parser = method_exists($this, 'getObjectStructureParser') ? $this->getObjectStructureParser() : [];
         if (empty($parser)) {
-            $class = get_called_class() ?: __CLASS__;
+            $class = get_called_class() ?: static::class;
             foreach ($data as $dataKey => $dataValue) {
                 if (is_array($dataValue)) {
                     $this->{$dataKey} = (new $class())->from($dataValue);
