@@ -2,6 +2,7 @@
 
 namespace Alibe\GeoCodes\Tests;
 
+use Alibe\GeoCodes\Lib\Exceptions\ConfigException;
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
@@ -61,7 +62,7 @@ final class ConfigSettingsTest extends TestCase
      */
     public function testDefaultLanguageWithException(): void
     {
-        $this->expectException(Exception::class);
+        $this->expectException(ConfigException::class);
         self::$geoCodes->setDefaultLanguage('zz');
     }
 

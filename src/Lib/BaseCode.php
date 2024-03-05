@@ -4,7 +4,8 @@ namespace Alibe\GeoCodes\Lib;
 
 use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
 use Alibe\GeoCodes\Lib\DataObj\ConfigSettings;
-use Exception;
+use Alibe\GeoCodes\Lib\Enums\Exceptions\ConfigCodes;
+use Alibe\GeoCodes\Lib\Exceptions\ConfigException;
 
 class BaseCode
 {
@@ -72,7 +73,7 @@ class BaseCode
      * Reset the configuration parameters.
      * It set all the parameters at the default state.
      *
-     * @throws Exception
+     * @throws ConfigException
      */
     protected function reset(): void
     {
@@ -87,12 +88,12 @@ class BaseCode
      *
      * @param string $language
      * @return BaseCode
-     * @throws Exception
+     * @throws ConfigException
      */
     public function setDefaultLanguage(string $language): BaseCode
     {
         if (!in_array($language, $this->config->settings->languages->inPackage->toArray())) {
-            throw new Exception('Invalid format. Use "array" or "object"');
+            throw new ConfigException(ConfigCodes::LANGUAGE_NOT_AVAILABLE);
         }
         $this->Language->default = $language;
         return $this;
