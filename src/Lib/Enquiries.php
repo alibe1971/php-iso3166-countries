@@ -156,7 +156,7 @@ class Enquiries
     /**
      * Execute the enquiries and get the result
      *
-     * @return object
+     * @return object   the simple object instead a multiple instance is needed for php 7.4
      */
     public function get(): object
     {
