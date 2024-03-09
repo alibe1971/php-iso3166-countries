@@ -160,13 +160,4 @@ class CodesCountries extends Enquiries
             'description' => null
         ]
     ];
-
-    /**
-     * @return object
-     */
-    public function get(): object
-    {
-        $this->dataGet();
-        return (new Countries())->from($this->data);
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace Alibe\GeoCodes\Lib;
 
+use Alibe\GeoCodes\Lib\DataObj\Countries;
 use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
@@ -49,9 +50,21 @@ class Enquiries
         ]
     ];
 
+//    /**
+//     * @var string
+//     */
+//    private string $extendedClass;
+
+
+    /**
+     * @var string
+     */
+    protected string $instanceName;
+
     public function __construct(InstanceLanguage $languages)
     {
         $this->InstanceLanguage = $languages;
+//        $this->extendedClass = static::class;
         $this->getDataSetData(Source::DATA, $this->dataSetName);
         $this->getDataSetData(Source::TRANSLATIONS, $this->dataSetName);
     }
@@ -138,9 +151,11 @@ class Enquiries
     }
 
     /**
+     * Execute the enquiries and get the result
      *
+     * @return object
      */
-    protected function dataGet(): void
+    public function get(): object
     {
         $this->data = [];
         foreach (
@@ -152,5 +167,9 @@ class Enquiries
         ) {
             $this->data[$key] = $val;
         }
+
+        /** @var Countries $childInstance */
+        $childInstance = new $this->instanceName($this->InstanceLanguage);
+        return $childInstance->from($this->data);
     }
 }
