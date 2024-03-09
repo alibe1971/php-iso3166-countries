@@ -42,6 +42,7 @@ class Enquiries
      * @var array<string, mixed>
      */
     private array $query = [
+        'index' => null,
         'select' => [],
         'where' => [],
         'limit' => [
@@ -119,7 +120,7 @@ class Enquiries
         $indexes = [];
         foreach ($this->dataSetsStructure as $property => $structure) {
             if ($structure['access'] ===  Access::PUBLIC && $structure['index'] !== Index::NOTINDEXABLE) {
-                $indexes[$property] = 'Key usable in the `->withIndex(?string $key)` method' .
+                $indexes[$property] = 'Key usable in the `->withIndex(?string $index)` method' .
                     ($structure['index'] === Index::PRIMARY ? ' (default key)' : '');
             }
         }
@@ -135,7 +136,16 @@ class Enquiries
     {
         $this->query['limit']['from'] = $from;
         $this->query['limit']['to'] = $numberOfItems;
+        return $this;
+    }
 
+    /**
+     * @param string $index
+     * @return $this
+     */
+    public function withIndex(string $index): Enquiries
+    {
+        $this->query['index'] = $index;
         return $this;
     }
 
@@ -161,6 +171,9 @@ class Enquiries
     public function get(): object
     {
         $this->data = [];
+
+
+
         foreach (
             array_slice(
                 $this->dataSets[Source::DATA][$this->dataSetName],
@@ -168,7 +181,7 @@ class Enquiries
                 $this->query['limit']['to'] ?? count($this->dataSets[Source::DATA][$this->dataSetName])
             ) as $key => $val
         ) {
-            $this->data[$key] = $val;
+            $this->data[($this->query['index'] ? $val[$this->query['index']] : $key)] = $val;
         }
 
         /** @var Countries $childInstance */
@@ -180,10 +193,14 @@ class Enquiries
     /**
      * Get the first element of the result
      *
-     * @return object
+     * @return object   the simple object instead a multiple instance is needed for php 7.4
      */
     public function first(): object
     {
-        return $this->get()->{0};
+        $this->limit(0,1);
+        foreach ($this->get() as $item) {
+            return $item;
+        }
+        return (object) [];
     }
 }
