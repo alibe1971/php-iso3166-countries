@@ -133,38 +133,27 @@ class BaseCode
     }
 
 
-
-
-
+    /**
+     * @return CodesCountries
+     */
     public function countries(): CodesCountries
     {
         return new CodesCountries($this->getInstanceLanguage());
     }
 
+    /**
+     * @return CodesGeoSets
+     */
     public function geoSets(): CodesGeoSets
     {
         return new CodesGeoSets($this->getInstanceLanguage());
     }
 
+    /**
+     * @return CodesCurrencies
+     */
     public function geoCurrencies(): CodesCurrencies
     {
         return new CodesCurrencies($this->getInstanceLanguage());
     }
-
-
-//    private function buildTranslation($lang)
-//    {
-////        $dir = 'Translations/'.$lang.'/';
-////
-////        $this->translations[$lang] = [
-////            'countries' => $this->getData($dir.'countries'),
-////            'currencies' => $this->getData($dir.'currencies'),
-////            'geoSets' => $this->getData($dir.'geoSets'),
-////            'languages' => $this->getData($dir.'languages')
-////        ];
-////
-////        if($this->superDefLang != $lang) {
-////            $this->execParsingTranslation($lang);
-////        }
-//    }
 }
