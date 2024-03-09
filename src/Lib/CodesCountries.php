@@ -55,7 +55,7 @@ class CodesCountries extends Enquiries
             'source' => Source::TRANSLATIONS,
             'type' => Type::STRING,
             'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
+            'index' => Index::INDEXABLE,
             'access' => Access::PUBLIC,
             'search' => true,
             'description' => 'The common name of the country'
@@ -64,7 +64,7 @@ class CodesCountries extends Enquiries
             'source' => Source::TRANSLATIONS,
             'type' => Type::STRING,
             'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
+            'index' => Index::INDEXABLE,
             'access' => Access::PUBLIC,
             'search' => true,
             'description' => 'The complete name of the country'
@@ -75,7 +75,7 @@ class CodesCountries extends Enquiries
             'nullable' => false,
             'index' => Index::NOTINDEXABLE,
             'access' => Access::PUBLIC,
-            'search' => false,
+            'search' => true,
             'description' => 'The country\'s official name(s) in its administrative language(s).'
         ],
         'dependency' => [
@@ -113,6 +113,24 @@ class CodesCountries extends Enquiries
             'access' => Access::PUBLIC,
             'search' => false,
             'description' => 'The dial codes for phone call to the country'
+        ],
+        'dialCodes.main' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The main dial codes for phone call to the country'
+        ],
+        'dialCodes.exceptions' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The exceptions of dial codes for phone call to the country'
         ],
         'timeZones' => [
             'source' => Source::DATA,
