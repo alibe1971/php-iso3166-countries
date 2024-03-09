@@ -103,7 +103,7 @@ class Enquiries
         foreach ($this->dataSetsStructure as $property => $structure) {
             if ($structure['access'] ===  Access::PUBLIC) {
                 $fields[$property] =
-                    '(' . ($structure['nullable'] === true ? '?' : '') . $structure['type'] . ') - ' .
+                    '[' . ($structure['nullable'] === true ? '?' : '') . $structure['type'] . '] - ' .
                         $structure['description'] .
                         ($structure['source'] === Source::TRANSLATIONS ? ' (in the chosen language)' : '');
             }
