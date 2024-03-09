@@ -7,6 +7,9 @@ use Exception;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
 
+/**
+ * @testdox Config Settings
+ */
 final class ConfigSettingsTest extends TestCase
 {
     private static GeoCodes $geoCodes;

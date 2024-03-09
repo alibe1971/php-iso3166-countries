@@ -5,6 +5,9 @@ namespace Alibe\GeoCodes\Tests;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
+/**
+ * @testdox Config Data Structure
+ */
 final class ConfigDataStructureTest extends TestCase
 {
     /**
