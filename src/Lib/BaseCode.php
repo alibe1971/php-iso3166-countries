@@ -133,6 +133,25 @@ class BaseCode
     }
 
 
+
+
+
+    public function countries(): CodesCountries
+    {
+        return new CodesCountries($this->getInstanceLanguage());
+    }
+
+    public function geoSets(): CodesGeoSets
+    {
+        return new CodesGeoSets($this->getInstanceLanguage());
+    }
+
+    public function geoCurrencies(): CodesCurrencies
+    {
+        return new CodesCurrencies($this->getInstanceLanguage());
+    }
+
+
 //    private function buildTranslation($lang)
 //    {
 ////        $dir = 'Translations/'.$lang.'/';
