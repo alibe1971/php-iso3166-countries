@@ -64,7 +64,10 @@ class Enquiries
     public function __construct(InstanceLanguage $languages)
     {
         $this->InstanceLanguage = $languages;
+        
 //        $this->extendedClass = static::class;
+//        $this->dataSetName = $this->extendedClass->dataSetName;
+
         $this->getDataSetData(Source::DATA, $this->dataSetName);
         $this->getDataSetData(Source::TRANSLATIONS, $this->dataSetName);
     }
@@ -171,5 +174,17 @@ class Enquiries
         /** @var Countries $childInstance */
         $childInstance = new $this->instanceName($this->InstanceLanguage);
         return $childInstance->from($this->data);
+    }
+
+
+    /**
+     * Get the first element of the result
+     *
+     * @return object
+     */
+    public function first(): object
+    {
+        $this->limit(0, 1);
+        return $this->get()->{0};
     }
 }
