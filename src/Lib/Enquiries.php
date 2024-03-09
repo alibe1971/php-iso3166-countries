@@ -184,7 +184,6 @@ class Enquiries
      */
     public function first(): object
     {
-        $this->limit(0, 1);
         return $this->get()->{0};
     }
 }
