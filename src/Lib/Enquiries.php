@@ -64,7 +64,7 @@ class Enquiries
     public function __construct(InstanceLanguage $languages)
     {
         $this->InstanceLanguage = $languages;
-        
+
 //        $this->extendedClass = static::class;
 //        $this->dataSetName = $this->extendedClass->dataSetName;
 
@@ -97,33 +97,33 @@ class Enquiries
     /**
      * @return array<string, mixed>
      */
-    public function getSelectables(): array
+    public function getFields(): array
     {
-        $selectables = [];
+        $fields = [];
         foreach ($this->dataSetsStructure as $property => $structure) {
             if ($structure['access'] ===  Access::PUBLIC) {
-                $selectables[$property] =
+                $fields[$property] =
                     '(' . ($structure['nullable'] === true ? '?' : '') . $structure['type'] . ') - ' .
                         $structure['description'] .
                         ($structure['source'] === Source::TRANSLATIONS ? ' (in the chosen language)' : '');
             }
         }
-        return $selectables;
+        return $fields;
     }
 
     /**
      * @return array<string, mixed>
      */
-    public function getIndexables(): array
+    public function getIndexes(): array
     {
-        $indexables = [];
+        $indexes = [];
         foreach ($this->dataSetsStructure as $property => $structure) {
             if ($structure['access'] ===  Access::PUBLIC && $structure['index'] !== Index::NOTINDEXABLE) {
-                $indexables[$property] = 'Key usable in the `->withIndex(?string $key)` method' .
+                $indexes[$property] = 'Key usable in the `->withIndex(?string $key)` method' .
                     ($structure['index'] === Index::PRIMARY ? ' (default key)' : '');
             }
         }
-        return $indexables;
+        return $indexes;
     }
 
     /**
