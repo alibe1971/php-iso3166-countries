@@ -34,7 +34,7 @@ class Enquiries
     protected array $dataSetsStructure;
 
     /**
-     * @var array<string, mixed>
+     * @var array<int|string, mixed>
      */
     protected array $data;
 
@@ -197,9 +197,10 @@ class Enquiries
      */
     public function first(): object
     {
-        $this->limit(0,1);
-        foreach ($this->get() as $item) {
-            return $item;
+        $this->limit(0, 1);
+        $item = (array) $this->get();
+        if (!empty($item)) {
+            return (object) $item[0];
         }
         return (object) [];
     }

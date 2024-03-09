@@ -29,7 +29,7 @@ class BaseDataObj extends StdClass
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param array<int|string, mixed> $data
      * @return $this
      */
     public function from(array $data): BaseDataObj
