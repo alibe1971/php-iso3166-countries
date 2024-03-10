@@ -4,6 +4,8 @@ namespace Alibe\GeoCodes\Lib\DataObj;
 
 use stdClass;
 
+use function PHPUnit\Framework\returnArgument;
+
 class BaseDataObj extends StdClass
 {
     /**
@@ -27,6 +29,36 @@ class BaseDataObj extends StdClass
     {
         return json_decode($this->toJson(), true);
     }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function toFlatten(string $separator = '.'): array
+    {
+        return $this->flattenArray($this->toArray(), '', $separator);
+    }
+
+    /**
+     * Flattens a multidimensional array with keys in dot notation.
+     *
+     * @param array<string, mixed> $array The multidimensional array to flatten.
+     * @param string $prefix Optional prefix for the keys in dot notation.
+     * @param string $separator Separator to use between keys in dot notation.
+     * @return array<string, mixed> The flattened array.
+     */
+    private function flattenArray(array $array, string $prefix, string $separator): array
+    {
+        $result = array();
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $result = array_merge($result, $this->flattenArray($value, $prefix . $key . $separator, $separator));
+            } else {
+                $result[$prefix . $key] = $value;
+            }
+        }
+        return $result;
+    }
+
 
     /**
      * @param array<int|string, mixed> $data

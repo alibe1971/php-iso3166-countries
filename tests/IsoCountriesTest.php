@@ -50,7 +50,6 @@ final class IsoCountriesTest extends TestCase
      */
     private static Country $country;
 
-
     /**
      * @test
      * @testdox Test `->get()` the list of countries is object as instance of Countries.
@@ -119,6 +118,53 @@ final class IsoCountriesTest extends TestCase
         $this->assertIsArray($array, 'Not a valid Array');
     }
 
+    /**
+     * @test
+     * @testdox Test the `->get()->toFlatten()` feature (default separator `.`).
+     * @depends testToGetListOfCountries
+     * @return void
+     */
+    public function testGetToFlattenFeature(): void
+    {
+        $flatten = self::$countryList->toFlatten();
+        $this->assertIsArray($flatten, 'Not a valid Array');
+        foreach( [
+            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+            mt_rand(0, (self::$constants['countriesTotalCount']-1))
+        ] as $key) {
+            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key.'.alpha2']);
+            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key.'.alpha3']);
+            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key.'.unM49']);
+            $this->assertEquals(self::$countryList->$key->name, $flatten[$key.'.name']);
+        };
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toFlatten('_')` feature, using custom separator.
+     * @depends testToGetListOfCountries
+     * @return void
+     */
+    public function testGetToFlattenFeatureCustomSeparator(): void
+    {
+        $flatten = self::$countryList->toFlatten('_');
+        $this->assertIsArray($flatten, 'Not a valid Array');
+        foreach( [
+                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
+                     mt_rand(0, (self::$constants['countriesTotalCount']-1))
+                 ] as $key) {
+            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key.'_alpha2']);
+            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key.'_alpha3']);
+            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key.'_unM49']);
+            $this->assertEquals(self::$countryList->$key->name, $flatten[$key.'_name']);
+        };
+    }
 
     /**
      * @test
