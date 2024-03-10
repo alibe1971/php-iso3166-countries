@@ -14,17 +14,21 @@ class Country extends BaseDataObj
     protected function getObjectStructureParser(): array
     {
         return [
-            'officialName' => Languages::class,
             'alpha2' => 'string',
             'alpha3' => 'string',
             'unM49' => 'string',
+            'name' => 'string',
+            'completeName' => 'string',
+            'officialName' => Languages::class,
             'dependency' => 'string',
             'mottos' => CountryMottos::class,
             'currencies' => CountryCurrencies::class,
             'dialCodes' => CountryDialCodes::class,
             'timeZones' => TimeZones::class,
             'languages' => 'string', //'string',
-            'locales' => Locales::class
+            'locales' => Locales::class,
+            'demonyms' => Demonysm::class
+
         ];
     }
 }
