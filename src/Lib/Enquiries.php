@@ -23,10 +23,7 @@ class Enquiries
     /**
      * @var array<string, mixed>
      */
-    protected array $dataSets = [
-        Source::DATA => [],
-        Source::TRANSLATIONS => []
-    ];
+    protected array $dataSets = [];
 
     /**
      * @var array<string, mixed>
@@ -69,29 +66,61 @@ class Enquiries
 //        $this->extendedClass = static::class;
 //        $this->dataSetName = $this->extendedClass->dataSetName;
 
-        $this->getDataSetData(Source::DATA, $this->dataSetName);
-        $this->getDataSetData(Source::TRANSLATIONS, $this->dataSetName);
+        $this->getDataSetData(Source::DATA);
+        $this->getDataSetData(Source::TRANSLATIONS);
+
+        $this->buildDataSet();
     }
 
     /**
      * @param string $source
-     * @param string $name
      */
-    private function getDataSetData(string $source, string $name): void
+    private function getDataSetData(string $source): void
     {
-        if ($source === Source::DATA && empty($this->dataSets[$source][$name])) {
-            $this->dataSets[$source][$name] = BaseCode::getData($name);
+        if ($source === Source::DATA && empty(DataSets::$dataSets[$source][$this->dataSetName])) {
+            DataSets::$dataSets[$source][$this->dataSetName] = DataSets::getData($this->dataSetName);
             return;
         }
 
-        if (empty($this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$name])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $name;
-            $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$name] = BaseCode::getData($dir);
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $this->dataSetName;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName] =
+                DataSets::getData($dir);
         }
 
-        if (empty($this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$name])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $name;
-            $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$name] = BaseCode::getData($dir);
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $this->dataSetName;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName] =
+                DataSets::getData($dir);
+        }
+    }
+
+    private function buildDataSet(): void
+    {
+        $this->dataSets[$this->dataSetName] = [];
+
+        /** get the databases for the translations */
+        $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+        [$this->dataSetName];
+        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+        [$this->dataSetName];
+
+        /** parse the data*/
+        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
+            $object = [];
+            foreach ($this->dataSetsStructure as $prop => $structure) {
+                /** get the value from the source */
+                if ($structure['source'] === Source::DATA) {
+                    $object[$prop] = $data[$prop];
+                }
+                if ($structure['source'] === Source::TRANSLATIONS) {
+                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
+                        $transCurrentLanguage[$data['alpha2']][$prop] :
+                        $transDefaultLanguage[$data['alpha2']][$prop];
+                }
+            }
+
+            $this->dataSets[$this->dataSetName][] = $object;
         }
     }
 
@@ -182,34 +211,40 @@ class Enquiries
             );
         }
 
-        /** get the databases for the translations */
-        $transCurrentLanguage = $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
-        [$this->dataSetName];
-        $transDefaultLanguage = $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
-        [$this->dataSetName];
-
         /** parse the data*/
-        foreach ($this->dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
+        foreach ($this->dataSets[$this->dataSetName] as $key => $data) {
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
 
                 /** get only the requested fields */
-                if (!in_array($prop, $this->query['fields'])) {
-                    continue;
-                }
-                /** get the value from the source */
-                if ($structure['source'] === Source::DATA) {
-                    $object[$prop] = $data[$prop];
-                }
-                if ($structure['source'] === Source::TRANSLATIONS) {
-                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
-                        $transCurrentLanguage[$data['alpha2']][$prop] :
-                        $transDefaultLanguage[$data['alpha2']][$prop];
-                }
+//                if (!in_array($prop, $this->query['fields'])) {
+//                    continue;
+//                }
             }
             /** build the index */
-            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
+            $this->data[($this->query['index'] ? $data[$this->query['index']] : $key)] = $data;
         }
+//        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
+//            $object = [];
+//            foreach ($this->dataSetsStructure as $prop => $structure) {
+//
+//                /** get only the requested fields */
+//                if (!in_array($prop, $this->query['fields'])) {
+//                    continue;
+//                }
+//                /** get the value from the source */
+//                if ($structure['source'] === Source::DATA) {
+//                    $object[$prop] = $data[$prop];
+//                }
+//                if ($structure['source'] === Source::TRANSLATIONS) {
+//                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
+//                        $transCurrentLanguage[$data['alpha2']][$prop] :
+//                        $transDefaultLanguage[$data['alpha2']][$prop];
+//                }
+//            }
+//            /** build the index */
+//            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
+//        }
 
 
         /** set the limits */
@@ -220,9 +255,9 @@ class Enquiries
 //        foreach (
 //            /** set the limits */
 //            array_slice(
-//                $this->dataSets[Source::DATA][$this->dataSetName],
+//                $this->data,
 //                $this->query['limit']['from'] ?? 0,
-//                $this->query['limit']['to'] ?? count($this->dataSets[Source::DATA][$this->dataSetName])
+//                $this->query['limit']['to'] ?? count(DataSets::$dataSets[Source::DATA][$this->dataSetName])
 //            ) as $key => $data
 //        ) {
 //

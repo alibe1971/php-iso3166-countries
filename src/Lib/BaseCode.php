@@ -22,22 +22,22 @@ class BaseCode
     private InstanceLanguage $Language;
 
 
-    /**
-     * Get the data from the database.
-     * @param string $file
-     * @return array<string, mixed>
-     */
-    public static function getData(string $file): array
-    {
-        return include(dirname(__DIR__) . '/Data/' . $file . '.php');
-    }
+//    /**
+//     * Get the data from the database.
+//     * @param string $file
+//     * @return array<string, mixed>
+//     */
+//    public static function getData(string $file): array
+//    {
+//        return include(dirname(__DIR__) . '/Data/' . $file . '.php');
+//    }
 
     /**
      * Set the internal main settings
      */
     protected function setConfig(): void
     {
-        $this->config = (new ConfigSettings())->from($this->getData('config'));
+        $this->config = (new ConfigSettings())->from(DataSets::getData('config'));
     }
 
     /**
