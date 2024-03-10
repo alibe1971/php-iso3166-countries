@@ -43,7 +43,7 @@ class Enquiries
      */
     private array $query = [
         'index' => null,
-        'select' => [],
+        'fields' => [],
         'where' => [],
         'limit' => [
             'from' => null,
@@ -149,19 +149,19 @@ class Enquiries
         return $this;
     }
 
-    /**
-     * @param string ...$select
-     * @return $this
-     */
-    public function select(string ...$select): Enquiries
-    {
-        $this->query['select'] = [];
-        foreach ($select as $element) {
-            $element = trim($element);
-            $this->query['select'][] = $element;
-        }
-        return $this;
-    }
+//    /**
+//     * @param string ...$select
+//     * @return $this
+//     */
+//    public function select(string ...$select): Enquiries
+//    {
+//        $this->query['select'] = [];
+//        foreach ($select as $element) {
+//            $element = trim($element);
+//            $this->query['select'][] = $element;
+//        }
+//        return $this;
+//    }
 
     /**
      * Execute the enquiries and get the result
@@ -170,19 +170,65 @@ class Enquiries
      */
     public function get(): object
     {
+
         $this->data = [];
 
-
-
-        foreach (
-            array_slice(
-                $this->dataSets[Source::DATA][$this->dataSetName],
-                $this->query['limit']['from'] ?? 0,
-                $this->query['limit']['to'] ?? count($this->dataSets[Source::DATA][$this->dataSetName])
-            ) as $key => $val
-        ) {
-            $this->data[($this->query['index'] ? $val[$this->query['index']] : $key)] = $val;
+        /** get all the fields if they are not defined */
+        if (empty($this->query['fields'])) {
+            $this->query['fields'] = array_filter(
+                array_map(function ($val, $key) {
+                    return ($val['access'] === Access::PUBLIC) ? $key : null;
+                }, $this->dataSetsStructure, array_keys($this->dataSetsStructure))
+            );
         }
+
+        /** get the databases for the translations */
+        $transCurrentLanguage = $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+        [$this->dataSetName];
+        $transDefaultLanguage = $this->dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+        [$this->dataSetName];
+
+        /** parse the data*/
+        foreach ($this->dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
+            $object = [];
+            foreach ($this->dataSetsStructure as $prop => $structure) {
+
+                /** get only the requested fields */
+                if (!in_array($prop, $this->query['fields'])) {
+                    continue;
+                }
+                /** get the value from the source */
+                if ($structure['source'] === Source::DATA) {
+                    $object[$prop] = $data[$prop];
+                }
+                if ($structure['source'] === Source::TRANSLATIONS) {
+                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
+                        $transCurrentLanguage[$data['alpha2']][$prop] :
+                        $transDefaultLanguage[$data['alpha2']][$prop];
+                }
+            }
+            /** build the index */
+            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
+        }
+
+
+        /** set the limits */
+        if ($this->query['limit']['from'] && $this->query['limit']['to']) {
+            $this->data = array_slice($this->data, $this->query['limit']['from'], $this->query['limit']['to']);
+        }
+
+//        foreach (
+//            /** set the limits */
+//            array_slice(
+//                $this->dataSets[Source::DATA][$this->dataSetName],
+//                $this->query['limit']['from'] ?? 0,
+//                $this->query['limit']['to'] ?? count($this->dataSets[Source::DATA][$this->dataSetName])
+//            ) as $key => $data
+//        ) {
+//
+//            /** build the index */
+//            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
+//        }
 
         /** @var Countries $childInstance */
         $childInstance = new $this->instanceName($this->InstanceLanguage);

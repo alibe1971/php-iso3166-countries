@@ -114,24 +114,24 @@ class CodesCountries extends Enquiries
             'search' => false,
             'description' => 'The dial codes for phone call to the country'
         ],
-        'dialCodes.main' => [
-            'source' => Source::DATA,
-            'type' => Type::OBJECT,
-            'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
-            'access' => Access::PUBLIC,
-            'search' => false,
-            'description' => 'The main dial codes for phone call to the country'
-        ],
-        'dialCodes.exceptions' => [
-            'source' => Source::DATA,
-            'type' => Type::OBJECT,
-            'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
-            'access' => Access::PUBLIC,
-            'search' => false,
-            'description' => 'The exceptions of dial codes for phone call to the country'
-        ],
+//        'dialCodes.main' => [
+//            'source' => Source::DATA,
+//            'type' => Type::OBJECT,
+//            'nullable' => false,
+//            'index' => Index::NOTINDEXABLE,
+//            'access' => Access::PUBLIC,
+//            'search' => false,
+//            'description' => 'The main dial codes for phone call to the country'
+//        ],
+//        'dialCodes.exceptions' => [
+//            'source' => Source::DATA,
+//            'type' => Type::OBJECT,
+//            'nullable' => false,
+//            'index' => Index::NOTINDEXABLE,
+//            'access' => Access::PUBLIC,
+//            'search' => false,
+//            'description' => 'The exceptions of dial codes for phone call to the country'
+//        ],
         'timeZones' => [
             'source' => Source::DATA,
             'type' => Type::ARRAY,
