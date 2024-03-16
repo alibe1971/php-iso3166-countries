@@ -13,10 +13,14 @@ use Alibe\GeoCodes\GeoCodes;
 final class IsoCountriesTest extends TestCase
 {
     /**
+     * @var int
+     */
+    private static int $countriesTotalCount = 249;
+
+    /**
      * @var array<int|array<string>> $constants
      */
     private static array $constants = [
-        'countriesTotalCount' => 249,
         'indexes' => [
             'alpha2',
             'alpha3',
@@ -61,7 +65,7 @@ final class IsoCountriesTest extends TestCase
         self::$countryList = self::$geoCodes->countries()->get();
         $this->assertIsObject(self::$countryList);
         $this->assertEquals(
-            self::$constants['countriesTotalCount'],
+            self::$countriesTotalCount,
             count(get_object_vars(self::$countryList)),
             "The number of the countries doesn't match with 249"
         );
@@ -128,17 +132,19 @@ final class IsoCountriesTest extends TestCase
     {
         $flatten = self::$countryList->toFlatten();
         $this->assertIsArray($flatten, 'Not a valid Array');
-        foreach( [
-            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-            mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-            mt_rand(0, (self::$constants['countriesTotalCount']-1))
-        ] as $key) {
-            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key.'.alpha2']);
-            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key.'.alpha3']);
-            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key.'.unM49']);
-            $this->assertEquals(self::$countryList->$key->name, $flatten[$key.'.name']);
+        foreach (
+            [
+            mt_rand(0, (self::$countriesTotalCount - 1)),
+            mt_rand(0, (self::$countriesTotalCount - 1)),
+            mt_rand(0, (self::$countriesTotalCount - 1)),
+            mt_rand(0, (self::$countriesTotalCount - 1)),
+            mt_rand(0, (self::$countriesTotalCount - 1))
+            ] as $key
+        ) {
+            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key . '.alpha2']);
+            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key . '.alpha3']);
+            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key . '.unM49']);
+            $this->assertEquals(self::$countryList->$key->name, $flatten[$key . '.name']);
         };
     }
 
@@ -152,17 +158,19 @@ final class IsoCountriesTest extends TestCase
     {
         $flatten = self::$countryList->toFlatten('_');
         $this->assertIsArray($flatten, 'Not a valid Array');
-        foreach( [
-                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-                     mt_rand(0, (self::$constants['countriesTotalCount']-1)),
-                     mt_rand(0, (self::$constants['countriesTotalCount']-1))
-                 ] as $key) {
-            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key.'_alpha2']);
-            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key.'_alpha3']);
-            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key.'_unM49']);
-            $this->assertEquals(self::$countryList->$key->name, $flatten[$key.'_name']);
+        foreach (
+            [
+                     mt_rand(0, (self::$countriesTotalCount - 1)),
+                     mt_rand(0, (self::$countriesTotalCount - 1)),
+                     mt_rand(0, (self::$countriesTotalCount - 1)),
+                     mt_rand(0, (self::$countriesTotalCount - 1)),
+                     mt_rand(0, (self::$countriesTotalCount - 1))
+                 ] as $key
+        ) {
+            $this->assertEquals(self::$countryList->$key->alpha2, $flatten[$key . '_alpha2']);
+            $this->assertEquals(self::$countryList->$key->alpha3, $flatten[$key . '_alpha3']);
+            $this->assertEquals(self::$countryList->$key->unM49, $flatten[$key . '_unM49']);
+            $this->assertEquals(self::$countryList->$key->name, $flatten[$key . '_name']);
         };
     }
 
