@@ -13,4 +13,6 @@ class ExceptionsMessagesMap
     public const ERROR_11002 = 'Property not existent or not usable as selectable';
     public const ERROR_11003 = 'Attribute `limit`.`from` cannot be less than 0';
     public const ERROR_11004 = 'Attribute `limit`.`numberOfItems` cannot be less than 0';
+    public const ERROR_11005 = 'Attribute `orderBy`.`property` must be usable as index';
+    public const ERROR_11006 = 'Attribute `orderBy`.`orderType` must "ASC" or "DESC" (case insensitive)';
 }

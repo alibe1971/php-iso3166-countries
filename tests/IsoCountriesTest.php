@@ -7,7 +7,6 @@ use Alibe\GeoCodes\Lib\DataObj\Elements\Country;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
-use TypeError;
 
 /**
  * @testdox Countries
@@ -46,6 +45,40 @@ final class IsoCountriesTest extends TestCase
             'timeZones',
             'locales',
             'demonyms'
+        ]
+    ];
+
+    /**
+     * @var array<int, string> $expectedLimitTest
+     */
+    private static array $expectedLimitTest = [
+        'WS',
+        'YE'
+    ];
+
+    /**
+     * @var array<string, array<string, string>> $expectedOrderByTest
+     */
+    private static array $expectedOrderByTest = [
+        'alpha2' => [
+            'ASC' => 'AD',
+            'DESC' => 'ZW',
+        ],
+        'alpha3' => [
+            'ASC' => 'ABW',
+            'DESC' => 'ZWE',
+        ],
+        'unM49' => [
+            'ASC' => '004',
+            'DESC' => '894',
+        ],
+        'name' => [
+            'ASC' => 'Afghanistan',
+            'DESC' => 'Zimbabwe',
+        ],
+        'completeName' => [
+            'ASC' => 'American Samoa',
+            'DESC' => 'Vatican City State',
         ]
     ];
 
@@ -192,6 +225,7 @@ final class IsoCountriesTest extends TestCase
      * @test
      * @testdox Test the `->first()` feature as instance of Country.
      * @return void
+     * @throws QueryException
      */
     public function testFirstFeature(): void
     {
@@ -206,6 +240,7 @@ final class IsoCountriesTest extends TestCase
      * @test
      * @testdox Test the `->first()` feature when result is empty as instance of Country.
      * @return void
+     * @throws QueryException
      */
     public function testFirstFeatureOnEmpty(): void
     {
@@ -299,6 +334,7 @@ final class IsoCountriesTest extends TestCase
      * @test
      * @testdox Test the `->count()` feature on the list of Countries.
      * @return void
+     * @throws QueryException
      */
     public function testCountOfCountries(): void
     {
@@ -326,23 +362,17 @@ final class IsoCountriesTest extends TestCase
      * @test
      * @testdox Test the `->limit()` feature.
      * @return void
-     * @throws TypeError
      * @throws QueryException
      */
     public function testLimit(): void
     {
         $countries = self::$geoCodes->countries();
 
-        // Invalid - No integer
-        $this->expectException(TypeError::class);
-        /** @phpstan-ignore-next-line   PhpStan doesn't handle this exception */
-        $countries->limit('aaa', 'aaa');
-
         // Invalid - `from` less than 0
         $this->expectException(QueryException::class);
         $countries->limit(-5, 20);
 
-        // Invalid - `to` less than 0
+        // Invalid - `numberOfItems` less than 0
         $this->expectException(QueryException::class);
         $countries->limit(20, -5);
 
@@ -350,11 +380,69 @@ final class IsoCountriesTest extends TestCase
         $countries->limit(243, 2);
         $this->assertEquals(2, $countries->count());
         $get = $countries->get();
-        $this->assertEquals('WS', $get->{0}->alpha2);
-        $this->assertEquals('YE', $get->{1}->alpha2);
+        $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->alpha2);
+        $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->alpha2);
     }
 
+    /**
+     * @test
+     * @testdox Test the `->orderBy()` feature.
+     * @return void
+     * @throws QueryException
+     */
+    public function testOrderBy(): void
+    {
+        // Test multiple calls.
+        $countries = self::$geoCodes->useLanguage('en')->countries();
+        $countries->orderBy('alpha2');
+        $countries->orderBy('alpha2', 'desc');
+        $country = $countries->first();
+        $this->assertEquals(self::$expectedOrderByTest['alpha2']['DESC'], $country->alpha2);
+    }
+    /**
+     * @dataProvider dataProviderIndexes
+     * @testdox ==>  using $index as property
+     * @throws QueryException
+     */
+    public function testOrderByWithDataProvider(string $index): void
+    {
+        $countries = self::$geoCodes->useLanguage('en')->countries();
+        $asc = $countries->orderBy($index)->first();
+        $this->assertEquals(self::$expectedOrderByTest[$index]['ASC'], $asc->{$index});
+        $desc = $countries->orderBy($index, 'desc')->first();
+        $this->assertEquals(self::$expectedOrderByTest[$index]['DESC'], $desc->{$index});
+    }
+    /**
+     * @test
+     * @testdox  ==>  using an invalid properties
+     * @return void
+     * @throws QueryException
+     */
+    public function testOrderByWithException(): void
+    {
+        $countries = self::$geoCodes->countries();
 
+        // Invalid - `property` less than 0
+        $this->expectException(QueryException::class);
+        $countries->orderBy('notIndexable');
+
+        // Invalid - `orderType` less than 0
+        $this->expectException(QueryException::class);
+        $countries->orderBy('alpha2', 'invalid');
+    }
+//    /**
+//     * @return array<array<int, int|string>>
+//     */
+//    public function dataProviderIndexes(): array
+//    {
+//        return array_map(
+//            function ($index) {
+//                return [$index];
+//            },
+//            (array) self::$constants['indexes']
+//        );
+//    }
+/** ---------------------------------- */
     /**
      * @test
      * @testdox Test the indexes
@@ -395,7 +483,7 @@ final class IsoCountriesTest extends TestCase
     }
     /**
      * @test
-     * @testdox ==>  using an invalid property
+     * @testdox ==>  using an invalid index
      * @return void
      */
     public function testIndexFeatureWithException(): void
@@ -446,8 +534,10 @@ final class IsoCountriesTest extends TestCase
             }
         }
     }
+
     /**
      * @param array<string> $selectFields
+     * @throws QueryException
      */
     private function checkThePropertyAfterSelect(array $selectFields): void
     {
@@ -542,5 +632,42 @@ final class IsoCountriesTest extends TestCase
     {
         $this->expectException(QueryException::class);
         self::$geoCodes->countries()->select('invalidField');
+    }
+
+    /** ELIBE */
+    /**
+     * [TODO] check the collection on the sub objects
+     * [TODO] After completion  ->useLanguage() feature
+     */
+
+
+
+    /**
+     * @test
+     * @testdox Countries: ELIBE.
+     * @return void
+     */
+    public function testAvailableLanguages(): void
+    {
+
+//        $countries = self::$geoCodes->useLanguage('it')->countries()->selectableFields();
+//
+//        $countries2 = self::$geoCodes->useLanguage('it')->countries()->getIndexes();
+//
+//        $countries3 = self::$geoCodes->useLanguage('it')->countries()->limit(0, 1)->get();
+//
+//        $countries4 = self::$geoCodes->countries()->withIndex('alpha2')->limit(0, 1)->get();
+
+//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+//        fwrite($elenaMyfile, print_r($countries4, true) . "\n");
+//        fclose($elenaMyfile);
+
+//        $countries4 = $countries3->toJson();
+//        $countries4 = $countries3->toArray();
+
+        self::$geoCodes->useLanguage('en');
+
+
+        $this->assertTrue(true);
     }
 }

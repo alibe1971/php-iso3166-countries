@@ -42,11 +42,11 @@ class BaseCode
 
     /**
      * Get the available languages present in the package
-     * @return array<string, mixed>
+     * @return array<int, int|string>
      */
     public function getAvailableLanguages(): array
     {
-        return $this->config->settings->languages->inPackage->toArray();
+        return array_keys($this->config->settings->languages->inPackage->toArray());
     }
 
     /**
@@ -57,6 +57,16 @@ class BaseCode
     protected function getInstanceLanguage(): InstanceLanguage
     {
         return $this->Language;
+    }
+
+    /**
+     * Get the locale config for the current Languages
+     *
+     * @return string
+     */
+    protected function getCurrentLocale(): string
+    {
+        return $this->config->settings->languages->inPackage->{$this->Language->current};
     }
 
     /**
@@ -82,7 +92,7 @@ class BaseCode
      */
     public function setDefaultLanguage(string $language): BaseCode
     {
-        if (!in_array($language, $this->config->settings->languages->inPackage->toArray())) {
+        if (empty($this->config->settings->languages->inPackage->{$language})) {
             throw new ConfigException(ConfigCodes::LANGUAGE_NOT_AVAILABLE);
         }
         $this->Language->default = $language;
@@ -107,7 +117,7 @@ class BaseCode
      */
     public function useLanguage(string $language): BaseCode
     {
-        $this->Language->current = (!in_array($language, $this->config->settings->languages->inPackage->toArray())) ?
+        $this->Language->current = (empty($this->config->settings->languages->inPackage->{$language})) ?
             $this->Language->default : $language;
         return $this;
     }
@@ -128,7 +138,7 @@ class BaseCode
      */
     public function countries(): CodesCountries
     {
-        return new CodesCountries($this->getInstanceLanguage());
+        return new CodesCountries($this->getInstanceLanguage(), $this->getCurrentLocale());
     }
 
     /**
@@ -136,7 +146,7 @@ class BaseCode
      */
     public function geoSets(): CodesGeoSets
     {
-        return new CodesGeoSets($this->getInstanceLanguage());
+        return new CodesGeoSets($this->getInstanceLanguage(), $this->getCurrentLocale());
     }
 
     /**
@@ -144,6 +154,6 @@ class BaseCode
      */
     public function geoCurrencies(): CodesCurrencies
     {
-        return new CodesCurrencies($this->getInstanceLanguage());
+        return new CodesCurrencies($this->getInstanceLanguage(), $this->getCurrentLocale());
     }
 }
