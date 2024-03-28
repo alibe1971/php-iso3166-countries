@@ -2,11 +2,14 @@
 
 namespace Alibe\GeoCodes\Lib;
 
+use Alibe\GeoCodes\Lib\DataObj\BaseDataObj;
 use Alibe\GeoCodes\Lib\DataObj\Countries;
 use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
+use Alibe\GeoCodes\Lib\Enums\Exceptions\QueryCodes;
+use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 
 class Enquiries
 {
@@ -40,7 +43,7 @@ class Enquiries
      */
     private array $query = [
         'index' => null,
-        'fields' => [],
+        'select' => [],
         'where' => [],
         'limit' => [
             'from' => null,
@@ -111,7 +114,12 @@ class Enquiries
             foreach ($this->dataSetsStructure as $prop => $structure) {
                 /** get the value from the source */
                 if ($structure['source'] === Source::DATA) {
-                    $object[$prop] = $data[$prop];
+                    if (preg_match('/\./', $prop)) {
+                        list($prop0, $prop1) = explode('.', $prop);
+                        $object[$prop0][$prop1] = $data[$prop0][$prop1];
+                    } else {
+                        $object[$prop] = $data[$prop];
+                    }
                 }
                 if ($structure['source'] === Source::TRANSLATIONS) {
                     $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
@@ -127,7 +135,7 @@ class Enquiries
     /**
      * @return array<string, mixed>
      */
-    public function getFields(): array
+    public function selectableFields(): array
     {
         $fields = [];
         foreach ($this->dataSetsStructure as $property => $structure) {
@@ -171,40 +179,47 @@ class Enquiries
     /**
      * @param string $index
      * @return $this
+     * @throws QueryException
      */
     public function withIndex(string $index): Enquiries
     {
+        if (!in_array($index, array_keys($this->getIndexes()))) {
+            throw new QueryException(QueryCodes::FIELD_NOT_INDEXABLE);
+        }
         $this->query['index'] = $index;
         return $this;
     }
 
-//    /**
-//     * @param string ...$select
-//     * @return $this
-//     */
-//    public function select(string ...$select): Enquiries
-//    {
-//        $this->query['select'] = [];
-//        foreach ($select as $element) {
-//            $element = trim($element);
-//            $this->query['select'][] = $element;
-//        }
-//        return $this;
-//    }
+    /**
+     * @param string ...$select
+     * @return $this
+     * @throws QueryException
+     */
+    public function select(string ...$select): Enquiries
+    {
+        foreach ($select as $element) {
+            if (!in_array($element, array_keys($this->selectableFields()))) {
+                throw new QueryException(QueryCodes::FIELD_NOT_SELECTABLE);
+            }
+            $element = trim($element);
+            $this->query['select'][] = $element;
+        }
+        return $this;
+    }
 
     /**
      * Execute the enquiries and get the result
      *
-     * @return object   the simple object instead a multiple instance is needed for php 7.4
+     * @return BaseDataObj
      */
-    public function get(): object
+    public function get(): BaseDataObj
     {
 
         $this->data = [];
 
         /** get all the fields if they are not defined */
-        if (empty($this->query['fields'])) {
-            $this->query['fields'] = array_filter(
+        if (empty($this->query['select'])) {
+            $this->query['select'] = array_filter(
                 array_map(function ($val, $key) {
                     return ($val['access'] === Access::PUBLIC) ? $key : null;
                 }, $this->dataSetsStructure, array_keys($this->dataSetsStructure))
@@ -215,21 +230,29 @@ class Enquiries
         foreach ($this->dataSets[$this->dataSetName] as $key => $data) {
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
-
                 /** get only the requested fields */
-//                if (!in_array($prop, $this->query['fields'])) {
-//                    continue;
-//                }
+                if (!in_array($prop, $this->query['select'])) {
+                    continue;
+                }
+                if (preg_match('/\./', $prop)) {
+                    list($prop0, $prop1) = explode('.', $prop);
+                    if (!array_key_exists($prop0, $object)) {
+                        $object[$prop0] = [];
+                    }
+                    $object[$prop0][$prop1] = $data[$prop0][$prop1];
+                } else {
+                    $object[$prop] = $data[$prop];
+                }
             }
             /** build the index */
-            $this->data[($this->query['index'] ? $data[$this->query['index']] : $key)] = $data;
+            $this->data[($this->query['index'] ? $data[$this->query['index']] : $key)] = $object;
         }
 //        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
 //            $object = [];
 //            foreach ($this->dataSetsStructure as $prop => $structure) {
 //
 //                /** get only the requested fields */
-//                if (!in_array($prop, $this->query['fields'])) {
+//                if (!in_array($prop, $this->query['select'])) {
 //                    continue;
 //                }
 //                /** get the value from the source */
@@ -252,21 +275,9 @@ class Enquiries
             $this->data = array_slice($this->data, $this->query['limit']['from'], $this->query['limit']['to']);
         }
 
-//        foreach (
-//            /** set the limits */
-//            array_slice(
-//                $this->data,
-//                $this->query['limit']['from'] ?? 0,
-//                $this->query['limit']['to'] ?? count(DataSets::$dataSets[Source::DATA][$this->dataSetName])
-//            ) as $key => $data
-//        ) {
-//
-//            /** build the index */
-//            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
-//        }
 
         /** @var Countries $childInstance */
-        $childInstance = new $this->instanceName($this->InstanceLanguage);
+        $childInstance = new $this->instanceName();
         return $childInstance->from($this->data);
     }
 

@@ -4,6 +4,7 @@ namespace Alibe\GeoCodes\Tests;
 
 use Alibe\GeoCodes\Lib\DataObj\Countries;
 use Alibe\GeoCodes\Lib\DataObj\Elements\Country;
+use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
 
@@ -27,6 +28,23 @@ final class IsoCountriesTest extends TestCase
             'unM49',
             'name',
             'completeName'
+        ],
+        'selectables' => [
+            'alpha2',
+            'alpha3',
+            'unM49',
+            'name',
+            'completeName',
+            'officialName',
+            'dependency',
+            'mottos',
+            'currencies',
+            'dialCodes',
+            'dialCodes.main',
+            'dialCodes.exceptions',
+            'timeZones',
+            'locales',
+            'demonyms'
         ]
     ];
 
@@ -230,32 +248,180 @@ final class IsoCountriesTest extends TestCase
         $indexes = array_keys($indexes);
         $this->assertEquals($indexes, self::$constants['indexes']);
     }
+
     /**
      * @dataProvider dataProviderIndexes
      * @testdox ==>  using $index as index
+     * @throws QueryException
      */
     public function testIndexesWithDataProvider(string $index): void
     {
         foreach (
-            /** @phpstan-ignore-next-line   The simple object is needed for php 7.4 */
             self::$geoCodes->countries()->withIndex($index)->limit(0, 1)->get()->toArray() as $key => $country
         ) {
             $this->assertEquals($key, $country[$index]);
         }
-
-        $this->assertTrue(true);
     }
     /**
-     * @phpstan-ignore-next-line
+     * @return array<array<int, int|string>>
      */
     public function dataProviderIndexes(): array
     {
         return array_map(
-            /** @phpstan-ignore-next-line */
-            function (string $index) {
+            function ($index) {
                 return [$index];
             },
             (array) self::$constants['indexes']
         );
+    }
+    /**
+     * @test
+     * @testdox ==>  using an invalid property
+     * @return void
+     */
+    public function testIndexFeatureWithException(): void
+    {
+        $this->expectException(QueryException::class);
+        self::$geoCodes->countries()->withIndex('invalidField');
+    }
+
+
+    /**
+     * @test
+     * @testdox Tests on the selectable fields.
+     * @return void
+     */
+    public function testSelectableFields(): void
+    {
+        $selectFields = self::$geoCodes->countries()->selectableFields();
+        $this->assertIsArray($selectFields);
+        $countries = self::$geoCodes->countries()->get();
+        foreach ($countries->collect() as $country) {
+            foreach ($selectFields as $key => $description) {
+                $prop = $key;
+                $object = $country;
+                if (preg_match('/\./', $prop)) {
+                    list($prop0, $prop) = explode('.', $prop);
+                    $object = $country->{$prop0};
+                }
+
+                // check the existence of the field
+                $this->assertTrue(
+                    property_exists($object, $prop),
+                    'Key `' . $key . '` not present in the country object'
+                );
+
+                // check the type of the key
+                preg_match('/\[(.*?)\]/', $description, $matches);
+                $type = $matches[1];
+                if (strpos($type, '?') === 0) {
+                    $type = substr($type, 1);
+                    $assert = gettype($object->{$prop}) == $type || gettype($object->{$prop}) == 'NULL';
+                } else {
+                    $assert = gettype($object->{$prop}) == $type;
+                }
+                $this->assertTrue(
+                    $assert,
+                    'Key `' . $key . '` for the country `' . $country->name . '`does not match with the declared type'
+                );
+            }
+        }
+    }
+    /**
+     * @param array<string> $selectFields
+     */
+    private function checkThePropertyAfterSelect(array $selectFields): void
+    {
+        $country = self::$geoCodes->countries()->first();
+        foreach ($selectFields as $key) {
+            $prop = $key;
+            $object = $country;
+            if (preg_match('/\./', $prop)) {
+                list($prop0, $prop) = explode('.', $prop);
+                $object = $country->{$prop0};
+            }
+            // check the existence of the field
+            $this->assertTrue(
+                property_exists($object, $prop),
+                'Key `' . $key . '` not present in the country object'
+            );
+        }
+    }
+    /**
+     * @test
+     * @testdox ==>  all the selectable properties with a single ->select() call
+     * @return void
+     * @throws QueryException
+     */
+    public function testAllPropertiesWithSingleSelectCall(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $selectFields = array_keys($countries->selectableFields());
+        $countries->select(...$selectFields);
+        $this->checkThePropertyAfterSelect($selectFields);
+    }
+    /**
+     * @test
+     * @testdox ==>  all the selectable properties with multiple ->select() calls
+     * @return void
+     * @throws QueryException
+     */
+    public function testMultipleSelectCalls(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $selectFields = array_keys($countries->selectableFields());
+        foreach ($selectFields as $key) {
+            $countries->select($key);
+            $countries->select($key); // test also the redundancy
+        }
+        $this->checkThePropertyAfterSelect($selectFields);
+    }
+    /**
+     * @test
+     * @testdox ==>  the sigle property in a single ->select() call
+     * @return void
+     */
+    public function testSingleSelect(): void
+    {
+        $this->assertTrue(true);
+    }
+    /**
+     * @dataProvider dataProviderSelect
+     * @testdox ====>  using ->select('$select')
+     * @throws QueryException
+     */
+    public function testSelectWithDataProvider(string $select): void
+    {
+        $countries = self::$geoCodes->countries();
+        $countries->select($select);
+        $country = $countries->first();
+        if (preg_match('/\./', $select)) {
+            list($prop0, $prop) = explode('.', $select);
+            $country = $country->{$prop0};
+        }
+        $count = count(get_object_vars($country));
+        $this->assertEquals(1, $count);
+    }
+    /**
+     * @return array<array<int, int|string>>
+     */
+    public function dataProviderSelect(): array
+    {
+        return array_map(
+            function ($select) {
+                return [$select];
+            },
+            (array) self::$constants['selectables']
+        );
+    }
+    /**
+     * @test
+     * @testdox ====>  using an invalid property
+     * @return void
+     */
+    public function testSelectFeatureWithException(): void
+    {
+        $this->expectException(QueryException::class);
+        self::$geoCodes->countries()->select('invalidField');
     }
 }

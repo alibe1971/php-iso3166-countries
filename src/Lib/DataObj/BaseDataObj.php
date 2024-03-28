@@ -3,11 +3,35 @@
 namespace Alibe\GeoCodes\Lib\DataObj;
 
 use stdClass;
+use IteratorAggregate;
+use ArrayIterator;
 
-use function PHPUnit\Framework\returnArgument;
-
-class BaseDataObj extends StdClass
+/**
+ * @implements IteratorAggregate<object>
+ */
+class BaseDataObj extends StdClass implements IteratorAggregate
 {
+    /**
+     * @var ArrayIterator<int|string, mixed>
+     */
+    private ArrayIterator $iterator;
+
+    /**
+     * @return ArrayIterator<int|string, mixed>
+     */
+    public function getIterator(): ArrayIterator
+    {
+        return $this->iterator;
+    }
+
+    /**
+     * @return ArrayIterator<int|string, mixed>
+     */
+    public function collect(): ArrayIterator
+    {
+        return $this->getIterator();
+    }
+
     /**
      * @return string
      */
@@ -79,11 +103,14 @@ class BaseDataObj extends StdClass
             return $this;
         }
 
+        $this->iterator = new ArrayIterator();
+
         foreach ($parser as $parserKey => $parserValue) {
             if ($parserKey == '0' && is_array($parserValue) && class_exists($parserValue[0])) {
                 foreach ($data as $dataKey => $dataValue) {
                     /** @phpstan-ignore-next-line */
                     $this->{$dataKey} = (new $parser[0][0]())->from($dataValue);
+                    $this->iterator->append($this->{$dataKey});
                 }
                 return $this;
             }
@@ -99,7 +126,7 @@ class BaseDataObj extends StdClass
                         }
                         break;
                     default:
-                        throw new \Error('STICA');
+                        throw new \Error('ELIBE');
                 }
             }
         }
