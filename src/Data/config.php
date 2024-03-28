@@ -17,8 +17,8 @@ return [
     'languages' => [
       'default' => 'en',
       'inPackage' => [
-         'en',
-         'it',
+        'en' => 'en_GB',
+        'it' => 'it_IT',
       ],
     ],
   ],
