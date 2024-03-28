@@ -3,7 +3,6 @@
 namespace Alibe\GeoCodes\Lib;
 
 use Alibe\GeoCodes\Lib\DataObj\BaseDataObj;
-use Alibe\GeoCodes\Lib\DataObj\Countries;
 use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
@@ -46,32 +45,27 @@ class Enquiries
         'select' => [],
         'where' => [],
         'limit' => [
-            'from' => null,
+            'from' => 0,
             'to' => null
         ]
     ];
-
-//    /**
-//     * @var string
-//     */
-//    private string $extendedClass;
-
 
     /**
      * @var string
      */
     protected string $instanceName;
 
+    /**
+     * @var string
+     */
+    protected string $singleItemInstanceName;
+
+
     public function __construct(InstanceLanguage $languages)
     {
         $this->InstanceLanguage = $languages;
-
-//        $this->extendedClass = static::class;
-//        $this->dataSetName = $this->extendedClass->dataSetName;
-
         $this->getDataSetData(Source::DATA);
         $this->getDataSetData(Source::TRANSLATIONS);
-
         $this->buildDataSet();
     }
 
@@ -109,6 +103,7 @@ class Enquiries
         [$this->dataSetName];
 
         /** parse the data*/
+        $k = 0;
         foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
@@ -129,7 +124,9 @@ class Enquiries
             }
 
             $this->dataSets[$this->dataSetName][] = $object;
+            $k++;
         }
+        $this->query['limit']['to'] = $k;
     }
 
     /**
@@ -168,9 +165,17 @@ class Enquiries
      * @param int $from
      * @param int $numberOfItems
      * @return $this
+     * @throws QueryException
      */
     public function limit(int $from, int $numberOfItems): Enquiries
     {
+        if ($from < 0) {
+            throw new QueryException(QueryCodes::LIMIT_FROM_LESS_THAN_ZERO);
+        }
+        if ($numberOfItems < 0) {
+            throw new QueryException(QueryCodes::LIMIT_ROWS_NUMBER_LESS_THAN_ZERO);
+        }
+
         $this->query['limit']['from'] = $from;
         $this->query['limit']['to'] = $numberOfItems;
         return $this;
@@ -208,14 +213,16 @@ class Enquiries
     }
 
     /**
-     * Execute the enquiries and get the result
-     *
-     * @return BaseDataObj
+     * Execution of the queries
      */
-    public function get(): BaseDataObj
+    private function execQueries(): void
     {
-
         $this->data = [];
+
+        /** check the limit `to` */
+        if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
+            return;
+        }
 
         /** get all the fields if they are not defined */
         if (empty($this->query['select'])) {
@@ -226,11 +233,21 @@ class Enquiries
             );
         }
 
-        /** parse the data*/
+        /** parse the data */
+        $k = 0;
         foreach ($this->dataSets[$this->dataSetName] as $key => $data) {
+            /** apply the limits */
+            if ($key < $this->query['limit']['from']) {
+                continue;
+            }
+            $k++;
+            if ($k > $this->query['limit']['to']) {
+                return;
+            }
+
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
-                /** get only the requested fields */
+                /** get only the requested property */
                 if (!in_array($prop, $this->query['select'])) {
                     continue;
                 }
@@ -247,36 +264,17 @@ class Enquiries
             /** build the index */
             $this->data[($this->query['index'] ? $data[$this->query['index']] : $key)] = $object;
         }
-//        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
-//            $object = [];
-//            foreach ($this->dataSetsStructure as $prop => $structure) {
-//
-//                /** get only the requested fields */
-//                if (!in_array($prop, $this->query['select'])) {
-//                    continue;
-//                }
-//                /** get the value from the source */
-//                if ($structure['source'] === Source::DATA) {
-//                    $object[$prop] = $data[$prop];
-//                }
-//                if ($structure['source'] === Source::TRANSLATIONS) {
-//                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
-//                        $transCurrentLanguage[$data['alpha2']][$prop] :
-//                        $transDefaultLanguage[$data['alpha2']][$prop];
-//                }
-//            }
-//            /** build the index */
-//            $this->data[($this->query['index'] ? $object[$this->query['index']] : $key)] = $object;
-//        }
+    }
 
-
-        /** set the limits */
-        if ($this->query['limit']['from'] && $this->query['limit']['to']) {
-            $this->data = array_slice($this->data, $this->query['limit']['from'], $this->query['limit']['to']);
-        }
-
-
-        /** @var Countries $childInstance */
+    /**
+     * Execute the enquiries and get the result
+     *
+     * @return BaseDataObj
+     */
+    public function get(): BaseDataObj
+    {
+        $this->execQueries();
+        /** @var BaseDataObj $childInstance */
         $childInstance = new $this->instanceName();
         return $childInstance->from($this->data);
     }
@@ -285,15 +283,23 @@ class Enquiries
     /**
      * Get the first element of the result
      *
-     * @return object   the simple object instead a multiple instance is needed for php 7.4
+     * @return BaseDataObj
      */
-    public function first(): object
+    public function first(): BaseDataObj
     {
         $this->limit(0, 1);
-        $item = (array) $this->get();
-        if (!empty($item)) {
-            return (object) $item[0];
-        }
-        return (object) [];
+        $this->execQueries();
+        /** @var BaseDataObj $childInstance */
+        $childInstance = new $this->singleItemInstanceName();
+        return $childInstance->from($this->data[0]);
+    }
+
+    /**
+     * @return int
+     */
+    public function count(): int
+    {
+        $this->execQueries();
+        return count($this->data);
     }
 }

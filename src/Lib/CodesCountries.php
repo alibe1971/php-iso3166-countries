@@ -3,6 +3,7 @@
 namespace Alibe\GeoCodes\Lib;
 
 use Alibe\GeoCodes\Lib\DataObj\Countries;
+use Alibe\GeoCodes\Lib\DataObj\Elements\Country;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
@@ -19,6 +20,11 @@ class CodesCountries extends Enquiries
      * @var string
      */
     protected string $instanceName = Countries::class;
+
+    /**
+     * @var string
+     */
+    protected string $singleItemInstanceName = Country::class;
 
     /**
      * @var array<string, array<string, bool|string|null>>

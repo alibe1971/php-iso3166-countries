@@ -7,6 +7,7 @@ use Alibe\GeoCodes\Lib\DataObj\Elements\Country;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
+use TypeError;
 
 /**
  * @testdox Countries
@@ -79,14 +80,9 @@ final class IsoCountriesTest extends TestCase
      */
     public function testToGetListOfCountries(): void
     {
-        /** @phpstan-ignore-next-line   The base object is needed for php 7.4 */
+        /** @phpstan-ignore-next-line   The unique object type is needed for php 7.4 */
         self::$countryList = self::$geoCodes->countries()->get();
         $this->assertIsObject(self::$countryList);
-        $this->assertEquals(
-            self::$countriesTotalCount,
-            count(get_object_vars(self::$countryList)),
-            "The number of the countries doesn't match with 249"
-        );
         $this->assertInstanceOf(Countries::class, self::$countryList);
     }
 
@@ -199,11 +195,26 @@ final class IsoCountriesTest extends TestCase
      */
     public function testFirstFeature(): void
     {
-        /** @phpstan-ignore-next-line   The simple object is needed for php 7.4 */
+        /** @phpstan-ignore-next-line   The unique object type is needed for php 7.4 */
         self::$country = self::$geoCodes->countries()->first();
 
         $this->assertIsObject(self::$country);
         $this->assertInstanceOf(Country::class, self::$country);
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()` feature when result is empty as instance of Country.
+     * @return void
+     */
+    public function testFirstFeatureOnEmpty(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $countries->limit(0, 0);
+        $country = $countries->first();
+
+        $this->assertIsObject($country);
+        $this->assertInstanceOf(Country::class, $country);
     }
 
 
@@ -233,6 +244,114 @@ final class IsoCountriesTest extends TestCase
     {
         $array = self::$country->toArray();
         $this->assertIsArray($array, 'Not a valid Array');
+    }
+
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toFlatten()` feature (default separator `.`).
+     * @depends testFirstFeature
+     * @return void
+     */
+    public function testFirstToFlattenFeature(): void
+    {
+        $flatten = self::$country->toFlatten();
+        $this->assertIsArray($flatten, 'Not a valid Array');
+        $regex = '/\./';
+        foreach ($flatten as $key => $val) {
+            if (preg_match('/^officialName/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+            if (preg_match('/^currencies/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+            if (preg_match('/^dialCodes/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toFlatten('_')` feature, using custom separator.
+     * @depends testFirstFeature
+     * @return void
+     */
+    public function testFirstToFlattenFeatureCustomSeparator(): void
+    {
+        $flatten = self::$country->toFlatten('_');
+        $this->assertIsArray($flatten, 'Not a valid Array');
+        $regex = '/_/';
+        foreach ($flatten as $key => $val) {
+            if (preg_match('/^officialName/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+            if (preg_match('/^currencies/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+            if (preg_match('/^dialCodes/', $key)) {
+                $this->assertTrue(preg_match($regex, $key) === 1);
+            }
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->count()` feature on the list of Countries.
+     * @return void
+     */
+    public function testCountOfCountries(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $count = $countries->count();
+        $this->assertEquals(
+            self::$countriesTotalCount,
+            $count,
+            "The TOTAL number of the countries doesn't match with " . self::$countriesTotalCount
+        );
+
+        foreach ([(self::$countriesTotalCount - 52), 27, 5, 32, 0] as $numberOfItems) {
+            $countries->limit(52, $numberOfItems);
+            $count = $countries->count();
+            $this->assertEquals(
+                $numberOfItems,
+                $count,
+                "The number of the countries doesn't match with " . $numberOfItems
+            );
+        }
+    }
+
+
+    /**
+     * @test
+     * @testdox Test the `->limit()` feature.
+     * @return void
+     * @throws TypeError
+     * @throws QueryException
+     */
+    public function testLimit(): void
+    {
+        $countries = self::$geoCodes->countries();
+
+        // Invalid - No integer
+        $this->expectException(TypeError::class);
+        /** @phpstan-ignore-next-line   PhpStan doesn't handle this exception */
+        $countries->limit('aaa', 'aaa');
+
+        // Invalid - `from` less than 0
+        $this->expectException(QueryException::class);
+        $countries->limit(-5, 20);
+
+        // Invalid - `to` less than 0
+        $this->expectException(QueryException::class);
+        $countries->limit(20, -5);
+
+        // Valid input
+        $countries->limit(243, 2);
+        $this->assertEquals(2, $countries->count());
+        $get = $countries->get();
+        $this->assertEquals('WS', $get->{0}->alpha2);
+        $this->assertEquals('YE', $get->{1}->alpha2);
     }
 
 
