@@ -20,12 +20,22 @@ class Enquiries
     /**
      * @var string
      */
+    private string $currentLocale;
+
+    /**
+     * @var string
+     */
     protected string $dataSetName;
 
     /**
      * @var array<string, mixed>
      */
-    protected array $dataSets = [];
+    private array $dataSets = [];
+
+    /**
+     * @var array<string, mixed>
+     */
+    private array $executiveSet = [];
 
     /**
      * @var array<string, mixed>
@@ -35,7 +45,7 @@ class Enquiries
     /**
      * @var array<int|string, mixed>
      */
-    protected array $data;
+    private array $data;
 
     /**
      * @var array<string, mixed>
@@ -47,6 +57,10 @@ class Enquiries
         'limit' => [
             'from' => 0,
             'to' => null
+        ],
+        'order' => [
+            'property' => null,
+            'type' => 'ASC'
         ]
     ];
 
@@ -61,9 +75,10 @@ class Enquiries
     protected string $singleItemInstanceName;
 
 
-    public function __construct(InstanceLanguage $languages)
+    public function __construct(InstanceLanguage $languages, string $currentLocale)
     {
         $this->InstanceLanguage = $languages;
+        $this->currentLocale = $currentLocale;
         $this->getDataSetData(Source::DATA);
         $this->getDataSetData(Source::TRANSLATIONS);
         $this->buildDataSet();
@@ -182,6 +197,26 @@ class Enquiries
     }
 
     /**
+     * @param string $property
+     * @param string $orderType
+     * @return $this
+     * @throws QueryException
+     */
+    public function orderBy(string $property, string $orderType = 'ASC'): Enquiries
+    {
+        if (!in_array($property, array_keys($this->getIndexes()))) {
+            throw new QueryException(QueryCodes::PROPERTY_TO_ORDER_NOT_VALID);
+        }
+        $orderType = strtoupper($orderType);
+        if (!in_array($orderType, ['ASC', 'DESC'])) {
+            throw new QueryException(QueryCodes::ORDER_TYPE_NOT_VALID);
+        }
+        $this->query['order']['property'] = $property;
+        $this->query['order']['type'] = $orderType;
+        return $this;
+    }
+
+    /**
      * @param string $index
      * @return $this
      * @throws QueryException
@@ -217,12 +252,14 @@ class Enquiries
      */
     private function execQueries(): void
     {
+        /** The return data */
         $this->data = [];
 
         /** check the limit `to` */
         if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
             return;
         }
+
 
         /** get all the fields if they are not defined */
         if (empty($this->query['select'])) {
@@ -233,9 +270,26 @@ class Enquiries
             );
         }
 
+        /** The executive dataset */
+        $this->executiveSet = $this->dataSets[$this->dataSetName];
+
+        /** Execute the orderBy */
+        if (!is_null($this->query['order']['property'])) {
+            $property = $this->query['order']['property'];
+            $order = strtoupper($this->query['order']['type'] ?? 'ASC');
+            $collator = collator_create($this->currentLocale . '.utf8');
+            usort($this->executiveSet, function ($a, $b) use ($collator, $property, $order) {
+                $result = collator_compare($collator, $a[$property], $b[$property]);
+                if ($result === false) {
+                    return 0;
+                }
+                return ($order === 'ASC') ? $result : -$result;
+            });
+        }
+
         /** parse the data */
         $k = 0;
-        foreach ($this->dataSets[$this->dataSetName] as $key => $data) {
+        foreach ($this->executiveSet as $key => $data) {
             /** apply the limits */
             if ($key < $this->query['limit']['from']) {
                 continue;
@@ -284,6 +338,7 @@ class Enquiries
      * Get the first element of the result
      *
      * @return BaseDataObj
+     * @throws QueryException
      */
     public function first(): BaseDataObj
     {
