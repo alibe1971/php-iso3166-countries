@@ -77,7 +77,7 @@ $func->build('geoSets', $geoSets);
 /**
  * Translations
  */
-foreach ($Config['settings']['languages']['inPackage'] as $lang) {
+foreach ($Config['settings']['languages']['inPackage'] as $lang => $locale) {
     $translationDir = 'Translations/' . $lang . '/';
 
     $names = $func->getData($func->devDirectory . '/Origin/' . $translationDir . '/ccNameCommon.json');
