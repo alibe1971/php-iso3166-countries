@@ -66,7 +66,7 @@ usort($geoSets, function ($a, $b) {
 foreach ($geoSets as $index => $arr) {
     $geoSets[$index]['internalCode'] = strtoupper($arr['internalCode']);
     $geoSets[$index]['unM49'] = ($arr['unM49'] !== null) ? str_pad($arr['unM49'], 3, '0', STR_PAD_LEFT) : null;
-    $geoSets[$index]['tags'] = array_map('strtolower', $arr['tags']);
+    $geoSets[$index]['tags'] = array_map('strtoupper', $arr['tags']);
     $geoSets[$index]['countryCodes'] = array_map('strtoupper', $arr['countryCodes']);
     unset($geoSets[$index]['label (not included in the build)']);
     unset($geoSets[$index]['NOTES (not included in the build)']);
