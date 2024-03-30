@@ -17,8 +17,8 @@ return [
     'internalCode' => 'CONV-G20',
     'unM49' => null,
     'tags' => [
-       'convention',
-       'geopolitics',
+       'CONVENTION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AR',
@@ -46,8 +46,8 @@ return [
     'internalCode' => 'CONV-G7',
     'unM49' => null,
     'tags' => [
-       'convention',
-       'geopolitics',
+       'CONVENTION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'CA',
@@ -63,8 +63,8 @@ return [
     'internalCode' => 'CONV-SCHENGEN',
     'unM49' => null,
     'tags' => [
-       'convention',
-       'geopolitics',
+       'CONVENTION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AT',
@@ -100,8 +100,8 @@ return [
     'internalCode' => 'CONV-UNCAC',
     'unM49' => null,
     'tags' => [
-       'convention',
-       'security',
+       'CONVENTION',
+       'SECURITY',
     ],
     'countryCodes' => [
        'AF',
@@ -300,8 +300,8 @@ return [
     'internalCode' => 'GEOG-AF',
     'unM49' => '002',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'DZ',
@@ -370,8 +370,8 @@ return [
     'internalCode' => 'GEOG-AF-NO',
     'unM49' => '015',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'DZ',
@@ -387,8 +387,8 @@ return [
     'internalCode' => 'GEOG-AF-SS',
     'unM49' => '202',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'IO',
@@ -450,8 +450,8 @@ return [
     'internalCode' => 'GEOG-AF-SS-EA',
     'unM49' => '014',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'IO',
@@ -482,8 +482,8 @@ return [
     'internalCode' => 'GEOG-AF-SS-MD',
     'unM49' => '017',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'AO',
@@ -501,8 +501,8 @@ return [
     'internalCode' => 'GEOG-AF-SS-SO',
     'unM49' => '018',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'BW',
@@ -516,8 +516,8 @@ return [
     'internalCode' => 'GEOG-AF-SS-WE',
     'unM49' => '011',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'BJ',
@@ -543,8 +543,8 @@ return [
     'internalCode' => 'GEOG-AM',
     'unM49' => '019',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'AI',
@@ -610,8 +610,8 @@ return [
     'internalCode' => 'GEOG-AM-LA',
     'unM49' => '419',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AI',
@@ -672,8 +672,8 @@ return [
     'internalCode' => 'GEOG-AM-LA-CA',
     'unM49' => '029',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'AI',
@@ -710,8 +710,8 @@ return [
     'internalCode' => 'GEOG-AM-LA-CT',
     'unM49' => '013',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'BZ',
@@ -728,8 +728,8 @@ return [
     'internalCode' => 'GEOG-AM-LA-SO',
     'unM49' => '005',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'AR',
@@ -754,8 +754,8 @@ return [
     'internalCode' => 'GEOG-AM-NO',
     'unM49' => '021',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'BM',
@@ -769,8 +769,8 @@ return [
     'internalCode' => 'GEOG-AQ',
     'unM49' => '010',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'AQ',
@@ -780,8 +780,8 @@ return [
     'internalCode' => 'GEOG-AS',
     'unM49' => '142',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'KZ',
@@ -840,8 +840,8 @@ return [
     'internalCode' => 'GEOG-AS-CT',
     'unM49' => '143',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'KZ',
@@ -855,8 +855,8 @@ return [
     'internalCode' => 'GEOG-AS-EA',
     'unM49' => '030',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'CN',
@@ -872,8 +872,8 @@ return [
     'internalCode' => 'GEOG-AS-SE',
     'unM49' => '035',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'BN',
@@ -893,8 +893,8 @@ return [
     'internalCode' => 'GEOG-AS-SO',
     'unM49' => '034',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AF',
@@ -912,8 +912,8 @@ return [
     'internalCode' => 'GEOG-AS-WE',
     'unM49' => '145',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AM',
@@ -940,8 +940,8 @@ return [
     'internalCode' => 'GEOG-EU',
     'unM49' => '150',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'BY',
@@ -1001,8 +1001,8 @@ return [
     'internalCode' => 'GEOG-EU-EA',
     'unM49' => '151',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'BY',
@@ -1021,8 +1021,8 @@ return [
     'internalCode' => 'GEOG-EU-NO',
     'unM49' => '154',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AX',
@@ -1047,8 +1047,8 @@ return [
     'internalCode' => 'GEOG-EU-NO-CH',
     'unM49' => '830',
     'tags' => [
-       'geography',
-       'subdivision',
+       'GEOGRAPHY',
+       'SUBDIVISION',
     ],
     'countryCodes' => [
        'GG',
@@ -1059,8 +1059,8 @@ return [
     'internalCode' => 'GEOG-EU-SO',
     'unM49' => '039',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AL',
@@ -1085,8 +1085,8 @@ return [
     'internalCode' => 'GEOG-EU-WE',
     'unM49' => '155',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AT',
@@ -1104,8 +1104,8 @@ return [
     'internalCode' => 'GEOG-OC',
     'unM49' => '009',
     'tags' => [
-       'geography',
-       'region',
+       'GEOGRAPHY',
+       'REGION',
     ],
     'countryCodes' => [
        'AU',
@@ -1143,8 +1143,8 @@ return [
     'internalCode' => 'GEOG-OC-AN',
     'unM49' => '053',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AU',
@@ -1159,8 +1159,8 @@ return [
     'internalCode' => 'GEOG-OC-ME',
     'unM49' => '054',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'FJ',
@@ -1174,8 +1174,8 @@ return [
     'internalCode' => 'GEOG-OC-MI',
     'unM49' => '057',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'GU',
@@ -1192,8 +1192,8 @@ return [
     'internalCode' => 'GEOG-OC-PO',
     'unM49' => '061',
     'tags' => [
-       'geography',
-       'subregion',
+       'GEOGRAPHY',
+       'SUBREGION',
     ],
     'countryCodes' => [
        'AS',
@@ -1212,8 +1212,8 @@ return [
     'internalCode' => 'ORGS-ACTO',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'BO',
@@ -1230,9 +1230,9 @@ return [
     'internalCode' => 'ORGS-ASEAN',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
-       'economy',
+       'ORGANIZATION',
+       'GEOPOLITICS',
+       'ECONOMY',
     ],
     'countryCodes' => [
        'ID',
@@ -1251,8 +1251,8 @@ return [
     'internalCode' => 'ORGS-AU',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'DZ',
@@ -1312,8 +1312,8 @@ return [
     'internalCode' => 'ORGS-BRICS',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'economy',
+       'ORGANIZATION',
+       'ECONOMY',
     ],
     'countryCodes' => [
        'BR',
@@ -1327,8 +1327,8 @@ return [
     'internalCode' => 'ORGS-CIS',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AM',
@@ -1346,8 +1346,8 @@ return [
     'internalCode' => 'ORGS-COE',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AD',
@@ -1403,8 +1403,8 @@ return [
     'internalCode' => 'ORGS-CSTO',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'military',
+       'ORGANIZATION',
+       'MILITARY',
     ],
     'countryCodes' => [
        'AM',
@@ -1419,8 +1419,8 @@ return [
     'internalCode' => 'ORGS-CWNAT',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'GB',
@@ -1485,8 +1485,8 @@ return [
     'internalCode' => 'ORGS-CWRLM',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AG',
@@ -1510,8 +1510,8 @@ return [
     'internalCode' => 'ORGS-EU',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AT',
@@ -1547,8 +1547,8 @@ return [
     'internalCode' => 'ORGS-IBRD',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'finance',
+       'ORGANIZATION',
+       'FINANCE',
     ],
     'countryCodes' => [
        'AF',
@@ -1746,8 +1746,8 @@ return [
     'internalCode' => 'ORGS-ICC',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'jurisprudence',
+       'ORGANIZATION',
+       'JURISPRUDENCE',
     ],
     'countryCodes' => [
        'AF',
@@ -1880,8 +1880,8 @@ return [
     'internalCode' => 'ORGS-ICSID',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'finance',
+       'ORGANIZATION',
+       'FINANCE',
     ],
     'countryCodes' => [
        'AF',
@@ -2048,8 +2048,8 @@ return [
     'internalCode' => 'ORGS-IDA',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'finance',
+       'ORGANIZATION',
+       'FINANCE',
     ],
     'countryCodes' => [
        'AF',
@@ -2232,8 +2232,8 @@ return [
     'internalCode' => 'ORGS-IFC',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'finance',
+       'ORGANIZATION',
+       'FINANCE',
     ],
     'countryCodes' => [
        'AF',
@@ -2428,8 +2428,8 @@ return [
     'internalCode' => 'ORGS-IPOL',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'security',
+       'ORGANIZATION',
+       'SECURITY',
     ],
     'countryCodes' => [
        'AF',
@@ -2633,8 +2633,8 @@ return [
     'internalCode' => 'ORGS-MIGA',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'finance',
+       'ORGANIZATION',
+       'FINANCE',
     ],
     'countryCodes' => [
        'AF',
@@ -2825,8 +2825,8 @@ return [
     'internalCode' => 'ORGS-NATO',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'military',
+       'ORGANIZATION',
+       'MILITARY',
     ],
     'countryCodes' => [
        'BE',
@@ -2865,8 +2865,8 @@ return [
     'internalCode' => 'ORGS-OAS',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AG',
@@ -2910,8 +2910,8 @@ return [
     'internalCode' => 'ORGS-OECD',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AT',
@@ -2958,8 +2958,8 @@ return [
     'internalCode' => 'ORGS-OPEC',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'economy',
+       'ORGANIZATION',
+       'ECONOMY',
     ],
     'countryCodes' => [
        'DZ',
@@ -2981,8 +2981,8 @@ return [
     'internalCode' => 'ORGS-OSCE',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AL',
@@ -3048,9 +3048,9 @@ return [
     'internalCode' => 'ORGS-SCO',
     'unM49' => null,
     'tags' => [
-       'geopolitics',
-       'economy',
-       'military',
+       'GEOPOLITICS',
+       'ECONOMY',
+       'MILITARY',
     ],
     'countryCodes' => [
        'CN',
@@ -3067,8 +3067,8 @@ return [
     'internalCode' => 'ORGS-UN',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'geopolitics',
+       'ORGANIZATION',
+       'GEOPOLITICS',
     ],
     'countryCodes' => [
        'AF',
@@ -3270,8 +3270,8 @@ return [
     'internalCode' => 'ORGS-WCO',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'economy',
+       'ORGANIZATION',
+       'ECONOMY',
     ],
     'countryCodes' => [
        'AG',
@@ -3465,8 +3465,8 @@ return [
     'internalCode' => 'ORGS-WTO',
     'unM49' => null,
     'tags' => [
-       'organization',
-       'economy',
+       'ORGANIZATION',
+       'ECONOMY',
     ],
     'countryCodes' => [
        'AF',
@@ -3638,10 +3638,10 @@ return [
     'internalCode' => 'ZONE-EZ',
     'unM49' => null,
     'tags' => [
-       'zone',
-       'finance',
-       'economy',
-       'currency',
+       'ZONE',
+       'FINANCE',
+       'ECONOMY',
+       'CURRENCY',
     ],
     'countryCodes' => [
        'AT',
