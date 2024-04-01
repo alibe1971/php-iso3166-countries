@@ -2,6 +2,8 @@
 
 namespace Alibe\GeoCodes\Lib;
 
+use Alibe\GeoCodes\Lib\DataObj\Currencies;
+use Alibe\GeoCodes\Lib\DataObj\Elements\Currency;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
@@ -9,7 +11,20 @@ use Alibe\GeoCodes\Lib\Enums\DataSets\Type;
 
 class CodesCurrencies extends Enquiries
 {
+    /**
+     * @var string
+     */
     protected string $dataSetName = 'currencies';
+
+    /**
+     * @var string
+     */
+    protected string $instanceName = Currencies::class;
+
+    /**
+     * @var string
+     */
+    protected string $singleItemInstanceName = Currency::class;
 
     protected array $dataSetsStructure = [
         'isoAlpha' => [
