@@ -343,10 +343,6 @@ final class IsoGeoSetsTest extends TestCase
             $this->assertInstanceOf(QueryException::class, $e);
         }
 
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r('STIEKATE2 ', true)."\n");
-        fclose($elenaMyfile);
-
         // Valid input
         $geoSets->limit(22, 2);
         $this->assertEquals(2, $geoSets->count());
