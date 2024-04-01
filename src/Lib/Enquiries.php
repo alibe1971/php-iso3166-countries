@@ -94,6 +94,8 @@ class Enquiries
         if ($this->dataSetName == 'countries') {
             $this->dataSets['geoSets'] = (new CodesGeoSets($languages, $currentLocale))
                 ->withIndex('internalCode')->get()->toArray();
+            $this->dataSets['currencies'] = (new CodesCurrencies($languages, $currentLocale))
+                ->withIndex('isoAlpha')->get()->toArray();
         }
         $this->getDataSetData(Source::DATA);
         $this->getDataSetData(Source::TRANSLATIONS);
@@ -102,49 +104,47 @@ class Enquiries
 
     /**
      * @param string $source
-     * @param string|null $dataSetName
      */
-    private function getDataSetData(string $source, string $dataSetName = null): void
+    private function getDataSetData(string $source): void
     {
-        $dataSet = $dataSetName ?? $this->dataSetName;
-        if ($source === Source::DATA && empty(DataSets::$dataSets[$source][$dataSet])) {
-            DataSets::$dataSets[$source][$dataSet] = DataSets::getData($dataSet);
+        if ($source === Source::DATA && empty(DataSets::$dataSets[$source][$this->dataSetName])) {
+            DataSets::$dataSets[$source][$this->dataSetName] = DataSets::getData($this->dataSetName);
             return;
         }
 
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$dataSet])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $dataSet;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$dataSet] =
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $this->dataSetName;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName] =
                 DataSets::getData($dir);
         }
 
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $dataSet;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet] =
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $this->dataSetName;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName] =
                 DataSets::getData($dir);
         }
     }
 
     /**
-     * @param string|null $dataSetName
+     *
      */
-    private function buildDataSet(string $dataSetName = null): void
+    private function buildDataSet(): void
     {
-        $dataSet = $dataSetName ?? $this->dataSetName;
-
-        if (array_key_exists($dataSet, $this->dataSets)) {
+        if (array_key_exists($this->dataSetName, $this->dataSets)) {
             return;
         }
 
-        $this->dataSets[$dataSet] = [];
+        $this->dataSets[$this->dataSetName] = [];
 
         /** get the databases for the translations */
-        $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet];
-        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet];
+        $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+            [$this->dataSetName];
+        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+            [$this->dataSetName];
 
         /** parse the data*/
         $k = 0;
-        foreach (DataSets::$dataSets[Source::DATA][$dataSet] as $data) {
+        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $data) {
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
                 /** get the value from the source */
@@ -163,7 +163,20 @@ class Enquiries
                 }
             }
 
-            $this->dataSets[$dataSet][$object[$this->dataSetPrimaryKey]] = $object;
+            /** Case of Countries: build also the currencies */
+            if ($this->dataSetName == 'countries') {
+                foreach ($object['currencies'] as $typeCur => $currencies) {
+                    if (!empty($currencies)) {
+                        $newCurrenciesArray = [];
+                        foreach ($currencies as $cur) {
+                            $newCurrenciesArray[] = $this->dataSets['currencies'][$cur];
+                        }
+                        $object['currencies'][$typeCur] = $newCurrenciesArray;
+                    }
+                }
+            }
+
+            $this->dataSets[$this->dataSetName][$object[$this->dataSetPrimaryKey]] = $object;
             $k++;
         }
         $this->query['limit']['to'] = $k;
