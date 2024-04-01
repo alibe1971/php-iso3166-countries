@@ -194,7 +194,7 @@ final class IsoGeoSetsTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the `->first()` feature as instance of Country.
+     * @testdox Test the `->first()` feature as instance of GeoSet.
      * @return void
      * @throws QueryException
      */
