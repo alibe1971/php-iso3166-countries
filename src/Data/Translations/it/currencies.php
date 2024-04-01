@@ -13,190 +13,544 @@
 */
 
 return [
-  'CONV-G20' => [
-    'name' => 'Gruppo dei Venti (G20)',
+  'AED' => [
+    'name' => 'Dirham degli Emirati Arabi Uniti',
   ],
-  'CONV-G7' => [
-    'name' => 'Gruppo dei Sette (G7)',
+  'AFN' => [
+    'name' => 'Afghani',
   ],
-  'CONV-SCHENGEN' => [
-    'name' => 'Spazio Schengen',
+  'ALL' => [
+    'name' => 'Lek',
   ],
-  'CONV-UNCAC' => [
-    'name' => 'Convenzione delle Nazioni Unite contro la Corruzione (CNUC)',
+  'AMD' => [
+    'name' => 'Dram Armeno',
   ],
-  'GEOG-AF' => [
-    'name' => 'Africa',
+  'ANG' => [
+    'name' => 'Fiorino delle Antille Olandesi',
   ],
-  'GEOG-AF-NO' => [
-    'name' => 'Africa Settentrionale',
+  'AOA' => [
+    'name' => 'Kwanza',
   ],
-  'GEOG-AF-SS' => [
-    'name' => 'Africa Sub-Sahariana',
+  'ARS' => [
+    'name' => 'Peso Argentino',
   ],
-  'GEOG-AF-SS-EA' => [
-    'name' => 'Africa Orientale',
+  'AUD' => [
+    'name' => 'Dollaro Australiano',
   ],
-  'GEOG-AF-SS-MD' => [
-    'name' => 'Africa Centrale',
+  'AWG' => [
+    'name' => 'Fiorino di Aruba',
   ],
-  'GEOG-AF-SS-SO' => [
-    'name' => 'Africa Meridionale',
+  'AZN' => [
+    'name' => 'Manat Azero',
   ],
-  'GEOG-AF-SS-WE' => [
-    'name' => 'Africa Occidentale',
+  'BAM' => [
+    'name' => 'Marco Convertibile',
   ],
-  'GEOG-AM' => [
-    'name' => 'Americhe',
+  'BBD' => [
+    'name' => 'Dollaro di Barbados',
   ],
-  'GEOG-AM-LA' => [
-    'name' => 'America Latina e Caraibi',
+  'BDT' => [
+    'name' => 'Taka',
   ],
-  'GEOG-AM-LA-CA' => [
-    'name' => 'Caraibi',
+  'BGN' => [
+    'name' => 'Lev Bulgaro',
   ],
-  'GEOG-AM-LA-CT' => [
-    'name' => 'America Centrale',
+  'BHD' => [
+    'name' => 'Dinaro del Bahrain',
   ],
-  'GEOG-AM-LA-SO' => [
-    'name' => 'America Meridionale',
+  'BIF' => [
+    'name' => 'Franco del Burundi',
   ],
-  'GEOG-AM-NO' => [
-    'name' => 'America Settentrionale',
+  'BMD' => [
+    'name' => 'Dollaro delle Bermuda',
   ],
-  'GEOG-AQ' => [
-    'name' => 'Antartide',
+  'BND' => [
+    'name' => 'Dollaro del Brunei',
   ],
-  'GEOG-AS' => [
-    'name' => 'Asia',
+  'BOB' => [
+    'name' => 'Boliviano',
   ],
-  'GEOG-AS-CT' => [
-    'name' => 'Asia Centrale',
+  'BOV' => [
+    'name' => 'Mvdol',
   ],
-  'GEOG-AS-EA' => [
-    'name' => 'Asia Orientale',
+  'BRL' => [
+    'name' => 'Real Brasiliano',
   ],
-  'GEOG-AS-SE' => [
-    'name' => 'Asia Sud-Orientale',
+  'BSD' => [
+    'name' => 'Dollaro delle Bahamas',
   ],
-  'GEOG-AS-SO' => [
-    'name' => 'Asia Meridionale',
+  'BTN' => [
+    'name' => 'Ngultrum',
   ],
-  'GEOG-AS-WE' => [
-    'name' => 'Asia Occidentale',
+  'BWP' => [
+    'name' => 'Pula',
   ],
-  'GEOG-EU' => [
-    'name' => 'Europa',
+  'BYN' => [
+    'name' => 'Rublo Bielorusso',
   ],
-  'GEOG-EU-EA' => [
-    'name' => 'Europa Orientale',
+  'BZD' => [
+    'name' => 'Dollaro del Belize',
   ],
-  'GEOG-EU-NO' => [
-    'name' => 'Europa Settentrionale',
+  'CAD' => [
+    'name' => 'Dollaro Canadese',
   ],
-  'GEOG-EU-NO-CH' => [
-    'name' => 'Isole del Canale',
+  'CDF' => [
+    'name' => 'Franco Congolese',
   ],
-  'GEOG-EU-SO' => [
-    'name' => 'Europa Meridionale',
+  'CHE' => [
+    'name' => 'Euro WIR',
   ],
-  'GEOG-EU-WE' => [
-    'name' => 'Europa Occidentale',
+  'CHF' => [
+    'name' => 'Franco Svizzero',
   ],
-  'GEOG-OC' => [
-    'name' => 'Oceania',
+  'CHW' => [
+    'name' => 'Franco WIR',
   ],
-  'GEOG-OC-AN' => [
-    'name' => 'Australia e Nuova Zelanda',
+  'CLF' => [
+    'name' => 'Unidad de Fomento',
   ],
-  'GEOG-OC-ME' => [
-    'name' => 'Melanesia',
+  'CLP' => [
+    'name' => 'Peso Cileno',
   ],
-  'GEOG-OC-MI' => [
-    'name' => 'Micronesia',
+  'CNY' => [
+    'name' => 'Renminbi Cinese',
   ],
-  'GEOG-OC-PO' => [
-    'name' => 'Polinesia',
+  'COP' => [
+    'name' => 'Peso Colombiano',
   ],
-  'ORGS-ACTO' => [
-    'name' => 'Organizzazione del Trattato di Cooperazione Amazzonica (ACTO)',
+  'COU' => [
+    'name' => 'Unidad de Valor Real',
   ],
-  'ORGS-ASEAN' => [
-    'name' => 'Associazione delle Nazioni del Sud-est Asiatico (ASEAN)',
+  'CRC' => [
+    'name' => 'Colón Costaricano',
   ],
-  'ORGS-AU' => [
-    'name' => 'Unione Africana (AU)',
+  'CUC' => [
+    'name' => 'Peso Cubano Convertible',
   ],
-  'ORGS-BRICS' => [
-    'name' => 'BRICS',
+  'CUP' => [
+    'name' => 'Peso Cubano',
   ],
-  'ORGS-CIS' => [
-    'name' => 'Comunità degli Stati Indipendenti (CSI)',
+  'CVE' => [
+    'name' => 'Escudo di Capo Verde',
   ],
-  'ORGS-COE' => [
-    'name' => 'Consiglio d\'Europa (CoE)',
+  'CZK' => [
+    'name' => 'Corona Ceca',
   ],
-  'ORGS-CSTO' => [
-    'name' => 'Organizzazione del Trattato di Sicurezza Collettiva (OTSC)',
+  'DJF' => [
+    'name' => 'Franco di Gibuti',
   ],
-  'ORGS-CWNAT' => [
-    'name' => 'Commonwealth delle Nazioni',
+  'DKK' => [
+    'name' => 'Corona Danese',
   ],
-  'ORGS-CWRLM' => [
-    'name' => 'Reame del Commonwealth',
+  'DOP' => [
+    'name' => 'Peso Dominicano',
   ],
-  'ORGS-EU' => [
-    'name' => 'Unione Europea (UE)',
+  'DZD' => [
+    'name' => 'Dinaro Algerino',
   ],
-  'ORGS-IBRD' => [
-    'name' => 'Banca Internazionale per la Ricostruzione e lo Sviluppo (BIRS)',
+  'EGP' => [
+    'name' => 'Sterlina Egiziana',
   ],
-  'ORGS-ICC' => [
-    'name' => 'Corte Penale Internazionale (CPI)',
+  'ERN' => [
+    'name' => 'Nakfa',
   ],
-  'ORGS-ICSID' => [
-    'name' => 'Centro Internazionale per la Regolamentazione delle Controversie relative agli Investimenti (ICSID)',
+  'ETB' => [
+    'name' => 'Birr Etiope',
   ],
-  'ORGS-IDA' => [
-    'name' => 'Associazione Internazionale per lo Sviluppo (IDA)',
+  'EUR' => [
+    'name' => 'Euro',
   ],
-  'ORGS-IFC' => [
-    'name' => 'Corporazione Finanziaria Internazionale (IFC)',
+  'FJD' => [
+    'name' => 'Dollaro delle Figi',
   ],
-  'ORGS-IPOL' => [
-    'name' => 'Organizzazione Internazionale di Polizia Criminale (Interpol)',
+  'FKP' => [
+    'name' => 'Sterlina delle Falkland',
   ],
-  'ORGS-MIGA' => [
-    'name' => 'Agenzia Multilaterale di Garanzia degli Investimenti (MIGA)',
+  'GBP' => [
+    'name' => 'Sterlina Britannica',
   ],
-  'ORGS-NATO' => [
-    'name' => 'Organizzazione del Trattato dell\'Atlantico del Nord (NATO)',
+  'GEL' => [
+    'name' => 'Lari Georgiano',
   ],
-  'ORGS-OAS' => [
-    'name' => 'Organizzazione degli Stati Americani (OAS)',
+  'GHS' => [
+    'name' => 'Cedi del Ghana',
   ],
-  'ORGS-OECD' => [
-    'name' => 'Organizzazione per la Cooperazione e lo Sviluppo Economico (OCSE)',
+  'GIP' => [
+    'name' => 'Sterlina di Gibilterra',
   ],
-  'ORGS-OPEC' => [
-    'name' => 'Organizzazione dei Paesi Esportatori di Petrolio (OPEC)',
+  'GMD' => [
+    'name' => 'Dalasi',
   ],
-  'ORGS-OSCE' => [
-    'name' => 'Organizzazione per la Sicurezza e la Cooperazione in Europa (OSCE)',
+  'GNF' => [
+    'name' => 'Franco della Guinea',
   ],
-  'ORGS-SCO' => [
-    'name' => 'Organizzazione di Cooperazione di Shanghai (SCO)',
+  'GTQ' => [
+    'name' => 'Quetzal',
   ],
-  'ORGS-UN' => [
-    'name' => 'Nazioni Unite (ONU)',
+  'GYD' => [
+    'name' => 'Dollaro della Guyana',
   ],
-  'ORGS-WCO' => [
-    'name' => 'Organizzazione Mondiale delle Dogane (OMD)',
+  'HKD' => [
+    'name' => 'Dollaro di Hong Kong',
   ],
-  'ORGS-WTO' => [
-    'name' => 'Organizzazione Mondiale del Commercio (OMC)',
+  'HNL' => [
+    'name' => 'Lempira',
   ],
-  'ZONE-EZ' => [
-    'name' => 'Eurozona (EZ)',
+  'HTG' => [
+    'name' => 'Gourde',
+  ],
+  'HUF' => [
+    'name' => 'Fiorino Ungherese',
+  ],
+  'IDR' => [
+    'name' => 'Rupia Indonesiana',
+  ],
+  'ILS' => [
+    'name' => 'Nuovo Sheqel Israeliano',
+  ],
+  'INR' => [
+    'name' => 'Rupia Indiana',
+  ],
+  'IQD' => [
+    'name' => 'Dinaro Iracheno',
+  ],
+  'IRR' => [
+    'name' => 'Rial Iraniano',
+  ],
+  'ISK' => [
+    'name' => 'Corona Islandese',
+  ],
+  'JMD' => [
+    'name' => 'Dollaro Giamaicano',
+  ],
+  'JOD' => [
+    'name' => 'Dinaro Giordano',
+  ],
+  'JPY' => [
+    'name' => 'Yen Giapponese',
+  ],
+  'KES' => [
+    'name' => 'Scellino Keniota',
+  ],
+  'KGS' => [
+    'name' => 'Som Kirghiso',
+  ],
+  'KHR' => [
+    'name' => 'Riel Cambogiano',
+  ],
+  'KMF' => [
+    'name' => 'Franco Comoriano',
+  ],
+  'KPW' => [
+    'name' => 'Won Nordcoreano',
+  ],
+  'KRW' => [
+    'name' => 'Won Sudcoreano',
+  ],
+  'KWD' => [
+    'name' => 'Dinaro Kuwaitiano',
+  ],
+  'KYD' => [
+    'name' => 'Dollaro delle Isole Cayman',
+  ],
+  'KZT' => [
+    'name' => 'Tenge Kazako',
+  ],
+  'LAK' => [
+    'name' => 'Kip del Laos',
+  ],
+  'LBP' => [
+    'name' => 'Sterlina Libanese',
+  ],
+  'LKR' => [
+    'name' => 'Rupia dello Sri Lanka',
+  ],
+  'LRD' => [
+    'name' => 'Dollaro Liberiano',
+  ],
+  'LSL' => [
+    'name' => 'Loti',
+  ],
+  'LYD' => [
+    'name' => 'Dinaro Libico',
+  ],
+  'MAD' => [
+    'name' => 'Dirham Marocchino',
+  ],
+  'MDL' => [
+    'name' => 'Leu Moldavo',
+  ],
+  'MGA' => [
+    'name' => 'Ariary Malgascio',
+  ],
+  'MKD' => [
+    'name' => 'Dinaro Macedone',
+  ],
+  'MMK' => [
+    'name' => 'Kyat Birmano',
+  ],
+  'MNT' => [
+    'name' => 'Tugrik Mongolo',
+  ],
+  'MOP' => [
+    'name' => 'Pataca',
+  ],
+  'MRU' => [
+    'name' => 'Ouguiya',
+  ],
+  'MUR' => [
+    'name' => 'Rupia Mauriziana',
+  ],
+  'MVR' => [
+    'name' => 'Rufiyaa',
+  ],
+  'MWK' => [
+    'name' => 'Kwacha Malawiano',
+  ],
+  'MXN' => [
+    'name' => 'Peso Messicano',
+  ],
+  'MXV' => [
+    'name' => 'Unidad de Inversion (UDI) Messicana',
+  ],
+  'MYR' => [
+    'name' => 'Ringgit Malese',
+  ],
+  'MZN' => [
+    'name' => 'Metical Mozambicano',
+  ],
+  'NAD' => [
+    'name' => 'Dollaro Namibiano',
+  ],
+  'NGN' => [
+    'name' => 'Naira Nigeriana',
+  ],
+  'NIO' => [
+    'name' => 'Cordoba Oro',
+  ],
+  'NOK' => [
+    'name' => 'Corona Norvegese',
+  ],
+  'NPR' => [
+    'name' => 'Rupia Nepalese',
+  ],
+  'NZD' => [
+    'name' => 'Dollaro Neozelandese',
+  ],
+  'OMR' => [
+    'name' => 'Rial Omanita',
+  ],
+  'PAB' => [
+    'name' => 'Balboa',
+  ],
+  'PEN' => [
+    'name' => 'Sol Peruviano',
+  ],
+  'PGK' => [
+    'name' => 'Kina della Papua Nuova Guinea',
+  ],
+  'PHP' => [
+    'name' => 'Peso Filippino',
+  ],
+  'PKR' => [
+    'name' => 'Rupia Pakistana',
+  ],
+  'PLN' => [
+    'name' => 'Zloty Polacco',
+  ],
+  'PYG' => [
+    'name' => 'Guarani',
+  ],
+  'QAR' => [
+    'name' => 'Rial Qatariota',
+  ],
+  'RON' => [
+    'name' => 'Leu Rumeno',
+  ],
+  'RSD' => [
+    'name' => 'Dinaro Serbo',
+  ],
+  'RUB' => [
+    'name' => 'Rublo Russo',
+  ],
+  'RWF' => [
+    'name' => 'Franco Ruandese',
+  ],
+  'SAR' => [
+    'name' => 'Riyal Saudita',
+  ],
+  'SBD' => [
+    'name' => 'Dollaro delle Isole Salomone',
+  ],
+  'SCR' => [
+    'name' => 'Rupia delle Seychelles',
+  ],
+  'SDG' => [
+    'name' => 'Sterlina Sudanese',
+  ],
+  'SEK' => [
+    'name' => 'Corona Svedese',
+  ],
+  'SGD' => [
+    'name' => 'Dollaro di Singapore',
+  ],
+  'SHP' => [
+    'name' => 'Sterlina di Sant\'Elena',
+  ],
+  'SLE' => [
+    'name' => 'Leone',
+  ],
+  'SLL' => [
+    'name' => 'Leone',
+  ],
+  'SOS' => [
+    'name' => 'Scellino Somalo',
+  ],
+  'SRD' => [
+    'name' => 'Dollaro del Suriname',
+  ],
+  'SSP' => [
+    'name' => 'Sterlina Sudsudanese',
+  ],
+  'STN' => [
+    'name' => 'Dobra',
+  ],
+  'SVC' => [
+    'name' => 'Colón Salvadoregno',
+  ],
+  'SYP' => [
+    'name' => 'Sterlina Siriana',
+  ],
+  'SZL' => [
+    'name' => 'Lilangeni',
+  ],
+  'THB' => [
+    'name' => 'Baht Tailandese',
+  ],
+  'TJS' => [
+    'name' => 'Somoni Tagiko',
+  ],
+  'TMT' => [
+    'name' => 'Manat Turkmeno',
+  ],
+  'TND' => [
+    'name' => 'Dinaro Tunisino',
+  ],
+  'TOP' => [
+    'name' => 'Pa\'anga',
+  ],
+  'TRY' => [
+    'name' => 'Lira Turca',
+  ],
+  'TTD' => [
+    'name' => 'Dollaro di Trinidad e Tobago',
+  ],
+  'TWD' => [
+    'name' => 'Nuovo Dollaro di Taiwan',
+  ],
+  'TZS' => [
+    'name' => 'Scellino della Tanzania',
+  ],
+  'UAH' => [
+    'name' => 'Grivnia Ucraina',
+  ],
+  'UGX' => [
+    'name' => 'Scellino Ugandese',
+  ],
+  'USD' => [
+    'name' => 'Dollaro Statunitense',
+  ],
+  'USN' => [
+    'name' => 'Dollaro Statunitense (giorno successivo)',
+  ],
+  'UYI' => [
+    'name' => 'Peso Uruguayo in Unidades Indexadas (UI)',
+  ],
+  'UYU' => [
+    'name' => 'Peso Uruguayo',
+  ],
+  'UYW' => [
+    'name' => 'Unidad Previsional',
+  ],
+  'UZS' => [
+    'name' => 'Sum Uzbeko',
+  ],
+  'VED' => [
+    'name' => 'Bolívar Soberano',
+  ],
+  'VES' => [
+    'name' => 'Bolívar Soberano',
+  ],
+  'VND' => [
+    'name' => 'Dong Vietnamita',
+  ],
+  'VUV' => [
+    'name' => 'Vatu',
+  ],
+  'WST' => [
+    'name' => 'Tala',
+  ],
+  'XAF' => [
+    'name' => 'Franco CFA BEAC',
+  ],
+  'XAG' => [
+    'name' => 'Argento',
+  ],
+  'XAU' => [
+    'name' => 'Oro',
+  ],
+  'XBA' => [
+    'name' => 'Unità composita europea dei mercati obbligazionari (EURCO)',
+  ],
+  'XBB' => [
+    'name' => 'Unità monetaria europea dei mercati obbligazionari (EMU-6)',
+  ],
+  'XBC' => [
+    'name' => 'Unità di conto europea 9 (EUA-9)',
+  ],
+  'XBD' => [
+    'name' => 'Unità di conto europea 17 (EUA-17)',
+  ],
+  'XCD' => [
+    'name' => 'Dollaro dei Caraibi Orientali',
+  ],
+  'XDR' => [
+    'name' => 'Diritti Speciali di Prelievo (SDR)',
+  ],
+  'XOF' => [
+    'name' => 'Franco CFA BCEAO',
+  ],
+  'XPD' => [
+    'name' => 'Palladio',
+  ],
+  'XPF' => [
+    'name' => 'Franco CFP',
+  ],
+  'XPT' => [
+    'name' => 'Platino',
+  ],
+  'XSU' => [
+    'name' => 'Sucre',
+  ],
+  'XTS' => [
+    'name' => 'Codici riservati specificamente per scopi di prova',
+  ],
+  'XUA' => [
+    'name' => 'Unità di conto ADB',
+  ],
+  'XXX' => [
+    'name' => 'Codici assegnati per transazioni senza valuta',
+  ],
+  'YER' => [
+    'name' => 'Rial dello Yemen',
+  ],
+  'ZAR' => [
+    'name' => 'Rand Sudafricano',
+  ],
+  'ZMW' => [
+    'name' => 'Kwacha dello Zambia',
+  ],
+  'ZWL' => [
+    'name' => 'Dollaro dello Zimbabwe',
   ],
 ];
