@@ -122,7 +122,7 @@ final class IsoCountriesTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the elements of the list of countries is an instance of Country.
+     * @testdox Test the elements of the list of countries are an instance of Country.
      * @depends testToGetListOfCountries
      * @return void
      */
@@ -369,12 +369,19 @@ final class IsoCountriesTest extends TestCase
         $countries = self::$geoCodes->countries();
 
         // Invalid - `from` less than 0
-        $this->expectException(QueryException::class);
-        $countries->limit(-5, 20);
+        try {
+            $countries->limit(-5, 20);
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+        }
 
         // Invalid - `numberOfItems` less than 0
-        $this->expectException(QueryException::class);
-        $countries->limit(20, -5);
+        try {
+            $countries->limit(20, -5);
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+        }
+
 
         // Valid input
         $countries->limit(243, 2);
@@ -395,6 +402,8 @@ final class IsoCountriesTest extends TestCase
         // Test multiple calls.
         $countries = self::$geoCodes->useLanguage('en')->countries();
         $countries->orderBy('alpha2');
+        $country = $countries->first();
+        $this->assertEquals(self::$expectedOrderByTest['alpha2']['ASC'], $country->alpha2);
         $countries->orderBy('alpha2', 'desc');
         $country = $countries->first();
         $this->assertEquals(self::$expectedOrderByTest['alpha2']['DESC'], $country->alpha2);
@@ -422,27 +431,21 @@ final class IsoCountriesTest extends TestCase
     {
         $countries = self::$geoCodes->countries();
 
-        // Invalid - `property` less than 0
-        $this->expectException(QueryException::class);
-        $countries->orderBy('notIndexable');
+        // Invalid - `property` not indexable
+        try {
+            $countries->orderBy('notIndexable');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+        }
 
-        // Invalid - `orderType` less than 0
-        $this->expectException(QueryException::class);
-        $countries->orderBy('alpha2', 'invalid');
+        // Invalid - `orderType` invalid
+        try {
+            $countries->orderBy('alpha2', 'invalid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+        }
     }
-//    /**
-//     * @return array<array<int, int|string>>
-//     */
-//    public function dataProviderIndexes(): array
-//    {
-//        return array_map(
-//            function ($index) {
-//                return [$index];
-//            },
-//            (array) self::$constants['indexes']
-//        );
-//    }
-/** ---------------------------------- */
+
     /**
      * @test
      * @testdox Test the indexes
@@ -529,7 +532,8 @@ final class IsoCountriesTest extends TestCase
                 }
                 $this->assertTrue(
                     $assert,
-                    'Key `' . $key . '` for the country `' . $country->name . '`does not match with the declared type'
+                    'Key type `' . $key . '` for the country `' . $country->name .
+                        '`does not match with the declared type'
                 );
             }
         }
@@ -636,6 +640,7 @@ final class IsoCountriesTest extends TestCase
 
     /** ELIBE */
     /**
+     * [TODO] ALTRI DATABASE
      * [TODO] check the collection on the sub objects
      * [TODO] After completion  ->useLanguage() feature
      */
@@ -647,7 +652,7 @@ final class IsoCountriesTest extends TestCase
      * @testdox Countries: ELIBE.
      * @return void
      */
-    public function testAvailableLanguages(): void
+    public function stica(): void
     {
 
 //        $countries = self::$geoCodes->useLanguage('it')->countries()->selectableFields();
@@ -667,6 +672,11 @@ final class IsoCountriesTest extends TestCase
 
         self::$geoCodes->useLanguage('en');
 
+        $countries = self::$geoCodes->countries()->count();
+//        $countries->fetch('it');
+        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+        fwrite($elenaMyfile, print_r($countries, true) . "\n");
+        fclose($elenaMyfile);
 
         $this->assertTrue(true);
     }

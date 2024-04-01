@@ -2,6 +2,8 @@
 
 namespace Alibe\GeoCodes\Lib;
 
+use Alibe\GeoCodes\Lib\DataObj\Elements\GeoSet;
+use Alibe\GeoCodes\Lib\DataObj\GeoSets;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
@@ -9,7 +11,21 @@ use Alibe\GeoCodes\Lib\Enums\DataSets\Type;
 
 class CodesGeoSets extends Enquiries
 {
+    /**
+     * @var string
+     */
     protected string $dataSetName = 'geoSets';
+
+    /**
+     * @var string
+     */
+    protected string $instanceName = GeoSets::class;
+
+    /**
+     * @var string
+     */
+    protected string $singleItemInstanceName = GeoSet::class;
+
 
     protected array $dataSetsStructure = [
         'internalCode' => [
@@ -34,14 +50,14 @@ class CodesGeoSets extends Enquiries
             'source' => Source::TRANSLATIONS,
             'type' => Type::STRING,
             'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
+            'index' => Index::INDEXABLE,
             'access' => Access::PUBLIC,
             'search' => true,
             'description' => 'The name of the geographic set'
         ],
         'tags' => [
             'source' => Source::DATA,
-            'type' => Type::ARRAY,
+            'type' => Type::OBJECT,
             'nullable' => false,
             'index' => Index::NOTINDEXABLE,
             'access' => Access::PUBLIC,
@@ -50,7 +66,7 @@ class CodesGeoSets extends Enquiries
         ],
         'countryCodes' => [
             'source' => Source::DATA,
-            'type' => Type::ARRAY,
+            'type' => Type::OBJECT,
             'nullable' => false,
             'index' => Index::NOTINDEXABLE,
             'access' => Access::PUBLIC,
