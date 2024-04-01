@@ -152,7 +152,7 @@ class BaseCode
     /**
      * @return CodesCurrencies
      */
-    public function geoCurrencies(): CodesCurrencies
+    public function currencies(): CodesCurrencies
     {
         return new CodesCurrencies($this->getInstanceLanguage(), $this->getCurrentLocale());
     }
