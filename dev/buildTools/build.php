@@ -137,7 +137,7 @@ foreach ($Config['settings']['languages']['inPackage'] as $lang => $locale) {
     }
 
     $currenciesTranslation = [];
-    foreach ($geoSets as $currency => $name) {
+    foreach ($currencies as $currency => $name) {
         $currenciesTranslation[$currency]['name'] = $name;
     }
 
