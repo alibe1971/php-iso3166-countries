@@ -33,6 +33,11 @@ class Enquiries
     private array $dataSets = [];
 
     /**
+     * @var string
+     */
+    private string $dataSetPrimaryKey;
+
+    /**
      * @var array<string, mixed>
      */
     private array $executiveSet = [];
@@ -52,6 +57,7 @@ class Enquiries
      */
     private array $query = [
         'index' => null,
+        'fetchGroups' => [],
         'select' => [],
         'where' => [],
         'limit' => [
@@ -63,6 +69,11 @@ class Enquiries
             'type' => 'ASC'
         ]
     ];
+
+    /**
+     * @var int
+     */
+    private int $fetchIndex = 0;
 
     /**
      * @var string
@@ -79,6 +90,11 @@ class Enquiries
     {
         $this->InstanceLanguage = $languages;
         $this->currentLocale = $currentLocale;
+        $this->dataSetPrimaryKey = $this->getPrimaryKey();
+        if ($this->dataSetName == 'countries') {
+            $this->dataSets['geoSets'] = (new CodesGeoSets($languages, $currentLocale))
+                ->withIndex('internalCode')->get()->toArray();
+        }
         $this->getDataSetData(Source::DATA);
         $this->getDataSetData(Source::TRANSLATIONS);
         $this->buildDataSet();
@@ -86,40 +102,49 @@ class Enquiries
 
     /**
      * @param string $source
+     * @param string|null $dataSetName
      */
-    private function getDataSetData(string $source): void
+    private function getDataSetData(string $source, string $dataSetName = null): void
     {
-        if ($source === Source::DATA && empty(DataSets::$dataSets[$source][$this->dataSetName])) {
-            DataSets::$dataSets[$source][$this->dataSetName] = DataSets::getData($this->dataSetName);
+        $dataSet = $dataSetName ?? $this->dataSetName;
+        if ($source === Source::DATA && empty(DataSets::$dataSets[$source][$dataSet])) {
+            DataSets::$dataSets[$source][$dataSet] = DataSets::getData($dataSet);
             return;
         }
 
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $this->dataSetName;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName] =
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$dataSet])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $dataSet;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$dataSet] =
                 DataSets::getData($dir);
         }
 
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $this->dataSetName;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName] =
+        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet])) {
+            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $dataSet;
+            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet] =
                 DataSets::getData($dir);
         }
     }
 
-    private function buildDataSet(): void
+    /**
+     * @param string|null $dataSetName
+     */
+    private function buildDataSet(string $dataSetName = null): void
     {
-        $this->dataSets[$this->dataSetName] = [];
+        $dataSet = $dataSetName ?? $this->dataSetName;
+
+        if (array_key_exists($dataSet, $this->dataSets)) {
+            return;
+        }
+
+        $this->dataSets[$dataSet] = [];
 
         /** get the databases for the translations */
-        $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
-        [$this->dataSetName];
-        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
-        [$this->dataSetName];
+        $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet];
+        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$dataSet];
 
         /** parse the data*/
         $k = 0;
-        foreach (DataSets::$dataSets[Source::DATA][$this->dataSetName] as $key => $data) {
+        foreach (DataSets::$dataSets[Source::DATA][$dataSet] as $data) {
             $object = [];
             foreach ($this->dataSetsStructure as $prop => $structure) {
                 /** get the value from the source */
@@ -132,13 +157,13 @@ class Enquiries
                     }
                 }
                 if ($structure['source'] === Source::TRANSLATIONS) {
-                    $object[$prop] = !$transCurrentLanguage[$data['alpha2']][$prop] ?
-                        $transCurrentLanguage[$data['alpha2']][$prop] :
-                        $transDefaultLanguage[$data['alpha2']][$prop];
+                    $object[$prop] = !$transCurrentLanguage[$data[$this->dataSetPrimaryKey]][$prop] ?
+                        $transCurrentLanguage[$data[$this->dataSetPrimaryKey]][$prop] :
+                        $transDefaultLanguage[$data[$this->dataSetPrimaryKey]][$prop];
                 }
             }
 
-            $this->dataSets[$this->dataSetName][] = $object;
+            $this->dataSets[$dataSet][$object[$this->dataSetPrimaryKey]] = $object;
             $k++;
         }
         $this->query['limit']['to'] = $k;
@@ -174,6 +199,19 @@ class Enquiries
             }
         }
         return $indexes;
+    }
+
+
+    private function getPrimaryKey(): string
+    {
+        $primary = '';
+        foreach ($this->dataSetsStructure as $property => $structure) {
+            if ($structure['index'] === Index::PRIMARY) {
+                $primary = $property;
+                break;
+            }
+        }
+        return $primary;
     }
 
     /**
@@ -247,6 +285,104 @@ class Enquiries
         return $this;
     }
 
+
+    //    /**
+//     * @param string $search
+//     * @param string $db
+//     * @param string $prop
+//     * @param string $toGet
+//     */
+//    private function executeFetches(string $search, string $db, string $prop, string $toGet): void
+//    {
+////        $this->query['groups'][$this->fetchIndex]
+//        $group = [];
+//
+//
+//        return;
+//    }
+
+    /**
+     * @param string ...$items
+     * @return Enquiries
+     */
+    public function fetch(string ...$items): Enquiries
+    {
+        $this->fetchIndex++;
+        foreach ($items as $item) {
+            $prop = 'string';
+            $minLength = 2;
+            $propToGet = null;
+            $dbToEnquiry = $this->dataSetName;
+            $lenght = strlen($item);
+            if (intval($item) == 0) {
+                $prop = 'numeric';
+                if ($lenght < 3) {
+                    $item = str_pad($item, 3, '0', STR_PAD_LEFT);
+                    $lenght = 3;
+                }
+            }
+            if ($lenght < $minLength) {
+                continue;
+            }
+            switch ($this->dataSetName) {
+                case 'countries':
+                    if ($prop == 'numeric') {
+                        $prop = 'unM49';
+                    } else {
+                        $minLength = 4;
+                        if ($lenght < $minLength) {
+                            continue 2;
+                        }
+                        switch ($lenght) {
+                            case 2:
+                                $prop = 'alpha2';
+                                break;
+                            case 3:
+                                $prop = 'alpha3';
+                                break;
+                            default:
+                                /** The countries fetch can have also a fetching on the geoSets */
+                                $dbToEnquiry = 'geoSets';
+                                $propToGet = 'countryCodes';
+                                $prop = 'tags';
+                                if (preg_match('/-/', $item)) {
+                                    $prop = 'internalCode';
+                                }
+                        }
+                    }
+                    break;
+                case 'geoSets':
+                    if ($prop == 'numeric') {
+                        $prop = 'unM49';
+                    } else {
+                        $minLength = 4;
+                        $prop = 'tags';
+                        if (preg_match('/-/', $item)) {
+                            $prop = 'internalCode';
+                        }
+                    }
+                    break;
+                case 'currencies':
+                    $minLength = 3;
+                    if ($lenght < $minLength) {
+                        continue 2;
+                    }
+                    $prop = $prop == 'numeric' ? 'isoNumber' : 'isoAlpha';
+                    break;
+                default:
+                    continue 2;
+            }
+
+            $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+            fwrite($elenaMyfile, print_r('INDAGINE', true) . "\n");
+            fwrite($elenaMyfile, print_r('$dbToEnquiry: ' . $dbToEnquiry, true) . "\n");
+            fwrite($elenaMyfile, print_r('$prop: ' . $prop, true) . "\n");
+            fwrite($elenaMyfile, print_r('$propToGet: ' . $propToGet, true) . "\n");
+            fclose($elenaMyfile);
+        }
+        return $this;
+    }
+
     /**
      * Execution of the queries
      */
@@ -259,7 +395,6 @@ class Enquiries
         if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
             return;
         }
-
 
         /** get all the fields if they are not defined */
         if (empty($this->query['select'])) {
@@ -288,10 +423,11 @@ class Enquiries
         }
 
         /** parse the data */
-        $k = 0;
-        foreach ($this->executiveSet as $key => $data) {
+        $k = $key = $keyOut = 0;
+        foreach ($this->executiveSet as $data) {
             /** apply the limits */
             if ($key < $this->query['limit']['from']) {
+                $key++;
                 continue;
             }
             $k++;
@@ -316,7 +452,9 @@ class Enquiries
                 }
             }
             /** build the index */
-            $this->data[($this->query['index'] ? $data[$this->query['index']] : $key)] = $object;
+            $this->data[($this->query['index'] ? $data[$this->query['index']] : $keyOut)] = $object;
+            $key++;
+            $keyOut++;
         }
     }
 
@@ -346,7 +484,7 @@ class Enquiries
         $this->execQueries();
         /** @var BaseDataObj $childInstance */
         $childInstance = new $this->singleItemInstanceName();
-        return $childInstance->from($this->data[0]);
+        return $childInstance->from(reset($this->data));
     }
 
     /**
