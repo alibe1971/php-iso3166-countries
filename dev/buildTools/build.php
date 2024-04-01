@@ -131,9 +131,19 @@ foreach ($Config['settings']['languages']['inPackage'] as $lang => $locale) {
         )));
     }
 
+    $geoSetsTranslation = [];
+    foreach ($geoSets as $set => $name) {
+        $geoSetsTranslation[$set]['name'] = $name;
+    }
+
+    $currenciesTranslation = [];
+    foreach ($geoSets as $currency => $name) {
+        $currenciesTranslation[$currency]['name'] = $name;
+    }
+
     $func->build($translationDir . 'countries', $countryTranslation);
-    $func->build($translationDir . 'currencies', $currencies);
-    $func->build($translationDir . 'geoSets', $geoSets);
+    $func->build($translationDir . 'currencies', $currenciesTranslation);
+    $func->build($translationDir . 'geoSets', $geoSetsTranslation);
     $func->build($translationDir . 'languages', $languages);
 }
 
