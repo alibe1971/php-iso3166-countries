@@ -49,7 +49,7 @@ class CodesCurrencies extends Enquiries
             'source' => Source::TRANSLATIONS,
             'type' => Type::STRING,
             'nullable' => false,
-            'index' => Index::NOTINDEXABLE,
+            'index' => Index::INDEXABLE,
             'access' => Access::PUBLIC,
             'search' => true,
             'description' => 'The name of the currency'
