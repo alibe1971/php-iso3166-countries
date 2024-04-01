@@ -858,12 +858,13 @@ final class ConfigDataStructureTest extends TestCase
 
                     $this->assertIsString(
                         /** @phpstan-ignore-next-line */
-                        $currencies[$cur],
+                        $currencies[$cur]['name'],
                         'The currency code `' . $cur . '` must be string in `translations.' .
                         $lang . '.currencies` dataset'
                     );
                     $this->assertNotEmpty(
-                        trim(preg_replace('/\s+/u', '', $currencies[$cur])),
+                        /** @phpstan-ignore-next-line */
+                        trim(preg_replace('/\s+/u', '', $currencies[$cur]['name'])),
                         'The currency code `' . $cur . '` is empty in `translations.' .
                         $lang . '.currencies` dataset'
                     );
@@ -879,12 +880,13 @@ final class ConfigDataStructureTest extends TestCase
                     );
                     $this->assertIsString(
                         /** @phpstan-ignore-next-line */
-                        $geosets[$gs],
+                        $geosets[$gs]['name'],
                         'The geoSets internal code `' . $gs . '` must be string in `translations.' .
                         $lang . '.geoSets` dataset'
                     );
                     $this->assertNotEmpty(
-                        trim(preg_replace('/\s+/u', '', $geosets[$gs])),
+                    /** @phpstan-ignore-next-line */
+                        trim(preg_replace('/\s+/u', '', $geosets[$gs]['name'])),
                         'The geoSets internal code `' . $gs . '` is empty in `translations.' .
                         $lang . '.geoSets` dataset'
                     );
