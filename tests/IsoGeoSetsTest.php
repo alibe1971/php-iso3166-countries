@@ -597,4 +597,84 @@ final class IsoGeoSetsTest extends TestCase
         $this->expectException(QueryException::class);
         self::$geoCodes->geoSets()->select('invalidField');
     }
+
+
+    /**
+     * @test
+     * @testdox Tests on the fetching feature.
+     * @return void
+     */
+    public function testFetchFeature(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @test
+     * @testdox ==> using - as valid - in input integer, string, array.
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchFeatureValidInput(): void
+    {
+        $cfr = [
+            'CONV-G7'       => [ 'internalCode' => 'CONV-G7' ],
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO'],
+            'CONV-SCHENGEN' => [ 'internalCode' => 'CONV-SCHENGEN' ],
+            'ZONE-EZ'       => [ 'internalCode' => 'ZONE-EZ' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15, ['CONV-SCHENGEN', 'ZONE-EZ']);
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with Exception (using array or arrays in input).
+     * @return void
+     */
+    public function testFetchFeatureWithException(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        $this->expectException(QueryException::class);
+        $geoSets->fetch('CONV-G7', 15, [['CONV-SCHENGEN'], ['ZONE-EZ']]);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with multiple calls ->fetch(...)->fetch(...)
+     * @return void
+     * @throws QueryException
+     */
+    public function testMultipleFetchFeature(): void
+    {
+        $cfr = [
+            'CONV-G7'       => [ 'internalCode' => 'CONV-G7' ],
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO'],
+            'CONV-SCHENGEN' => [ 'internalCode' => 'CONV-SCHENGEN' ],
+            'ZONE-EZ'       => [ 'internalCode' => 'ZONE-EZ' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ']);
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->fetchAll() or the ->fetch('*') or the ->fetch(..., '*') features
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchAllFeature(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        $fetchAll = $geoSets->fetchAll()->get();
+        $fetchStar = $geoSets->fetch('*')->get();
+        $fetchWithStar = $geoSets->fetch('CONV-G7', 15, ['CONV-SCHENGEN', 'ZONE-EZ'], '*')->get();
+        $this->assertEquals($fetchAll, self::$geoSetsList);
+        $this->assertEquals($fetchStar, self::$geoSetsList);
+        $this->assertEquals($fetchWithStar, self::$geoSetsList);
+    }
 }

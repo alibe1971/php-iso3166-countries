@@ -15,4 +15,5 @@ class ExceptionsMessagesMap
     public const ERROR_11004 = 'Attribute `limit`.`numberOfItems` cannot be less than 0';
     public const ERROR_11005 = 'Attribute `orderBy`.`property` must be usable as index';
     public const ERROR_11006 = 'Attribute `orderBy`.`orderType` must "ASC" or "DESC" (case insensitive)';
+    public const ERROR_11007 = 'Multidimensional arrays are not allowed in the fetching';
 }

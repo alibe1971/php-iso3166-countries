@@ -601,4 +601,83 @@ final class IsoCurrenciesTest extends TestCase
         $this->expectException(QueryException::class);
         self::$geoCodes->currencies()->select('invalidField');
     }
+
+    /**
+     * @test
+     * @testdox Tests on the fetching feature.
+     * @return void
+     */
+    public function testFetchFeature(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @test
+     * @testdox ==> using - as valid -  in input integer, string, array.
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchFeatureValidInput(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'AUD' => [ 'isoAlpha' => 'AUD' ],
+            'USD' => [ 'isoAlpha' => 'USD' ],
+            'BRL' => [ 'isoAlpha' => 'BRL' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, ['USD', 986]);
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with Exception (using array or arrays in input).
+     * @return void
+     */
+    public function testFetchFeatureWithException(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        $this->expectException(QueryException::class);
+        $currencies->fetch('EUR', 36, [['USD'], [986]]);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with multiple calls ->fetch(...)->fetch(...)
+     * @return void
+     * @throws QueryException
+     */
+    public function testMultipleFetchFeature(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'AUD' => [ 'isoAlpha' => 'AUD' ],
+            'USD' => [ 'isoAlpha' => 'USD' ],
+            'BRL' => [ 'isoAlpha' => 'BRL' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36)->fetch(['USD', 986]);
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->fetchAll() or the ->fetch('*') or the ->fetch(..., '*') features
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchAllFeature(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        $fetchAll = $currencies->fetchAll()->get();
+        $fetchStar = $currencies->fetch('*')->get();
+        $fetchWithStar = $currencies->fetch('EUR', 36, ['USD', '*'])->get();
+        $this->assertEquals($fetchAll, self::$currenciesSetsList);
+        $this->assertEquals($fetchStar, self::$currenciesSetsList);
+        $this->assertEquals($fetchWithStar, self::$currenciesSetsList);
+    }
 }

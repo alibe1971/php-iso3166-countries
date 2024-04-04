@@ -638,9 +638,102 @@ final class IsoCountriesTest extends TestCase
         self::$geoCodes->countries()->select('invalidField');
     }
 
+    /**
+     * @test
+     * @testdox Tests on the fetching feature.
+     * @return void
+     */
+    public function testFetchFeature(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @test
+     * @testdox ==> using - as valid -  in input integer, string, array and geoSets group.
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchFeatureValidInput(): void
+    {
+        $cfr = [
+            'IT' => [ 'alpha2' => 'IT' ],
+            'AF' => [ 'alpha2' => 'AF' ],
+            'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ],
+            'DZ' => [ 'alpha2' => 'DZ' ],
+            'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ],
+            'MA' => [ 'alpha2' => 'MA' ],
+            'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ],
+            'EH' => [ 'alpha2' => 'EH' ]
+        ];
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('it', 4, ['fr', 'de'], 'GEOG-AF-NO');
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with Exception (using array or arrays in input).
+     * @return void
+     */
+    public function testFetchFeatureWithException(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $this->expectException(QueryException::class);
+        $countries->fetch('it', 4, [['fr'], ['de']]);
+    }
+
+
+    /**
+     * @test
+     * @testdox ==> with multiple calls ->fetch(...)->fetch(...)
+     * @return void
+     * @throws QueryException
+     */
+    public function testMultipleFetchFeature(): void
+    {
+        $cfr = [
+            'IT' => [ 'alpha2' => 'IT' ],
+            'AF' => [ 'alpha2' => 'AF' ],
+            'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ],
+            'DZ' => [ 'alpha2' => 'DZ' ],
+            'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ],
+            'MA' => [ 'alpha2' => 'MA' ],
+            'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ],
+            'EH' => [ 'alpha2' => 'EH' ]
+        ];
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('it', 4, ['fr', 'de'])->fetch('GEOG-AF-NO');
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($result, $cfr);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->fetchAll() or the ->fetch('*') or the ->fetch(..., '*') features
+     * @return void
+     * @throws QueryException
+     */
+    public function testFetchAllFeature(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $fetchAll = $countries->fetchAll()->get();
+        $fetchStar = $countries->fetch('*')->get();
+        $fetchWithStar = $countries->fetch('it', 4, ['fr', 'de'], 'GEOG-AF-NO', '*')->get();
+        $this->assertEquals($fetchAll, self::$countryList);
+        $this->assertEquals($fetchStar, self::$countryList);
+        $this->assertEquals($fetchWithStar, self::$countryList);
+    }
+
     /** ELIBE */
     /**
-     * [TODO] ALTRI DATABASE
      * [TODO] check the collection on the sub objects
      * [TODO] After completion  ->useLanguage() feature
      */
@@ -672,11 +765,12 @@ final class IsoCountriesTest extends TestCase
 
         self::$geoCodes->useLanguage('en');
 
-        $countries = self::$geoCodes->countries()->count();
-//        $countries->fetch('it');
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r($countries, true) . "\n");
-        fclose($elenaMyfile);
+//        $countries = self::$geoCodes->countries()->withIndex('alpha2')->get()->toArray();
+//        $countries = self::$geoCodes->countries();
+//        $countries->fetch('it', 4, ['fr', 'de']);
+//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+//        fwrite($elenaMyfile, print_r($countries, true) . "\n");
+//        fclose($elenaMyfile);
 
         $this->assertTrue(true);
     }
