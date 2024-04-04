@@ -40,11 +40,6 @@ class Enquiries
     /**
      * @var array<string, mixed>
      */
-    private array $executiveSet = [];
-
-    /**
-     * @var array<string, mixed>
-     */
     protected array $dataSetsStructure;
 
     /**
@@ -58,6 +53,7 @@ class Enquiries
     private array $query = [
         'index' => null,
         'fetchGroups' => [],
+        'fetchSuperGroups' => [],
         'select' => [],
         'where' => [],
         'limit' => [
@@ -74,6 +70,7 @@ class Enquiries
      * @var int
      */
     private int $fetchIndex = 0;
+
 
     /**
      * @var string
@@ -299,100 +296,165 @@ class Enquiries
     }
 
 
-    //    /**
-//     * @param string $search
-//     * @param string $db
-//     * @param string $prop
-//     * @param string $toGet
-//     */
-//    private function executeFetches(string $search, string $db, string $prop, string $toGet): void
-//    {
-////        $this->query['groups'][$this->fetchIndex]
-//        $group = [];
-//
-//
-//        return;
-//    }
+    /**
+     * @param string $search
+     * @param string $db
+     * @param string $prop
+     */
+    private function executeFetches(string $search, string $db, string $prop): bool
+    {
+        $toGet = $this->dataSetPrimaryKey;
+        if ($this->dataSetName == 'countries' && $db == 'geoSets') {
+            $toGet = 'countryCodes';
+        }
+
+        if (!array_key_exists($this->fetchIndex, $this->query['fetchGroups'])) {
+            $this->query['fetchGroups'][$this->fetchIndex] = [];
+        }
+
+        foreach ($this->dataSets[$db] as $item) {
+            if (isset($item[$prop]) && $item[$prop] === $search) {
+                if (is_array($item[$toGet])) {
+                    $this->query['fetchGroups'][$this->fetchIndex] =
+                        array_merge($this->query['fetchGroups'][$this->fetchIndex], $item[$toGet]);
+                } else {
+                    $this->query['fetchGroups'][$this->fetchIndex][] = $item[$toGet];
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 
     /**
-     * @param string ...$items
-     * @return Enquiries
+     * @return $this
      */
-    public function fetch(string ...$items): Enquiries
+    public function fetchAll(): Enquiries
     {
+        $this->query['fetchGroups'][$this->fetchIndex] = array_keys($this->dataSets[$this->dataSetName]);
         $this->fetchIndex++;
+        return $this;
+    }
+
+    /**
+     * @param string|int|array<string|int|array<string|int>> ...$items
+     * @return Enquiries
+     * @throws QueryException
+     */
+    public function fetch(...$items): Enquiries
+    {
+        $list = [];
         foreach ($items as $item) {
+            if (is_array($item)) {
+                foreach ($item as $it) {
+                    if (is_array($it)) {
+                        throw new QueryException(QueryCodes::FETCH_MULTIDIM_ARRAY_NOT_ALLOWED);
+                    }
+                    $it = trim((string) $it);
+                    if ($it == '*') {
+                        return $this->fetchAll();
+                    }
+                    if (preg_match('/\s/', $it)) {
+                        continue;
+                    }
+                    $list[$it] = 1;
+                }
+                continue;
+            }
+            $item = trim((string) $item);
+            if ($item == '*') {
+                return $this->fetchAll();
+            }
+            if (preg_match('/\s/', $item)) {
+                continue;
+            }
+            $list[$item] = 1;
+        }
+        foreach ($list as $item => $val) {
             $prop = 'string';
-            $minLength = 2;
-            $propToGet = null;
-            $dbToEnquiry = $this->dataSetName;
             $lenght = strlen($item);
-            if (intval($item) == 0) {
+            if ($lenght <= 3 && intval($item) != 0) {
                 $prop = 'numeric';
                 if ($lenght < 3) {
                     $item = str_pad($item, 3, '0', STR_PAD_LEFT);
                     $lenght = 3;
                 }
+            } else {
+                $item = strtoupper($item);
             }
-            if ($lenght < $minLength) {
+            if ($lenght < 2) {
                 continue;
             }
+            $Enquiry = [];
             switch ($this->dataSetName) {
                 case 'countries':
                     if ($prop == 'numeric') {
-                        $prop = 'unM49';
+                        $Enquiry = [
+                            'countries' => 'unM49',
+                            'geoSets' => 'unM49'
+                        ];
                     } else {
-                        $minLength = 4;
-                        if ($lenght < $minLength) {
-                            continue 2;
-                        }
                         switch ($lenght) {
                             case 2:
-                                $prop = 'alpha2';
+                                $Enquiry = [
+                                    'countries' => 'alpha2'
+                                ];
                                 break;
                             case 3:
-                                $prop = 'alpha3';
+                                $Enquiry = [
+                                    'countries' => 'alpha3'
+                                ];
                                 break;
                             default:
-                                /** The countries fetch can have also a fetching on the geoSets */
-                                $dbToEnquiry = 'geoSets';
-                                $propToGet = 'countryCodes';
                                 $prop = 'tags';
                                 if (preg_match('/-/', $item)) {
                                     $prop = 'internalCode';
                                 }
+                                $Enquiry = [
+                                    'geoSets' => $prop
+                                ];
                         }
                     }
                     break;
                 case 'geoSets':
+                    if ($lenght < 3) {
+                        break;
+                    }
                     if ($prop == 'numeric') {
-                        $prop = 'unM49';
+                        $Enquiry = [
+                            'geoSets' => 'unM49'
+                        ];
                     } else {
-                        $minLength = 4;
                         $prop = 'tags';
                         if (preg_match('/-/', $item)) {
                             $prop = 'internalCode';
                         }
+                        $Enquiry = [
+                            'geoSets' => $prop
+                        ];
                     }
                     break;
                 case 'currencies':
-                    $minLength = 3;
-                    if ($lenght < $minLength) {
-                        continue 2;
+                    if ($lenght < 3) {
+                        break;
                     }
                     $prop = $prop == 'numeric' ? 'isoNumber' : 'isoAlpha';
+                    $Enquiry = [
+                        'currencies' => $prop
+                    ];
                     break;
                 default:
-                    continue 2;
+                    break;
             }
 
-            $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-            fwrite($elenaMyfile, print_r('INDAGINE', true) . "\n");
-            fwrite($elenaMyfile, print_r('$dbToEnquiry: ' . $dbToEnquiry, true) . "\n");
-            fwrite($elenaMyfile, print_r('$prop: ' . $prop, true) . "\n");
-            fwrite($elenaMyfile, print_r('$propToGet: ' . $propToGet, true) . "\n");
-            fclose($elenaMyfile);
+            foreach ($Enquiry as $db => $prop) {
+                if ($this->executeFetches($item, $db, $prop)) {
+                    break;
+                }
+            }
         }
+        $this->fetchIndex++;
+
         return $this;
     }
 
@@ -419,14 +481,25 @@ class Enquiries
         }
 
         /** The executive dataset */
-        $this->executiveSet = $this->dataSets[$this->dataSetName];
+        $catchSets = array_merge(
+            ...array_values($this->query['fetchGroups']),
+            ...array_values($this->query['fetchSuperGroups'])
+        );
+        if (empty($catchSets)) {
+            $executiveSet = $this->dataSets[$this->dataSetName];
+        } else {
+            $executiveSet = [];
+            foreach ($catchSets as $index) {
+                $executiveSet[$index] = $this->dataSets[$this->dataSetName][$index];
+            }
+        }
 
         /** Execute the orderBy */
         if (!is_null($this->query['order']['property'])) {
             $property = $this->query['order']['property'];
             $order = strtoupper($this->query['order']['type'] ?? 'ASC');
             $collator = collator_create($this->currentLocale . '.utf8');
-            usort($this->executiveSet, function ($a, $b) use ($collator, $property, $order) {
+            usort($executiveSet, function ($a, $b) use ($collator, $property, $order) {
                 $result = collator_compare($collator, $a[$property], $b[$property]);
                 if ($result === false) {
                     return 0;
@@ -437,7 +510,7 @@ class Enquiries
 
         /** parse the data */
         $k = $key = $keyOut = 0;
-        foreach ($this->executiveSet as $data) {
+        foreach ($executiveSet as $data) {
             /** apply the limits */
             if ($key < $this->query['limit']['from']) {
                 $key++;
