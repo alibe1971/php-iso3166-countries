@@ -16,4 +16,6 @@ class ExceptionsMessagesMap
     public const ERROR_11005 = 'Attribute `orderBy`.`property` must be usable as index';
     public const ERROR_11006 = 'Attribute `orderBy`.`orderType` must "ASC" or "DESC" (case insensitive)';
     public const ERROR_11007 = 'Multidimensional arrays are not allowed in the fetching';
+    public const ERROR_11008 = 'The `intersect` operation requires at least 2 fetched elements';
+    public const ERROR_11009 = 'The `complement` operation requires at least 2 fetched elements';
 }

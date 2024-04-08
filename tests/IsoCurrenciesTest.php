@@ -629,7 +629,7 @@ final class IsoCurrenciesTest extends TestCase
         $currencies = self::$geoCodes->currencies();
         $currencies->fetch('EUR', 36, ['USD', 986]);
         $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -661,7 +661,7 @@ final class IsoCurrenciesTest extends TestCase
         $currencies = self::$geoCodes->currencies();
         $currencies->fetch('EUR', 36)->fetch(['USD', 986]);
         $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -679,5 +679,181 @@ final class IsoCurrenciesTest extends TestCase
         $this->assertEquals($fetchAll, self::$currenciesSetsList);
         $this->assertEquals($fetchStar, self::$currenciesSetsList);
         $this->assertEquals($fetchWithStar, self::$currenciesSetsList);
+    }
+
+
+    /**
+     * @test
+     * @testdox Test operations on the fetched groups
+     * @return void
+     */
+    public function testOperationsOnFetchedGroup(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->merge() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testMerge(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'AUD' => [ 'isoAlpha' => 'AUD' ],
+            'USD' => [ 'isoAlpha' => 'USD' ],
+            'BRL' => [ 'isoAlpha' => 'BRL' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36)->fetch(['USD', 986]);
+        $currencies->merge();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testMergeMultiples(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'AUD' => [ 'isoAlpha' => 'AUD' ],
+            'USD' => [ 'isoAlpha' => 'USD' ],
+            'BRL' => [ 'isoAlpha' => 'BRL' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR');
+        $currencies->fetch(36);
+        $currencies->merge();
+        $currencies->fetch(['USD', 986]);
+        $currencies->merge();
+        $currencies->merge();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->intersect() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersect(): void
+    {
+        $cfr = [
+            'USD' => [ 'isoAlpha' => 'USD' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, 840)->fetch(['USD', 986]);
+        $currencies->intersect();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectMultiples(): void
+    {
+        $cfr = [
+            'USD' => [ 'isoAlpha' => 'USD' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, 840)->fetch(['USD', 986]);
+        $currencies->intersect();
+        $currencies->fetch(['USD', 986]);
+        $currencies->fetch([840]);
+        $currencies->intersect();
+        $currencies->intersect();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectException(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, 840);
+        $this->expectException(QueryException::class);
+        $currencies->intersect();
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->complement() (simmetric complement) command
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplement(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'AUD' => [ 'isoAlpha' => 'AUD' ],
+            'BRL' => [ 'isoAlpha' => 'BRL' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, 840)->fetch(['USD', 986]);
+        $currencies->complement();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementMultiples(): void
+    {
+        $cfr = [
+            'EUR' => [ 'isoAlpha' => 'EUR' ],
+            'USD' => [ 'isoAlpha' => 'USD' ]
+        ];
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch(840, 'EUR')->fetch(['USD']);
+        $currencies->complement();
+        $currencies->fetch(840, 978)->fetch(['EUR']);
+        $currencies->complement();
+        $currencies->complement();
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementException(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        $currencies->fetch('EUR', 36, 840);
+        $this->expectException(QueryException::class);
+        $currencies->complement();
+    }
+
+
+
+
+    public function testStica(): void
+    {
+//        $currencies = self::$geoCodes->currencies();
+        $this->assertTrue(true);
     }
 }

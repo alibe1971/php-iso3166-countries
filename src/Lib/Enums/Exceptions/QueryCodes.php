@@ -11,4 +11,6 @@ class QueryCodes
     public const PROPERTY_TO_ORDER_NOT_VALID        = 11005;
     public const ORDER_TYPE_NOT_VALID               = 11006;
     public const FETCH_MULTIDIM_ARRAY_NOT_ALLOWED   = 11007;
+    public const INTERSECT_OPETARION_NOT_ALLOWED    = 11008;
+    public const COMPLEMENT_OPETARION_NOT_ALLOWED   = 11009;
 }

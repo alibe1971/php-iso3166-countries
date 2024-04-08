@@ -626,7 +626,7 @@ final class IsoGeoSetsTest extends TestCase
         $geoSets = self::$geoCodes->geoSets();
         $geoSets->fetch('CONV-G7', 15, ['CONV-SCHENGEN', 'ZONE-EZ']);
         $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -658,7 +658,7 @@ final class IsoGeoSetsTest extends TestCase
         $geoSets = self::$geoCodes->geoSets();
         $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ']);
         $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -676,5 +676,175 @@ final class IsoGeoSetsTest extends TestCase
         $this->assertEquals($fetchAll, self::$geoSetsList);
         $this->assertEquals($fetchStar, self::$geoSetsList);
         $this->assertEquals($fetchWithStar, self::$geoSetsList);
+    }
+
+    /**
+     * @test
+     * @testdox Test operations on the fetched groups
+     * @return void
+     */
+    public function testOperationsOnFetchedGroup(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->merge() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testMerge(): void
+    {
+        $cfr = [
+            'CONV-G7'       => [ 'internalCode' => 'CONV-G7' ],
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO'],
+            'CONV-SCHENGEN' => [ 'internalCode' => 'CONV-SCHENGEN' ],
+            'ZONE-EZ'       => [ 'internalCode' => 'ZONE-EZ' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ']);
+        $geoSets->merge();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testMergeMultiples(): void
+    {
+        $cfr = [
+            'CONV-G7'       => [ 'internalCode' => 'CONV-G7' ],
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO'],
+            'CONV-SCHENGEN' => [ 'internalCode' => 'CONV-SCHENGEN' ],
+            'ZONE-EZ'       => [ 'internalCode' => 'ZONE-EZ' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch(15)->fetch(['ZONE-EZ']);
+        $geoSets->merge();
+        $geoSets->fetch('CONV-G7')->fetch(['CONV-SCHENGEN']);
+        $geoSets->merge();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->intersect() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersect(): void
+    {
+        $cfr = [
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO']
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ', 'GEOG-AF-NO']);
+        $geoSets->intersect();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectMultiples(): void
+    {
+        $cfr = [
+            'GEOG-AF-NO'    => [ 'internalCode' => 'GEOG-AF-NO']
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ', 'GEOG-AF-NO']);
+        $geoSets->intersect();
+        $geoSets->fetch('CONV-G7', 'GEOG-AF-NO')->fetch(['CONV-SCHENGEN', 'ZONE-EZ', 15]);
+        $geoSets->intersect();
+        $geoSets->intersect();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectException(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        $this->expectException(QueryException::class);
+        $geoSets->fetch('CONV-G7', 15);
+        $geoSets->intersect();
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->complement() (simmetric complement) command
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplement(): void
+    {
+        $cfr = [
+            'CONV-G7'       => [ 'internalCode' => 'CONV-G7' ],
+            'CONV-SCHENGEN' => [ 'internalCode' => 'CONV-SCHENGEN' ],
+            'ZONE-EZ'       => [ 'internalCode' => 'ZONE-EZ' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch('CONV-G7', 15)->fetch(['CONV-SCHENGEN', 'ZONE-EZ', 'GEOG-AF-NO']);
+        $geoSets->complement();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementMultiples(): void
+    {
+        $cfr = [
+            'GEOG-AF-NO'       => [ 'internalCode' => 'GEOG-AF-NO' ],
+            'GEOG-OC-MI'       => [ 'internalCode' => 'GEOG-OC-MI' ]
+        ];
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->fetch(15, 'GEOG-OC-MI')->fetch(['GEOG-AF-NO']);
+        $geoSets->complement();
+        $geoSets->fetch(15, 57)->fetch(['GEOG-OC-MI']);
+        $geoSets->complement();
+        $geoSets->complement();
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementException(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        $this->expectException(QueryException::class);
+        $geoSets->fetch('CONV-G7', 15);
+        $geoSets->complement();
+    }
+
+
+    public function testStica(): void
+    {
+//        $geoSets = self::$geoCodes->geoSets();
+        $this->assertTrue(true);
     }
 }

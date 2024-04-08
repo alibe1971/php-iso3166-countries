@@ -657,22 +657,15 @@ final class IsoCountriesTest extends TestCase
     public function testFetchFeatureValidInput(): void
     {
         $cfr = [
-            'IT' => [ 'alpha2' => 'IT' ],
-            'AF' => [ 'alpha2' => 'AF' ],
-            'FR' => [ 'alpha2' => 'FR' ],
-            'DE' => [ 'alpha2' => 'DE' ],
-            'DZ' => [ 'alpha2' => 'DZ' ],
-            'EG' => [ 'alpha2' => 'EG' ],
-            'LY' => [ 'alpha2' => 'LY' ],
-            'MA' => [ 'alpha2' => 'MA' ],
-            'SD' => [ 'alpha2' => 'SD' ],
-            'TN' => [ 'alpha2' => 'TN' ],
-            'EH' => [ 'alpha2' => 'EH' ]
+            'IT' => [ 'alpha2' => 'IT' ], 'AF' => [ 'alpha2' => 'AF' ], 'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ], 'DZ' => [ 'alpha2' => 'DZ' ], 'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ], 'MA' => [ 'alpha2' => 'MA' ], 'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ], 'EH' => [ 'alpha2' => 'EH' ]
         ];
         $countries = self::$geoCodes->countries();
         $countries->fetch('it', 4, ['fr', 'de'], 'GEOG-AF-NO');
         $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -697,22 +690,15 @@ final class IsoCountriesTest extends TestCase
     public function testMultipleFetchFeature(): void
     {
         $cfr = [
-            'IT' => [ 'alpha2' => 'IT' ],
-            'AF' => [ 'alpha2' => 'AF' ],
-            'FR' => [ 'alpha2' => 'FR' ],
-            'DE' => [ 'alpha2' => 'DE' ],
-            'DZ' => [ 'alpha2' => 'DZ' ],
-            'EG' => [ 'alpha2' => 'EG' ],
-            'LY' => [ 'alpha2' => 'LY' ],
-            'MA' => [ 'alpha2' => 'MA' ],
-            'SD' => [ 'alpha2' => 'SD' ],
-            'TN' => [ 'alpha2' => 'TN' ],
-            'EH' => [ 'alpha2' => 'EH' ]
+            'IT' => [ 'alpha2' => 'IT' ], 'AF' => [ 'alpha2' => 'AF' ], 'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ], 'DZ' => [ 'alpha2' => 'DZ' ], 'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ], 'MA' => [ 'alpha2' => 'MA' ], 'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ], 'EH' => [ 'alpha2' => 'EH' ]
         ];
         $countries = self::$geoCodes->countries();
         $countries->fetch('it', 4, ['fr', 'de'])->fetch('GEOG-AF-NO');
         $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
-        $this->assertEquals($result, $cfr);
+        $this->assertEquals($cfr, $result);
     }
 
     /**
@@ -732,6 +718,200 @@ final class IsoCountriesTest extends TestCase
         $this->assertEquals($fetchWithStar, self::$countryList);
     }
 
+    /**
+     * @test
+     * @testdox Test operations on the fetched groups
+     * @return void
+     */
+    public function testOperationsOnFetchedGroup(): void
+    {
+        $this->assertTrue(true);
+    }
+
+
+    /**
+     * @test
+     * @testdox ==> with the ->merge() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testMerge(): void
+    {
+        $cfr = [
+            'IT' => [ 'alpha2' => 'IT' ], 'AF' => [ 'alpha2' => 'AF' ], 'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ], 'DZ' => [ 'alpha2' => 'DZ' ], 'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ], 'MA' => [ 'alpha2' => 'MA' ], 'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ], 'EH' => [ 'alpha2' => 'EH' ]
+        ];
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('it', 4, ['fr', 'de'])->fetch('GEOG-AF-NO');
+        $countries->merge();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testMergeMultiples(): void
+    {
+        $cfr = [
+            'IT' => [ 'alpha2' => 'IT' ], 'AF' => [ 'alpha2' => 'AF' ], 'FR' => [ 'alpha2' => 'FR' ],
+            'DE' => [ 'alpha2' => 'DE' ], 'DZ' => [ 'alpha2' => 'DZ' ], 'EG' => [ 'alpha2' => 'EG' ],
+            'LY' => [ 'alpha2' => 'LY' ], 'MA' => [ 'alpha2' => 'MA' ], 'SD' => [ 'alpha2' => 'SD' ],
+            'TN' => [ 'alpha2' => 'TN' ], 'EH' => [ 'alpha2' => 'EH' ]
+        ];
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('it')->fetch('GEOG-AF-NO');
+        $countries->merge();
+        $countries->fetch(4)->fetch(['fr', 'de']);
+        $countries->merge();
+        $countries->merge();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->intersect() command
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersect(): void
+    {
+        $cfr = [
+            'BG' => [ 'alpha2' => 'BG' ], 'CZ' => [ 'alpha2' => 'CZ' ], 'HU' => [ 'alpha2' => 'HU' ],
+            'PL' => [ 'alpha2' => 'PL' ], 'RO' => [ 'alpha2' => 'RO' ], 'SK' => [ 'alpha2' => 'SK' ],
+            'DK' => [ 'alpha2' => 'DK' ], 'EE' => [ 'alpha2' => 'EE' ], 'FI' => [ 'alpha2' => 'FI' ],
+            'IS' => [ 'alpha2' => 'IS' ], 'LV' => [ 'alpha2' => 'LV' ], 'LT' => [ 'alpha2' => 'LT' ],
+            'NO' => [ 'alpha2' => 'NO' ], 'GB' => [ 'alpha2' => 'GB' ], 'AL' => [ 'alpha2' => 'AL' ],
+            'HR' => [ 'alpha2' => 'HR' ], 'IT' => [ 'alpha2' => 'IT' ], 'MK' => [ 'alpha2' => 'MK' ],
+            'PT' => [ 'alpha2' => 'PT' ], 'SI' => [ 'alpha2' => 'SI' ], 'ES' => [ 'alpha2' => 'ES' ],
+            'BE' => [ 'alpha2' => 'BE' ], 'DE' => [ 'alpha2' => 'DE' ], 'FR' => [ 'alpha2' => 'FR' ],
+            'LU' => [ 'alpha2' => 'LU' ], 'NL' => [ 'alpha2' => 'NL' ]
+        ];
+        /** European countries that are part of the NATO  */
+        $countries = self::$geoCodes->countries();
+        $countries->fetch(150)->fetch('ORGS-NATO');
+        $countries->intersect();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectMultiples(): void
+    {
+        $cfr = [
+            'GB' => [ 'alpha2' => 'GB' ]
+        ];
+        /**
+         * Intersect
+         * - European countries that are part of the NATO and
+         * - Countries that are part of International Criminal Court the International Criminal Police Organization
+         */
+        $countries = self::$geoCodes->countries();
+        $countries->fetch(150)->fetch('ORGS-NATO');
+        $countries->intersect();
+        $countries->fetch('ORGS-CWNAT')->fetch('ORGS-CWRLM');
+        $countries->intersect();
+        $countries->intersect();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testIntersectException(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $countries->fetch(150);
+        $this->expectException(QueryException::class);
+        $countries->intersect();
+    }
+
+    /**
+     * @test
+     * @testdox ==> with the ->complement() (simmetric complement) command
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplement(): void
+    {
+        $cfr = [
+            'BG' => [ 'alpha2' => 'BG' ], 'CZ' => [ 'alpha2' => 'CZ' ], 'DK' => [ 'alpha2' => 'DK' ],
+            'HU' => [ 'alpha2' => 'HU' ], 'PL' => [ 'alpha2' => 'PL' ], 'RO' => [ 'alpha2' => 'RO' ],
+            'SE' => [ 'alpha2' => 'SE' ]
+        ];
+        /** Countries of the European Union that are not part of the eurozone  */
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('ORGS-EU')->fetch('ZONE-EZ');
+        $countries->complement();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> after multiple operations
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementMultiples(): void
+    {
+        $cfr = [
+            'BG' => [ 'alpha2' => 'BG' ], 'CZ' => [ 'alpha2' => 'CZ' ], 'DK' => [ 'alpha2' => 'DK' ],
+            'HU' => [ 'alpha2' => 'HU' ], 'PL' => [ 'alpha2' => 'PL' ], 'RO' => [ 'alpha2' => 'RO' ],
+            'SE' => [ 'alpha2' => 'SE' ], 'MD' => [ 'alpha2' => 'MD' ], 'RU' => [ 'alpha2' => 'RU' ],
+            'UA' => [ 'alpha2' => 'UA' ], 'AX' => [ 'alpha2' => 'AX' ], 'GG' => [ 'alpha2' => 'GG' ],
+            'JE' => [ 'alpha2' => 'JE' ], 'FO' => [ 'alpha2' => 'FO' ], 'IS' => [ 'alpha2' => 'IS' ],
+            'IM' => [ 'alpha2' => 'IM' ], 'NO' => [ 'alpha2' => 'NO' ], 'SJ' => [ 'alpha2' => 'SJ' ],
+            'GB' => [ 'alpha2' => 'GB' ], 'AL' => [ 'alpha2' => 'AL' ], 'AD' => [ 'alpha2' => 'AD' ],
+            'BA' => [ 'alpha2' => 'BA' ], 'GI' => [ 'alpha2' => 'GI' ], 'VA' => [ 'alpha2' => 'VA' ],
+            'ME' => [ 'alpha2' => 'ME' ], 'MK' => [ 'alpha2' => 'MK' ], 'SM' => [ 'alpha2' => 'SM' ],
+            'RS' => [ 'alpha2' => 'RS' ], 'LI' => [ 'alpha2' => 'LI' ], 'MC' => [ 'alpha2' => 'MC' ],
+            'CH' => [ 'alpha2' => 'CH' ], 'CY' => [ 'alpha2' => 'CY' ], 'BY' => [ 'alpha2' => 'BY' ]
+        ];
+        /**
+         * Make the simmetric complement between
+         * - Countries of the European Union that are not part of the eurozone and
+         * - European countries that are not part of the European Union
+         */
+        $countries = self::$geoCodes->countries();
+        $countries->fetch('ORGS-EU')->fetch('ZONE-EZ');
+        $countries->complement();
+        $countries->fetch(150)->fetch('ORGS-EU');
+        $countries->complement();
+        $countries->complement();
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($cfr, $result);
+    }
+
+    /**
+     * @test
+     * @testdox ====> with thrown exception
+     * @return void
+     * @throws QueryException
+     */
+    public function testComplementException(): void
+    {
+        $countries = self::$geoCodes->countries();
+        $countries->fetch(150);
+        $this->expectException(QueryException::class);
+        $countries->complement();
+    }
+
     /** ELIBE */
     /**
      * [TODO] check the collection on the sub objects
@@ -745,7 +925,7 @@ final class IsoCountriesTest extends TestCase
      * @testdox Countries: ELIBE.
      * @return void
      */
-    public function stica(): void
+    public function testStica(): void
     {
 
 //        $countries = self::$geoCodes->useLanguage('it')->countries()->selectableFields();
