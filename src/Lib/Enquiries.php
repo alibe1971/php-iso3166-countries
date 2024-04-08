@@ -75,6 +75,12 @@ class Enquiries
     /**
      * @var string
      */
+    private string $cursor = 'fetchGroups';
+
+
+    /**
+     * @var string
+     */
     protected string $instanceName;
 
     /**
@@ -327,7 +333,7 @@ class Enquiries
     }
 
     /**
-     * @return $this
+     * @return Enquiries
      */
     public function fetchAll(): Enquiries
     {
@@ -454,7 +460,87 @@ class Enquiries
             }
         }
         $this->fetchIndex++;
+        return $this;
+    }
 
+    /**
+     * @param array<string> $fetch
+     */
+    private function saveFetch(array $fetch): void
+    {
+        if ($this->cursor == 'fetchSuperGroups') {
+            $this->query['fetchSuperGroups'] = [];
+        }
+        $this->query['fetchSuperGroups'][] = $fetch;
+        $this->query['fetchGroups'] = [];
+        $this->fetchIndex = 0;
+        $this->cursor = 'fetchGroups';
+    }
+
+    /**
+     * @param string $op
+     * @throws QueryException
+     */
+    private function checkCursorElements(string $op = 'merge'): void
+    {
+        if (empty($this->query['fetchGroups'])) {
+            $this->cursor = 'fetchSuperGroups';
+        }
+        if ($op != 'merge' && count($this->query[$this->cursor]) < 2) {
+            $exceptions = [
+                'intersect'  => QueryCodes::INTERSECT_OPETARION_NOT_ALLOWED,
+                'complement' => QueryCodes::COMPLEMENT_OPETARION_NOT_ALLOWED
+            ];
+            throw new QueryException($exceptions[$op]);
+        }
+    }
+
+    /**
+     * @return Enquiries
+     * @throws QueryException
+     */
+    public function merge(): Enquiries
+    {
+        $this->checkCursorElements();
+        $this->saveFetch(
+            array_merge(
+                ...array_values($this->query[$this->cursor]),
+            )
+        );
+        return $this;
+    }
+
+    /**
+     * @return Enquiries
+     * @throws QueryException
+     */
+    public function intersect(): Enquiries
+    {
+        $this->checkCursorElements('intersect');
+        $this->saveFetch(
+            array_intersect(
+                ...array_values($this->query[$this->cursor]),
+            )
+        );
+        return $this;
+    }
+
+    /**
+     * @return Enquiries
+     * @throws QueryException
+     */
+    public function complement(): Enquiries
+    {
+        $this->checkCursorElements('complement');
+        $intersect = array_intersect(
+            ...array_values($this->query[$this->cursor]),
+        );
+        $simmetricComplement = [];
+        foreach ($this->query[$this->cursor] as $subArray) {
+            $diff = array_diff($subArray, $intersect);
+            $simmetricComplement = array_merge($simmetricComplement, $diff);
+        }
+        $this->saveFetch($simmetricComplement);
         return $this;
     }
 
@@ -481,17 +567,19 @@ class Enquiries
         }
 
         /** The executive dataset */
-        $catchSets = array_merge(
-            ...array_values($this->query['fetchGroups']),
-            ...array_values($this->query['fetchSuperGroups'])
-        );
-        if (empty($catchSets)) {
-            $executiveSet = $this->dataSets[$this->dataSetName];
-        } else {
-            $executiveSet = [];
-            foreach ($catchSets as $index) {
-                $executiveSet[$index] = $this->dataSets[$this->dataSetName][$index];
+        $executiveSet = [];
+        if (!empty($this->query['fetchGroups']) || !empty($this->query['fetchSuperGroups'])) {
+            $catchSets = array_merge(
+                ...array_values($this->query['fetchGroups']),
+                ...array_values($this->query['fetchSuperGroups'])
+            );
+            if (!empty($catchSets)) {
+                foreach ($catchSets as $index) {
+                    $executiveSet[$index] = $this->dataSets[$this->dataSetName][$index];
+                }
             }
+        } else {
+            $executiveSet = $this->dataSets[$this->dataSetName];
         }
 
         /** Execute the orderBy */
@@ -581,4 +669,5 @@ class Enquiries
         $this->execQueries();
         return count($this->data);
     }
+
 }
