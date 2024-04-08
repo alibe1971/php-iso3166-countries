@@ -164,7 +164,7 @@ return [
     'name' => 'International Finance Corporation (IFC)',
   ],
   'ORGS-IPOL' => [
-    'name' => 'The International Criminal Police Organization (Interpol)',
+    'name' => 'International Criminal Police Organization (Interpol)',
   ],
   'ORGS-MIGA' => [
     'name' => 'Multilateral Investment Guarantee Agency (MIGA)',
