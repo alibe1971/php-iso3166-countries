@@ -669,5 +669,4 @@ class Enquiries
         $this->execQueries();
         return count($this->data);
     }
-
 }
