@@ -371,15 +371,19 @@ final class IsoCountriesTest extends TestCase
         // Invalid - `from` less than 0
         try {
             $countries->limit(-5, 20);
+            $this->fail('An invalid limit from has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11003, $e->getCode());
         }
 
         // Invalid - `numberOfItems` less than 0
         try {
             $countries->limit(20, -5);
+            $this->fail('An invalid limit numberOfItems has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11004, $e->getCode());
         }
 
 
@@ -425,7 +429,6 @@ final class IsoCountriesTest extends TestCase
      * @test
      * @testdox  ==>  using an invalid properties
      * @return void
-     * @throws QueryException
      */
     public function testOrderByWithException(): void
     {
@@ -434,15 +437,20 @@ final class IsoCountriesTest extends TestCase
         // Invalid - `property` not indexable
         try {
             $countries->orderBy('notIndexable');
+            $this->fail('An invalid orderBy property has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11005, $e->getCode());
+            $this->assertEquals(1, preg_match('/"notIndexable"/', $e->getMessage()));
         }
 
         // Invalid - `orderType` invalid
         try {
             $countries->orderBy('alpha2', 'invalid');
+            $this->fail('An invalid orderBy type has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11006, $e->getCode());
         }
     }
 
@@ -491,8 +499,14 @@ final class IsoCountriesTest extends TestCase
      */
     public function testIndexFeatureWithException(): void
     {
-        $this->expectException(QueryException::class);
-        self::$geoCodes->countries()->withIndex('invalidField');
+        try {
+            self::$geoCodes->countries()->withIndex('invalidField');
+            $this->fail('The index is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11001, $e->getCode());
+            $this->assertEquals(1, preg_match('/"invalidField"/', $e->getMessage()));
+        }
     }
 
 
@@ -634,8 +648,14 @@ final class IsoCountriesTest extends TestCase
      */
     public function testSelectFeatureWithException(): void
     {
-        $this->expectException(QueryException::class);
-        self::$geoCodes->countries()->select('invalidField');
+        try {
+            self::$geoCodes->countries()->select('invalidField');
+            $this->fail('The select is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11002, $e->getCode());
+            $this->assertEquals(1, preg_match('/"invalidField"/', $e->getMessage()));
+        }
     }
 
     /**
@@ -676,8 +696,13 @@ final class IsoCountriesTest extends TestCase
     public function testFetchFeatureWithException(): void
     {
         $countries = self::$geoCodes->countries();
-        $this->expectException(QueryException::class);
-        $countries->fetch('it', 4, [['fr'], ['de']]);
+        try {
+            $countries->fetch('it', 4, [['fr'], ['de']]);
+            $this->fail('The fetch is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11007, $e->getCode());
+        }
     }
 
 
@@ -837,8 +862,13 @@ final class IsoCountriesTest extends TestCase
     {
         $countries = self::$geoCodes->countries();
         $countries->fetch(150);
-        $this->expectException(QueryException::class);
-        $countries->intersect();
+        try {
+            $countries->intersect();
+            $this->fail('The intersect has been allowed');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11008, $e->getCode());
+        }
     }
 
     /**
@@ -908,8 +938,271 @@ final class IsoCountriesTest extends TestCase
     {
         $countries = self::$geoCodes->countries();
         $countries->fetch(150);
-        $this->expectException(QueryException::class);
-        $countries->complement();
+        try {
+            $countries->complement();
+            $this->fail('The symmetric complement has been allowed');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11009, $e->getCode());
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the conditions ->where() and ->orWhere()
+     * @return void
+     */
+    public function testConditions(): void
+    {
+        $this->assertTrue(true);
+    }
+    /**
+     * @test
+     * @testdox ==> invalid conditions
+     * @return void
+     */
+    public function testInvalidConditions(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @dataProvider dataProviderInvalidConditions
+     * @testdox ====>  is invalid using ->where($txt) or ->orWhere($txt)
+     *
+     * @param string $txt
+     * @param array<array<int, int|string>> $args
+     * @param int $errorCode
+     * @param array<string> $matches
+     */
+    public function testConditionsWithDataProviderInvalid(
+        string $txt,
+        array $args,
+        int $errorCode,
+        array $matches = []
+    ): void {
+        $countries = self::$geoCodes->countries();
+        try {
+            $countries->where(...$args);
+            $this->fail('The condition is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals($errorCode, $e->getCode());
+            if (!empty($matches)) {
+                foreach ($matches as $match) {
+                    $this->assertEquals(1, preg_match('/"' . $match . '"/i', $e->getMessage()));
+                }
+            }
+        }
+        try {
+            $countries->orWhere(...$args);
+            $this->fail('The condition is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals($errorCode, $e->getCode());
+            if (!empty($matches)) {
+                foreach ($matches as $match) {
+                    $this->assertEquals(1, preg_match('/"' . $match . '"/i', $e->getMessage()));
+                }
+            }
+        }
+    }
+    /**
+     * @return array<
+     *     int,
+     *     array<int,
+     *      array<int, array<int, array<int, array<int, string>|string>|int|string>|bool|int|string>|int|string>>
+     */
+    public function dataProviderInvalidConditions(): array
+    {
+        return [
+            [
+                "'sss'",
+                ['sss'],
+                11011
+            ],
+            [
+                "'sss', '5', 'aaa', 'aaa'",
+                ['sss', '5', 'aaa', 'aaa'],
+                11010
+            ],
+            [
+                "['field', 'operator', 'term'], ['field', 'operator', 'term']",
+                [['field', 'operator', 'term'], ['field', 'operator', 'term']],
+                11010
+            ],
+            [
+                "5, '5', 'aaa'",
+                [5, '5', 'aaa'],
+                11010
+            ],
+            [
+                "['5'], '5', 'aaa'",
+                [['5'], '5', 'aaa'],
+                11010
+            ],
+            [
+                "[5], ['5'], ['aaa']",
+                [[5], ['5'], ['aaa']],
+                11010
+            ],
+            [
+                "['5'], ['5'], ['aaa']",
+                [['5'], ['5'], ['aaa']],
+                11010
+            ],
+            [
+                "true, '5', 'aaa'",
+                [true, '5', 'aaa'],
+                11010
+            ],
+            [
+                "['field', 'operator', 'term']",
+                [['field', 'operator', 'term']],
+                11012,
+                ['operator']
+            ],
+            [
+                "['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']",
+                [['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']],
+                11010
+            ],
+            [
+                "[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]",
+                [[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]],
+                11015,
+                ['field']
+            ],
+            [
+                "[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]",
+                [[['field', '=', 'term'],['field', '=', 'term']], ['field', '=', 'term']],
+                11010
+            ],
+            [
+                "[[]]",
+                [[[]]],
+                11011
+            ],
+            [
+                "[[['field'], 'operator', 'term']]",
+                [[[['field'], 'operator', 'term']]],
+                11011
+            ],
+            [
+                "[['field', ['operator'], 'term']]",
+                [[['field', ['operator'], 'term']]],
+                11011
+            ],
+            [
+                "'alPha2', 'IE'",
+                ['alPha2', 'IE'],
+                11015,
+                ['alPha2']
+            ],
+            [
+                "'alpha2.inexistent', 'IE'",
+                ['alpha2.inexistent', 'IE'],
+                11015,
+                ['alpha2.inexistent']
+            ],
+            [
+                "['alpha2.inexistent', 'IE']",
+                [['alpha2.inexistent', 'IE']],
+                11015,
+                ['alpha2.inexistent']
+            ],
+            [
+                "[['alpha2.inexistent', 'IE']]",
+                [[['alpha2.inexistent', 'IE']]],
+                11015,
+                ['alpha2.inexistent']
+            ],
+            [
+                "['alpha2', '=', ['IE', 'IT']]]",
+                [['alpha2', '=', ['IE', 'IT']]],
+                11014,
+                ['=']
+            ],
+            [
+                "[['alpha2', 'IN', 'IE']]",
+                [[['alpha2', 'IN', 'IE']]],
+                11013,
+                ['IN']
+            ]
+        ];
+    }
+
+    /**
+     * @test
+     * @testdox ==> valid conditions results
+     * @return void
+     */
+    public function testValidConditions(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @dataProvider dataProviderValidConditions
+     * @testdox ====>  has valid result using ->$method($txt)
+     *
+     * @param string $txt
+     * @param array<array<int, int|string>> $args
+     * @param string $method
+     * @param array<string> $matches
+     * @throws QueryException
+     */
+    public function testConditionsWithDataProviderValid(
+        string $txt,
+        array $args,
+        string $method,
+        array $matches = []
+    ): void {
+        $countries = self::$geoCodes->countries();
+        $countries->$method(...$args);
+        $result = $countries->withIndex('alpha2')->select('alpha2')->get()->toArray();
+        $this->assertEquals($matches, $result);
+    }
+    /**
+     * @return array<
+     *     int,
+     *     array<int,
+     *      array<int, array<int, array<int, array<int, string>|string>|int|string>|bool|int|string>|int|string>>
+     */
+    public function dataProviderValidConditions(): array
+    {
+        return [
+            [
+                "'alpha2', 'IE'",
+                ['alpha2', 'IE'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'alpha2', '=', 'IE'",
+                ['alpha2', '=', 'IE'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "['alpha2', '=', 'IE']",
+                [['alpha2', '=', 'IE']],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "[['alpha2', '=', 'IE']]",
+                [[['alpha2', '=', 'IE']]],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+//            [
+//                "[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]",
+//                [[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]],
+//                'where',
+//                []
+//            ],
+        ];
     }
 
     /** ELIBE */
@@ -919,38 +1212,31 @@ final class IsoCountriesTest extends TestCase
      */
 
 
-
     /**
      * @test
      * @testdox Countries: ELIBE.
      * @return void
+     * @throws QueryException
      */
     public function testStica(): void
     {
+        $countries = self::$geoCodes->countries();
 
-//        $countries = self::$geoCodes->useLanguage('it')->countries()->selectableFields();
-//
-//        $countries2 = self::$geoCodes->useLanguage('it')->countries()->getIndexes();
-//
-//        $countries3 = self::$geoCodes->useLanguage('it')->countries()->limit(0, 1)->get();
-//
-//        $countries4 = self::$geoCodes->countries()->withIndex('alpha2')->limit(0, 1)->get();
 
-//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-//        fwrite($elenaMyfile, print_r($countries4, true) . "\n");
-//        fclose($elenaMyfile);
+        $countries->where([['alpha2', '=', 'IE']])->orWhere('alpha2', 'IN', ['IT']);
+        $countries->fetch('IT')->where([['alpha2', 'IN', ['IE']]]);
+        $countries->get();
 
-//        $countries4 = $countries3->toJson();
-//        $countries4 = $countries3->toArray();
+        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+        fwrite($elenaMyfile, print_r($countries->stica(), true) . "\n");
+        fclose($elenaMyfile);
 
-        self::$geoCodes->useLanguage('en');
 
-//        $countries = self::$geoCodes->countries()->withIndex('alpha2')->get()->toArray();
-//        $countries = self::$geoCodes->countries();
-//        $countries->fetch('it', 4, ['fr', 'de']);
-//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-//        fwrite($elenaMyfile, print_r($countries, true) . "\n");
-//        fclose($elenaMyfile);
+//        $countries->where([
+//            ['alpha2', '=', 'term'],
+//            [['field'], '=', 'term']
+//        ]);
+
 
         $this->assertTrue(true);
     }

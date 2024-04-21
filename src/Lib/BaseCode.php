@@ -93,7 +93,7 @@ class BaseCode
     public function setDefaultLanguage(string $language): BaseCode
     {
         if (empty($this->config->settings->languages->inPackage->{$language})) {
-            throw new ConfigException(ConfigCodes::LANGUAGE_NOT_AVAILABLE);
+            throw new ConfigException(ConfigCodes::LANGUAGE_NOT_AVAILABLE, [$language]);
         }
         $this->Language->default = $language;
         return $this;

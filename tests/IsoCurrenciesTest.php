@@ -337,15 +337,19 @@ final class IsoCurrenciesTest extends TestCase
         // Invalid - `from` less than 0
         try {
             $currencies->limit(-5, 20);
+            $this->fail('An invalid limit from has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11003, $e->getCode());
         }
 
         // Invalid - `numberOfItems` less than 0
         try {
             $currencies->limit(20, -5);
+            $this->fail('An invalid limit numberOfItems has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11004, $e->getCode());
         }
 
         // Valid input
@@ -399,15 +403,20 @@ final class IsoCurrenciesTest extends TestCase
         // Invalid - `property` not indexable
         try {
             $currencies->orderBy('notIndexable');
+            $this->fail('An invalid orderBy property has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11005, $e->getCode());
+            $this->assertEquals(1, preg_match('/"notIndexable"/', $e->getMessage()));
         }
 
         // Invalid - `orderType` invalid
         try {
             $currencies->orderBy('isoAlpha', 'invalid');
+            $this->fail('An invalid orderBy type has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11006, $e->getCode());
         }
     }
 
@@ -456,8 +465,14 @@ final class IsoCurrenciesTest extends TestCase
      */
     public function testIndexFeatureWithException(): void
     {
-        $this->expectException(QueryException::class);
-        self::$geoCodes->currencies()->withIndex('invalidField');
+        try {
+            self::$geoCodes->currencies()->withIndex('invalidField');
+            $this->fail('The index is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11001, $e->getCode());
+            $this->assertEquals(1, preg_match('/"invalidField"/', $e->getMessage()));
+        }
     }
 
     /**
@@ -598,8 +613,14 @@ final class IsoCurrenciesTest extends TestCase
      */
     public function testSelectFeatureWithException(): void
     {
-        $this->expectException(QueryException::class);
-        self::$geoCodes->currencies()->select('invalidField');
+        try {
+            self::$geoCodes->currencies()->select('invalidField');
+            $this->fail('The select is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11002, $e->getCode());
+            $this->assertEquals(1, preg_match('/"invalidField"/', $e->getMessage()));
+        }
     }
 
     /**
@@ -640,8 +661,13 @@ final class IsoCurrenciesTest extends TestCase
     public function testFetchFeatureWithException(): void
     {
         $currencies = self::$geoCodes->currencies();
-        $this->expectException(QueryException::class);
-        $currencies->fetch('EUR', 36, [['USD'], [986]]);
+        try {
+            $currencies->fetch('EUR', 36, [['USD'], [986]]);
+            $this->fail('The fetch is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11007, $e->getCode());
+        }
     }
 
     /**
@@ -788,8 +814,13 @@ final class IsoCurrenciesTest extends TestCase
     {
         $currencies = self::$geoCodes->currencies();
         $currencies->fetch('EUR', 36, 840);
-        $this->expectException(QueryException::class);
-        $currencies->intersect();
+        try {
+            $currencies->intersect();
+            $this->fail('The intersect has been allowed');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11008, $e->getCode());
+        }
     }
 
     /**
@@ -844,10 +875,199 @@ final class IsoCurrenciesTest extends TestCase
     {
         $currencies = self::$geoCodes->currencies();
         $currencies->fetch('EUR', 36, 840);
-        $this->expectException(QueryException::class);
-        $currencies->complement();
+        try {
+            $currencies->complement();
+            $this->fail('The symmetric complement has been allowed');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11009, $e->getCode());
+        }
     }
 
+    /**
+     * @test
+     * @testdox Test the conditions ->where() and ->orWhere()
+     * @return void
+     */
+    public function testConditions(): void
+    {
+        $this->assertTrue(true);
+    }
+    /**
+     * @test
+     * @testdox ==> invalid conditions
+     * @return void
+     */
+    public function testInvalidConditions(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @dataProvider dataProviderInvalidConditions
+     * @testdox ====>  is invalid using ->where($txt) or ->orWhere($txt)
+     *
+     * @param string $txt
+     * @param array<array<int, int|string>> $args
+     * @param int $errorCode
+     * @param array<string> $matches
+     */
+    public function testConditionsWithDataProviderInvalid(
+        string $txt,
+        array $args,
+        int $errorCode,
+        array $matches = []
+    ): void {
+        $countries = self::$geoCodes->countries();
+        try {
+            $countries->where(...$args);
+            $this->fail('The condition is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals($errorCode, $e->getCode());
+            if (!empty($matches)) {
+                foreach ($matches as $match) {
+                    $this->assertEquals(1, preg_match('/"' . $match . '"/i', $e->getMessage()));
+                }
+            }
+        }
+        try {
+            $countries->orWhere(...$args);
+            $this->fail('The condition is considered valid');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals($errorCode, $e->getCode());
+            if (!empty($matches)) {
+                foreach ($matches as $match) {
+                    $this->assertEquals(1, preg_match('/"' . $match . '"/i', $e->getMessage()));
+                }
+            }
+        }
+    }
+    /**
+     * @return array<
+     *     int,
+     *     array<int,
+     *      array<int, array<int, array<int, array<int, string>|string>|int|string>|bool|int|string>|int|string>>
+     */
+    public function dataProviderInvalidConditions(): array
+    {
+        return [
+            [
+                "'sss'",
+                ['sss'],
+                11011
+            ],
+            [
+                "'sss', '5', 'aaa', 'aaa'",
+                ['sss', '5', 'aaa', 'aaa'],
+                11010
+            ],
+            [
+                "['field', 'operator', 'term'], ['field', 'operator', 'term']",
+                [['field', 'operator', 'term'], ['field', 'operator', 'term']],
+                11010
+            ],
+            [
+                "5, '5', 'aaa'",
+                [5, '5', 'aaa'],
+                11010
+            ],
+            [
+                "['5'], '5', 'aaa'",
+                [['5'], '5', 'aaa'],
+                11010
+            ],
+            [
+                "[5], ['5'], ['aaa']",
+                [[5], ['5'], ['aaa']],
+                11010
+            ],
+            [
+                "['5'], ['5'], ['aaa']",
+                [['5'], ['5'], ['aaa']],
+                11010
+            ],
+            [
+                "true, '5', 'aaa'",
+                [true, '5', 'aaa'],
+                11010
+            ],
+            [
+                "['field', 'operator', 'term']",
+                [['field', 'operator', 'term']],
+                11012,
+                ['operator']
+            ],
+            [
+                "['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']",
+                [['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']],
+                11010
+            ],
+            [
+                "[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]",
+                [[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]],
+                11015,
+                ['field']
+            ],
+            [
+                "[['field', '=', 'term'],['field', 'operator', 'term'],['field', 'operator', 'term']]",
+                [[['field', '=', 'term'],['field', '=', 'term']], ['field', '=', 'term']],
+                11010
+            ],
+            [
+                "[[]]",
+                [[[]]],
+                11011
+            ],
+            [
+                "[[['field'], 'operator', 'term']]",
+                [[[['field'], 'operator', 'term']]],
+                11011
+            ],
+            [
+                "[['field', ['operator'], 'term']]",
+                [[['field', ['operator'], 'term']]],
+                11011
+            ],
+            [
+                "'isoAlPha', 'EUR'",
+                ['isoAlPha', 'EUR'],
+                11015,
+                ['isoAlPha']
+            ],
+            [
+                "'isoAlpha.inexistent', 'EUR'",
+                ['isoAlpha.inexistent', 'EUR'],
+                11015,
+                ['isoAlpha.inexistent']
+            ],
+            [
+                "['isoAlpha.inexistent', 'EUR']",
+                [['isoAlpha.inexistent', 'EUR']],
+                11015,
+                ['isoAlpha.inexistent']
+            ],
+            [
+                "[['isoAlpha.inexistent', 'EUR']]",
+                [[['isoAlpha.inexistent', 'EUR']]],
+                11015,
+                ['isoAlpha.inexistent']
+            ],
+            [
+                "['isoAlpha', '=', ['EUR', 'USD']]]",
+                [['isoAlpha', '=', ['EUR', 'USD']]],
+                11014,
+                ['=']
+            ],
+            [
+                "[['isoAlpha', 'IN', 'EUR']]",
+                [[['isoAlpha', 'IN', 'EUR']]],
+                11013,
+                ['IN']
+            ]
+        ];
+    }
 
 
 

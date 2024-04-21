@@ -65,8 +65,14 @@ final class ConfigSettingsTest extends TestCase
      */
     public function testDefaultLanguageWithException(): void
     {
-        $this->expectException(ConfigException::class);
-        self::$geoCodes->setDefaultLanguage('zz');
+        try {
+            self::$geoCodes->setDefaultLanguage('zz');
+            $this->fail('An not existent language has been accepted');
+        } catch (ConfigException $e) {
+            $this->assertInstanceOf(ConfigException::class, $e);
+            $this->assertEquals(10001, $e->getCode());
+            $this->assertEquals(1, preg_match('/"zz"/', $e->getMessage()));
+        }
     }
 
     /**
