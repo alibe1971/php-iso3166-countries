@@ -7,6 +7,7 @@ use Alibe\GeoCodes\Lib\DataObj\InstanceLanguage;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Access;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Index;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
+use Alibe\GeoCodes\Lib\Enums\DataSets\Type;
 use Alibe\GeoCodes\Lib\Enums\Exceptions\QueryCodes;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 
@@ -48,6 +49,25 @@ class Enquiries
     private array $data;
 
     /**
+     * @var array|string[]
+     */
+    private array $conditionsOperators = [
+        '=',
+        '!=',
+        '<>',
+        'IS NULL',
+        'IS NOT NULL',
+        '>',
+        '>=',
+        '<',
+        '<=',
+        'IN',
+        'NOT IN',
+        'LIKE',
+        'NOT LIKE',
+    ];
+
+    /**
      * @var array<string, mixed>
      */
     private array $query = [
@@ -55,7 +75,7 @@ class Enquiries
         'fetchGroups' => [],
         'fetchSuperGroups' => [],
         'select' => [],
-        'where' => [],
+        'conditionsSet' => [],
         'limit' => [
             'from' => 0,
             'to' => null
@@ -76,7 +96,6 @@ class Enquiries
      * @var string
      */
     private string $cursor = 'fetchGroups';
-
 
     /**
      * @var string
@@ -217,7 +236,9 @@ class Enquiries
         return $indexes;
     }
 
-
+    /**
+     * @return string
+     */
     private function getPrimaryKey(): string
     {
         $primary = '';
@@ -233,7 +254,7 @@ class Enquiries
     /**
      * @param int $from
      * @param int $numberOfItems
-     * @return $this
+     * @return Enquiries
      * @throws QueryException
      */
     public function limit(int $from, int $numberOfItems): Enquiries
@@ -253,13 +274,13 @@ class Enquiries
     /**
      * @param string $property
      * @param string $orderType
-     * @return $this
+     * @return Enquiries
      * @throws QueryException
      */
     public function orderBy(string $property, string $orderType = 'ASC'): Enquiries
     {
         if (!in_array($property, array_keys($this->getIndexes()))) {
-            throw new QueryException(QueryCodes::PROPERTY_TO_ORDER_NOT_VALID);
+            throw new QueryException(QueryCodes::PROPERTY_TO_ORDER_NOT_VALID, [$property]);
         }
         $orderType = strtoupper($orderType);
         if (!in_array($orderType, ['ASC', 'DESC'])) {
@@ -272,13 +293,13 @@ class Enquiries
 
     /**
      * @param string $index
-     * @return $this
+     * @return Enquiries
      * @throws QueryException
      */
     public function withIndex(string $index): Enquiries
     {
         if (!in_array($index, array_keys($this->getIndexes()))) {
-            throw new QueryException(QueryCodes::FIELD_NOT_INDEXABLE);
+            throw new QueryException(QueryCodes::FIELD_NOT_INDEXABLE, [$index]);
         }
         $this->query['index'] = $index;
         return $this;
@@ -286,14 +307,14 @@ class Enquiries
 
     /**
      * @param string ...$select
-     * @return $this
+     * @return Enquiries
      * @throws QueryException
      */
     public function select(string ...$select): Enquiries
     {
         foreach ($select as $element) {
             if (!in_array($element, array_keys($this->selectableFields()))) {
-                throw new QueryException(QueryCodes::FIELD_NOT_SELECTABLE);
+                throw new QueryException(QueryCodes::FIELD_NOT_SELECTABLE, [$element]);
             }
             $element = trim($element);
             $this->query['select'][] = $element;
@@ -306,6 +327,7 @@ class Enquiries
      * @param string $search
      * @param string $db
      * @param string $prop
+     * @return bool
      */
     private function executeFetches(string $search, string $db, string $prop): bool
     {
@@ -333,10 +355,132 @@ class Enquiries
     }
 
     /**
+     * @param array<string> $fetch
+     */
+    private function saveFetch(array $fetch): void
+    {
+        if ($this->cursor == 'fetchSuperGroups') {
+            $this->query['fetchSuperGroups'] = [];
+        }
+        $this->query['fetchSuperGroups'][] = $fetch;
+        $this->query['fetchGroups'] = [];
+        $this->fetchIndex = 0;
+        $this->cursor = 'fetchGroups';
+    }
+
+    /**
+     * @param string $op
+     * @throws QueryException
+     */
+    private function checkCursorElements(string $op = 'merge'): void
+    {
+        if (empty($this->query['fetchGroups'])) {
+            $this->cursor = 'fetchSuperGroups';
+        }
+        if ($op != 'merge' && count($this->query[$this->cursor]) < 2) {
+            $exceptions = [
+                'intersect'  => QueryCodes::INTERSECT_OPERATION_NOT_ALLOWED,
+                'complement' => QueryCodes::COMPLEMENT_OPERATION_NOT_ALLOWED
+            ];
+            throw new QueryException($exceptions[$op]);
+        }
+    }
+
+    /**
+     * Execution of the queries
+     */
+    private function execQueries(): void
+    {
+        /** The return data */
+        $this->data = [];
+
+        /** check the limit `to` */
+        if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
+            return;
+        }
+
+        /** get all the fields if they are not defined */
+        if (empty($this->query['select'])) {
+            $this->query['select'] = array_filter(
+                array_map(function ($val, $key) {
+                    return ($val['access'] === Access::PUBLIC) ? $key : null;
+                }, $this->dataSetsStructure, array_keys($this->dataSetsStructure))
+            );
+        }
+
+        /** The executive dataset */
+        $this->executeConditions();
+        $executiveSet = [];
+        if (!empty($this->query['fetchGroups']) || !empty($this->query['fetchSuperGroups'])) {
+            $catchSets = array_merge(
+                ...array_values($this->query['fetchGroups']),
+                ...array_values($this->query['fetchSuperGroups'])
+            );
+            if (!empty($catchSets)) {
+                foreach ($catchSets as $index) {
+                    $executiveSet[$index] = $this->dataSets[$this->dataSetName][$index];
+                }
+            }
+        } else {
+            $executiveSet = $this->dataSets[$this->dataSetName];
+        }
+
+        /** Execute the orderBy */
+        if (!is_null($this->query['order']['property'])) {
+            $property = $this->query['order']['property'];
+            $order = strtoupper($this->query['order']['type'] ?? 'ASC');
+            $collator = collator_create($this->currentLocale . '.utf8');
+            usort($executiveSet, function ($a, $b) use ($collator, $property, $order) {
+                $result = collator_compare($collator, $a[$property], $b[$property]);
+                if ($result === false) {
+                    return 0;
+                }
+                return ($order === 'ASC') ? $result : -$result;
+            });
+        }
+
+        /** parse the data */
+        $k = $key = $keyOut = 0;
+        foreach ($executiveSet as $data) {
+            /** apply the limits */
+            if ($key < $this->query['limit']['from']) {
+                $key++;
+                continue;
+            }
+            $k++;
+            if ($k > $this->query['limit']['to']) {
+                return;
+            }
+
+            $object = [];
+            foreach ($this->dataSetsStructure as $prop => $structure) {
+                /** get only the requested property */
+                if (!in_array($prop, $this->query['select'])) {
+                    continue;
+                }
+                if (preg_match('/\./', $prop)) {
+                    list($prop0, $prop1) = explode('.', $prop);
+                    if (!array_key_exists($prop0, $object)) {
+                        $object[$prop0] = [];
+                    }
+                    $object[$prop0][$prop1] = $data[$prop0][$prop1];
+                } else {
+                    $object[$prop] = $data[$prop];
+                }
+            }
+            /** build the index */
+            $this->data[($this->query['index'] ? $data[$this->query['index']] : $keyOut)] = $object;
+            $key++;
+            $keyOut++;
+        }
+    }
+
+    /**
      * @return Enquiries
      */
     public function fetchAll(): Enquiries
     {
+        $this->executeConditions();
         $this->query['fetchGroups'][$this->fetchIndex] = array_keys($this->dataSets[$this->dataSetName]);
         $this->fetchIndex++;
         return $this;
@@ -349,6 +493,7 @@ class Enquiries
      */
     public function fetch(...$items): Enquiries
     {
+        $this->executeConditions();
         $list = [];
         foreach ($items as $item) {
             if (is_array($item)) {
@@ -464,38 +609,6 @@ class Enquiries
     }
 
     /**
-     * @param array<string> $fetch
-     */
-    private function saveFetch(array $fetch): void
-    {
-        if ($this->cursor == 'fetchSuperGroups') {
-            $this->query['fetchSuperGroups'] = [];
-        }
-        $this->query['fetchSuperGroups'][] = $fetch;
-        $this->query['fetchGroups'] = [];
-        $this->fetchIndex = 0;
-        $this->cursor = 'fetchGroups';
-    }
-
-    /**
-     * @param string $op
-     * @throws QueryException
-     */
-    private function checkCursorElements(string $op = 'merge'): void
-    {
-        if (empty($this->query['fetchGroups'])) {
-            $this->cursor = 'fetchSuperGroups';
-        }
-        if ($op != 'merge' && count($this->query[$this->cursor]) < 2) {
-            $exceptions = [
-                'intersect'  => QueryCodes::INTERSECT_OPETARION_NOT_ALLOWED,
-                'complement' => QueryCodes::COMPLEMENT_OPETARION_NOT_ALLOWED
-            ];
-            throw new QueryException($exceptions[$op]);
-        }
-    }
-
-    /**
      * @return Enquiries
      * @throws QueryException
      */
@@ -545,92 +658,337 @@ class Enquiries
     }
 
     /**
-     * Execution of the queries
+     * @param mixed ...$conditions
+     * @return $this
+     * @throws QueryException
      */
-    private function execQueries(): void
+    public function where(...$conditions): Enquiries
     {
-        /** The return data */
-        $this->data = [];
+        $this->parseConditions($conditions, 'and');
+        return $this;
+    }
 
-        /** check the limit `to` */
-        if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
+    /**
+     * @param array<array<int|string>|int|string>|int|string ...$conditions
+     * @return Enquiries
+     * @throws QueryException
+     */
+    public function orWhere(...$conditions): Enquiries
+    {
+        $this->parseConditions($conditions, 'or');
+        return $this;
+    }
+
+    /**
+     * @param array<int|string, array<array<int|string>|int|string>|int|string>  $conditions
+     * @param string $target
+     * @throws QueryException
+     */
+    private function parseConditions(array $conditions, string $target): void
+    {
+        if (
+            empty($conditions) ||
+            count($conditions) > 3 ||
+            (!is_array($conditions[0]) && !is_string($conditions[0])) ||
+            (is_array($conditions[0]) && count($conditions) > 1)
+        ) {
+            throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_WRONG);
+        }
+        /** @var array<int|string, array<int|string>|int|string|null> $structure */
+        $structure = [];
+        // case ->where(['field', 'operator', 'term']) or ->where(['field', 'term'])
+        if (is_array($conditions[0]) && !is_array($conditions[0][0])) {
+            if (count($conditions) > 1) {
+                throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_WRONG);
+            }
+            $structure[] = $conditions[0];
+        } elseif (is_string($conditions[0])) {
+            $structure[] = $conditions;
+        } elseif (is_array($conditions[0]) && is_array($conditions[0][0])) {
+            if (count($conditions) > 1) {
+                throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_WRONG);
+            }
+            $structure = $conditions[0];
+        } else {
+            throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_WRONG);
+        }
+
+        foreach ($structure as $key => $struct) {
+            if (!is_array($struct)) {
+                throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_WRONG);
+            }
+            $count = count($struct);
+            if (
+                !in_array($count, [2, 3]) ||
+                !is_string($struct[0]) ||
+                is_array($struct[1])
+            ) {
+                throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_COMPONENTS_WRONG);
+            }
+
+            switch ($count) {
+                case 2:
+                    if (is_string($struct[1]) && in_array(strtoupper($struct[1]), ['IS NULL', 'IS NOT NULL'])) {
+                        /** @phpstan-ignore-next-line   false positive */
+                        $structure[$key][1] = strtoupper($struct[1]);
+                        $structure[$key][2] = null;
+                    } elseif ($struct[1] == '=') {
+                        throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_COMPONENTS_WRONG);
+                    } else {
+                        /** @phpstan-ignore-next-line   false positive */
+                        $structure[$key][2] = $struct[1];
+                        $structure[$key][1] = '=';
+                    }
+                    break;
+                case 3:
+                    if (!is_string($struct[1]) || in_array(strtoupper($struct[1]), ['IS NULL', 'IS NOT NULL'])) {
+                        throw new QueryException(QueryCodes::CONDITIONS_STRUCTURE_COMPONENTS_WRONG);
+                    }
+                    break;
+            }
+            /** @phpstan-ignore-next-line   false positive */
+            $structure[$key][1] = strtoupper($structure[$key][1]);
+
+            // Check the operator
+            if (!in_array($structure[$key][1], $this->conditionsOperators, true)) {
+                throw new QueryException(QueryCodes::CONDITIONS_WRONG_OPERATOR, [$structure[$key][1]]);
+            }
+
+            // Check the term
+            if (in_array($structure[$key][1], ['IN', 'NOT IN']) && !is_array($structure[$key][2])) {
+                throw new QueryException(QueryCodes::CONDITIONS_TERM_MUST_BE_ARRAY, [$structure[$key][1]]);
+            }
+            if (!in_array($structure[$key][1], ['IN', 'NOT IN']) && is_array($structure[$key][2])) {
+                throw new QueryException(QueryCodes::CONDITIONS_TERM_MUST_BE_NOT_ARRAY, [$structure[$key][1]]);
+            }
+
+            // Check the field
+            if (!is_string($structure[$key][0])) {
+                throw new QueryException(QueryCodes::CONDITIONS_WRONG_FIELD_TYPE);
+            }
+            if (!array_key_exists($structure[$key][0], $this->dataSetsStructure)) {
+                if (strpos($structure[$key][0], '.') !== false) {
+                    $chkFieldArray = explode('.', $structure[$key][0]);
+                    $chkField = '';
+                    foreach ($chkFieldArray as $chk) {
+                        $chkField .= $chk;
+                        if (array_key_exists($chkField, $this->dataSetsStructure)) {
+                            if ($chkField == $structure[$key][0]) {
+                                break;
+                            }
+                            if (
+                                $this->dataSetsStructure[$chkField]['type'] !== Type::ARRAY &&
+                                $this->dataSetsStructure[$chkField]['type'] !== Type::OBJECT
+                            ) {
+                                throw new QueryException(QueryCodes::CONDITIONS_WRONG_FIELD, [$structure[$key][0]]);
+                            }
+                            $chkField .= '.';
+                            continue;
+                        }
+                        throw new QueryException(QueryCodes::CONDITIONS_WRONG_FIELD, [$structure[$key][0]]);
+                    }
+                } else {
+                    throw new QueryException(QueryCodes::CONDITIONS_WRONG_FIELD, [$structure[$key][0]]);
+                }
+            }
+        }
+
+        // Check the for empty fetches
+        if (empty($this->query['fetchGroups']) && empty($this->query['fetchSuperGroups'])) {
+            $this->fetchAll();
+        }
+
+        // Add the conditions
+        if (!array_key_exists($target, $this->query['conditionsSet'])) {
+            $this->query['conditionsSet'][$target] = [];
+        }
+        $this->query['conditionsSet'][$target] = array_merge($this->query['conditionsSet'][$target], $structure);
+    }
+
+    /**
+     * Execute the where and/or orWhere conditions
+     */
+    private function executeConditions(): void
+    {
+        if (empty($this->query['conditionsSet'])) {
             return;
         }
-
-        /** get all the fields if they are not defined */
-        if (empty($this->query['select'])) {
-            $this->query['select'] = array_filter(
-                array_map(function ($val, $key) {
-                    return ($val['access'] === Access::PUBLIC) ? $key : null;
-                }, $this->dataSetsStructure, array_keys($this->dataSetsStructure))
-            );
-        }
-
-        /** The executive dataset */
-        $executiveSet = [];
-        if (!empty($this->query['fetchGroups']) || !empty($this->query['fetchSuperGroups'])) {
-            $catchSets = array_merge(
-                ...array_values($this->query['fetchGroups']),
-                ...array_values($this->query['fetchSuperGroups'])
-            );
-            if (!empty($catchSets)) {
-                foreach ($catchSets as $index) {
-                    $executiveSet[$index] = $this->dataSets[$this->dataSetName][$index];
-                }
-            }
-        } else {
-            $executiveSet = $this->dataSets[$this->dataSetName];
-        }
-
-        /** Execute the orderBy */
-        if (!is_null($this->query['order']['property'])) {
-            $property = $this->query['order']['property'];
-            $order = strtoupper($this->query['order']['type'] ?? 'ASC');
-            $collator = collator_create($this->currentLocale . '.utf8');
-            usort($executiveSet, function ($a, $b) use ($collator, $property, $order) {
-                $result = collator_compare($collator, $a[$property], $b[$property]);
-                if ($result === false) {
-                    return 0;
-                }
-                return ($order === 'ASC') ? $result : -$result;
-            });
-        }
-
-        /** parse the data */
-        $k = $key = $keyOut = 0;
-        foreach ($executiveSet as $data) {
-            /** apply the limits */
-            if ($key < $this->query['limit']['from']) {
-                $key++;
-                continue;
-            }
-            $k++;
-            if ($k > $this->query['limit']['to']) {
+        if (empty($this->query['fetchGroups'])) {
+            if (empty($this->query['fetchSuperGroups'])) {
                 return;
             }
+            $set4Conditions = array_pop($this->query['fetchSuperGroups']);
+            $cursor = 'fetchSuperGroups';
+        } else {
+            $set4Conditions = array_pop($this->query['fetchGroups']);
+            $cursor = 'fetchGroups';
+        }
 
-            $object = [];
-            foreach ($this->dataSetsStructure as $prop => $structure) {
-                /** get only the requested property */
-                if (!in_array($prop, $this->query['select'])) {
-                    continue;
-                }
+        // Execute the conditions and Rebuild the set
+        $this->query[$cursor][] = array_merge(
+            $this->applyConditionsToSet($set4Conditions, 'and'),
+            $this->applyConditionsToSet($set4Conditions, 'or')
+        );
+
+        // At the end clean the conditions
+        $this->query['conditionsSet'] = [];
+    }
+
+    /**
+     * @param array<string> $set
+     * @param string $method
+     * @return array<string>
+     */
+    private function applyConditionsToSet(array $set, string $method): array
+    {
+        $result = [];
+        foreach ($set as $setItem) {
+            $matches = 0;
+            if (empty($this->query['conditionsSet']) || !array_key_exists($method, $this->query['conditionsSet'])) {
+                continue;
+            }
+            foreach ($this->query['conditionsSet'][$method] as $condition) {
+                list($prop, $op, $term) = $condition;
+                // Search the property alibe
                 if (preg_match('/\./', $prop)) {
-                    list($prop0, $prop1) = explode('.', $prop);
-                    if (!array_key_exists($prop0, $object)) {
-                        $object[$prop0] = [];
+                    $object = $this->dataSets[$this->dataSetName][$setItem];
+                    $propPath = explode('.', $prop);
+                    foreach ($propPath as $path) {
+                        if (!array_key_exists($path, $object)) {
+                            if ($method == 'AND') {
+                                break 2;
+                            }
+                            continue 2;
+                        }
+                        $object = $object[$path];
                     }
-                    $object[$prop0][$prop1] = $data[$prop0][$prop1];
+                    $propValue = $object;
                 } else {
-                    $object[$prop] = $data[$prop];
+                    $propValue = $this->dataSets[$this->dataSetName][$setItem][$prop];
+                }
+
+                // Check if the condition is met
+                if ($this->applyCondition($op, $term, $propValue)) { //stica
+//                if (true) { //stica
+                    if ($method == 'AND') {
+                        $matches++;
+                    } else {
+                        $result[] = $setItem;
+                        break;
+                    }
                 }
             }
-            /** build the index */
-            $this->data[($this->query['index'] ? $data[$this->query['index']] : $keyOut)] = $object;
-            $key++;
-            $keyOut++;
+            if ($method == 'AND' && $matches == count($this->query['conditionsSet'][$method])) {
+                $result[] = $setItem;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * @param string $operator
+     * @param array<string>|string|null $term
+     * @param array<array<string>>|array<string>|string|null $value
+     * @return bool
+     * @throws QueryException
+     */
+    private function applyCondition(string $operator, $term, $value): bool
+    {
+        if (is_array($value)) {
+            foreach ($value as $val) {
+                if ($this->applyCondition($operator, $term, $val)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        switch ($operator) {
+            case '=':
+            case '!=':
+            case '<>':
+                /** @var string $term */
+                $result = (bool) preg_match('/^' . $term . '$/i', $value);
+                switch ($operator) {
+                    case '=':
+                        return $result;
+                    case '!=':
+                    case '<>':
+                        return !$result;
+                }
+                /** no break - The code above terminates. */
+            case 'IS NULL':
+                return is_null($value);
+            case 'IS NOT NULL':
+                return !is_null($value);
+            case '>':
+            case '>=':
+            case '<':
+            case '<=':
+                $collator = collator_create($this->currentLocale . '.utf8');
+                /** @var string $term */ /** @var string $value */
+                $result = collator_compare($collator, (string) $value, (string) $term);
+                switch ($operator) {
+                    case '>':
+                        return $result > 0;
+                    case '>=':
+                        return $result >= 0;
+                    case '<':
+                        return $result < 0;
+                    case '<=':
+                        return $result <= 0;
+                }
+                /** no break - The code above terminates. */
+            case 'IN':
+                /** @var array $term */ /** @var string $value */
+                return in_array($value, $term);
+            case 'NOT IN':
+                /** @var array $term */ /** @var string $value */
+                return !in_array($value, $term);
+            case 'LIKE':
+            case 'NOT LIKE':
+                /** @var string $term */ /** @var string $value */
+                $getRegex = function ($string) {
+                    $escaped = preg_quote($string, '/');
+                    // Add quantifiers to handle the position of the % discriminant
+                    if (strpos($string, '%') === 0 && strrpos($string, '%') === (strlen($string) - 1)) {
+                        return '/' . $escaped . '/i';    // '%my value%'
+                    } elseif (strpos($string, '%') === 0) {
+                        return '/' . $escaped . '$/i';   // '%my value'
+                    } elseif (strrpos($string, '%') === (strlen($string) - 1)) {
+                        return '/^' . $escaped . '/i';   // 'my value%'
+                    } else {
+                        return '/^' . $escaped . '$/i';  // 'my value'
+                    }
+                };
+                $result = (bool) preg_match($getRegex($term), $value);
+                switch ($operator) {
+                    case 'LIKE':
+                        return $result;
+                    case 'NOT LIKE':
+                        return !$result;
+                }
+                /** no break - The code above terminates. */
+            default:
+                throw new QueryException(QueryCodes::CONDITIONS_WRONG_OPERATOR, [$operator]);
         }
     }
+
+
+    /**
+     * @return array<array<string>>
+     */
+    public function stica(): array
+    {
+        return [
+            'fetchGroups' => $this->query['fetchGroups'],
+            'fetchSuperGroups' => $this->query['fetchSuperGroups'],
+        ];
+    }
+
+
+
+
+
 
     /**
      * Execute the enquiries and get the result
