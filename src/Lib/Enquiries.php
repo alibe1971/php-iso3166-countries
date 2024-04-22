@@ -855,7 +855,7 @@ class Enquiries
                     $propPath = explode('.', $prop);
                     foreach ($propPath as $path) {
                         if (!array_key_exists($path, $object)) {
-                            if ($method == 'AND') {
+                            if ($method == 'and') {
                                 break 2;
                             }
                             continue 2;
@@ -868,9 +868,8 @@ class Enquiries
                 }
 
                 // Check if the condition is met
-                if ($this->applyCondition($op, $term, $propValue)) { //stica
-//                if (true) { //stica
-                    if ($method == 'AND') {
+                if ($this->applyCondition($op, $term, $propValue)) {
+                    if ($method == 'and') {
                         $matches++;
                     } else {
                         $result[] = $setItem;
@@ -878,7 +877,7 @@ class Enquiries
                     }
                 }
             }
-            if ($method == 'AND' && $matches == count($this->query['conditionsSet'][$method])) {
+            if ($method == 'and' && $matches == count($this->query['conditionsSet'][$method])) {
                 $result[] = $setItem;
             }
         }
@@ -972,23 +971,6 @@ class Enquiries
                 throw new QueryException(QueryCodes::CONDITIONS_WRONG_OPERATOR, [$operator]);
         }
     }
-
-
-    /**
-     * @return array<array<string>>
-     */
-    public function stica(): array
-    {
-        return [
-            'fetchGroups' => $this->query['fetchGroups'],
-            'fetchSuperGroups' => $this->query['fetchSuperGroups'],
-        ];
-    }
-
-
-
-
-
 
     /**
      * Execute the enquiries and get the result
