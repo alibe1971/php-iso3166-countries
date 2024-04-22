@@ -1196,12 +1196,18 @@ final class IsoCountriesTest extends TestCase
                 'where',
                 ['IE' => [ 'alpha2' => 'IE' ]]
             ],
-//            [
-//                "[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]",
-//                [[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]],
-//                'where',
-//                []
-//            ],
+            [
+                "[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]",
+                [[['alpha2', '=', 'IE'], ['alpha2', '=', 'IT']]],
+                'where',
+                []
+            ],
+            [
+                "[['alpha2', '=', 'IE'], ['alpha3', '=', 'IRL'], ['unM49', '=', '372']]",
+                [[['alpha2', '=', 'IE'], ['alpha3', '=', 'IRL'], ['unM49', '=', '372']]],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
         ];
     }
 
@@ -1223,12 +1229,15 @@ final class IsoCountriesTest extends TestCase
         $countries = self::$geoCodes->countries();
 
 
-        $countries->where([['alpha2', '=', 'IE']])->orWhere('alpha2', 'IN', ['IT']);
-        $countries->fetch('IT')->where([['alpha2', 'IN', ['IE']]]);
-        $countries->get();
+        $countries->where([['alpha2', '=', 'IE'],['alpha2', '=', 'IT']]);
+//        $countries->orWhere('alpha2', 'IN', ['IT']);
+//        $countries->fetch('IT')->where([['alpha2', 'IN', ['IE']]]);
+//        $countries->get();
 
         $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r($countries->stica(), true) . "\n");
+        fwrite($elenaMyfile, print_r(
+            $countries->withIndex('alpha2')->select('alpha2')->get()->toArray(),
+            true) . "\n");
         fclose($elenaMyfile);
 
 
