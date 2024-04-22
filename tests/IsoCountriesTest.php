@@ -1164,10 +1164,7 @@ final class IsoCountriesTest extends TestCase
         $this->assertEquals($matches, $result);
     }
     /**
-     * @return array<
-     *     int,
-     *     array<int,
-     *      array<int, array<int, array<int, array<int, string>|string>|int|string>|bool|int|string>|int|string>>
+     * @return array<int, array<int, array<int|string, array<int|string, array<int, string>|string>|string>|string>>
      */
     public function dataProviderValidConditions(): array
     {
@@ -1237,7 +1234,8 @@ final class IsoCountriesTest extends TestCase
         $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
         fwrite($elenaMyfile, print_r(
             $countries->withIndex('alpha2')->select('alpha2')->get()->toArray(),
-            true) . "\n");
+            true
+        ) . "\n");
         fclose($elenaMyfile);
 
 
