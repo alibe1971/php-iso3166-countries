@@ -1205,6 +1205,162 @@ final class IsoCountriesTest extends TestCase
                 'where',
                 ['IE' => [ 'alpha2' => 'IE' ]]
             ],
+            [
+                "'currencies', 'idr'",
+                ['currencies', 'idr'],
+                'where',
+                ['ID' => [ 'alpha2' => 'ID' ]]
+            ],
+            [
+                "'dialCodes.main', '+62'",
+                ['dialCodes.main', '+62'],
+                'where',
+                ['ID' => [ 'alpha2' => 'ID' ]]
+            ],
+            [
+                "'dialCodes', '+62'",
+                ['dialCodes', '+62'],
+                'where',
+                ['ID' => [ 'alpha2' => 'ID' ]]
+            ],
+            [
+                "'locales', 'jv-id'",
+                ['locales', 'jv-id'],
+                'where',
+                ['ID' => [ 'alpha2' => 'ID' ]]
+            ],
+            [
+                "'locales', 'like', 'jv-id'",
+                ['locales', 'like', 'jv-id'],
+                'where',
+                ['ID' => [ 'alpha2' => 'ID' ]]
+            ],
+            [
+                "'name', 'like', '%Ireland%'",
+                ['name', 'like', '%Ireland%'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', 'Poblacht%'",
+                ['officialName', 'like', 'Poblacht%'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', '%Poblacht%'",
+                ['officialName', 'like', '%Poblacht%'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', '%hÉireann'",
+                ['officialName', 'like', '%hÉireann'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', '%hÉirean%'",
+                ['officialName', 'like', '%hÉirean%'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', '%hÉireann%'",
+                ['officialName', 'like', '%hÉireann%'],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "'officialName', 'like', '%ינת%'",
+                ['officialName', 'like', '%ינת%'],
+                'where',
+                ['IL' => [ 'alpha2' => 'IL' ]]
+            ],
+            [
+                "'officialName', 'like', '%णराज्%'",
+                ['officialName', 'like', '%णराज्%'],
+                'where',
+                ['IN' => [ 'alpha2' => 'IN' ]]
+            ],
+            [
+                "'officialName', 'like', '%日本%'",
+                ['officialName', 'like', '%日本%'],
+                'where',
+                ['JP' => [ 'alpha2' => 'JP' ]]
+            ],
+            [
+                "'officialName', 'like', '%人民共和%'",
+                ['officialName', 'like', '%人民共和%'],
+                'where',
+                ['CN' => [ 'alpha2' => 'CN' ], 'HK' => [ 'alpha2' => 'HK' ], 'MO' => [ 'alpha2' => 'MO' ]]
+            ],
+            [
+                "[['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]",
+                [[['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]],
+                'where',
+                ['CN' => [ 'alpha2' => 'CN' ], 'MO' => [ 'alpha2' => 'MO' ]]
+            ],
+            [
+                "'officialName', 'like', '%민주주의인민%'",
+                ['officialName', 'like', '%민주주의인민%'],
+                'where',
+                ['KP' => [ 'alpha2' => 'KP' ]]
+            ],
+            [
+                "'officialName', 'like', '%عربية الس%'",
+                ['officialName', 'like', '%عربية الس%'],
+                'where',
+                ['SA' => [ 'alpha2' => 'SA' ]]
+            ],
+            [
+                "'dialCodes', '<=', '+1'",
+                ['dialCodes', '<=', '+1'],
+                'where',
+                [
+                    'CA' => [ 'alpha2' => 'CA' ], 'DO' => [ 'alpha2' => 'DO' ], 'UM' => [ 'alpha2' => 'UM' ],
+                    'US' => [ 'alpha2' => 'US' ]
+                ]
+            ],
+            [
+                "[['dialCodes', '>=', '+1'], ['dialCodes', '<', '+12']]",
+                [[['dialCodes', '>=', '+1'], ['dialCodes', '<', '+12']]],
+                 'where',
+                [
+                    'CA' => [ 'alpha2' => 'CA' ], 'DO' => [ 'alpha2' => 'DO' ], 'UM' => [ 'alpha2' => 'UM' ],
+                    'US' => [ 'alpha2' => 'US' ]
+                ]
+            ],
+            [
+                "'dialCodes', '<', '+12'",
+                ['dialCodes', '<', '+12'],
+                'where',
+                [
+                    'CA' => [ 'alpha2' => 'CA' ], 'DO' => [ 'alpha2' => 'DO' ], 'UM' => [ 'alpha2' => 'UM' ],
+                    'US' => [ 'alpha2' => 'US' ]
+                ]
+            ],
+            [
+                "[['dialCodes', '>', '+1'], ['dialCodes', '<', '+13']]",
+                [[['dialCodes', '>', '+1'], ['dialCodes', '<', '+13']]],
+                'where',
+                [
+                    'AG' => [ 'alpha2' => 'AG' ], 'AI' => [ 'alpha2' => 'AI' ], 'BB' => [ 'alpha2' => 'BB' ],
+                    'BS' => [ 'alpha2' => 'BS' ], 'VG' => [ 'alpha2' => 'VG' ]
+                ]
+            ],
+            [
+                "[['dependency', 'is null'], ['alpha2', 'ie']]",
+                [[['dependency', 'is null'], ['alpha2', 'ie']]],
+                'where',
+                ['IE' => [ 'alpha2' => 'IE' ]]
+            ],
+            [
+                "[['dependency', 'is NOT null'], ['alpha2', 'vg']]",
+                [[['dependency', 'is NOT null'], ['alpha2', 'vg']]],
+                'where',
+                ['VG' => [ 'alpha2' => 'VG' ]]
+            ],
         ];
     }
 
@@ -1225,8 +1381,7 @@ final class IsoCountriesTest extends TestCase
     {
         $countries = self::$geoCodes->countries();
 
-
-        $countries->where([['alpha2', '=', 'IE'],['alpha2', '=', 'IT']]);
+        $countries->where([['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]);
 //        $countries->orWhere('alpha2', 'IN', ['IT']);
 //        $countries->fetch('IT')->where([['alpha2', 'IN', ['IE']]]);
 //        $countries->get();
