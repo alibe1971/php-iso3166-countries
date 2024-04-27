@@ -906,7 +906,7 @@ class Enquiries
             case '!=':
             case '<>':
                 /** @var string $term */
-                $result = (bool) preg_match('/^' . $term . '$/i', $value);
+                $result = (bool) preg_match('/^' . preg_quote($term, '/') . '$/iu', $value);
                 switch ($operator) {
                     case '=':
                         return $result;
@@ -947,16 +947,16 @@ class Enquiries
             case 'NOT LIKE':
                 /** @var string $term */ /** @var string $value */
                 $getRegex = function ($string) {
-                    $escaped = preg_quote($string, '/');
+                    $escaped = preg_replace('/%/', '', preg_quote($string, '/'));
                     // Add quantifiers to handle the position of the % discriminant
                     if (strpos($string, '%') === 0 && strrpos($string, '%') === (strlen($string) - 1)) {
-                        return '/' . $escaped . '/i';    // '%my value%'
+                        return '/' . $escaped . '/iu';    // '%my value%'
                     } elseif (strpos($string, '%') === 0) {
-                        return '/' . $escaped . '$/i';   // '%my value'
+                        return '/' . $escaped . '$/iu';   // '%my value'
                     } elseif (strrpos($string, '%') === (strlen($string) - 1)) {
-                        return '/^' . $escaped . '/i';   // 'my value%'
+                        return '/^' . $escaped . '/iu';   // 'my value%'
                     } else {
-                        return '/^' . $escaped . '$/i';  // 'my value'
+                        return '/^' . $escaped . '$/iu';  // 'my value'
                     }
                 };
                 $result = (bool) preg_match($getRegex($term), $value);
