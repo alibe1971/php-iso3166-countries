@@ -1069,7 +1069,155 @@ final class IsoCurrenciesTest extends TestCase
         ];
     }
 
-
+    /**
+     * @dataProvider dataProviderValidConditions
+     * @testdox ====>  has valid result using ->$method($txt)
+     *
+     * @param string $txt
+     * @param array<array<int, int|string>> $args
+     * @param string $method
+     * @param array<string> $matches
+     * @throws QueryException
+     */
+    public function testConditionsWithDataProviderValid(
+        string $txt,
+        array $args,
+        string $method,
+        array $matches = []
+    ): void {
+        $currencies = self::$geoCodes->currencies();
+        $currencies->$method(...$args);
+        $result = $currencies->withIndex('isoAlpha')->select('isoAlpha')->get()->toArray();
+        $this->assertEquals($matches, $result);
+    }
+    /**
+     * @return array<int, array<int, array<int|string, array<int|string, array<int, string>|string>|string>|string>>
+     */
+    public function dataProviderValidConditions(): array
+    {
+        return [
+            [
+                "'isoAlpha', 'EUR'",
+                ['isoAlpha', 'EUR'],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "'isoNumber', 978",
+                ['isoNumber', 978],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "'symbol', '€'",
+                ['symbol', '€'],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "'isoAlpha', '=', 'EUR'",
+                ['isoAlpha', '=', 'EUR'],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "['isoAlpha', '=', 'EUR']",
+                [['isoAlpha', '=', 'EUR']],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['isoAlpha', '=', 'EUR']]",
+                [[['isoAlpha', '=', 'EUR']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['isoAlpha', '=', 'EUR'], ['isoAlpha', '=', 'USD']]",
+                [[['isoAlpha', '=', 'EUR'], ['isoAlpha', '=', 'USD']]],
+                'where',
+                []
+            ],
+            [
+                "[['isoAlpha', '=', 'EUR'], ['isoNumber', '=', '978']]",
+                [[['isoAlpha', '=', 'EUR'], ['isoNumber', '=', '978']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "'name', 'like', 'Netherlands%'",
+                ['name', 'like', 'Netherlands%'],
+                'where',
+                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+            ],
+            [
+                "'name', 'like', '%Netherlands%'",
+                ['name', 'like', '%Netherlands%'],
+                'where',
+                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+            ],
+            [
+                "'name', 'like', '%Guilder'",
+                ['name', 'like', '%Guilder'],
+                'where',
+                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+            ],
+            [
+                "'name', 'like', '%Guilder%'",
+                ['name', 'like', '%Guilder%'],
+                'where',
+                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+            ],
+            [
+                "'name', 'like', '%ntillea%'",
+                ['name', 'like', '%ntillea%'],
+                'where',
+                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+            ],
+            [
+                "[['name', 'like', '%Euro'], ['name', 'not like', '%WIR%']]",
+                [[['name', 'like', '%Euro'], ['name', 'not like', '%WIR%']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['decimal', '<=', 2], ['isoNumber', '978']]",
+                [[['decimal', '<=', 2], ['isoNumber', '978']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['decimal', '>=', '2'], ['decimal', '<', '3'], ['isoNumber', '978']]",
+                [[['decimal', '>=', '2'], ['decimal', '<', '3'], ['isoNumber', '978']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['decimal', '<', 3], ['isoNumber', '978']]",
+                [[['decimal', '<', 3], ['isoNumber', '978']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['decimal', '>', '1'], ['decimal', '<', '3'], ['isoNumber', '978']]",
+                [[['decimal', '>', '1'], ['decimal', '<', '3'], ['isoNumber', '978']]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['symbol', 'is NOT null'], ['isoNumber', 978]]",
+                [[['symbol', 'is NOT null'], ['isoNumber', 978]]],
+                'where',
+                ['EUR' => [ 'isoAlpha' => 'EUR' ]]
+            ],
+            [
+                "[['symbol', 'is null'], ['isoNumber', 646]]",
+                [[['symbol', 'is null'], ['isoNumber', 646]]],
+                'where',
+                ['RWF' => [ 'isoAlpha' => 'RWF' ]]
+            ],
+        ];
+    }
 
     public function testStica(): void
     {
