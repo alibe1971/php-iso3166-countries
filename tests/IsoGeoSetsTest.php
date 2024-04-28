@@ -1147,6 +1147,12 @@ final class IsoGeoSetsTest extends TestCase
                 ['ZONE-EZ' => [ 'internalCode' => 'ZONE-EZ' ]]
             ],
             [
+                "[['countryCodes', 'IE'], ['tags', 'zone']]",
+                [[['countryCodes', 'IE'], ['tags', 'zone']]],
+                'where',
+                ['ZONE-EZ' => [ 'internalCode' => 'ZONE-EZ' ]]
+            ],
+            [
                 "'name', 'like', 'Channel%'",
                 ['name', 'like', 'Channel%'],
                 'where',
