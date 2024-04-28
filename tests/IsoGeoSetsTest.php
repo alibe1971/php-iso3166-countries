@@ -1061,12 +1061,171 @@ final class IsoGeoSetsTest extends TestCase
         ];
     }
 
-
+    /**
+     * @dataProvider dataProviderValidConditions
+     * @testdox ====>  has valid result using ->$method($txt)
+     *
+     * @param string $txt
+     * @param array<array<int, int|string>> $args
+     * @param string $method
+     * @param array<string> $matches
+     * @throws QueryException
+     */
+    public function testConditionsWithDataProviderValid(
+        string $txt,
+        array $args,
+        string $method,
+        array $matches = []
+    ): void {
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->$method(...$args);
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+        $this->assertEquals($matches, $result);
+    }
+    /**
+     * @return array<int, array<int, array<int|string, array<int|string, array<int, string>|string>|string>|string>>
+     */
+    public function dataProviderValidConditions(): array
+    {
+        return [
+            [
+                "'internalCode', 'GEOG-EU'",
+                ['internalCode', 'GEOG-EU'],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "'internalCode', '=', 'GEOG-EU'",
+                ['internalCode', '=', 'GEOG-EU'],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "['internalCode', '=', 'GEOG-EU']",
+                [['internalCode', '=', 'GEOG-EU']],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "[['internalCode', '=', 'GEOG-EU']]",
+                [[['internalCode', '=', 'GEOG-EU']]],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "[['internalCode', '=', 'GEOG-EU'], ['internalCode', '=', 'GEOG-AS-WE']]",
+                [[['internalCode', '=', 'GEOG-EU'], ['internalCode', '=', 'GEOG-AS-WE']]],
+                'where',
+                []
+            ],
+            [
+                "[['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150']]",
+                [[['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150']]],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "[['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150'], ['tags', 'geography']]",
+                [[['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150'], ['tags', 'geography']]],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "[['internalCode', '=', 'GEOG-EU'],['unM49', '=', '150'],['tags', 'geography'],['countryCodes', 'ie']]",
+                [
+                    [
+                        ['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150'], ['tags', 'geography'],
+                        ['countryCodes', 'ie']
+                ]   ],
+                'where',
+                ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
+            ],
+            [
+                "'tags', 'zone'",
+                ['tags', 'zone'],
+                'where',
+                ['ZONE-EZ' => [ 'internalCode' => 'ZONE-EZ' ]]
+            ],
+            [
+                "'name', 'like', 'Channel%'",
+                ['name', 'like', 'Channel%'],
+                'where',
+                ['GEOG-EU-NO-CH' => [ 'internalCode' => 'GEOG-EU-NO-CH' ]]
+            ],
+            [
+                "'name', 'like', '%Channel%'",
+                ['name', 'like', '%Channel%'],
+                'where',
+                ['GEOG-EU-NO-CH' => [ 'internalCode' => 'GEOG-EU-NO-CH' ]]
+            ],
+            [
+                "'name', 'like', '%Islands'",
+                ['name', 'like', '%Islands'],
+                'where',
+                ['GEOG-EU-NO-CH' => [ 'internalCode' => 'GEOG-EU-NO-CH' ]]
+            ],
+            [
+                "'name', 'like', '%Islands%'",
+                ['name', 'like', '%Islands%'],
+                'where',
+                ['GEOG-EU-NO-CH' => [ 'internalCode' => 'GEOG-EU-NO-CH' ]]
+            ],
+            [
+                "'name', 'like', '%anne%'",
+                ['name', 'like', '%anne%'],
+                'where',
+                ['GEOG-EU-NO-CH' => [ 'internalCode' => 'GEOG-EU-NO-CH' ]]
+            ],
+            [
+                "[['name', 'like', '%Euro%'], ['name', 'not like', '%Europe%']]",
+                [[['name', 'like', '%Euro%'], ['name', 'not like', '%Europe%']]],
+                'where',
+                ['ZONE-EZ' => [ 'internalCode' => 'ZONE-EZ' ]]
+            ],
+            [
+                "[['unM49', '<=', 2], ['unM49', 'is not null']]",
+                [[['unM49', '<=', 2], ['unM49', 'is not null']]],
+                'where',
+                ['GEOG-AF' => [ 'internalCode' => 'GEOG-AF' ]]
+            ],
+            [
+                "[['unM49', '>=', '2'], ['unM49', '<', '5']]",
+                [[['unM49', '>=', '2'], ['unM49', '<', '5']]],
+                'where',
+                ['GEOG-AF' => [ 'internalCode' => 'GEOG-AF' ]]
+            ],
+            [
+                "[['unM49', '<', 5], ['unM49', 'is not null']]",
+                [[['unM49', '<', 5], ['unM49', 'is not null']]],
+                'where',
+                ['GEOG-AF' => [ 'internalCode' => 'GEOG-AF' ]]
+            ],
+            [
+                "[['unM49', '>', '1'], ['unM49', '<', '5']]",
+                [[['unM49', '>', '1'], ['unM49', '<', '5']]],
+                'where',
+                ['GEOG-AF' => [ 'internalCode' => 'GEOG-AF' ]]
+            ],
+            [
+                "[['unM49', 'is NOT null'], ['internalCode', 'gEoG-aF']]",
+                [[['unM49', 'is NOT null'], ['internalCode', 'gEoG-aF']]],
+                'where',
+                ['GEOG-AF' => [ 'internalCode' => 'GEOG-AF' ]]
+            ],
+        ];
+    }
 
 
     public function testStica(): void
     {
-//        $geoSets = self::$geoCodes->geoSets();
+        $geoSets = self::$geoCodes->geoSets();
+        $geoSets->where([['unM49', '<=', '2'], ['unM49', 'is not null']]);
+        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
+
+        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+        fwrite($elenaMyfile, print_r($result, true)."\n");
+        fclose($elenaMyfile);
+
         $this->assertTrue(true);
     }
 }
