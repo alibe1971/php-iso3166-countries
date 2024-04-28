@@ -910,9 +910,9 @@ final class IsoGeoSetsTest extends TestCase
         int $errorCode,
         array $matches = []
     ): void {
-        $countries = self::$geoCodes->countries();
+        $geoSets = self::$geoCodes->geoSets();
         try {
-            $countries->where(...$args);
+            $geoSets->where(...$args);
             $this->fail('The condition is considered valid');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
@@ -924,7 +924,7 @@ final class IsoGeoSetsTest extends TestCase
             }
         }
         try {
-            $countries->orWhere(...$args);
+            $geoSets->orWhere(...$args);
             $this->fail('The condition is considered valid');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
@@ -1060,6 +1060,8 @@ final class IsoGeoSetsTest extends TestCase
             ]
         ];
     }
+
+
 
 
     public function testStica(): void

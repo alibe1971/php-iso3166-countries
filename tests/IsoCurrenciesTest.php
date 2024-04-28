@@ -918,9 +918,9 @@ final class IsoCurrenciesTest extends TestCase
         int $errorCode,
         array $matches = []
     ): void {
-        $countries = self::$geoCodes->countries();
+        $currencies = self::$geoCodes->currencies();
         try {
-            $countries->where(...$args);
+            $currencies->where(...$args);
             $this->fail('The condition is considered valid');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
@@ -932,7 +932,7 @@ final class IsoCurrenciesTest extends TestCase
             }
         }
         try {
-            $countries->orWhere(...$args);
+            $currencies->orWhere(...$args);
             $this->fail('The condition is considered valid');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
