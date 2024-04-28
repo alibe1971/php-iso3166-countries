@@ -1083,7 +1083,7 @@ final class IsoGeoSetsTest extends TestCase
         $this->assertEquals($matches, $result);
     }
     /**
-     * @return array<int, array<int, array<int|string, array<int|string, array<int, string>|string>|string>|string>>
+     * @return array<int, array<int, array<int|string, array<int|string, array<int, int|string>|string>|string>|string>>
      */
     public function dataProviderValidConditions(): array
     {
@@ -1136,7 +1136,7 @@ final class IsoGeoSetsTest extends TestCase
                     [
                         ['internalCode', '=', 'GEOG-EU'], ['unM49', '=', '150'], ['tags', 'geography'],
                         ['countryCodes', 'ie']
-                ]   ],
+                    ]   ],
                 'where',
                 ['GEOG-EU' => [ 'internalCode' => 'GEOG-EU' ]]
             ],
@@ -1229,7 +1229,7 @@ final class IsoGeoSetsTest extends TestCase
         $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
 
         $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r($result, true)."\n");
+        fwrite($elenaMyfile, print_r($result, true) . "\n");
         fclose($elenaMyfile);
 
         $this->assertTrue(true);

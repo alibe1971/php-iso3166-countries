@@ -1091,7 +1091,8 @@ final class IsoCurrenciesTest extends TestCase
         $this->assertEquals($matches, $result);
     }
     /**
-     * @return array<int, array<int, array<int|string, array<int|string, array<int, string>|string>|string>|string>>
+     * @return array<int,
+     *     array<int, array<int|string, array<int|string, array<int, int|string>|string>|int|string>|string>>
      */
     public function dataProviderValidConditions(): array
     {
