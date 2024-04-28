@@ -867,6 +867,10 @@ class Enquiries
                     $propValue = $this->dataSets[$this->dataSetName][$setItem][$prop];
                 }
 
+                /** This is an exception for dealing with numeric terms */
+                if(is_numeric($term) && in_array($prop, ['unM49', 'isoNumber'])) {
+                    $term = str_pad($term, 3, '0', STR_PAD_LEFT);
+                }
                 // Check if the condition is met
                 if ($this->applyCondition($op, $term, $propValue)) {
                     if ($method == 'and') {
