@@ -905,6 +905,9 @@ class Enquiries
             case '=':
             case '!=':
             case '<>':
+                if(is_null($value) || is_null($term)) {
+                    return $value === $term;
+                }
                 /** @var string $term */
                 $result = (bool) preg_match('/^' . preg_quote($term, '/') . '$/iu', $value);
                 switch ($operator) {
