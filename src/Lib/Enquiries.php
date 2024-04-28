@@ -868,8 +868,8 @@ class Enquiries
                 }
 
                 /** This is an exception for dealing with numeric terms */
-                if(is_numeric($term) && in_array($prop, ['unM49', 'isoNumber'])) {
-                    $term = str_pad($term, 3, '0', STR_PAD_LEFT);
+                if (is_numeric($term) && in_array($prop, ['unM49', 'isoNumber'])) {
+                    $term = str_pad((string) $term, 3, '0', STR_PAD_LEFT);
                 }
                 // Check if the condition is met
                 if ($this->applyCondition($op, $term, $propValue)) {
@@ -909,7 +909,7 @@ class Enquiries
             case '=':
             case '!=':
             case '<>':
-                if(is_null($value) || is_null($term)) {
+                if (is_null($value) || is_null($term)) {
                     return $value === $term;
                 }
                 /** @var string $term */
