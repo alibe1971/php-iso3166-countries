@@ -16,7 +16,7 @@ final class IsoCountriesTest extends TestCase
     /**
      * @var int
      */
-    private static int $countriesTotalCount = 249;
+    private static int $countriesTotalCount = 250;
 
     /**
      * @var array<int|array<string>> $constants
@@ -27,14 +27,14 @@ final class IsoCountriesTest extends TestCase
             'alpha3',
             'unM49',
             'name',
-            'completeName'
+            'fullName'
         ],
         'selectables' => [
             'alpha2',
             'alpha3',
             'unM49',
             'name',
-            'completeName',
+            'fullName',
             'officialName',
             'dependency',
             'mottos',
@@ -53,7 +53,7 @@ final class IsoCountriesTest extends TestCase
      */
     private static array $expectedLimitTest = [
         'WS',
-        'YE'
+        'XK'
     ];
 
     /**
@@ -76,7 +76,7 @@ final class IsoCountriesTest extends TestCase
             'ASC' => 'Afghanistan',
             'DESC' => 'Zimbabwe',
         ],
-        'completeName' => [
+        'fullName' => [
             'ASC' => 'American Samoa',
             'DESC' => 'Vatican City State',
         ]
@@ -816,7 +816,7 @@ final class IsoCountriesTest extends TestCase
             'HR' => [ 'alpha2' => 'HR' ], 'IT' => [ 'alpha2' => 'IT' ], 'MK' => [ 'alpha2' => 'MK' ],
             'PT' => [ 'alpha2' => 'PT' ], 'SI' => [ 'alpha2' => 'SI' ], 'ES' => [ 'alpha2' => 'ES' ],
             'BE' => [ 'alpha2' => 'BE' ], 'DE' => [ 'alpha2' => 'DE' ], 'FR' => [ 'alpha2' => 'FR' ],
-            'LU' => [ 'alpha2' => 'LU' ], 'NL' => [ 'alpha2' => 'NL' ]
+            'LU' => [ 'alpha2' => 'LU' ], 'NL' => [ 'alpha2' => 'NL' ], 'GR' => [ 'alpha2' => 'GR' ]
         ];
         /** European countries that are part of the NATO  */
         $countries = self::$geoCodes->countries();

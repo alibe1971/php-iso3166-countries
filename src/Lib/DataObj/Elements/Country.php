@@ -18,7 +18,7 @@ class Country extends BaseDataObj
             'alpha3' => 'string',
             'unM49' => 'string',
             'name' => 'string',
-            'completeName' => 'string',
+            'fullName' => 'string',
             'officialName' => Languages::class,
             'dependency' => 'string',
             'mottos' => CountryMottos::class,

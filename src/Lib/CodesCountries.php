@@ -66,7 +66,7 @@ class CodesCountries extends Enquiries
             'search' => true,
             'description' => 'The common name of the country'
         ],
-        'completeName' => [
+        'fullName' => [
             'source' => Source::TRANSLATIONS,
             'type' => Type::STRING,
             'nullable' => false,
