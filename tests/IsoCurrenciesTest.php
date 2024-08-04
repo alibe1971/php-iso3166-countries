@@ -1161,13 +1161,13 @@ final class IsoCurrenciesTest extends TestCase
                 "'name', 'like', '%Guilder'",
                 ['name', 'like', '%Guilder'],
                 'where',
-                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+                ['ANG' => [ 'isoAlpha' => 'ANG' ], 'AWG' => [ 'isoAlpha' => 'AWG' ]]
             ],
             [
                 "'name', 'like', '%Guilder%'",
                 ['name', 'like', '%Guilder%'],
                 'where',
-                ['ANG' => [ 'isoAlpha' => 'ANG' ]]
+                ['ANG' => [ 'isoAlpha' => 'ANG' ], 'AWG' => [ 'isoAlpha' => 'AWG' ]]
             ],
             [
                 "'name', 'like', '%ntillea%'",
