@@ -24,6 +24,7 @@ class Country extends BaseDataObj
             'mottos' => CountryMottos::class,
             'currencies' => CountryCurrencies::class,
             'dialCodes' => CountryDialCodes::class,
+            'ccTld' => 'string',
             'timeZones' => TimeZones::class,
             'languages' => 'string', //'string',
             'locales' => Locales::class,

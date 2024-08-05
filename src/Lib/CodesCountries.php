@@ -138,6 +138,15 @@ class CodesCountries extends Enquiries
             'search' => false,
             'description' => 'The exceptions of dial codes for phone call to the country'
         ],
+        'ccTld' => [
+            'source' => Source::DATA,
+            'type' => Type::STRING,
+            'nullable' => true,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => true,
+            'description' => 'The top level domain country code (if it exists)'
+        ],
         'timeZones' => [
             'source' => Source::DATA,
             'type' => Type::OBJECT,

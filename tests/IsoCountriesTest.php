@@ -1361,6 +1361,12 @@ final class IsoCountriesTest extends TestCase
                 'where',
                 ['VG' => [ 'alpha2' => 'VG' ]]
             ],
+            [
+                "'ccTld', 'like', '%it%'",
+                ['ccTld', 'like', '%it%'],
+                'where',
+                ['IT' => [ 'alpha2' => 'IT' ]]
+            ],
         ];
     }
 
