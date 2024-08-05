@@ -1400,7 +1400,7 @@ final class IsoCountriesTest extends TestCase
 
         $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
         fwrite($elenaMyfile, print_r(
-            $countries->withIndex('alpha2')->select('alpha2', 'ccTld', 'otherAppsIds.geoNamesOrg')->get(),
+            $countries->withIndex('alpha2')->select('alpha2', 'ccTld', 'otherAppsIds', 'flags')->get(),
             true
         ) . "\n");
         fclose($elenaMyfile);

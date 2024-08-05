@@ -84,6 +84,24 @@ class CodesCountries extends Enquiries
             'search' => true,
             'description' => 'The country\'s official name(s) in its administrative language(s).'
         ],
+        'flags' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The flags in different format for the country'
+        ],
+        'flags.svg' => [
+            'source' => Source::DATA,
+            'type' => Type::STRING,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The flag in svg format'
+        ],
         'dependency' => [
             'source' => Source::DATA,
             'type' => Type::STRING,

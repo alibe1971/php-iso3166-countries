@@ -20,6 +20,7 @@ class Country extends BaseDataObj
             'name' => 'string',
             'fullName' => 'string',
             'officialName' => Languages::class,
+            'flags' => CountryFlags::class,
             'dependency' => 'string',
             'mottos' => CountryMottos::class,
             'currencies' => CountryCurrencies::class,
