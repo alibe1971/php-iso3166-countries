@@ -183,6 +183,24 @@ class CodesCountries extends Enquiries
             'search' => false,
             'description' => 'The demonysms; the names of the inhabitants'
         ],
+        'otherAppsIds' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'Identification code to use in other applications'
+        ],
+        'otherAppsIds.geoNamesOrg' => [
+            'source' => Source::DATA,
+            'type' => Type::INTEGER,
+            'nullable' => true,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'Ids for geonames.org'
+        ],
         'keywords' => [
             'source' => Source::TRANSLATIONS,
             'type' => Type::ARRAY,

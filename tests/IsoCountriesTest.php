@@ -1367,6 +1367,12 @@ final class IsoCountriesTest extends TestCase
                 'where',
                 ['IT' => [ 'alpha2' => 'IT' ]]
             ],
+            [
+                "'otherAppsIds', 'like', '%3175395%'",
+                ['otherAppsIds', 'like', '%3175395%'],
+                'where',
+                ['IT' => [ 'alpha2' => 'IT' ]]
+            ],
         ];
     }
 
@@ -1394,7 +1400,7 @@ final class IsoCountriesTest extends TestCase
 
         $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
         fwrite($elenaMyfile, print_r(
-            $countries->withIndex('alpha2')->select('alpha2')->get()->toArray(),
+            $countries->withIndex('alpha2')->select('alpha2', 'ccTld', 'otherAppsIds.geoNamesOrg')->get(),
             true
         ) . "\n");
         fclose($elenaMyfile);

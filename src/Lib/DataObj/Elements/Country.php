@@ -28,7 +28,8 @@ class Country extends BaseDataObj
             'timeZones' => TimeZones::class,
             'languages' => 'string', //'string',
             'locales' => Locales::class,
-            'demonyms' => Demonysm::class
+            'demonyms' => Demonysm::class,
+            'otherAppsIds' => CountryOtherAppsIds::class,
 
         ];
     }
