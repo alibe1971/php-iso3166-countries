@@ -24,4 +24,22 @@ class DataSets
     {
         return include(dirname(__DIR__) . '/Data/' . $file . '.php');
     }
+
+
+    /**
+     * Validate an SVG
+     * @param $svgContent
+     * @return bool
+     */
+    public static function isValidSVG(string $svgContent): bool
+    {
+        libxml_use_internal_errors(true);
+        $dom = new \DOMDocument();
+        $dom->loadXML($svgContent, LIBXML_NOERROR | LIBXML_NOWARNING);
+        $isValid = $dom->documentElement && $dom->documentElement->tagName === 'svg';
+        libxml_clear_errors();
+        libxml_use_internal_errors(false);
+
+        return $isValid;
+    }
 }

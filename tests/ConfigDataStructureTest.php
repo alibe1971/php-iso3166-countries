@@ -2,6 +2,7 @@
 
 namespace Alibe\GeoCodes\Tests;
 
+use Alibe\GeoCodes\Lib\DataSets;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
@@ -471,6 +472,40 @@ final class ConfigDataStructureTest extends TestCase
 
 
             $this->assertArrayHasKey(
+                'flags',
+                $cc,
+                'The property `flags` is not present inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertIsArray(
+                $cc['flags'],
+                'The property `flags` is not an array ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertNotEmpty(
+                $cc['flags'],
+                'The property `flags` is empty ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertArrayHasKey(
+                'svg',
+                $cc['flags'],
+                'The property `flags.svg` is not present inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertIsString(
+                $cc['flags']['svg'],
+                'The property `flags.svg` is not a string inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertTrue(
+                DataSets::isValidSVG($cc['flags']['svg']),
+                'The property `flags.svg` is not a valid SVG for the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+
+
+            $this->assertArrayHasKey(
                 'dependency',
                 $cc,
                 'The property `dependency` is not present inside the `countries` data ' .
@@ -673,6 +708,26 @@ final class ConfigDataStructureTest extends TestCase
                 'for the alpha2 `' . $cc['alpha2'] . '`'
             );
 
+            $this->assertArrayHasKey(
+                'ccTld',
+                $cc,
+                'The property `ccTld` is not present inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $is_string = is_string($cc['ccTld']);
+            $this->assertTrue(
+                $is_string || is_null($cc['ccTld']),
+                'The country property `ccTld` ' .
+                ' for the alpha2 `' . $cc['alpha2'] . '` must be "string" or "null" ' .
+                '(`' . gettype($cc['ccTld']) . '` returned)'
+            );
+            if ($is_string) {
+                $this->assertNotEmpty(
+                    trim(preg_replace('/\s+/u', '', $cc['ccTld'])),
+                    'The country property `ccTld` cannot be an empty string ' .
+                    'for the alpha2 `' . $cc['alpha2'] . '`'
+                );
+            }
 
             $this->assertArrayHasKey(
                 'timeZones',
@@ -729,8 +784,42 @@ final class ConfigDataStructureTest extends TestCase
                 $locs[] = $loc;
             }
 
-
-
+            $this->assertArrayHasKey(
+                'otherAppsIds',
+                $cc,
+                'The property `otherAppsIds` is not present inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertIsArray(
+                $cc['otherAppsIds'],
+                'The property `otherAppsIds` is not an array ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertNotEmpty(
+                $cc['otherAppsIds'],
+                'The property `otherAppsIds` is empty ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $this->assertArrayHasKey(
+                'geoNamesOrg',
+                $cc['otherAppsIds'],
+                'The property `otherAppsIds.geoNamesOrg` is not present inside the `countries` data ' .
+                'for the alpha2 `' . $cc['alpha2'] . '`'
+            );
+            $is_int = is_int($cc['otherAppsIds']['geoNamesOrg']);
+            $this->assertTrue(
+                $is_int || is_null($cc['otherAppsIds']['geoNamesOrg']),
+                'The country property `otherAppsIds.geoNamesOrg` ' .
+                ' for the alpha2 `' . $cc['alpha2'] . '` must be "string" or "null" ' .
+                '(`' . gettype($cc['otherAppsIds']['geoNamesOrg']) . '` returned)'
+            );
+            if ($is_int) {
+                $this->assertTrue(
+                    $cc['otherAppsIds']['geoNamesOrg'] > 0,
+                    'The country property `otherAppsIds.geoNamesOrg` cannot be zero ' .
+                    'for the alpha2 `' . $cc['alpha2'] . '`'
+                );
+            }
 
 
             // [TODO] LANGUAGES
