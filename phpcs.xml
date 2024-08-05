@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="CustomRuleset">
+    <!-- Inherit the default PSR12 standard -->
+    <rule ref="PSR12"/>
+
+    <file>src</file>
+    <file>tests</file>
+
+    <!-- Custom rules -->
+    <rule ref="Generic.Files.LineLength">
+        <exclude-pattern>/src/Data/*</exclude-pattern>
+    </rule>
+</ruleset>

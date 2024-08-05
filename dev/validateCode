@@ -15,28 +15,16 @@ show_progress() {
 script_path=$(readlink -f "$0")
 base_directory=$(dirname "$(dirname "$script_path")")
 
-echo 'DATA CONSTRUCTION IN EXECUTION ...'
-php "$base_directory/dev/buildTools/build.php"
-if [ $? -ne 0 ]; then
-  echo
-  echo "DATA CONSTRUCTION TERMINATED WITH ERRORS."
-  echo
-  echo "$buildData"
-  echo
-  echo "SCRIPT TERMINATED WITH ERROR."
-  echo
-  exit 1
-fi
-echo 'DATA CONSTRUCTION EXECUTED.'
-
 cd "$base_directory"
 
 echo
 echo 'SOURCE CODE CHECK WITH RUNNING CODE SNIFFER ...'
 show_progress &
 progress_pid=$!
-coderepair=$("vendor/bin/phpcbf" --standard=PSR12 "$base_directory"/src "$base_directory"/dev "$base_directory"/tests)
-codesniffer=$("vendor/bin/phpcs" --standard=PSR12 "$base_directory"/src "$base_directory"/dev "$base_directory"/tests)
+
+coderepair=$("vendor/bin/phpcbf" --standard="$base_directory/phpcs.xml")
+codesniffer=$("vendor/bin/phpcs" --standard="$base_directory/phpcs.xml")
+
 kill $progress_pid > /dev/null 2>&1
 printf '\r\033[K'
 echo 'SOURCE CODE CHECK WITH CODE SNIFFER COMPLETED.'
