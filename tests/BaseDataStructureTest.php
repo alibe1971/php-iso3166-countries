@@ -9,7 +9,7 @@ use Symfony\Component\Finder\Finder;
 /**
  * @testdox Config Data Structure
  */
-final class ConfigDataStructureTest extends TestCase
+final class BaseDataStructureTest extends TestCase
 {
     /**
      * @var string
