@@ -402,6 +402,8 @@ final class BaseDataStructureTest extends TestCase
 
         $this->assertNotEmpty($countries);
 
+        $alpha2Values = array_column($countries, 'alpha2');
+
         foreach ($countries as $idx => $cc) {
             $this->assertArrayHasKey(
                 'alpha2',
@@ -523,6 +525,11 @@ final class BaseDataStructureTest extends TestCase
                     trim(preg_replace('/\s+/u', '', $cc['dependency'])),
                     'The country property `dependency` cannot be an empty string ' .
                     'for the alpha2 `' . $cc['alpha2'] . '`'
+                );
+                $this->assertContains(
+                    $cc['dependency'],
+                    $alpha2Values,
+                    'Dependency `' . $cc['dependency'] . '` does not match any existing `alpha2`'
                 );
             }
 
