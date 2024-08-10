@@ -252,7 +252,7 @@ final class BaseDataStructureTest extends TestCase
         $geo = [];
         $geoLv0 = [];
         $geoLv1 = [
-            'AQ'        // Antartica is an exception
+            'AQ'        // Exception for Antartica (AQ - 010) that is also a continent
         ];
 
         foreach ($geosets as $idx => $gs) {
@@ -366,7 +366,7 @@ final class BaseDataStructureTest extends TestCase
                     '` must be three digits long'
                 );
                 $m49[] = $gs['unM49'];
-                if ($gs['internalCode'] != 'GEOG-AQ') {      // Antartica is an exception
+                if ($gs['internalCode'] != 'GEOG-AQ') {  // Exception for Antartica (AQ - 010) that is also a continent
                     self::$countriesData['unM49'][] = $gs['unM49'];
                 } else {
                     $aq = true;
@@ -721,6 +721,14 @@ final class BaseDataStructureTest extends TestCase
                 'The property `dialCodes.main` is not an array ' .
                 'for the alpha2 `' . $cc['alpha2'] . '`'
             );
+            foreach ($cc['dialCodes']['main'] as $dial) {
+                $this->assertMatchesRegularExpression(
+                    '/^\+\d+$/',
+                    $dial,
+                    'The property `dialCodes.main`=' . $dial . ' has wrong format ' .
+                    'for the alpha2 `' . $cc['alpha2'] . '`'
+                );
+            }
             $this->assertArrayHasKey(
                 'exceptions',
                 $cc['dialCodes'],
@@ -732,6 +740,14 @@ final class BaseDataStructureTest extends TestCase
                 'The property `dialCodes.exceptions` is not an array ' .
                 'for the alpha2 `' . $cc['alpha2'] . '`'
             );
+            foreach ($cc['dialCodes']['exceptions'] as $dial) {
+                $this->assertMatchesRegularExpression(
+                    '/^\+\d+$/',
+                    $dial,
+                    'The property `dialCodes.exceptions`=' . $dial . ' has wrong format ' .
+                    'for the alpha2 `' . $cc['alpha2'] . '`'
+                );
+            }
 
             $this->assertArrayHasKey(
                 'ccTld',
