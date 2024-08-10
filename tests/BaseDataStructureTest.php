@@ -35,9 +35,16 @@ final class BaseDataStructureTest extends TestCase
         'alpha2' => [],
         'alpha3' => [],
         'unM49' => [],
+        'officialName' => [],
         'ln' => [],
         'currencies' => [],
-        'setsInternal' => []
+        'setsInternal' => [],
+        'translations' => [
+            'countries' => [],
+            'geosets' => [],
+            'currencies' => [],
+            'languages' => []
+        ]
     ];
 
     public static function setUpBeforeClass(): void
@@ -550,6 +557,9 @@ final class BaseDataStructureTest extends TestCase
                 'for the alpha2 `' . $cc['alpha2'] . '`'
             );
             foreach ($cc['officialName'] as $ln => $name) {
+                if (!array_key_exists($ln, self::$countriesData['officialName'])) {
+                    self::$countriesData['officialName'][$ln] = [];
+                }
                 $this->assertIsString(
                     $name,
                     'The country property `officialName` must have elements as string ' .
@@ -560,6 +570,14 @@ final class BaseDataStructureTest extends TestCase
                     'The country property `officialName` cannot have elements as empty string ' .
                     'for the alpha2 `' . $cc['alpha2'] . '`'
                 );
+                $this->assertNotContains(
+                    $name,
+                    self::$countriesData['officialName'][$ln],
+                    'The country code with `officialName` ' . $name . ' for the language `'
+                    . $ln .
+                    '` is a duplicated key in the `countries` data with the alpha2 `' . $cc['alpha2'] . '`'
+                );
+                self::$countriesData['officialName'][$ln][] = $name;
                 self::$countriesData['ln'][] = $ln;
             }
 
@@ -843,20 +861,24 @@ final class BaseDataStructureTest extends TestCase
      */
     public function testValidationTranslationsFiles(): void
     {
-        $trns = [
-            'countries',
-            'currencies',
-            'geosets',
-            'languages'
-        ];
         $countries = [];
         $currencies = [];
         $geosets = [];
         $languages = [];
         foreach (self::$Config['settings']['languages']['inPackage'] as $lang => $locale) {
             $transDir = self::$dataDir . '/Translations/' . $lang . '/';
+            self::$countriesData['translations']['countries'][$lang] = [
+                'name' => [],
+                'fullName' => [],
+            ];
+            self::$countriesData['translations']['geosets'][$lang] = [
+                'name' => []
+            ];
+            self::$countriesData['translations']['currencies'][$lang] = [
+                'name' => []
+            ];
 
-            foreach ($trns as $item) {
+            foreach (array_keys(self::$countriesData['translations']) as $item) {
                 $this->assertFileExists(
                     $transDir . $item . '.php',
                     'The translation ' . $item . ' file is missing'
@@ -889,12 +911,29 @@ final class BaseDataStructureTest extends TestCase
                         'The country code `' . $cc . '`has not the property `name` in `translations.' .
                         $lang . '.countries` dataset'
                     );
+                    $this->assertNotContains(
+                        $countries[$cc]['name'],
+                        self::$countriesData['translations']['countries'][$lang]['name'],
+                        'The country property `name` as "' . $countries[$cc]['name'] .
+                        '" for the translation `' . $lang .
+                        '` is a duplicated key in `alpha2` "' . $cc . '"'
+                    );
+                    self::$countriesData['translations']['countries'][$lang]['name'][] = $countries[$cc]['name'];
                     $this->assertArrayHasKey(
                         'fullName',
                         $countries[$cc],
                         'The country code `' . $cc . '` has the missing property ' .
                         '`fullName` in `translations.' . $lang . '.countries` dataset'
                     );
+                    $this->assertNotContains(
+                        $countries[$cc]['fullName'],
+                        self::$countriesData['translations']['countries'][$lang]['fullName'],
+                        'The country property `fullName` as "' . $countries[$cc]['fullName'] .
+                        '" for the translation `' . $lang .
+                        '` is a duplicated key in `alpha2` "' . $cc . '"'
+                    );
+                    self::$countriesData['translations']['countries'][$lang]['fullName'][] =
+                        $countries[$cc]['fullName'];
                     $this->assertArrayHasKey(
                         'demonyms',
                         $countries[$cc],
@@ -951,19 +990,26 @@ final class BaseDataStructureTest extends TestCase
                         'The currency code `' . $cur . '`does not exist in `translations.' .
                         $lang . '.currencies` dataset'
                     );
-
+                    /** @phpstan-ignore-next-line */
+                    $currencyName = $currencies[$cur]['name'];
                     $this->assertIsString(
-                        /** @phpstan-ignore-next-line */
-                        $currencies[$cur]['name'],
+                        $currencyName,
                         'The currency code `' . $cur . '` must be string in `translations.' .
                         $lang . '.currencies` dataset'
                     );
                     $this->assertNotEmpty(
-                        /** @phpstan-ignore-next-line */
-                        trim(preg_replace('/\s+/u', '', $currencies[$cur]['name'])),
+                        trim(preg_replace('/\s+/u', '', $currencyName)),
                         'The currency code `' . $cur . '` is empty in `translations.' .
                         $lang . '.currencies` dataset'
                     );
+                    $this->assertNotContains(
+                        $currencyName,
+                        self::$countriesData['translations']['currencies'][$lang]['name'],
+                        'The currencies property `name` as "' . $currencyName .
+                        '" for the translation `' . $lang .
+                        '` is a duplicated key in `isoAlpha` "' . $cur . '"'
+                    );
+                    self::$countriesData['translations']['currencies'][$lang]['name'][] = $currencyName;
                 }
 
 
@@ -974,18 +1020,26 @@ final class BaseDataStructureTest extends TestCase
                         'The geoSets internal code `' . $gs . '`does not exist in `translations.' .
                         $lang . '.geoSets` dataset'
                     );
+                    /** @phpstan-ignore-next-line */
+                    $geoSetName = $geosets[$gs]['name'];
                     $this->assertIsString(
-                        /** @phpstan-ignore-next-line */
-                        $geosets[$gs]['name'],
+                        $geoSetName,
                         'The geoSets internal code `' . $gs . '` must be string in `translations.' .
                         $lang . '.geoSets` dataset'
                     );
                     $this->assertNotEmpty(
-                    /** @phpstan-ignore-next-line */
-                        trim(preg_replace('/\s+/u', '', $geosets[$gs]['name'])),
+                        trim(preg_replace('/\s+/u', '', $geoSetName)),
                         'The geoSets internal code `' . $gs . '` is empty in `translations.' .
                         $lang . '.geoSets` dataset'
                     );
+                    $this->assertNotContains(
+                        $geoSetName,
+                        self::$countriesData['translations']['geosets'][$lang]['name'],
+                        'The geoSets property `name` as "' . $geoSetName .
+                        '" for the translation `' . $lang .
+                        '` is a duplicated key in `internalCode` "' . $gs . '"'
+                    );
+                    self::$countriesData['translations']['geosets'][$lang]['name'][] = $geoSetName;
                 }
 
 
