@@ -911,7 +911,8 @@ final class IsoCountriesTest extends TestCase
             'BA' => [ 'alpha2' => 'BA' ], 'GI' => [ 'alpha2' => 'GI' ], 'VA' => [ 'alpha2' => 'VA' ],
             'ME' => [ 'alpha2' => 'ME' ], 'MK' => [ 'alpha2' => 'MK' ], 'SM' => [ 'alpha2' => 'SM' ],
             'RS' => [ 'alpha2' => 'RS' ], 'LI' => [ 'alpha2' => 'LI' ], 'MC' => [ 'alpha2' => 'MC' ],
-            'CH' => [ 'alpha2' => 'CH' ], 'CY' => [ 'alpha2' => 'CY' ], 'BY' => [ 'alpha2' => 'BY' ]
+            'CH' => [ 'alpha2' => 'CH' ], 'CY' => [ 'alpha2' => 'CY' ], 'BY' => [ 'alpha2' => 'BY' ],
+            'XK' => [ 'alpha2' => 'XK' ]
         ];
         /**
          * Make the simmetric complement between
