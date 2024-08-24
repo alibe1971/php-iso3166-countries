@@ -5,6 +5,7 @@ namespace Alibe\GeoCodes\Lib\DataObj;
 use stdClass;
 use IteratorAggregate;
 use ArrayIterator;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * @implements IteratorAggregate<object>
@@ -44,6 +45,14 @@ class BaseDataObj extends StdClass implements IteratorAggregate
         }
 
         return $jsonString;
+    }
+
+    /**
+     * @return string
+     */
+    public function toYaml(): string
+    {
+        return Yaml::dump($this->toArray(),5, 4, Yaml::DUMP_OBJECT_AS_MAP);
     }
 
     /**

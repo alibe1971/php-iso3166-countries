@@ -7,6 +7,7 @@ use Alibe\GeoCodes\Lib\DataObj\GeoSets;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * @testdox GeoSets
@@ -119,12 +120,41 @@ final class IsoGeoSetsTest extends TestCase
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $expectedData = self::$geoSetsList->toArray();
+        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
 
         $json = self::$geoSetsList->{0}->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $expectedData = $expectedData[0];
+        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toYaml()` feature.
+     * @depends testToGetListOfGeoSets
+     * @return void
+     */
+    public function testGetToYamlFeature(): void
+    {
+        $yaml = self::$geoSetsList->toYaml();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $expectedData = self::$geoSetsList->toArray();
+        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+
+        $yaml = self::$geoSetsList->{0}->toJson();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $expectedData = $expectedData[0];
+        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
     }
 
     /**
