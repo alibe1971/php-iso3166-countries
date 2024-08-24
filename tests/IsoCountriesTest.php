@@ -245,7 +245,7 @@ final class IsoCountriesTest extends TestCase
     public function testFirstFeatureOnEmpty(): void
     {
         $countries = self::$geoCodes->countries();
-        $countries->limit(0, 0);
+        $countries->offset(0)->limit(0);
         $country = $countries->first();
 
         $this->assertIsObject($country);
@@ -347,7 +347,7 @@ final class IsoCountriesTest extends TestCase
         );
 
         foreach ([(self::$countriesTotalCount - 52), 27, 5, 32, 0] as $numberOfItems) {
-            $countries->limit(52, $numberOfItems);
+            $countries->offset(52)->limit($numberOfItems);
             $count = $countries->count();
             $this->assertEquals(
                 $numberOfItems,
@@ -360,7 +360,7 @@ final class IsoCountriesTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the `->limit()` feature.
+     * @testdox Test the interval `->offset()->limit()` feature.
      * @return void
      * @throws QueryException
      */
@@ -368,27 +368,27 @@ final class IsoCountriesTest extends TestCase
     {
         $countries = self::$geoCodes->countries();
 
-        // Invalid - `from` less than 0
+        // Invalid - `offset` less than 0
         try {
-            $countries->limit(-5, 20);
+            $countries->offset(-5)->limit(20);
             $this->fail('An invalid limit from has been accepted');
-        } catch (QueryException $e) {
-            $this->assertInstanceOf(QueryException::class, $e);
-            $this->assertEquals(11003, $e->getCode());
-        }
-
-        // Invalid - `numberOfItems` less than 0
-        try {
-            $countries->limit(20, -5);
-            $this->fail('An invalid limit numberOfItems has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
             $this->assertEquals(11004, $e->getCode());
         }
 
+        // Invalid - `limit` less than 0
+        try {
+            $countries->offset(20)->limit(-5);
+            $this->fail('An invalid limit numberOfItems has been accepted');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11003, $e->getCode());
+        }
+
 
         // Valid input
-        $countries->limit(243, 2);
+        $countries->offset(243)->limit(2);
         $this->assertEquals(2, $countries->count());
         $get = $countries->get();
         $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->alpha2);
@@ -475,7 +475,7 @@ final class IsoCountriesTest extends TestCase
     public function testIndexesWithDataProvider(string $index): void
     {
         foreach (
-            self::$geoCodes->countries()->withIndex($index)->limit(0, 1)->get()->toArray() as $key => $country
+            self::$geoCodes->countries()->withIndex($index)->offset(0)->limit(1)->get()->toArray() as $key => $country
         ) {
             $this->assertEquals($key, $country[$index]);
         }
@@ -1392,19 +1392,19 @@ final class IsoCountriesTest extends TestCase
      */
     public function testStica(): void
     {
-        $countries = self::$geoCodes->countries();
+//        $countries = self::$geoCodes->countries()->withIndex();
 
-        $countries->where([['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]);
+//        $countries->where([['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]);
 //        $countries->orWhere('alpha2', 'IN', ['IT']);
 //        $countries->fetch('IT')->where([['alpha2', 'IN', ['IE']]]);
 //        $countries->get();
 
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r(
-            $countries->withIndex('alpha2')->select('alpha2', 'ccTld', 'otherAppsIds', 'flags')->get(),
-            true
-        ) . "\n");
-        fclose($elenaMyfile);
+//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+//        fwrite($elenaMyfile, print_r(
+//           $countries->toJson(),
+//            true
+//        ) . "\n");
+//        fclose($elenaMyfile);
 
 
 //        $countries->where([

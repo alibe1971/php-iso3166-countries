@@ -76,9 +76,9 @@ class Enquiries
         'fetchSuperGroups' => [],
         'select' => [],
         'conditionsSet' => [],
-        'limit' => [
-            'from' => 0,
-            'to' => null
+        'interval' => [
+            'offSet' => 0,
+            'limit' => null
         ],
         'order' => [
             'property' => null,
@@ -201,7 +201,7 @@ class Enquiries
             $this->dataSets[$this->dataSetName][$object[$this->dataSetPrimaryKey]] = $object;
             $k++;
         }
-        $this->query['limit']['to'] = $k;
+        $this->query['interval']['limit'] = $k;
     }
 
     /**
@@ -252,22 +252,52 @@ class Enquiries
     }
 
     /**
-     * @param int $from
-     * @param int $numberOfItems
-     * @return Enquiries
+     * @param int $offSet
+     * @return $this
      * @throws QueryException
      */
-    public function limit(int $from, int $numberOfItems): Enquiries
+    public function offset(int $offSet): Enquiries
     {
-        if ($from < 0) {
-            throw new QueryException(QueryCodes::LIMIT_FROM_LESS_THAN_ZERO);
+        if ($offSet < 0) {
+            throw new QueryException(QueryCodes::OFFSET_ROWS_NUMBER_LESS_THAN_ZERO);
         }
-        if ($numberOfItems < 0) {
+        $this->query['interval']['offSet'] = $offSet;
+        return $this;
+    }
+
+    /**
+     * @param int $offSet
+     * @return $this
+     * @throws QueryException
+     */
+    public function skip(int $offSet): Enquiries
+    {
+        $this->offset($offSet);
+        return $this;
+    }
+
+    /**
+     * @param int $limit
+     * @return $this
+     * @throws QueryException
+     */
+    public function limit(int $limit): Enquiries
+    {
+        if ($limit < 0) {
             throw new QueryException(QueryCodes::LIMIT_ROWS_NUMBER_LESS_THAN_ZERO);
         }
+        $this->query['interval']['limit'] = $limit;
+        return $this;
+    }
 
-        $this->query['limit']['from'] = $from;
-        $this->query['limit']['to'] = $numberOfItems;
+    /**
+     * @param int $limit
+     * @return $this
+     * @throws QueryException
+     */
+    public function take(int $limit): Enquiries
+    {
+        $this->limit($limit);
         return $this;
     }
 
@@ -394,8 +424,8 @@ class Enquiries
         /** The return data */
         $this->data = [];
 
-        /** check the limit `to` */
-        if (!is_null($this->query['limit']['to']) && $this->query['limit']['to'] <= 0) {
+        /** check the interval `limit` */
+        if (!is_null($this->query['interval']['limit']) && $this->query['interval']['limit'] <= 0) {
             return;
         }
 
@@ -443,12 +473,12 @@ class Enquiries
         $k = $key = $keyOut = 0;
         foreach ($executiveSet as $data) {
             /** apply the limits */
-            if ($key < $this->query['limit']['from']) {
+            if ($key < $this->query['interval']['offSet']) {
                 $key++;
                 continue;
             }
             $k++;
-            if ($k > $this->query['limit']['to']) {
+            if ($k > $this->query['interval']['limit']) {
                 return;
             }
 
@@ -1001,7 +1031,7 @@ class Enquiries
      */
     public function first(): BaseDataObj
     {
-        $this->limit(0, 1);
+        $this->limit(1)->offset(0);
         $this->execQueries();
         /** @var BaseDataObj $childInstance */
         $childInstance = new $this->singleItemInstanceName();

@@ -216,7 +216,7 @@ final class IsoGeoSetsTest extends TestCase
     public function testFirstFeatureOnEmpty(): void
     {
         $geoSets = self::$geoCodes->geoSets();
-        $geoSets->limit(0, 0);
+        $geoSets->offset(0)->limit(0);
         $geoSet = $geoSets->first();
 
         $this->assertIsObject($geoSet);
@@ -309,7 +309,7 @@ final class IsoGeoSetsTest extends TestCase
         );
 
         foreach ([(self::$geoSetsTotalCount - 21), 27, 5, 32, 0] as $numberOfItems) {
-            $geoSets->limit(21, $numberOfItems);
+            $geoSets->offset(21)->limit($numberOfItems);
             $count = $geoSets->count();
             $this->assertEquals(
                 $numberOfItems,
@@ -321,7 +321,7 @@ final class IsoGeoSetsTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the `->limit()` feature.
+     * @testdox Test the interval `->offset()->limit()` feature.
      * @return void
      * @throws QueryException
      */
@@ -329,26 +329,26 @@ final class IsoGeoSetsTest extends TestCase
     {
         $geoSets = self::$geoCodes->geoSets();
 
-        // Invalid - `from` less than 0
+        // Invalid - `offset` less than 0
         try {
-            $geoSets->limit(-5, 20);
+            $geoSets->offset(-2)->limit(20);
             $this->fail('An invalid limit from has been accepted');
-        } catch (QueryException $e) {
-            $this->assertInstanceOf(QueryException::class, $e);
-            $this->assertEquals(11003, $e->getCode());
-        }
-
-        // Invalid - `numberOfItems` less than 0
-        try {
-            $geoSets->limit(20, -5);
-            $this->fail('An invalid limit numberOfItems has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
             $this->assertEquals(11004, $e->getCode());
         }
 
+        // Invalid - `limit` less than 0
+        try {
+            $geoSets->offset(20)->limit(-5);
+            $this->fail('An invalid limit numberOfItems has been accepted');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11003, $e->getCode());
+        }
+
         // Valid input
-        $geoSets->limit(22, 2);
+        $geoSets->offset(22)->limit(2);
         $this->assertEquals(2, $geoSets->count());
         $get = $geoSets->get();
 
@@ -436,7 +436,7 @@ final class IsoGeoSetsTest extends TestCase
     public function testIndexesWithDataProvider(string $index): void
     {
         foreach (
-            self::$geoCodes->geoSets()->withIndex($index)->limit(0, 1)->get()->toArray() as $key => $geoSet
+            self::$geoCodes->geoSets()->withIndex($index)->offset(0)->limit(1)->get()->toArray() as $key => $geoSet
         ) {
             $this->assertEquals($key, $geoSet[$index]);
         }

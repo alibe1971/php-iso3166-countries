@@ -221,7 +221,7 @@ final class IsoCurrenciesTest extends TestCase
     public function testFirstFeatureOnEmpty(): void
     {
         $currencies = self::$geoCodes->currencies();
-        $currencies->limit(0, 0);
+        $currencies->offset(0)->limit(0);
         $currency = $currencies->first();
 
         $this->assertIsObject($currency);
@@ -314,7 +314,7 @@ final class IsoCurrenciesTest extends TestCase
         );
 
         foreach ([(self::$currenciesTotalCount - 21), 27, 5, 32, 0] as $numberOfItems) {
-            $currencies->limit(21, $numberOfItems);
+            $currencies->offset(21)->limit($numberOfItems);
             $count = $currencies->count();
             $this->assertEquals(
                 $numberOfItems,
@@ -326,7 +326,7 @@ final class IsoCurrenciesTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the `->limit()` feature.
+     * @testdox Test the interval`->offset()->limit()` feature.
      * @return void
      * @throws QueryException
      */
@@ -336,24 +336,24 @@ final class IsoCurrenciesTest extends TestCase
 
         // Invalid - `from` less than 0
         try {
-            $currencies->limit(-5, 20);
+            $currencies->offset(-5)->limit(20);
             $this->fail('An invalid limit from has been accepted');
-        } catch (QueryException $e) {
-            $this->assertInstanceOf(QueryException::class, $e);
-            $this->assertEquals(11003, $e->getCode());
-        }
-
-        // Invalid - `numberOfItems` less than 0
-        try {
-            $currencies->limit(20, -5);
-            $this->fail('An invalid limit numberOfItems has been accepted');
         } catch (QueryException $e) {
             $this->assertInstanceOf(QueryException::class, $e);
             $this->assertEquals(11004, $e->getCode());
         }
 
+        // Invalid - `numberOfItems` less than 0
+        try {
+            $currencies->offset(20)->limit(-5);
+            $this->fail('An invalid limit numberOfItems has been accepted');
+        } catch (QueryException $e) {
+            $this->assertInstanceOf(QueryException::class, $e);
+            $this->assertEquals(11003, $e->getCode());
+        }
+
         // Valid input
-        $currencies->limit(22, 2);
+        $currencies->offset(22)->limit(2);
         $this->assertEquals(2, $currencies->count());
         $get = $currencies->get();
 
@@ -441,7 +441,7 @@ final class IsoCurrenciesTest extends TestCase
     public function testIndexesWithDataProvider(string $index): void
     {
         foreach (
-            self::$geoCodes->currencies()->withIndex($index)->limit(0, 1)->get()->toArray() as $key => $currency
+            self::$geoCodes->currencies()->withIndex($index)->offset(0)->limit(1)->get()->toArray() as $key => $currency
         ) {
             $this->assertEquals($key, $currency[$index]);
         }
