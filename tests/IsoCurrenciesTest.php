@@ -326,7 +326,7 @@ final class IsoCurrenciesTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the interval`->offset()->limit()` feature.
+     * @testdox Test the interval `->offset()->limit()` or the aliases `->skip()->take()` features.
      * @return void
      * @throws QueryException
      */
@@ -356,7 +356,13 @@ final class IsoCurrenciesTest extends TestCase
         $currencies->offset(22)->limit(2);
         $this->assertEquals(2, $currencies->count());
         $get = $currencies->get();
+        $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->isoAlpha);
+        $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->isoAlpha);
 
+        // Alias input
+        $currencies->skip(22)->take(2);
+        $this->assertEquals(2, $currencies->count());
+        $get = $currencies->get();
         $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->isoAlpha);
         $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->isoAlpha);
     }

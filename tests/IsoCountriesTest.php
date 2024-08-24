@@ -360,7 +360,7 @@ final class IsoCountriesTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the interval `->offset()->limit()` feature.
+     * @testdox Test the interval `->offset()->limit()` or the aliases `->skip()->take()` features.
      * @return void
      * @throws QueryException
      */
@@ -389,6 +389,13 @@ final class IsoCountriesTest extends TestCase
 
         // Valid input
         $countries->offset(243)->limit(2);
+        $this->assertEquals(2, $countries->count());
+        $get = $countries->get();
+        $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->alpha2);
+        $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->alpha2);
+
+        // Alias input
+        $countries->skip(243)->take(2);
         $this->assertEquals(2, $countries->count());
         $get = $countries->get();
         $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->alpha2);

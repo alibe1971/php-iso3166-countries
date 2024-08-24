@@ -321,7 +321,7 @@ final class IsoGeoSetsTest extends TestCase
 
     /**
      * @test
-     * @testdox Test the interval `->offset()->limit()` feature.
+     * @testdox Test the interval `->offset()->limit()` or the aliases `->skip()->take()` features.
      * @return void
      * @throws QueryException
      */
@@ -351,7 +351,13 @@ final class IsoGeoSetsTest extends TestCase
         $geoSets->offset(22)->limit(2);
         $this->assertEquals(2, $geoSets->count());
         $get = $geoSets->get();
+        $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->internalCode);
+        $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->internalCode);
 
+        // Alias input
+        $geoSets->skip(22)->take(2);
+        $this->assertEquals(2, $geoSets->count());
+        $get = $geoSets->get();
         $this->assertEquals(self::$expectedLimitTest[0], $get->{0}->internalCode);
         $this->assertEquals(self::$expectedLimitTest[1], $get->{1}->internalCode);
     }
