@@ -1031,7 +1031,7 @@ class Enquiries
      */
     public function first(): BaseDataObj
     {
-        $this->limit(1)->offset(0);
+        $this->limit(1)->offset($this->query['interval']['offSet']);
         $this->execQueries();
         /** @var BaseDataObj $childInstance */
         $childInstance = new $this->singleItemInstanceName();
