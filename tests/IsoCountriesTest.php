@@ -40,6 +40,8 @@ final class IsoCountriesTest extends TestCase
             'dependency',
             'mottos',
             'currencies',
+            'currencies.legalTenders',
+            'currencies.widelyAccepted',
             'dialCodes',
             'dialCodes.main',
             'dialCodes.exceptions',
@@ -1432,7 +1434,7 @@ final class IsoCountriesTest extends TestCase
 //        $countries = self::$geoCodes->countries()->withIndex();
         $countries = self::$geoCodes->countries();
         $xml = $countries->select('alpha2', 'alpha3', 'currencies.legalTenders')->withIndex('fullName')
-            ->get()->toXmlAndValidate();
+            ->skip(500)->take(1)->first()->toXmlAndValidate();
 //        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
 //        fwrite($elenaMyfile, print_r(
 //            $xml,

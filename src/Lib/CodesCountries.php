@@ -129,6 +129,24 @@ class CodesCountries extends Enquiries
             'search' => false,
             'description' => 'The currencies used in the country'
         ],
+        'currencies.legalTenders' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The legalTenders currencies used in the country'
+        ],
+        'currencies.widelyAccepted' => [
+            'source' => Source::DATA,
+            'type' => Type::OBJECT,
+            'nullable' => false,
+            'index' => Index::NOTINDEXABLE,
+            'access' => Access::PUBLIC,
+            'search' => false,
+            'description' => 'The widelyAccepted currencies used in the country'
+        ],
         'dialCodes' => [
             'source' => Source::DATA,
             'type' => Type::OBJECT,
