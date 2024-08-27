@@ -1035,7 +1035,11 @@ class Enquiries
         $this->execQueries();
         /** @var BaseDataObj $childInstance */
         $childInstance = new $this->singleItemInstanceName();
-        return $childInstance->from(reset($this->data));
+        $first = reset($this->data);
+        if (!is_array($first)) {
+            $first = [];
+        }
+        return $childInstance->from($first);
     }
 
     /**
