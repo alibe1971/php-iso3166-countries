@@ -112,9 +112,11 @@ final class IsoGeoSetsTest extends TestCase
      * @testdox Test the `->get()->toJson()` feature.
      * @depends testToGetListOfGeoSets
      * @return void
+     * @throws QueryException
      */
     public function testGetToJsonFeature(): void
     {
+        // Whole list
         $json = self::$geoSetsList->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
@@ -123,12 +125,32 @@ final class IsoGeoSetsTest extends TestCase
         $expectedData = self::$geoSetsList->toArray();
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
 
+        // Whole list with index
+        $geoSets = self::$geoCodes->geoSets()->withIndex('name')->get();
+        $json = $geoSets->toJson();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $this->assertEquals($geoSets->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+
+        // Single element in list
         $json = self::$geoSetsList->{0}->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
         $expectedData = reset($expectedData);
+        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+
+        // Empty
+        $geoSets = self::$geoCodes->geoSets()->take(0)->get();
+        $json = $geoSets->toJson();
+        $expectedData = $geoSets->toArray();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
     }
 
@@ -137,9 +159,11 @@ final class IsoGeoSetsTest extends TestCase
      * @testdox Test the `->get()->toYaml()` feature.
      * @depends testToGetListOfGeoSets
      * @return void
+     * @throws QueryException
      */
     public function testGetToYamlFeature(): void
     {
+        // Whole list
         $yaml = self::$geoSetsList->toYaml();
         $this->assertIsString($yaml);
         $decodedYaml = Yaml::parse($yaml);
@@ -148,12 +172,32 @@ final class IsoGeoSetsTest extends TestCase
         $expectedData = self::$geoSetsList->toArray();
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
 
-        $yaml = self::$geoSetsList->{0}->toJson();
+        // Whole list with index
+        $geosets = self::$geoCodes->geoSets()->withIndex('name')->get();
+        $yaml = $geosets->toYaml();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals($geosets->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Single element in list
+        $yaml = self::$geoSetsList->{0}->toYaml();
         $this->assertIsString($yaml);
         $decodedYaml = Yaml::parse($yaml);
         $this->assertNotNull($decodedYaml, 'Not a valid YAML');
         $this->assertIsArray($decodedYaml, 'Not a valid YAML');
         $expectedData = reset($expectedData);
+        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Empty
+        $geosets = self::$geoCodes->geoSets()->take(0)->get();
+        $yaml = $geosets->toYaml();
+        $expectedData = $geosets->toArray();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
     }
 
@@ -261,11 +305,48 @@ final class IsoGeoSetsTest extends TestCase
      */
     public function testFirstToJsonFeature(): void
     {
+        // Existent
         $json = self::$geoSet->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
+
+        // Empty
+        $geoset = self::$geoCodes->geoSets()->limit(0)->first();
+        $json = $geoset->toJson();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $this->assertEquals($geoset->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toYaml()` feature.
+     * @depends testFirstFeature
+     * @return void
+     * @throws QueryException
+     */
+    public function testFirstToYamlFeature(): void
+    {
+        // Existent
+        $yaml = self::$geoSet->toYaml();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals(self::$geoSet->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Empty
+        $geoset = self::$geoCodes->geoSets()->limit(0)->first();
+        $yaml = $geoset->toJson();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals($geoset->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
     }
 
     /**

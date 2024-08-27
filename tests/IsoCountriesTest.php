@@ -140,9 +140,11 @@ final class IsoCountriesTest extends TestCase
      * @testdox Test the `->get()->toJson()` feature.
      * @depends testToGetListOfCountries
      * @return void
+     * @throws QueryException
      */
     public function testGetToJsonFeature(): void
     {
+        // Whole list
         $json = self::$countryList->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
@@ -151,12 +153,32 @@ final class IsoCountriesTest extends TestCase
         $expectedData = self::$countryList->toArray();
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
 
+        // Whole list with index
+        $countries = self::$geoCodes->countries()->withIndex('name')->get();
+        $json = $countries->toJson();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $this->assertEquals($countries->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+
+        // Single element in list
         $json = self::$countryList->{0}->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
         $expectedData = reset($expectedData);
+        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+
+        // Empty
+        $countries = self::$geoCodes->countries()->take(0)->get();
+        $json = $countries->toJson();
+        $expectedData = $countries->toArray();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
     }
 
@@ -165,9 +187,11 @@ final class IsoCountriesTest extends TestCase
      * @testdox Test the `->get()->toYaml()` feature.
      * @depends testToGetListOfCountries
      * @return void
+     * @throws QueryException
      */
     public function testGetToYamlFeature(): void
     {
+        // Whole list
         $yaml = self::$countryList->toYaml();
         $this->assertIsString($yaml);
         $decodedYaml = Yaml::parse($yaml);
@@ -176,12 +200,32 @@ final class IsoCountriesTest extends TestCase
         $expectedData = self::$countryList->toArray();
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
 
-        $yaml = self::$countryList->{0}->toJson();
+        // Whole list with index
+        $countries = self::$geoCodes->countries()->withIndex('name')->get();
+        $yaml = $countries->toYaml();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals($countries->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Single element in list
+        $yaml = self::$countryList->{0}->toYaml();
         $this->assertIsString($yaml);
         $decodedYaml = Yaml::parse($yaml);
         $this->assertNotNull($decodedYaml, 'Not a valid YAML');
         $this->assertIsArray($decodedYaml, 'Not a valid YAML');
         $expectedData = reset($expectedData);
+        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Empty
+        $countries = self::$geoCodes->countries()->take(0)->get();
+        $yaml = $countries->toYaml();
+        $expectedData = $countries->toArray();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
     }
 
@@ -277,7 +321,7 @@ final class IsoCountriesTest extends TestCase
     public function testFirstFeatureOnEmpty(): void
     {
         $countries = self::$geoCodes->countries();
-        $countries->offset(0)->limit(0);
+        $countries->limit(0);
         $country = $countries->first();
 
         $this->assertIsObject($country);
@@ -290,14 +334,53 @@ final class IsoCountriesTest extends TestCase
      * @testdox Test the `->first()->toJson()` feature.
      * @depends testFirstFeature
      * @return void
+     * @throws QueryException
      */
     public function testFirstToJsonFeature(): void
     {
+        // Existent
         $json = self::$country->toJson();
         $this->assertIsString($json);
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $this->assertEquals(self::$country->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+
+        // Empty
+        $country = self::$geoCodes->countries()->limit(0)->first();
+        $json = $country->toJson();
+        $this->assertIsString($json);
+        $decodedJson = json_decode($json, true);
+        $this->assertNotNull($decodedJson, 'Not a valid JSON');
+        $this->assertIsArray($decodedJson, 'Not a valid JSON');
+        $this->assertEquals($country->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toYaml()` feature.
+     * @depends testFirstFeature
+     * @return void
+     * @throws QueryException
+     */
+    public function testFirstToYamlFeature(): void
+    {
+        // Existent
+        $yaml = self::$country->toYaml();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals(self::$country->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+
+        // Empty
+        $country = self::$geoCodes->countries()->limit(0)->first();
+        $yaml = $country->toJson();
+        $this->assertIsString($yaml);
+        $decodedYaml = Yaml::parse($yaml);
+        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+        $this->assertEquals($country->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
     }
 
 
