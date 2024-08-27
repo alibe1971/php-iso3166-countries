@@ -154,7 +154,7 @@ final class IsoCountriesTest extends TestCase
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = $expectedData[0];
+        $expectedData = reset($expectedData);
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
     }
 
@@ -179,7 +179,7 @@ final class IsoCountriesTest extends TestCase
         $decodedYaml = Yaml::parse($yaml);
         $this->assertNotNull($decodedYaml, 'Not a valid YAML');
         $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = $expectedData[0];
+        $expectedData = reset($expectedData);
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
     }
 
@@ -1431,13 +1431,16 @@ final class IsoCountriesTest extends TestCase
     {
 //        $countries = self::$geoCodes->countries()->withIndex();
         $countries = self::$geoCodes->countries();
-        $xml = $countries->get()->toYaml();
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r(
-            $xml,
-            true
-        ) . "\n");
-        fclose($elenaMyfile);
+        $xml = $countries->select('alpha2', 'alpha3', 'currencies.legalTenders')->withIndex('fullName')
+            ->get()->toXmlAndValidate();
+//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
+//        fwrite($elenaMyfile, print_r(
+//            $xml,
+//            true
+//        ) . "\n");
+//        fclose($elenaMyfile);
+
+        print_r($xml);
 
 //        $countries->where([['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]);
 //        $countries->orWhere('alpha2', 'IN', ['IT']);

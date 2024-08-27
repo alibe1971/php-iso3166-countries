@@ -133,7 +133,7 @@ final class IsoCurrenciesTest extends TestCase
         $decodedJson = json_decode($json, true);
         $this->assertNotNull($decodedJson, 'Not a valid JSON');
         $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = $expectedData[0];
+        $expectedData = reset($expectedData);
         $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
     }
 
@@ -158,7 +158,7 @@ final class IsoCurrenciesTest extends TestCase
         $decodedYaml = Yaml::parse($yaml);
         $this->assertNotNull($decodedYaml, 'Not a valid YAML');
         $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = $expectedData[0];
+        $expectedData = reset($expectedData);
         $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
     }
 
