@@ -26,4 +26,10 @@ class ExceptionsMessagesMap
     public const ERROR_11014 = 'With "%s" operator the term of match cannot be an array';
     public const ERROR_11015 = 'The condition property "%s" doesn\'t exist';
     public const ERROR_11016 = 'The condition property must be a string';
+
+
+
+    /** General */
+    public const ERROR_12001 = 'Invalid XML. Reported error: %s';
+    public const ERROR_12002 = 'XML for `%s` not valid according to xsd schema.';
 }
