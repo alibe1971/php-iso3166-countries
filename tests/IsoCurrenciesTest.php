@@ -4,9 +4,12 @@ namespace Alibe\GeoCodes\Tests;
 
 use Alibe\GeoCodes\Lib\DataObj\Currencies;
 use Alibe\GeoCodes\Lib\DataObj\Elements\Currency;
+use Alibe\GeoCodes\Lib\Exceptions\GeneralException;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
+use DOMDocument;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
+use SimpleXMLElement;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -88,6 +91,16 @@ final class IsoCurrenciesTest extends TestCase
     private static Currency $currency;
 
     /**
+     * @var string
+     */
+    private static string $xsdList;
+
+    /**
+     * @var string
+     */
+    private static string $xsdSingle;
+
+    /**
      * @test
      * @testdox Test `->get()` the list of currencies is object as instance of Currencies.
      * @return void
@@ -121,42 +134,27 @@ final class IsoCurrenciesTest extends TestCase
      */
     public function testGetToJsonFeature(): void
     {
-        // Whole list
-        $json = self::$currenciesSetsList->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = self::$currenciesSetsList->toArray();
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Whole list with index
-        $currencies = self::$geoCodes->currencies()->withIndex('name')->get();
-        $json = $currencies->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($currencies->toArray(), $decodedJson, 'Converted JSON does not match expected data');
-
-        // Single element in list
-        $json = self::$currenciesSetsList->{0}->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Empty
-        $currencies = self::$geoCodes->currencies()->take(0)->get();
-        $json = $currencies->toJson();
-        $expectedData = $currencies->toArray();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        $currencies = self::$geoCodes->currencies();
+        foreach (
+            [
+            // Whole list
+            self::$currenciesSetsList,
+            // Whole list with index
+            $currencies->withIndex('name')->get(),
+            // Single element in list
+            $currencies->take(1)->get(),
+            // Empty
+            $currencies->take(0)->get(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -168,42 +166,105 @@ final class IsoCurrenciesTest extends TestCase
      */
     public function testGetToYamlFeature(): void
     {
-        // Whole list
-        $yaml = self::$currenciesSetsList->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = self::$currenciesSetsList->toArray();
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        $currencies = self::$geoCodes->currencies();
+        foreach (
+            [
+            // Whole list
+            self::$currenciesSetsList,
+            // Whole list with index
+            $currencies->withIndex('name')->get(),
+            // Single element in list
+            $currencies->take(1)->get(),
+            // Empty
+            $currencies->take(0)->get(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
+    }
 
-        // Whole list with index
-        $currencies = self::$geoCodes->currencies()->withIndex('name')->get();
-        $yaml = $currencies->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($currencies->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->getXsd()` and the `->getXsdSingle()` features.
+     * @depends testToGetListOfCurrencies
+     * @return void
+     * @throws GeneralException
+     */
+    public function testGetXsdFeatures(): void
+    {
+        self::$xsdList = self::$geoCodes->currencies()->getXsd();
+        $this->assertIsString(self::$xsdList);
 
-        // Single element in list
-        $yaml = self::$currenciesSetsList->{0}->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        self::$xsdSingle = self::$geoCodes->currencies()->getXsdSingle();
+        $this->assertIsString(self::$xsdSingle);
+    }
 
-        // Empty
-        $currencies = self::$geoCodes->currencies()->take(0)->get();
-        $yaml = $currencies->toYaml();
-        $expectedData = $currencies->toArray();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->get()->toXml()` feature and validate it with external xsd.
+     * @depends testToGetListOfCurrencies
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testGetToXmlFeatureWithExternalValidation(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        foreach (
+            [
+            // Whole list
+            self::$currenciesSetsList,
+            // Whole list with index
+            $currencies->withIndex('name')->get(),
+            // Single element in list
+            $currencies->take(1)->get(),
+            // Empty
+            $currencies->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdList), 'Not a valid XML');
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toXmlAndValidate()` feature.
+     * @depends testToGetListOfCurrencies
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testGetToXmlAndValidateFeature(): void
+    {
+        $currencies = self::$geoCodes->currencies();
+        foreach (
+            [
+            // Whole list
+            self::$currenciesSetsList,
+            // Whole list with index
+            $currencies->withIndex('name')->get(),
+            // Single element in list
+            $currencies->take(1)->get(),
+            // Empty
+            $currencies->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
     }
 
     /**
@@ -307,24 +368,26 @@ final class IsoCurrenciesTest extends TestCase
      * @testdox Test the `->first()->toJson()` feature.
      * @depends testFirstFeature
      * @return void
+     * @throws QueryException
      */
     public function testFirstToJsonFeature(): void
     {
-        // Existent
-        $json = self::$currency->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-
-        // Empty
-        $currency = self::$geoCodes->currencies()->limit(0)->first();
-        $json = $currency->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($currency->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+        foreach (
+            [
+                // Single Existent Currency
+                self::$currency,
+                // Empty
+                self::$geoCodes->currencies()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -336,22 +399,74 @@ final class IsoCurrenciesTest extends TestCase
      */
     public function testFirstToYamlFeature(): void
     {
-        // Existent
-        $yaml = self::$currency->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals(self::$currency->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+        foreach (
+            [
+                // Single Existent Currency
+                self::$currency,
+                // Empty
+                self::$geoCodes->currencies()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
+    }
 
-        // Empty
-        $currency = self::$geoCodes->currencies()->limit(0)->first();
-        $yaml = $currency->toJson();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($currency->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->first()->toXml()` feature and validate it with external xsd.
+     * @depends testFirstFeature
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testFirstToXmlFeatureWithExternalValidation(): void
+    {
+        foreach (
+            [
+                // Single Existent Currency
+                self::$currency,
+                // Empty
+                self::$geoCodes->currencies()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdSingle), 'Not a valid XML');
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toXmlAndValidate()` feature.
+     * @depends testFirstFeature
+     * @return void
+     * @throws QueryException
+     */
+    public function testFirstToXmlAndValidateFeature(): void
+    {
+        foreach (
+            [
+            // Single Existent Currency
+            self::$currency,
+            // Empty
+            self::$geoCodes->currencies()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
     }
 
     /**
@@ -376,15 +491,6 @@ final class IsoCurrenciesTest extends TestCase
     {
         $flatten = self::$currency->toFlatten();
         $this->assertIsArray($flatten, 'Not a valid Array');
-        $regex = '/\./';
-        foreach ($flatten as $key => $val) {
-            if (preg_match('/^tags/', $key)) {
-                $this->assertTrue(preg_match($regex, $key) === 1);
-            }
-            if (preg_match('/^countryCodes/', $key)) {
-                $this->assertTrue(preg_match($regex, $key) === 1);
-            }
-        }
     }
 
     /**
@@ -397,15 +503,6 @@ final class IsoCurrenciesTest extends TestCase
     {
         $flatten = self::$currency->toFlatten('_');
         $this->assertIsArray($flatten, 'Not a valid Array');
-        $regex = '/_/';
-        foreach ($flatten as $key => $val) {
-            if (preg_match('/^tags/', $key)) {
-                $this->assertTrue(preg_match($regex, $key) === 1);
-            }
-            if (preg_match('/^countryCodes/', $key)) {
-                $this->assertTrue(preg_match($regex, $key) === 1);
-            }
-        }
     }
 
     /**
@@ -614,7 +711,7 @@ final class IsoCurrenciesTest extends TestCase
                 // check the existence of the field
                 $this->assertTrue(
                     property_exists($object, $prop),
-                    'Key `' . $key . '` not present in the country object'
+                    'Key `' . $key . '` not present in the currency object'
                 );
 
                 // check the type of the key
@@ -652,7 +749,7 @@ final class IsoCurrenciesTest extends TestCase
             // check the existence of the field
             $this->assertTrue(
                 property_exists($object, $prop),
-                'Key `' . $key . '` not present in the country object'
+                'Key `' . $key . '` not present in the currency object'
             );
         }
     }

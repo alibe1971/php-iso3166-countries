@@ -30,6 +30,7 @@ class ExceptionsMessagesMap
 
 
     /** General */
-    public const ERROR_12001 = 'Invalid XML. Reported error: %s';
-    public const ERROR_12002 = 'XML for `%s` not valid according to xsd schema.';
+    public const ERROR_12001 = 'Invalid XSD.';
+    public const ERROR_12002 = 'Invalid XML. Reported error: %s';
+    public const ERROR_12003 = 'XML for `%s` not valid according to xsd schema.';
 }

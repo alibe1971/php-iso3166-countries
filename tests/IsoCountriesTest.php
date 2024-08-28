@@ -5,8 +5,11 @@ namespace Alibe\GeoCodes\Tests;
 use Alibe\GeoCodes\Lib\DataObj\Countries;
 use Alibe\GeoCodes\Lib\DataObj\Elements\Country;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
+use Alibe\GeoCodes\Lib\Exceptions\GeneralException;
+use DOMDocument;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
+use SimpleXMLElement;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -110,6 +113,16 @@ final class IsoCountriesTest extends TestCase
     private static Country $country;
 
     /**
+     * @var string
+     */
+    private static string $xsdList;
+
+    /**
+     * @var string
+     */
+    private static string $xsdSingle;
+
+    /**
      * @test
      * @testdox Test `->get()` the list of countries is object as instance of Countries.
      * @return void
@@ -144,42 +157,27 @@ final class IsoCountriesTest extends TestCase
      */
     public function testGetToJsonFeature(): void
     {
-        // Whole list
-        $json = self::$countryList->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = self::$countryList->toArray();
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Whole list with index
-        $countries = self::$geoCodes->countries()->withIndex('name')->get();
-        $json = $countries->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($countries->toArray(), $decodedJson, 'Converted JSON does not match expected data');
-
-        // Single element in list
-        $json = self::$countryList->{0}->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Empty
-        $countries = self::$geoCodes->countries()->take(0)->get();
-        $json = $countries->toJson();
-        $expectedData = $countries->toArray();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        $countries = self::$geoCodes->countries();
+        foreach (
+            [
+            // Whole list
+            self::$countryList,
+            // Whole list with index
+            $countries->withIndex('name')->get(),
+            // Single element in list
+            $countries->take(1)->get(),
+            // Empty
+            $countries->take(0)->get(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -191,44 +189,106 @@ final class IsoCountriesTest extends TestCase
      */
     public function testGetToYamlFeature(): void
     {
-        // Whole list
-        $yaml = self::$countryList->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = self::$countryList->toArray();
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
-
-        // Whole list with index
-        $countries = self::$geoCodes->countries()->withIndex('name')->get();
-        $yaml = $countries->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($countries->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
-
-        // Single element in list
-        $yaml = self::$countryList->{0}->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
-
-        // Empty
-        $countries = self::$geoCodes->countries()->take(0)->get();
-        $yaml = $countries->toYaml();
-        $expectedData = $countries->toArray();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        $countries = self::$geoCodes->countries();
+        foreach (
+            [
+             // Whole list
+             self::$countryList,
+             // Whole list with index
+             $countries->withIndex('name')->get(),
+             // Single element in list
+             $countries->take(1)->get(),
+             // Empty
+             $countries->take(0)->get(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
     }
 
+    /**
+     * @test
+     * @testdox Test the `->getXsd()` and the `->getXsdSingle()` features.
+     * @depends testToGetListOfCountries
+     * @return void
+     * @throws GeneralException
+     */
+    public function testGetXsdFeatures(): void
+    {
+        self::$xsdList = self::$geoCodes->countries()->getXsd();
+        $this->assertIsString(self::$xsdList);
+
+        self::$xsdSingle = self::$geoCodes->countries()->getXsdSingle();
+        $this->assertIsString(self::$xsdSingle);
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toXml()` feature and validate it with external xsd.
+     * @depends testToGetListOfCountries
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testGetToXmlFeatureWithExternalValidation(): void
+    {
+        $countries = self::$geoCodes->countries();
+        foreach (
+            [
+            // Whole list
+            self::$countryList,
+            // Whole list with index
+            $countries->withIndex('name')->get(),
+            // Single element in list
+            $countries->take(1)->get(),
+            // Empty
+            $countries->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdList), 'Not a valid XML');
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toXmlAndValidate()` feature.
+     * @depends testToGetListOfCountries
+     * @return void
+     * @throws QueryException
+     */
+    public function testGetToXmlAndValidateFeature(): void
+    {
+        $countries = self::$geoCodes->countries();
+        foreach (
+            [
+            // Whole list
+            self::$countryList,
+            // Whole list with index
+            $countries->withIndex('name')->get(),
+            // Single element in list
+            $countries->take(1)->get(),
+            // Empty
+            $countries->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
+    }
 
     /**
      * @test
@@ -338,22 +398,22 @@ final class IsoCountriesTest extends TestCase
      */
     public function testFirstToJsonFeature(): void
     {
-        // Existent
-        $json = self::$country->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals(self::$country->toArray(), $decodedJson, 'Converted JSON does not match expected data');
-
-        // Empty
-        $country = self::$geoCodes->countries()->limit(0)->first();
-        $json = $country->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($country->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+        foreach (
+            [
+                // Single Existent Country
+                self::$country,
+                // Empty
+                self::$geoCodes->countries()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -365,22 +425,74 @@ final class IsoCountriesTest extends TestCase
      */
     public function testFirstToYamlFeature(): void
     {
-        // Existent
-        $yaml = self::$country->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals(self::$country->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+        foreach (
+            [
+                // Single Existent Country
+                self::$country,
+                // Empty
+                self::$geoCodes->countries()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
+    }
 
-        // Empty
-        $country = self::$geoCodes->countries()->limit(0)->first();
-        $yaml = $country->toJson();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($country->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->first()->toXml()` feature and validate it with external xsd.
+     * @depends testFirstFeature
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testFirstToXmlFeatureWithExternalValidation(): void
+    {
+        foreach (
+            [
+                // Single Existent Country
+                self::$country,
+                // Empty
+                self::$geoCodes->countries()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdSingle), 'Not a valid XML');
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toXmlAndValidate()` feature.
+     * @depends testFirstFeature
+     * @return void
+     * @throws QueryException
+     */
+    public function testFirstToXmlAndValidateFeature(): void
+    {
+        foreach (
+            [
+            // Single Existent Country
+            self::$country,
+            // Empty
+            self::$geoCodes->countries()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
     }
 
 
@@ -1511,21 +1623,62 @@ final class IsoCountriesTest extends TestCase
      * @testdox Countries: ELIBE.
      * @return void
      * @throws QueryException
+     * @throws \Exception
      */
     public function testStica(): void
     {
-//        $countries = self::$geoCodes->countries()->withIndex();
+        /// DA FARE
+        /// - prendere l'XSD
+        /// - tests
+//        testGetToXmlFeature
         $countries = self::$geoCodes->countries();
-        $xml = $countries->select('alpha2', 'alpha3', 'currencies.legalTenders')->withIndex('fullName')
-            ->skip(500)->take(1)->first()->toXmlAndValidate();
-//        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-//        fwrite($elenaMyfile, print_r(
-//            $xml,
-//            true
-//        ) . "\n");
-//        fclose($elenaMyfile);
+        $xsd = $countries->getXsd();
+//        $xml = $countries->get()->toXml();
+        $xml = $countries->take(1)->get()->toXml();
+//        $dom = new DOMDocument();
+//        $dom->loadXML($xml);
+//        $dom->schemaValidateSource($xsd);
+//        $this->assertTrue($dom->schemaValidateSource($xsd), 'Not a valid XML');
 
-        print_r($xml);
+//        print_r($xml);
+
+//        $testCases = [
+//            // Whole list
+//            self::$countryList->toXml(),
+//            // Whole list with index
+//            self::$geoCodes->countries()->withIndex('name')->get()->toXml(),
+//            // Single element in list
+//            self::$countryList->{0}->toXml(),
+//            // Empty
+//            self::$geoCodes->countries()->take(0)->get()->toXml(),
+//        ];
+//
+//        foreach ($testCases as $xml) {
+//            $this->assertIsString($xml);
+//
+//            $decodedXml = simplexml_load_string($xml);
+//            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+//
+//            $dom = new DOMDocument();
+//            $dom->loadXML($xml);
+//
+//            $this->assertTrue($dom->schemaValidateSource(self::$xsdList), 'Not a valid XML');
+//
+//        }
+
+
+//        $countries = self::$geoCodes->countries()->where('alpha2', 'XK')->withIndex('name')->get();
+//        $xml = $countries->toXmlAndValidate();
+//        $this->assertIsString($xml);
+//        $xml = simplexml_load_string($xml);
+//        $decodedJson = json_decode(json_encode($xml), true);
+//        print_r($xml);
+//
+//        $xml = new SimpleXMLElement($xml);
+//        $resultArray = $this->xmlToArrayWithAttributes($xml);
+
+//        print_r($resultArray);
+
 
 //        $countries->where([['officialName', 'like', '%人民共和%'], ['officialName', 'not like', '%港特別行政%']]);
 //        $countries->orWhere('alpha2', 'IN', ['IT']);

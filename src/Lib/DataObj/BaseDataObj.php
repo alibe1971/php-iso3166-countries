@@ -2,6 +2,10 @@
 
 namespace Alibe\GeoCodes\Lib\DataObj;
 
+use Alibe\GeoCodes\Lib\Enums\Exceptions\GeneralCodes;
+use Alibe\GeoCodes\Lib\Exceptions\GeneralException;
+use DOMDocument;
+use DOMElement;
 use stdClass;
 use IteratorAggregate;
 use ArrayIterator;
@@ -16,6 +20,11 @@ class BaseDataObj extends StdClass implements IteratorAggregate
      * @var ArrayIterator<int|string, mixed>
      */
     private ArrayIterator $iterator;
+
+    /**
+     * @var string
+     */
+    protected string $xmlRootElement;
 
     /**
      * @return ArrayIterator<int|string, mixed>
@@ -52,7 +61,38 @@ class BaseDataObj extends StdClass implements IteratorAggregate
      */
     public function toYaml(): string
     {
-        return Yaml::dump($this->toArray(),5, 4, Yaml::DUMP_OBJECT_AS_MAP);
+        return Yaml::dump($this->toArray(), 5, 4, Yaml::DUMP_OBJECT_AS_MAP);
+    }
+
+    /**
+     * @return string
+     * @throws GeneralException
+     */
+    public function toXml(): string
+    {
+        return $this->execToXml();
+    }
+
+    /**
+     * @return string
+     * @throws GeneralException
+     */
+    public function toXmlAndValidate(): string
+    {
+        return $this->execToXml(true);
+    }
+
+    /**
+     * @return string
+     * @throws GeneralException
+     */
+    public function getXsd(): string
+    {
+        $xsd = file_get_contents($schemaPath = __DIR__ . '/Xsd/' . $this->xmlRootElement . '.xsd');
+        if (!$xsd) {
+            throw new GeneralException(GeneralCodes::INVALID_XSD);
+        }
+        return $xsd;
     }
 
     /**
@@ -143,9 +183,135 @@ class BaseDataObj extends StdClass implements IteratorAggregate
     }
 
     /**
+     * @param bool $withValidation
+     * @return string
+     * @throws GeneralException
+     */
+    private function execToXml(bool $withValidation = false): string
+    {
+        $dom = new DOMDocument('1.0', 'UTF-8');
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+
+        $rootElement = $this->xmlRootElement;
+        $root = $dom->createElement($rootElement);
+        $dom->appendChild($root);
+        $this->arrayToXml($this->toArray(), $root, $dom, $rootElement, $this->getXmlMap());
+        $xmlString = $dom->saveXML();
+
+        if (!is_string($xmlString)) {
+            throw new GeneralException(GeneralCodes::INVALID_XML, [$rootElement, 'The XML is not a string']);
+        }
+
+        libxml_use_internal_errors(true);
+        if (!$dom->loadXML($xmlString)) {
+            $errors = libxml_get_errors();
+            libxml_clear_errors();
+            throw new GeneralException(GeneralCodes::INVALID_XML, [$rootElement, json_encode($errors)]);
+        }
+
+        if ($withValidation && !$this->validateXml($xmlString)) {
+            throw new GeneralException(GeneralCodes::XML_FAILED_VALIDATION, [$rootElement]);
+        }
+
+        return $xmlString;
+    }
+
+    /**
+     * @param array<string, array<string, array<string, string>|string>|array<string, string>|string|null> $data
+     * @param DOMElement $element
+     * @param DOMDocument $dom
+     * @param string $rootElement
+     * @param array<string, mixed> $map
+     */
+    private function arrayToXml(
+        array $data,
+        DOMElement $element,
+        DOMDocument $dom,
+        string $rootElement,
+        array $map
+    ): void {
+        $tagKey = $attributeKey = $typeKey = $subElement = null;
+        if (isset($map[$rootElement]) && is_array($map[$rootElement])) {
+            if (array_key_exists('@tag', $map[$rootElement])) {
+                $tagKey = $map[$rootElement]['@tag'];
+            }
+            if (array_key_exists('@attribute', $map[$rootElement])) {
+                $attributeKey = $map[$rootElement]['@attribute'];
+                if (!is_string($attributeKey)) {
+                    $attributeKey = null;
+                }
+            }
+            if (array_key_exists('@type', $map[$rootElement])) {
+                $typeKey = $map[$rootElement]['@type'];
+                if (!is_array($typeKey)) {
+                    $typeKey = null;
+                }
+            }
+        }
+
+        foreach ($data as $key => $value) {
+            $transformedKey = preg_replace('/[^a-zA-Z0-9_]/', '_', $tagKey ?? $key);
+            if (is_string($transformedKey)) {
+                if (is_array($value)) {
+                    $subElement = $dom->createElement($transformedKey);
+                    $element->appendChild($subElement);
+
+                    $newRootElement = $transformedKey;
+                    $newMap = isset($map[$rootElement]) && is_array($map[$rootElement]) ? $map[$rootElement] : [];
+                    $this->arrayToXml($value, $subElement, $dom, $newRootElement, $newMap);
+                } else {
+                    if (isset($typeKey) && array_key_exists($transformedKey, $typeKey)) {
+                        switch ($typeKey[$transformedKey]) {
+                            case 'CDATA':
+                                $subElement = $dom->createElement($transformedKey);
+                                $cdata = $dom->createCDATASection($value);
+                                $subElement->appendChild($cdata);
+                                break;
+                        }
+                    } else {
+                        if (is_null($value)) {
+                            $subElement = $dom->createElement($transformedKey);
+                            $subElement->setAttribute('xsi:nil', 'true');
+                            $subElement->setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
+                        } else {
+                            $subElement = $dom->createElement($transformedKey, $value);
+                        }
+                    }
+                }
+
+                if ($attributeKey) {
+                    $subElement->setAttribute($attributeKey, $key);
+                }
+                $element->appendChild($subElement);
+            }
+        }
+    }
+
+    /**
+     * @param string $xmlString
+     * @return bool
+     */
+    private function validateXml(string $xmlString): bool
+    {
+        $dom = new DOMDocument();
+        $dom->loadXML($xmlString);
+        $schemaPath = __DIR__ . '/Xsd/' . $this->xmlRootElement . '.xsd';
+        return $dom->schemaValidate($schemaPath);
+    }
+
+    /**
      * @return array<string, mixed> | array<int, array<int, string>>
      */
     protected function getObjectStructureParser(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return array<string, array<string, array<string, array<string, string>|string>>>
+     */
+    protected function getXmlMap(): array
     {
         return [];
     }

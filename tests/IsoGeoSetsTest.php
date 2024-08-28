@@ -4,9 +4,12 @@ namespace Alibe\GeoCodes\Tests;
 
 use Alibe\GeoCodes\Lib\DataObj\Elements\GeoSet;
 use Alibe\GeoCodes\Lib\DataObj\GeoSets;
+use Alibe\GeoCodes\Lib\Exceptions\GeneralException;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
+use DOMDocument;
 use PHPUnit\Framework\TestCase;
 use Alibe\GeoCodes\GeoCodes;
+use SimpleXMLElement;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -83,6 +86,16 @@ final class IsoGeoSetsTest extends TestCase
     private static GeoSet $geoSet;
 
     /**
+     * @var string
+     */
+    private static string $xsdList;
+
+    /**
+     * @var string
+     */
+    private static string $xsdSingle;
+
+    /**
      * @test
      * @testdox Test `->get()` the list of geosets is object as instance of GeoSets.
      * @return void
@@ -116,42 +129,27 @@ final class IsoGeoSetsTest extends TestCase
      */
     public function testGetToJsonFeature(): void
     {
-        // Whole list
-        $json = self::$geoSetsList->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = self::$geoSetsList->toArray();
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Whole list with index
-        $geoSets = self::$geoCodes->geoSets()->withIndex('name')->get();
-        $json = $geoSets->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($geoSets->toArray(), $decodedJson, 'Converted JSON does not match expected data');
-
-        // Single element in list
-        $json = self::$geoSetsList->{0}->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
-
-        // Empty
-        $geoSets = self::$geoCodes->geoSets()->take(0)->get();
-        $json = $geoSets->toJson();
-        $expectedData = $geoSets->toArray();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        $geoSets = self::$geoCodes->geoSets();
+        foreach (
+            [
+            // Whole list
+            self::$geoSetsList,
+            // Whole list with index
+            $geoSets->withIndex('name')->get(),
+            // Single element in list
+            $geoSets->take(1)->get(),
+            // Empty
+            $geoSets->take(0)->get(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -163,42 +161,106 @@ final class IsoGeoSetsTest extends TestCase
      */
     public function testGetToYamlFeature(): void
     {
-        // Whole list
-        $yaml = self::$geoSetsList->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = self::$geoSetsList->toArray();
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        $geosets = self::$geoCodes->geoSets();
+        foreach (
+            [
+            // Whole list
+            self::$geoSetsList,
+            // Whole list with index
+            $geosets->withIndex('name')->get(),
+            // Single element in list
+            $geosets->take(1)->get(),
+            // Empty
+            $geosets->take(0)->get(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
+    }
 
-        // Whole list with index
-        $geosets = self::$geoCodes->geoSets()->withIndex('name')->get();
-        $yaml = $geosets->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($geosets->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->getXsd()` and the `->getXsdSingle()` features.
+     * @depends testToGetListOfGeoSets
+     * @return void
+     * @throws GeneralException
+     */
+    public function testGetXsdFeatures(): void
+    {
+        self::$xsdList = self::$geoCodes->geoSets()->getXsd();
+        $this->assertIsString(self::$xsdList);
 
-        // Single element in list
-        $yaml = self::$geoSetsList->{0}->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $expectedData = reset($expectedData);
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        self::$xsdSingle = self::$geoCodes->geoSets()->getXsdSingle();
+        $this->assertIsString(self::$xsdSingle);
+    }
 
-        // Empty
-        $geosets = self::$geoCodes->geoSets()->take(0)->get();
-        $yaml = $geosets->toYaml();
-        $expectedData = $geosets->toArray();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->get()->toXml()` feature and validate it with external xsd.
+     * @depends testToGetListOfGeoSets
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testGetToXmlFeatureWithExternalValidation(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        foreach (
+            [
+            // Whole list
+            self::$geoSetsList,
+            // Whole list with index
+            $geoSets->withIndex('name')->get(),
+            // Single element in list
+            $geoSets->take(1)->get(),
+            // Empty
+            $geoSets->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdList), 'Not a valid XML');
+        }
+    }
+
+
+    /**
+     * @test
+     * @testdox Test the `->get()->toXmlAndValidate()` feature.
+     * @depends testToGetListOfGeoSets
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testGetToXmlAndValidateFeature(): void
+    {
+        $geoSets = self::$geoCodes->geoSets();
+        foreach (
+            [
+            // Whole list
+            self::$geoSetsList,
+            // Whole list with index
+            $geoSets->withIndex('name')->get(),
+            // Single element in list
+            $geoSets->take(1)->get(),
+            // Empty
+            $geoSets->take(0)->get(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
     }
 
     /**
@@ -302,24 +364,26 @@ final class IsoGeoSetsTest extends TestCase
      * @testdox Test the `->first()->toJson()` feature.
      * @depends testFirstFeature
      * @return void
+     * @throws QueryException
      */
     public function testFirstToJsonFeature(): void
     {
-        // Existent
-        $json = self::$geoSet->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-
-        // Empty
-        $geoset = self::$geoCodes->geoSets()->limit(0)->first();
-        $json = $geoset->toJson();
-        $this->assertIsString($json);
-        $decodedJson = json_decode($json, true);
-        $this->assertNotNull($decodedJson, 'Not a valid JSON');
-        $this->assertIsArray($decodedJson, 'Not a valid JSON');
-        $this->assertEquals($geoset->toArray(), $decodedJson, 'Converted JSON does not match expected data');
+        foreach (
+            [
+                // Single Existent GeoSet
+                self::$geoSet,
+                // Empty
+                self::$geoCodes->geoSets()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $json = $testCase->toJson();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($json);
+            $decodedJson = json_decode($json, true);
+            $this->assertNotNull($decodedJson, 'Not a valid JSON');
+            $this->assertIsArray($decodedJson, 'Not a valid JSON');
+            $this->assertEquals($expectedData, $decodedJson, 'Converted JSON does not match expected data');
+        }
     }
 
     /**
@@ -331,22 +395,74 @@ final class IsoGeoSetsTest extends TestCase
      */
     public function testFirstToYamlFeature(): void
     {
-        // Existent
-        $yaml = self::$geoSet->toYaml();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals(self::$geoSet->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+        foreach (
+            [
+                // Single Existent GeoSet
+                self::$geoSet,
+                // Empty
+                self::$geoCodes->geoSets()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $yaml = $testCase->toYaml();
+            $expectedData = $testCase->toArray();
+            $this->assertIsString($yaml);
+            $decodedYaml = Yaml::parse($yaml);
+            $this->assertNotNull($decodedYaml, 'Not a valid YAML');
+            $this->assertIsArray($decodedYaml, 'Not a valid YAML');
+            $this->assertEquals($expectedData, $decodedYaml, 'Converted YAML does not match expected data');
+        }
+    }
 
-        // Empty
-        $geoset = self::$geoCodes->geoSets()->limit(0)->first();
-        $yaml = $geoset->toJson();
-        $this->assertIsString($yaml);
-        $decodedYaml = Yaml::parse($yaml);
-        $this->assertNotNull($decodedYaml, 'Not a valid YAML');
-        $this->assertIsArray($decodedYaml, 'Not a valid YAML');
-        $this->assertEquals($geoset->toArray(), $decodedYaml, 'Converted YAML does not match expected data');
+    /**
+     * @test
+     * @testdox Test the `->first()->toXml()` feature and validate it with external xsd.
+     * @depends testFirstFeature
+     * @depends testGetXsdFeatures
+     * @return void
+     * @throws QueryException|GeneralException
+     */
+    public function testFirstToXmlFeatureWithExternalValidation(): void
+    {
+        foreach (
+            [
+                // Single Existent GeoSet
+                self::$geoSet,
+                // Empty
+                self::$geoCodes->geoSets()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXml();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+            $dom = new DOMDocument();
+            $dom->loadXML($xml);
+            $this->assertTrue($dom->schemaValidateSource(self::$xsdSingle), 'Not a valid XML');
+        }
+    }
+
+    /**
+     * @test
+     * @testdox Test the `->first()->toXmlAndValidate()` feature.
+     * @depends testFirstFeature
+     * @return void
+     * @throws QueryException
+     */
+    public function testFirstToXmlAndValidateFeature(): void
+    {
+        foreach (
+            [
+            // Single Existent GeoSet
+            self::$geoSet,
+            // Empty
+            self::$geoCodes->geoSets()->take(0)->first(),
+            ] as $testCase
+        ) {
+            $xml = $testCase->toXmlAndValidate();
+            $this->assertIsString($xml);
+            $decodedXml = simplexml_load_string($xml);
+            $this->assertInstanceOf(SimpleXMLElement::class, $decodedXml, 'Not a valid XML');
+        }
     }
 
     /**
@@ -609,7 +725,7 @@ final class IsoGeoSetsTest extends TestCase
                 // check the existence of the field
                 $this->assertTrue(
                     property_exists($object, $prop),
-                    'Key `' . $key . '` not present in the country object'
+                    'Key `' . $key . '` not present in the geoSet object'
                 );
 
                 // check the type of the key
@@ -647,7 +763,7 @@ final class IsoGeoSetsTest extends TestCase
             // check the existence of the field
             $this->assertTrue(
                 property_exists($object, $prop),
-                'Key `' . $key . '` not present in the country object'
+                'Key `' . $key . '` not present in the geoSet object'
             );
         }
     }

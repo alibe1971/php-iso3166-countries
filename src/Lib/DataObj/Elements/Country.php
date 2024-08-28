@@ -9,6 +9,62 @@ use Alibe\GeoCodes\Lib\DataObj\TimeZones;
 class Country extends BaseDataObj
 {
     /**
+     * @var string
+     */
+    protected string $xmlRootElement = "country";
+
+    /**
+     * @return array<string, array<string, array<string, array<string, string>|string>>>
+     */
+    protected function getXmlMap(): array
+    {
+        return [
+            'country' => [
+                "officialName" => [
+                    "@attribute" => "lang",
+                    "@tag" => "name"
+                ],
+                "flags" => [
+                    "@type" => [
+                        "svg" => "CDATA"
+                    ]
+                ],
+                "mottos" => [
+                    "official" => [
+                        "@attribute" => "lang",
+                        "@tag" => "motto"
+                    ]
+                ],
+                "currencies" => [
+                    "legalTenders" => [
+                        "@tag" => "currency"
+                    ],
+                    "widelyAccepted" => [
+                        "@tag" => "currency"
+                    ]
+                ],
+                "dialCodes" => [
+                    "main" => [
+                        "@tag" => "dial"
+                    ],
+                    "exceptions" => [
+                        "@tag" => "dial"
+                    ]
+                ],
+                "demonyms" => [
+                    "@tag" => "demonym"
+                ],
+                "timeZones" => [
+                    "@tag" => "tz"
+                ],
+                "locales" => [
+                    "@tag" => "locale"
+                ]
+            ]
+        ];
+    }
+
+    /**
      * @return array<string, mixed>
      */
     protected function getObjectStructureParser(): array

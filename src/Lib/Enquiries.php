@@ -10,6 +10,7 @@ use Alibe\GeoCodes\Lib\Enums\DataSets\Source;
 use Alibe\GeoCodes\Lib\Enums\DataSets\Type;
 use Alibe\GeoCodes\Lib\Enums\Exceptions\QueryCodes;
 use Alibe\GeoCodes\Lib\Exceptions\QueryException;
+use Alibe\GeoCodes\Lib\Exceptions\GeneralException;
 
 class Enquiries
 {
@@ -1049,5 +1050,27 @@ class Enquiries
     {
         $this->execQueries();
         return count($this->data);
+    }
+
+    /**
+     * @return string
+     * @throws GeneralException
+     */
+    public function getXsd(): string
+    {
+        /** @var BaseDataObj $childInstance */
+        $childInstance = new $this->instanceName();
+        return $childInstance->getXsd();
+    }
+
+    /**
+     * @return string
+     * @throws GeneralException
+     */
+    public function getXsdSingle(): string
+    {
+        /** @var BaseDataObj $childInstance */
+        $childInstance = new $this->singleItemInstanceName();
+        return $childInstance->getXsd();
     }
 }
