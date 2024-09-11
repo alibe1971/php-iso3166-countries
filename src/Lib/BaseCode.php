@@ -78,7 +78,7 @@ class BaseCode
     protected function reset(): void
     {
         $this->Language = new InstanceLanguage();
-        $language = $this->config->settings->languages->default;
+        $language = $this->Language->superDefault = $this->config->settings->languages->default;
         $this->setDefaultLanguage($language);
         $this->useLanguage($language);
     }

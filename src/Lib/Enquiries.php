@@ -108,7 +108,11 @@ class Enquiries
      */
     protected string $singleItemInstanceName;
 
-
+    /**
+     * @param InstanceLanguage $languages
+     * @param string $currentLocale
+     * @throws QueryException
+     */
     public function __construct(InstanceLanguage $languages, string $currentLocale)
     {
         $this->InstanceLanguage = $languages;
@@ -135,16 +139,11 @@ class Enquiries
             return;
         }
 
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->default . '/' . $this->dataSetName;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default][$this->dataSetName] =
-                DataSets::getData($dir);
-        }
-
-        if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName])) {
-            $dir = 'Translations/' . $this->InstanceLanguage->current . '/' . $this->dataSetName;
-            DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current][$this->dataSetName] =
-                DataSets::getData($dir);
+        foreach ($this->InstanceLanguage->toArray() as $lang) {
+            if (empty(DataSets::$dataSets[Source::TRANSLATIONS][$lang][$this->dataSetName])) {
+                $dir = 'Translations/' . $lang . '/' . $this->dataSetName;
+                DataSets::$dataSets[Source::TRANSLATIONS][$lang][$this->dataSetName] = DataSets::getData($dir);
+            }
         }
     }
 
@@ -162,8 +161,10 @@ class Enquiries
         /** get the databases for the translations */
         $transCurrentLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
             [$this->dataSetName];
-        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->current]
+        $transDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->default]
             [$this->dataSetName];
+        $transSuperDefaultLanguage = DataSets::$dataSets[Source::TRANSLATIONS][$this->InstanceLanguage->superDefault]
+        [$this->dataSetName];
 
         /** parse the data*/
         $k = 0;
@@ -180,9 +181,12 @@ class Enquiries
                     }
                 }
                 if ($structure['source'] === Source::TRANSLATIONS) {
-                    $object[$prop] = !$transCurrentLanguage[$data[$this->dataSetPrimaryKey]][$prop] ?
+                    $object[$prop] = !empty($transCurrentLanguage[$data[$this->dataSetPrimaryKey]][$prop]) ?
                         $transCurrentLanguage[$data[$this->dataSetPrimaryKey]][$prop] :
-                        $transDefaultLanguage[$data[$this->dataSetPrimaryKey]][$prop];
+                        (!empty($transDefaultLanguage[$data[$this->dataSetPrimaryKey]][$prop]) ?
+                            $transDefaultLanguage[$data[$this->dataSetPrimaryKey]][$prop] :
+                            $transSuperDefaultLanguage[$data[$this->dataSetPrimaryKey]][$prop]
+                        );
                 }
             }
 
@@ -997,7 +1001,7 @@ class Enquiries
                         return '/^' . $escaped . '$/iu';  // 'my value'
                     }
                 };
-                $result = (bool) preg_match($getRegex($term), $value);
+                $result = (bool) preg_match($getRegex($term), (string) $value);
                 switch ($operator) {
                     case 'LIKE':
                         return $result;
