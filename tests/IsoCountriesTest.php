@@ -1633,14 +1633,14 @@ final class IsoCountriesTest extends TestCase
 //        testGetToXmlFeature
         $countries = self::$geoCodes->countries();
         $xsd = $countries->getXsd();
-//        $xml = $countries->get()->toXml();
+        $xml = $countries->get()->toXml();
         $xml = $countries->take(1)->get()->toXml();
 //        $dom = new DOMDocument();
 //        $dom->loadXML($xml);
 //        $dom->schemaValidateSource($xsd);
 //        $this->assertTrue($dom->schemaValidateSource($xsd), 'Not a valid XML');
 
-//        print_r($xml);
+        print_r($xml);
 
 //        $testCases = [
 //            // Whole list

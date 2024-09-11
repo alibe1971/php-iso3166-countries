@@ -1453,18 +1453,4 @@ final class IsoGeoSetsTest extends TestCase
             ],
         ];
     }
-
-
-    public function testStica(): void
-    {
-        $geoSets = self::$geoCodes->geoSets();
-        $geoSets->where([['unM49', '<=', '2'], ['unM49', 'is not null']]);
-        $result = $geoSets->withIndex('internalCode')->select('internalCode')->get()->toArray();
-
-        $elenaMyfile = fopen("/Users/aliberati/ALIBE/test.log", "a") or die("Unable to open file!");
-        fwrite($elenaMyfile, print_r($result, true) . "\n");
-        fclose($elenaMyfile);
-
-        $this->assertTrue(true);
-    }
 }

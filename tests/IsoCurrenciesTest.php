@@ -1433,10 +1433,4 @@ final class IsoCurrenciesTest extends TestCase
             ],
         ];
     }
-
-    public function testStica(): void
-    {
-//        $currencies = self::$geoCodes->currencies();
-        $this->assertTrue(true);
-    }
 }
