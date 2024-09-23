@@ -280,7 +280,7 @@ class BaseDataObj extends StdClass implements IteratorAggregate
                     }
                 }
 
-                if ($attributeKey) {
+                if ($attributeKey && is_string($key)) {
                     $subElement->setAttribute($attributeKey, $key);
                 }
                 $element->appendChild($subElement);
